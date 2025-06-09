@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/🤓 writeups/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/🤓 writeups/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/🤓 writeups/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/index.md",
+                "file": "docs/🤓 writeups/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -179,8 +179,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "530c40956062fda5",
+  "active": "a42191c42a6edab1",
   "lastOpenFiles": [
+    "docs/🤓 writeups/HackTheBox/tmp..md",
+    "docs/🤓 writeups/index.md",
+    "docs/🤓 writeups/pwnedlabs/tmp.md",
+    "docs/index.md",
     "docs/☁️ Cloud/Amazon Web Services (AWS)/Compute Services & Lateral Movement.md"
   ]
 }
