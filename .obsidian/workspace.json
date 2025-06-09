@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/🤓 writeups/index.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "Domain ACLs"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/🤓 writeups/index.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for index"
+              "title": "Backlinks for Domain ACLs"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/🤓 writeups/index.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from index"
+              "title": "Outgoing links from Domain ACLs"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/🤓 writeups/index.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of index"
+              "title": "Outline of Domain ACLs"
             }
           },
           {
@@ -181,8 +181,14 @@
   },
   "active": "a42191c42a6edab1",
   "lastOpenFiles": [
-    "docs/🤓 writeups/HackTheBox/tmp..md",
+    "docs/🪟 Active Directory/Lateral Movement/Constrained Delegation.md",
+    "docs/🪟 Active Directory/Defense Evasion/Powershell Downgrade.md",
+    "docs/🪟 Active Directory/Defense Evasion/Enumerating Security Controls.md",
+    "docs/🪟 Active Directory/image 2.png",
+    "docs/🪟 Active Directory/image 1.png",
+    "docs/🪟 Active Directory/image.png",
     "docs/🤓 writeups/index.md",
+    "docs/🤓 writeups/HackTheBox/tmp..md",
     "docs/🤓 writeups/pwnedlabs/tmp.md",
     "docs/index.md",
     "docs/☁️ Cloud/Amazon Web Services (AWS)/Compute Services & Lateral Movement.md"
