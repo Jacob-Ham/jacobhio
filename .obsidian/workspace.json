@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/☁️ Cloud/Amazon Web Services (AWS)/Compute Services & Lateral Movement.md",
+                "file": "docs/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Compute Services & Lateral Movement"
+              "title": "index"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/☁️ Cloud/Amazon Web Services (AWS)/Compute Services & Lateral Movement.md",
+                "file": "docs/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Compute Services & Lateral Movement"
+              "title": "Backlinks for index"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/☁️ Cloud/Amazon Web Services (AWS)/Compute Services & Lateral Movement.md",
+                "file": "docs/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Compute Services & Lateral Movement"
+              "title": "Outgoing links from index"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/☁️ Cloud/Amazon Web Services (AWS)/Compute Services & Lateral Movement.md",
+                "file": "docs/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Compute Services & Lateral Movement"
+              "title": "Outline of index"
             }
           },
           {
@@ -180,5 +180,7 @@
     }
   },
   "active": "530c40956062fda5",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "docs/☁️ Cloud/Amazon Web Services (AWS)/Compute Services & Lateral Movement.md"
+  ]
 }
