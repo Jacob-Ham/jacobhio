@@ -1,0 +1,5 @@
+---
+tags:
+  - Privilege-Escalation
+  - AD
+---

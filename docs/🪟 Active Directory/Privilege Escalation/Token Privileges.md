@@ -1,0 +1,15 @@
+---
+tags:
+  - Local
+  - Privilege-Escalation
+  - SeAssignPrimaryPrivilege
+  - SeBackupPrivilege
+  - SeCreateTokenPrivilege
+  - SeDebugPrivilege
+  - SeImpersonatePrivilege
+  - SeLoadDriverPrivilege
+  - SeRestorePrivilege
+  - SeTakeOwnershipPrivilege
+  - SeTcbPrivilege
+  - AD
+---
