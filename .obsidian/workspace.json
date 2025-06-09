@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Domain ACLs"
+              "title": "Unconstrained Delegation"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Domain ACLs"
+              "title": "Backlinks for Unconstrained Delegation"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Domain ACLs"
+              "title": "Outgoing links from Unconstrained Delegation"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
+                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Domain ACLs"
+              "title": "Outline of Unconstrained Delegation"
             }
           },
           {
@@ -166,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,6 +181,12 @@
   },
   "active": "a42191c42a6edab1",
   "lastOpenFiles": [
+    "docs/🪟 Active Directory/Lateral Movement/SMB.md",
+    "docs/🪟 Active Directory/Lateral Movement/Resource-Based Constrained Delegation.md",
+    "docs/🪟 Active Directory/Lateral Movement/Relay Attacks.md",
+    "docs/🪟 Active Directory/Lateral Movement/Service for User to Self.md",
+    "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
+    "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
     "docs/🪟 Active Directory/Lateral Movement/Constrained Delegation.md",
     "docs/🪟 Active Directory/Defense Evasion/Powershell Downgrade.md",
     "docs/🪟 Active Directory/Defense Evasion/Enumerating Security Controls.md",
