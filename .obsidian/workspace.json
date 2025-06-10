@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
+                "file": "docs/🪟 Active Directory/Defense Evasion/AppLocker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Unconstrained Delegation"
+              "title": "AppLocker"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
+                "file": "docs/🪟 Active Directory/Defense Evasion/AppLocker.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Unconstrained Delegation"
+              "title": "Backlinks for AppLocker"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
+                "file": "docs/🪟 Active Directory/Defense Evasion/AppLocker.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Unconstrained Delegation"
+              "title": "Outgoing links from AppLocker"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
+                "file": "docs/🪟 Active Directory/Defense Evasion/AppLocker.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Unconstrained Delegation"
+              "title": "Outline of AppLocker"
             }
           },
           {
@@ -181,11 +181,12 @@
   },
   "active": "a42191c42a6edab1",
   "lastOpenFiles": [
+    "docs/🪟 Active Directory/Lateral Movement/IPv6 Attacks.md",
     "docs/🪟 Active Directory/Lateral Movement/SMB.md",
+    "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
     "docs/🪟 Active Directory/Lateral Movement/Resource-Based Constrained Delegation.md",
     "docs/🪟 Active Directory/Lateral Movement/Relay Attacks.md",
     "docs/🪟 Active Directory/Lateral Movement/Service for User to Self.md",
-    "docs/🪟 Active Directory/Lateral Movement/Unconstrained Delegation.md",
     "docs/🪟 Active Directory/Lateral Movement/Domain ACLs.md",
     "docs/🪟 Active Directory/Lateral Movement/Constrained Delegation.md",
     "docs/🪟 Active Directory/Defense Evasion/Powershell Downgrade.md",
