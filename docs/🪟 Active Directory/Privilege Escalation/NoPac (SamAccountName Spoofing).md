@@ -13,6 +13,11 @@ tags:
 ```PowerShell
 sudo python3 scanner.py domain.local/user:'password' -dc-ip <DCIP> -use-ldap
 ```
+nxc:
+```bash
+nxc smb <ip> -u 'user' -p 'pass' -M nopac
+```
+
 ## Exploit
 ---
 ```PowerShell
