@@ -4,15 +4,16 @@ tags:
 ---
 
 ## Attack requirements
-|   |   |   |
-|---|---|---|
-|Feature / Component|Required for PetitPotam|Required for Full Relay to DA via AD CS|
-|EFSRPC|✅ Yes|✅ Yes|
-|NTLM Enabled|✅ Yes|✅ Yes|
-|SMB/LDAP Signing Disabled|✅ Yes (on relay target)|✅ Yes (on certsrv or LDAP)|
-|AD CS Installed|❌ No|✅ Yes|
-|Vulnerable AD CS Template|❌ No|✅ Yes|
-|EPA / Channel Binding Off|❌ No|✅ Yes|
+
+| Feature / Component       | Required for PetitPotam | Required for Full Relay to DA via AD CS |
+| ------------------------- | ----------------------- | --------------------------------------- |
+| EFSRPC                    | ✅ Yes                   | ✅ Yes                                   |
+| NTLM Enabled              | ✅ Yes                   | ✅ Yes                                   |
+| SMB/LDAP Signing Disabled | ✅ Yes (on relay target) | ✅ Yes (on certsrv or LDAP)              |
+| AD CS Installed           | ❌ No                    | ✅ Yes                                   |
+| Vulnerable AD CS Template | ❌ No                    | ✅ Yes                                   |
+| EPA / Channel Binding Off | ❌ No                    | ✅ Yes                                   |
+
 ## Identify
 ---
 ```bash
