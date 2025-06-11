@@ -6,6 +6,8 @@ tags:
   - SMB
   - AD
 ---
+[https://blog.fox-it.com/2017/05/09/relaying-credentials-everywhere-with-ntlmrelayx/](https://blog.fox-it.com/2017/05/09/relaying-credentials-everywhere-with-ntlmrelayx/)
+
 Relay captures hashes to target machine for various types of access.
 - Only works if SMB signing is disabled or "not required"
 - Relayed creds MUST be admin on the machine
