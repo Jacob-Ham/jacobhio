@@ -1,2 +1,2 @@
-# Welcome to my Active Directory Notes
-- This section is a work in progress
+# Under Construction
+The notes in this section are still being migrated and are incomplete

