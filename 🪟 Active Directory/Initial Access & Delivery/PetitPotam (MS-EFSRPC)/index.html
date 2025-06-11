@@ -2831,6 +2831,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exploit" class="md-nav__link">
     <span class="md-ellipsis">
       Exploit
@@ -3697,6 +3706,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exploit" class="md-nav__link">
     <span class="md-ellipsis">
       Exploit
@@ -3739,17 +3757,12 @@
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th></th>
+<th>Feature / Component</th>
+<th>Required for PetitPotam</th>
+<th>Required for Full Relay to DA via AD CS</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Feature / Component</td>
-<td>Required for PetitPotam</td>
-<td>Required for Full Relay to DA via AD CS</td>
-</tr>
 <tr>
 <td>EFSRPC</td>
 <td>✅ Yes</td>
@@ -3780,35 +3793,15 @@
 <td>❌ No</td>
 <td>✅ Yes</td>
 </tr>
-<tr>
-<td>## Identify</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>---</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">METHOD</span><span class="o">=</span>PetitPotam
-</span></code></pre></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>shorthand</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">M</span><span class="o">=</span>pe
-</span></code></pre></div></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<h2 id="identify">Identify</h2>
+<hr />
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">METHOD</span><span class="o">=</span>PetitPotam
+</span></code></pre></div>
+shorthand
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">M</span><span class="o">=</span>pe
+</span></code></pre></div></p>
 <h2 id="exploit">Exploit</h2>
 <hr />
 <p><a href="https://github.com/topotam/PetitPotam">https://github.com/topotam/PetitPotam</a>
