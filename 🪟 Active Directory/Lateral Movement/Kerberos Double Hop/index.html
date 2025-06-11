@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Kerberos%20Double%20Hop/">
       
       
-        <link rel="prev" href="../IPv6%20Attacks/">
+        <link rel="prev" href="../Group%20Policy%20Abuse/">
       
       
         <link rel="next" href="../MSSQL%20Abuse/">
@@ -843,7 +843,7 @@
   
   
   <span class="md-ellipsis">
-    Index
+    Under Construction
     
   </span>
   
@@ -2682,6 +2682,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Initial%20Access%20%26%20Delivery/IPv6%20Attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPv6 Attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Initial%20Access%20%26%20Delivery/LLMNR%20Poisoning/" class="md-nav__link">
         
   
@@ -2969,29 +2992,6 @@
   
   <span class="md-ellipsis">
     Group Policy Abuse
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../IPv6%20Attacks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    IPv6 Attacks
     
   </span>
   
@@ -3786,9 +3786,9 @@
 </span></code></pre></div>
 <div class="language-Bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Enter-PSSession<span class="w"> </span>-ComputerName<span class="w"> </span>computer01<span class="w"> </span>-Credential<span class="w"> </span>domain<span class="se">\u</span>ser<span class="w"> </span>-ConfigurationName<span class="w"> </span>&lt;whateveryouanemdthesession&gt;
 </span></code></pre></div></p>
-<blockquote>
-<p>[!important] Note: We cannot use Register-PSSessionConfiguration from an evil-winrm shell because we won't be able to get the credentials popup. Furthermore, if we try to run this by first setting up a PSCredential object and then attempting to run the command by passing credentials like -RunAsCredential $Cred, we will get an error because we can only use RunAs from an elevated PowerShell terminal.</p>
-</blockquote>
+<div class="admonition alert">
+<p class="admonition-title">Note: We cannot use Register-PSSessionConfiguration from an evil-winrm shell because we won't be able to get the credentials popup. Furthermore, if we try to run this by first setting up a PSCredential object and then attempting to run the command by passing credentials like -RunAsCredential $Cred, we will get an error because we can only use RunAs from an elevated PowerShell terminal.</p>
+</div>
 
 
 
