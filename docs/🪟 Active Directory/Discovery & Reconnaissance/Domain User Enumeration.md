@@ -60,4 +60,4 @@ cd username-anarchy
 kerberute userenum -d <DOMAIN> users.txt
 ```
 
-> [!important] Add a known negative user to make sure the server is properly validating.
+!!! alert "Add a known negative user to make sure the server is properly validating."
