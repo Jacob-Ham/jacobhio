@@ -6,7 +6,7 @@ tags:
 ---
 ## Identify
 ---
-Do you control and object with the `DS-Replication-Get-Changes` ACL?
+Do you control an object with the `DS-Replication-Get-Changes` ACL?
 ## Exploit
 ---
 ```Python

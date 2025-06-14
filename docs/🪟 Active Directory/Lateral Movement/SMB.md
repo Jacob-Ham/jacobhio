@@ -17,3 +17,4 @@ smbmap -u <user> -p <pass> -d <domain> -H <ip>
 ```PowerShell
 smbmap -u <user> -p <pass> -d <domain> -H <ip> -R 'sharename' --dir-only
 ```
+

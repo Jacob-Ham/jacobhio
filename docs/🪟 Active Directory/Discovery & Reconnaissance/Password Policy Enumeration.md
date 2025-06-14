@@ -16,3 +16,15 @@ rpcclient $> querydominfo
 ```Bash
 enum4linux -P <target-ip>
 ```
+```bash
+ldeep ldap -u 'USER' -p "PASS' -d 'domain.local' -s $IP domain_policy
+```
+## From Windows
+---
+```batch
+net accounts
+```
+**PowerView**
+```powershell
+Get-DomainPolicy
+```
