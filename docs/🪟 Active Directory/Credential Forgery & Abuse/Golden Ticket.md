@@ -5,7 +5,7 @@ tags:
   - Persistence
   - AD
 ---
-forge a Kerberos Ticket Granting Ticket (TGT) with using a domain's KRBTGT account hash, allowing an attacker to impersonate any user including domain admins without needing their credentials.
+forge a Kerberos Ticket Granting Ticket (TGT) with a domain's KRBTGT account hash, allowing an attacker to impersonate any user including domain admins without needing their credentials.
 
 #### **Get domain SID**
 locally:
