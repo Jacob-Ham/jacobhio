@@ -1293,6 +1293,78 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HackTheBox
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            HackTheBox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OverCertified
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3773,7 +3845,7 @@ Connect - Windows
 <div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-SQLQuery</span> <span class="n">-Verbose</span> <span class="n">-Instance</span> <span class="s2">&quot;host,port&quot;</span> <span class="n">-username</span> <span class="s2">&quot;domain.local\\user&quot;</span> <span class="n">-password</span> <span class="s2">&quot;password&quot;</span> <span class="n">-query</span> <span class="s1">&#39;Select @@version&#39;</span>
 </span></code></pre></div>
 Connect - Linux
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mssqlclient.py<span class="w"> </span>DOMAIN/USER@IP<span class="w"> </span>-windows-auth
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>impacket-mssqlclient<span class="w"> </span>user:<span class="s1">&#39;pass&#39;</span>@&lt;IP&gt;<span class="w"> </span>-windows-auth
 </span></code></pre></div></p>
 <h2 id="exploit">Exploit</h2>
 <hr />

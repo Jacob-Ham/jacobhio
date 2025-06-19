@@ -1296,6 +1296,78 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HackTheBox
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            HackTheBox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OverCertified
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3692,17 +3764,28 @@
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>tmux<span class="w"> </span>-y
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>syncthing<span class="w"> </span>-y
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>awscli<span class="w"> </span>-y
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ltrace<span class="w"> </span>-y
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>strace<span class="w"> </span>-y
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ldeep<span class="w"> </span>--break-system-packages
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gdb<span class="w"> </span>-y
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3.12-venv<span class="w"> </span>-y
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>pipx<span class="w"> </span>git
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>pipx<span class="w"> </span>ensurepath
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>pipx<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Pennyw0rth/NetExec
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-argcomplete
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>register-python-argcomplete<span class="w"> </span>nxc<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>register-python-argcomplete<span class="w"> </span>nxc<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/tools/kerbrute
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nb">cd</span><span class="w"> </span>~/tools/kerbrute
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>wget<span class="w"> </span>https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/home/kali/tools/kerbrute/kerbrute_linux_amd64<span class="w"> </span>/usr/local/bin/kerbrute
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>chmod<span class="w"> </span>+x<span class="w"> </span>/home/kali/tools/kerbrute/kerbrute_linux_amd64
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="k">for</span><span class="w"> </span>pkg<span class="w"> </span><span class="k">in</span><span class="w"> </span>docker.io<span class="w"> </span>docker-doc<span class="w"> </span>docker-compose<span class="w"> </span>podman-docker<span class="w"> </span>containerd<span class="w"> </span>runc<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>remove<span class="w"> </span><span class="nv">$pkg</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/debian/gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/docker.gpg
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span>-y
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ltrace<span class="w"> </span>-y
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>strace<span class="w"> </span>-y
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ldeep<span class="w"> </span>--break-system-packages
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gdb<span class="w"> </span>-y
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3.12-venv<span class="w"> </span>-y
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>pipx<span class="w"> </span>git
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>pipx<span class="w"> </span>ensurepath
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>pipx<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Pennyw0rth/NetExec
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-argcomplete
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>register-python-argcomplete<span class="w"> </span>nxc<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>register-python-argcomplete<span class="w"> </span>nxc<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 </span></code></pre></div>
 <strong>Codium</strong>
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">wget</span> <span class="o">-</span><span class="n">qO</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">gitlab</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">paulcarroty</span><span class="o">/</span><span class="n">vscodium</span><span class="o">-</span><span class="n">deb</span><span class="o">-</span><span class="n">rpm</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">pub</span><span class="o">.</span><span class="n">gpg</span> \

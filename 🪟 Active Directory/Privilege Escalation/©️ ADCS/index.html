@@ -1293,6 +1293,78 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HackTheBox
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            HackTheBox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OverCertified
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3809,8 +3881,11 @@ Powershell
 <p><strong>NetExec</strong>
 <div class="language-C highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">nxc</span><span class="w"> </span><span class="n">ldap</span><span class="w"> </span><span class="o">&lt;</span><span class="n">IP</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="s">&quot;user&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="s">&quot;Password123!&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">M</span><span class="w"> </span><span class="n">adcs</span>
 </span></code></pre></div>
+<strong>ldap</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ldapsearch<span class="w"> </span>-x<span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;CN=svc-ldapuser,CN=Users,DC=certified,DC=htb&quot;</span><span class="w"> </span>-w<span class="w"> </span><span class="s1">&#39;SuperSecretPass&#39;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;DC=certified,DC=htb&quot;</span><span class="w"> </span><span class="s2">&quot;(&amp;(objectClass=pKIEnrollmentService))&quot;</span><span class="w"> </span>-H<span class="w"> </span>ldap://10.129.229.25
+</span></code></pre></div>
 <strong>Certipy</strong>
-<div class="language-C highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">certipy</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="err">&#39;</span><span class="n">user</span><span class="err">@</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Password123</span><span class="o">!</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;</span><span class="n">IP</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">vulnerable</span><span class="w"> </span><span class="o">-</span><span class="n">stdout</span>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">certipy</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="err">&#39;</span><span class="n">user</span><span class="err">@</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Password123</span><span class="o">!</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;</span><span class="n">IP</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">vulnerable</span><span class="w"> </span><span class="o">-</span><span class="n">stdout</span>
 </span></code></pre></div></p>
 
 

