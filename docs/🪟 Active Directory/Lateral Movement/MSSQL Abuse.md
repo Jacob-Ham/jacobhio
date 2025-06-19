@@ -18,7 +18,7 @@ Get-SQLQuery -Verbose -Instance "host,port" -username "domain.local\\user" -pass
 ```
 Connect - Linux
 ```Bash
-mssqlclient.py DOMAIN/USER@IP -windows-auth
+impacket-mssqlclient user:'pass'@<IP> -windows-auth
 ```
 ## Exploit
 ---

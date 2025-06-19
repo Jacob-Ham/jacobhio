@@ -20,6 +20,17 @@ sudo apt install dirsearch -y
 sudo apt install tmux -y
 sudo apt install syncthing -y
 sudo apt install awscli -y
+mkdir -p ~/tools/kerbrute
+cd ~/tools/kerbrute
+wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
+sudo ln -s /home/kali/tools/kerbrute/kerbrute_linux_amd64 /usr/local/bin/kerbrute
+chmod +x /home/kali/tools/kerbrute/kerbrute_linux_amd64
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian bookworm stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo apt update -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo apt install ltrace -y
 sudo apt install strace -y
 python3 -m pip install ldeep --break-system-packages

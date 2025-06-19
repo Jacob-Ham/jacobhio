@@ -25,6 +25,10 @@ Get-ADObject -LDAPFilter '(&(objectclass=pkicertificatetemplate)(!(mspki-enrollm
 ```C
 nxc ldap <IP> -u "user" -p "Password123!" -M adcs
 ```
+**ldap**
+```bash
+ldapsearch -x -D "CN=svc-ldapuser,CN=Users,DC=certified,DC=htb" -w 'SuperSecretPass' -b "DC=certified,DC=htb" "(&(objectClass=pKIEnrollmentService))" -H ldap://10.129.229.25
+```
 **Certipy**
 ```C
 certipy find -u 'user@domain.local' -p 'Password123!' -dc-ip <IP> -vulnerable -stdout
