@@ -40,6 +40,20 @@ $sid = Convert-NameToSid wley
 ```PowerShell
 Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid} 
 ```
+Check what objects have ACLs over a specific user
+```powershell
+Get-DomainObjectAcl -Identity harry.jones -Domain inlanefreight.local -ResolveGUIDs
+```
+
+
+ACLs are granted to USER1 over USER2
+```powershell
+(Get-ACL "AD:$((Get-ADUser <USER2>).distinguishedname)").access  | ? {$_.IdentityReference -eq "DOMAIN.LOCAL\USER1"}
+```
+FInd all users with a specific ACL over USER1 (GenericAll in this example)
+```powershell
+(Get-ACL "AD:$((Get-ADUser <USER1>).distinguishedname)").access  | ? {$_.ActiveDirectoryRights -match "WriteProperty" -or $_.ActiveDirectoryRights -match "GenericAll"} | Select IdentityReference,ActiveDirectoryRights -Unique | ft -W
+```
 
 !!! alert "Note"
 	that if PowerView has already been imported, the cmdlet shown below will result in an error. Therefore, we may need to run it from a new PowerShell session.
