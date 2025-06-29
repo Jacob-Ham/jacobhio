@@ -1,7 +1,8 @@
 ___
-# Getting Started
-___
+
+
 **General Starting Point**
+
 - Map entire auth flow / attack surface
 - Proxy requests, target a functionality, step through entire process, then review every step in the chain via the proxy requests.
 - Create multiple accounts for testing

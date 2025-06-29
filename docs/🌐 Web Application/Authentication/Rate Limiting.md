@@ -1,6 +1,8 @@
 ___
 ### Identify rate limiting technique
+
 Potential:
+
 - Headers?
 - User agents?
 - Cookies? Session tokens?

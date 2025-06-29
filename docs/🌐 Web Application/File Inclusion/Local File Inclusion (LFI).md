@@ -1,3 +1,4 @@
+
 **List of payloads**
 [https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File) Inclusion/README.md
 **Non-recursive filter bypass**
@@ -24,4 +25,33 @@ ffuf -request r -request-proto http -w /usr/share/seclists/Fuzzing/LFI/LFI-Jhadd
 **Filter by wordcount**
 ```Python
 ffuf -request r -request-proto http -w /usr/share/seclists/Fuzzing/LFI/LFI-Jhaddix.txt -fw 19,20
+```
+
+**List of most common LFI parameters**
+```bash
+?cat={payload}
+?dir={payload]
+?action={payload}
+?board={payload}
+?date={payload}
+?detail={payload}
+?file={payload}
+?download={payload}
+?path={payload}
+?folder={payload}
+?prefix={payload}
+?include={payload}
+?page={payload]
+?inc={payload}
+?locate={payload}
+?show={payload}
+?doc={payload}
+?site={payload}
+?type={payload}
+?view={payload}
+?content={payload}
+?document={payload}
+?layout={payload}
+?mod={payload}
+?conf={payload}
 ```
