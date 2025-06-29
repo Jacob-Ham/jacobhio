@@ -13,3 +13,9 @@ ffuf -request r.txt -request-proto http -mode clusterbomb -w /usr/share/seclists
 ```Python
 hydra -V -L ../wordlists/users.txt -P ../wordlists/pass.txt 192.168.187.133 http-get-form "/dvwa/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:F=Username and/or password incorrect.:H=Cookie\: PHPSESSID=XXXXX; security=low"
 ```
+## User Enumeration
+- Check if response is different for failed username vs failed password
+#### Timing technique:
+- Attempt usernames with an extremely long password
+	- Does the application take longer to check the password when the username is valid? 
+	- Check response times !

