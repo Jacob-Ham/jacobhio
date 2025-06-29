@@ -1109,12 +1109,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Access%20Control/" class="md-nav__link">
+      <a href="../../Access%20Control/-%20Getting%20Started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Index
+      Getting Started
     
   </span>
   
@@ -1250,12 +1250,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Authentication/" class="md-nav__link">
+      <a href="../../Authentication/-%20Getting%20Started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Index
+      Getting Started
     
   </span>
   
@@ -4321,6 +4321,33 @@
 </span></code></pre></div>
 <strong>Filter by wordcount</strong>
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">ffuf</span> <span class="o">-</span><span class="n">request</span> <span class="n">r</span> <span class="o">-</span><span class="n">request</span><span class="o">-</span><span class="n">proto</span> <span class="n">http</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Fuzzing</span><span class="o">/</span><span class="n">LFI</span><span class="o">/</span><span class="n">LFI</span><span class="o">-</span><span class="n">Jhaddix</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">fw</span> <span class="mi">19</span><span class="p">,</span><span class="mi">20</span>
+</span></code></pre></div></p>
+<p><strong>List of most common LFI parameters</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>?cat<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>?dir<span class="o">={</span>payload<span class="o">]</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>?action<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>?board<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>?date<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>?detail<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>?file<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>?download<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>?path<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>?folder<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>?prefix<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>?include<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>?page<span class="o">={</span>payload<span class="o">]</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>?inc<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>?locate<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>?show<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>?doc<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>?site<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>?type<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>?view<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>?content<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>?document<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>?layout<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>?mod<span class="o">={</span>payload<span class="o">}</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>?conf<span class="o">={</span>payload<span class="o">}</span>
 </span></code></pre></div></p>
 
 
