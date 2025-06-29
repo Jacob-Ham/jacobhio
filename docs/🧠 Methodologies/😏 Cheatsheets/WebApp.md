@@ -72,7 +72,7 @@ dalfox url target.com
 
 ## **COMMAND INJECTION**
 *Present when: User input passed to system commands without sanitization*
-Also see: [Command Injection](../../🌐%20Web%20Application/Command%20Injection.md)
+Also see: [Command Injection](../../🌐%20Web%20Application/Injections/Command%20Injection.md)
 **Manual:** Test with `;`, `&&`, `|` followed by commands like `whoami`
 **Automated:**
 ```bash

