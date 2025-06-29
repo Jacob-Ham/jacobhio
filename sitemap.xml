@@ -53,10 +53,6 @@
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Cross-Site%20Scripting%20%28XSS%29/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Directory%20Fuzzing/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
@@ -134,6 +130,10 @@
     </url>
     <url>
          <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/Command%20Injection/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/Cross-Site%20Scripting%20%28XSS%29/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
