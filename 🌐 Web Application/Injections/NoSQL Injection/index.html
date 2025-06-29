@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#server-side-javascript-injection" class="md-skip">
+        <a href="#mongodb" class="md-skip">
           Skip to content
         </a>
       
@@ -1631,11 +1631,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      MongoDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-injection-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Injection Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#server-side-javascript-injection" class="md-nav__link">
     <span class="md-ellipsis">
       Server-Side JavaScript Injection
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4355,11 +4379,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      MongoDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-injection-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Injection Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#server-side-javascript-injection" class="md-nav__link">
     <span class="md-ellipsis">
       Server-Side JavaScript Injection
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4417,23 +4465,11 @@ The way <code>NoSQL</code> databases store data varies significantly across the 
 <td>Stores data in <code>nodes</code> and uses <code>edges</code> to define relationships.</td>
 <td><a href="https://neo4j.com/">Neo4j</a>, <a href="https://azure.microsoft.com/en-us/products/cosmos-db/">Azure Cosmos DB</a>, <a href="https://virtuoso.openlinksw.com/">Virtuoso</a></td>
 </tr>
-<tr>
-<td>## MongoDB</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>___</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>MongoDB Usage cheatsheet: https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#connect-mongodb-shell</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<h2 id="mongodb">MongoDB</h2>
+<hr />
+<p>MongoDB Usage cheatsheet: https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#connect-mongodb-shell</p>
 <p>Mongo uses query operators to interact and compare fields. Here are some examples:
 <a href="https://www.mongodb.com/docs/manual/reference/operator/query/">query operators</a>.</p>
 <table>
@@ -4488,119 +4524,29 @@ The way <code>NoSQL</code> databases store data varies significantly across the 
 <td>Matches values which <code>match a specified RegEx</code></td>
 <td><code>type: {$regex: /^G.*/}</code></td>
 </tr>
-<tr>
-<td>### Basic Injection Example</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>---</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Auth Bypass</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Normal data:</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>email=test@test.com&amp;password=test
-</span></code></pre></div></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Becomes:</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>email[$ne]=test@test.com&amp;password[$ne]=test
-</span></code></pre></div></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><img alt="" src="../../../assets/Pasted%20image%2020250629152540.png" /></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>This will evaluate to TRUE (unless the values actually exist) and bypass auth.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>OR match anything and always eval to true:</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>email[$regex]=.*&amp;password[$regex]=.*
-</span></code></pre></div></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Data Extraction</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Ways can match ALL data from an injection point and return it:</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>- <code>name: {$ne: 'doesntExist'}</code>: Assuming <code>doesntExist</code> doesn't match any documents' names, this will match all documents.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>- <code>name: {$gt: ''}</code>: This matches all documents whose name is 'bigger' than an empty string.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>- <code>name: {$gte: ''}</code>: This matches all documents whose name is 'bigger or equal to' an empty string.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>- <code>name: {$lt: '~'}</code>: This compares the first character of <code>name</code> to a Tilde character and matches if it is 'less'. This will not always work, but it works in this case because Tilde is the <a href="https://www.asciitable.com/">largest printable ASCII value</a>, and we know that all names in the collection are composed of ASCII characters.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>- <code>name: {$lte: '~'}</code>: Same logic as above, except it additionally matches documents whose names start with <code>~</code>.</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<h3 id="basic-injection-example">Basic Injection Example</h3>
+<hr />
+<p><strong>Auth Bypass</strong>
+Normal data:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>email=test@test.com&amp;password=test
+</span></code></pre></div>
+Becomes:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>email[$ne]=test@test.com&amp;password[$ne]=test
+</span></code></pre></div>
+<img alt="" src="../../../assets/Pasted%20image%2020250629152540.png" />
+This will evaluate to TRUE (unless the values actually exist) and bypass auth.
+OR match anything and always eval to true:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>email[$regex]=.*&amp;password[$regex]=.*
+</span></code></pre></div>
+<strong>Data Extraction</strong>
+Ways can match ALL data from an injection point and return it:
+- <code>name: {$ne: 'doesntExist'}</code>: Assuming <code>doesntExist</code> doesn't match any documents' names, this will match all documents.
+- <code>name: {$gt: ''}</code>: This matches all documents whose name is 'bigger' than an empty string.
+- <code>name: {$gte: ''}</code>: This matches all documents whose name is 'bigger or equal to' an empty string.
+- <code>name: {$lt: '~'}</code>: This compares the first character of <code>name</code> to a Tilde character and matches if it is 'less'. This will not always work, but it works in this case because Tilde is the <a href="https://www.asciitable.com/">largest printable ASCII value</a>, and we know that all names in the collection are composed of ASCII characters.
+- <code>name: {$lte: '~'}</code>: Same logic as above, except it additionally matches documents whose names start with <code>~</code>.</p>
 <h3 id="server-side-javascript-injection">Server-Side JavaScript Injection</h3>
 <hr />
 <p>Execute arbitrary JavaScript in the context of the database.
