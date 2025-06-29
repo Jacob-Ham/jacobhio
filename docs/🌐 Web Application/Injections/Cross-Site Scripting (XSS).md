@@ -4,6 +4,7 @@
 Are we able to control any data that is being reflected back and rendered by the application?
 
 Important considerations:
+
 - Where is the payload executing?
 - What input validation exists?
 
@@ -19,7 +20,10 @@ If you have control over an `href` you can try the javascript browser scheme
 ```
 http://example.com --> javascript:prompt()
 ```
-
+Or just close tag early
+```
+</selected><img src=x onerror="prompt(1)">
+```
 ## Javascript context
 ---
 If we have control over content that is being reflected into a javascript context. Example:

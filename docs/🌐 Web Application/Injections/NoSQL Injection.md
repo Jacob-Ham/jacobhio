@@ -9,6 +9,7 @@ The way `NoSQL` databases store data varies significantly across the different c
 | Key-Value Database         | A data structure that stores data in `key:value` pairs, also known as a `dictionary`.                                                                              | [Redis](https://redis.io/), [Amazon DynamoDB](https://aws.amazon.com/dynamodb/), [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/)                          |
 | Wide-Column Store          | Used for storing enormous amounts of data in `tables`, `rows`, and `columns` like a relational database, but with the ability to handle more ambiguous data types. | [Apache Cassandra](https://cassandra.apache.org/_/index.html), [Apache HBase](https://hbase.apache.org/), [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/) |
 | Graph Database             | Stores data in `nodes` and uses `edges` to define relationships.                                                                                                   | [Neo4j](https://neo4j.com/), [Azure Cosmos DB](https://azure.microsoft.com/en-us/products/cosmos-db/), [Virtuoso](https://virtuoso.openlinksw.com/)                                |
+
 ## MongoDB
 ___
 MongoDB Usage cheatsheet: https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#connect-mongodb-shell
@@ -25,6 +26,7 @@ Mongo uses query operators to interact and compare fields. Here are some example
 | Comparison | `$lt`    | Matches values which are `less than` a specified value                    | `price: {$lt: 0.60}`                         |
 | Logical    | `$not`   | Matches documents which `do not meet the conditions` of a specified query | `type: {$not: {$eq: "Granny Smith"}}`        |
 | Evaluation | `$regex` | Matches values which `match a specified RegEx`                            | `type: {$regex: /^G.*/}`                     |
+
 ### Basic Injection Example
 ---
 **Auth Bypass**
