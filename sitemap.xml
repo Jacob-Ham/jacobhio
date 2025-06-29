@@ -53,15 +53,7 @@
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Brute%20Forcing%20Authentication/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Command%20Injection/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Cross-Site%20Request%20Forgery%20%28CSRF%29/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
@@ -73,15 +65,7 @@
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/External%20Entity%20Injection%20%28XXE%29/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Google%20Dorks/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Insecure%20Direct%20Object%20Reference%20%28IDOR%29/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
@@ -89,19 +73,7 @@
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Local%20File%20Inclusion%20%28LFI%29/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Parameter%20Fuzzing/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/SQL%20Injection/</loc>
-         <lastmod>2025-06-29</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Server-Side%20Template%20Injection%20%28SSTI%29/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
@@ -110,6 +82,78 @@
     </url>
     <url>
          <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Web%20Application%20Firewall/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Access%20Control/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Access%20Control/Broken%20Function%20Level%20Access%20%28BLFA%29/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Access%20Control/Broken%20Object%20Level%20Access%20%28BOLA%29/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Access%20Control/Insecure%20Direct%20Object%20Reference%20%28IDOR%29/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Authentication/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Authentication/Brute%20Forcing%20Authentication/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Authentication/Multi-Factor%20Authentication/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Authentication/Rate%20Limiting/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Authentication/Session%20Tokens/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Directory%20Traversal/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Local%20File%20Inclusion%20%28LFI%29/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Remote%20File%20Inclusion/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/External%20Entity%20Injection%20%28XXE%29/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/NoSQL%20Injection/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/SQL%20Injection/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Injections/Server-Side%20Template%20Injection%20%28SSTI%29/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Request%20Forgery/Cross-Site%20Request%20Forgery%20%28CSRF%29/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%8C%90%20Web%20Application/Request%20Forgery/Server%20Side%20Request%20Forgery/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
@@ -134,6 +178,10 @@
     </url>
     <url>
          <loc>https://jacobh.io/%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Passive%20Network%20Recon/</loc>
+         <lastmod>2025-06-29</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/SQLMap/</loc>
          <lastmod>2025-06-29</lastmod>
     </url>
     <url>
