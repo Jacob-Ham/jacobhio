@@ -54,7 +54,7 @@ ghauri -u "target.com/page?id=1"
 
 ## **XSS**
 *Present when: User input reflected in HTML without proper encoding*
-Also see [Cross-Site Scripting (XSS)](../../🌐%20Web%20Application/Cross-Site%20Scripting%20(XSS).md)
+Also see [Cross-Site Scripting (XSS)](../../🌐%20Web%20Application/Injections/Cross-Site%20Scripting%20(XSS).md)
 **Manual:** Insert `<script>alert(1)</script>` in all inputs, check response
 **Automated:**
 ```bash
