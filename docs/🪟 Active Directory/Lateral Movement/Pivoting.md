@@ -103,5 +103,45 @@ nxc smb 172.16.139.10/24
 nxc smb 172.16.210.0/24
 ```
 
-## proxychains
+## proxychains (with SOCKS tunnel)
 ---
+**Start with dynamic SSH port forward**
+```bash
+ssh -D 9050 user@<jumpIP>
+```
+**Check proxychains configuration**
+```bash
+cat /etc/proxychains.conf
+or
+cat /etc/proxychains4.conf
+```
+**Ensure its configured to route over the local forward**
+```plaintext
+# meanwile
+# defaults set to "tor"
+socks4 	127.0.0.1 9050
+```
+**prepend `proxychains` or `proxychains4` to any command to tunnel the traffic**
+```bash
+proxychains nmap
+proxychain msfconsole
+proxychains firefox
+```
+!!! alert "we can only perform a full TCP connect scan over proxychains. The reason for this is that proxychains cannot understand partial packets. If you send partial packets like half connect scans, it will return incorrect results"
+```bash
+proxychains nmap -v -Pn -sT <internalIP>
+```
+
+## sshuttle
+---
+[https://github.com/sshuttle/sshuttle](https://github.com/sshuttle/sshuttle)
+
+specify the option `-r` to connect to the remote machine with a username and password. Then we need to include the network or IP we want to route through
+```bash
+sudo sshuttle -r user@<jumpHost> 172.16.5.0/23 -v 
+```
+sshuttle creates an entry in our `iptables` to redirect all traffic to the 172.16.5.0/23 network through the pivot host.
+We can now use any tool directly without using proxychains.
+```bash
+nmap -v -sV 172.16.5.19 -A -Pn
+```
