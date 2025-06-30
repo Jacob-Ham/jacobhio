@@ -4476,10 +4476,12 @@
 
 <hr />
 <p>Similar to <a href="../Broken%20Object%20Level%20Access%20%28BOLA%29/">Broken Object Level Access (BOLA)</a> but less API focused, for example, iterating a pageID or page directory to view information of other users.</p>
-<p><strong>ffuf</strong>
-- if you have UIDs (can be anything) <code>-mr</code> = regex match
+<p><strong>ffuf</strong></p>
+<ul>
+<li>if you have UIDs (can be anything) <code>-mr</code> = regex match
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ffuf</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">info</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">account</span><span class="o">=</span><span class="n">FUZZ</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">UIDLIST</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">mr</span> <span class="s1">&#39;admin&#39;</span>
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ul>
 <h1 id="api">API</h1>
 <hr />
 <p><strong>Post data</strong>

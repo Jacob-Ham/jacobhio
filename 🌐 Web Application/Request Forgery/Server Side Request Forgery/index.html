@@ -4469,24 +4469,38 @@
 
 <hr />
 <p>Force the server to make a request to an arbitrary endpoint.</p>
-<p>Things to assess:
-- Have a referrer header? Try blind SSRF
-- API interactions where an entire URL is being passed via a controllable input
-- HTTP parameters that are being passed URLs (or sometimes files)</p>
-<p>Found an SSRF?
-- Try requesting localhost
-- Can you make a request to a sensitive endpoint coming from localhost?
-- Fuzz LAN subnets
-- Found alive IP on LAN? 
-    - Fuzz for open ports</p>
-<p><strong>Blind SSRF</strong>
-- We find an ssrf but we do not receive a response with data indicating we've hit an endpoint.
-- Data exfil CAN be possible, but it is pretty difficult. 
-- Use a tool like burp collaborator OR:
-    - https://github.com/projectdiscovery/interactsh-web</p>
-<p><strong>Misc</strong>
-- Payloads delivered via http request headers may take SSRF to further compromise.
-    - Ex: https://infosecwriteups.com/shellshock-a-deep-dive-into-cve-2014-6271-3eb5b33e5de6 (Shell shock payload delivered via UA)</p>
+<p>Things to assess:</p>
+<ul>
+<li>Have a referrer header? Try blind SSRF</li>
+<li>API interactions where an entire URL is being passed via a controllable input</li>
+<li>HTTP parameters that are being passed URLs (or sometimes files)</li>
+</ul>
+<p>Found an SSRF?</p>
+<ul>
+<li>Try requesting localhost</li>
+<li>Can you make a request to a sensitive endpoint coming from localhost?</li>
+<li>Fuzz LAN subnets</li>
+<li>Found alive IP on LAN? <ul>
+<li>Fuzz for open ports</li>
+</ul>
+</li>
+</ul>
+<p><strong>Blind SSRF</strong></p>
+<ul>
+<li>We find an ssrf but we do not receive a response with data indicating we've hit an endpoint.</li>
+<li>Data exfil CAN be possible, but it is pretty difficult. </li>
+<li>Use a tool like burp collaborator OR:<ul>
+<li><a href="https://github.com/projectdiscovery/interactsh-web">https://github.com/projectdiscovery/interactsh-web</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Misc</strong></p>
+<ul>
+<li>Payloads delivered via http request headers may take SSRF to further compromise.<ul>
+<li>Ex: <a href="https://infosecwriteups.com/shellshock-a-deep-dive-into-cve-2014-6271-3eb5b33e5de6">https://infosecwriteups.com/shellshock-a-deep-dive-into-cve-2014-6271-3eb5b33e5de6</a> (Shell shock payload delivered via UA)</li>
+</ul>
+</li>
+</ul>
 
 
 

