@@ -3986,9 +3986,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proxychains" class="md-nav__link">
+  <a href="#proxychains-with-socks-tunnel" class="md-nav__link">
     <span class="md-ellipsis">
-      proxychains
+      proxychains (with SOCKS tunnel)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sshuttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      sshuttle
     </span>
   </a>
   
@@ -4565,9 +4574,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proxychains" class="md-nav__link">
+  <a href="#proxychains-with-socks-tunnel" class="md-nav__link">
     <span class="md-ellipsis">
-      proxychains
+      proxychains (with SOCKS tunnel)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sshuttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      sshuttle
     </span>
   </a>
   
@@ -4673,8 +4691,41 @@ start second tunnell
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">172</span>.16.139.10/24<span class="w"> </span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>nxc<span class="w"> </span>smb<span class="w"> </span><span class="m">172</span>.16.210.0/24
 </span></code></pre></div></p>
-<h2 id="proxychains">proxychains</h2>
+<h2 id="proxychains-with-socks-tunnel">proxychains (with SOCKS tunnel)</h2>
 <hr />
+<p><strong>Start with dynamic SSH port forward</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ssh<span class="w"> </span>-D<span class="w"> </span><span class="m">9050</span><span class="w"> </span>user@&lt;jumpIP&gt;
+</span></code></pre></div>
+<strong>Check proxychains configuration</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>cat<span class="w"> </span>/etc/proxychains.conf
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>or
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>cat<span class="w"> </span>/etc/proxychains4.conf
+</span></code></pre></div>
+<strong>Ensure its configured to route over the local forward</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a># meanwile
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a># defaults set to &quot;tor&quot;
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>socks4  127.0.0.1 9050
+</span></code></pre></div>
+<strong>prepend <code>proxychains</code> or <code>proxychains4</code> to any command to tunnel the traffic</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>proxychains<span class="w"> </span>nmap
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>proxychain<span class="w"> </span>msfconsole
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>proxychains<span class="w"> </span>firefox
+</span></code></pre></div></p>
+<div class="admonition alert">
+<p class="admonition-title">we can only perform a full TCP connect scan over proxychains. The reason for this is that proxychains cannot understand partial packets. If you send partial packets like half connect scans, it will return incorrect results</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>proxychains<span class="w"> </span>nmap<span class="w"> </span>-v<span class="w"> </span>-Pn<span class="w"> </span>-sT<span class="w"> </span>&lt;internalIP&gt;
+</span></code></pre></div>
+<h2 id="sshuttle">sshuttle</h2>
+<hr />
+<p><a href="https://github.com/sshuttle/sshuttle">https://github.com/sshuttle/sshuttle</a></p>
+<p>specify the option <code>-r</code> to connect to the remote machine with a username and password. Then we need to include the network or IP we want to route through
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>sudo<span class="w"> </span>sshuttle<span class="w"> </span>-r<span class="w"> </span>user@&lt;jumpHost&gt;<span class="w"> </span><span class="m">172</span>.16.5.0/23<span class="w"> </span>-v<span class="w"> </span>
+</span></code></pre></div>
+sshuttle creates an entry in our <code>iptables</code> to redirect all traffic to the 172.16.5.0/23 network through the pivot host.
+We can now use any tool directly without using proxychains.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>nmap<span class="w"> </span>-v<span class="w"> </span>-sV<span class="w"> </span><span class="m">172</span>.16.5.19<span class="w"> </span>-A<span class="w"> </span>-Pn
+</span></code></pre></div></p>
 
 
 
