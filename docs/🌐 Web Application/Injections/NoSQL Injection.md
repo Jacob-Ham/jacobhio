@@ -12,7 +12,7 @@ The way `NoSQL` databases store data varies significantly across the different c
 
 ## MongoDB
 ___
-MongoDB Usage cheatsheet: https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#connect-mongodb-shell
+MongoDB Usage cheatsheet: [https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#connect-mongodb-shell](https://www.mongodb.com/developer/products/mongodb/cheat-sheet/#connect-mongodb-shell)
 
 Mongo uses query operators to interact and compare fields. Here are some examples:
 [query operators](https://www.mongodb.com/docs/manual/reference/operator/query/).

@@ -40,7 +40,7 @@ Intercept image upload, change content type header, and file extension to svg
 ```
 Content-Type: image/svg+xml
 ```
-https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-inside-svg
+[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-inside-svg](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection#xxe-inside-svg)
 ![](../../assets/Pasted%20image%2020250629162451.png)
 
 **Via XInclude**

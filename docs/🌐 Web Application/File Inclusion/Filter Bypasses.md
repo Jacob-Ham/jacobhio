@@ -27,7 +27,7 @@ becomes:
 
 ### **PHP Wrappers**
 
-https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/Wrappers.md
+[https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/Wrappers.md](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/Wrappers.md)
 
 - Leak php code instead of executing it.
 ```Python

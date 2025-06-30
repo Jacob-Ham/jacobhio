@@ -13,4 +13,4 @@ ___
 
 ### Wordlist Resources
 ---
-- https://wordlists.assetnote.io/
+- [https://wordlists.assetnote.io/](https://wordlists.assetnote.io/)

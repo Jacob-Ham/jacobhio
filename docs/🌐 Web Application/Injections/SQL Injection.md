@@ -28,7 +28,7 @@
 
 ## Enumerate DB Type
 ---
-https://portswigger.net/web-security/sql-injection/cheat-sheet
+[https://portswigger.net/web-security/sql-injection/cheat-sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 
 PostgreSQL: 	`SELECT pg_sleep(10)`
 MySQL: 	`SELECT SLEEP(10)`
