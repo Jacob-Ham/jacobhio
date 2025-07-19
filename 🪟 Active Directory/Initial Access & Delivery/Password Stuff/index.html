@@ -3869,6 +3869,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#passwords-in-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passwords in files
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4768,6 +4777,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#passwords-in-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passwords in files
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4862,6 +4880,10 @@ You can try two things
 <div class="language-Bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Import-Module<span class="w"> </span>powerview.ps1
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Get-DomainUser<span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>Select-Object<span class="w"> </span>samaccountname,description<span class="w"> </span><span class="p">|</span>Where-Object<span class="w"> </span><span class="o">{</span><span class="nv">$_</span>.Description<span class="w"> </span>-ne<span class="w"> </span><span class="nv">$null</span><span class="o">}</span>
 </span></code></pre></div></p>
+<h2 id="passwords-in-files">Passwords in files</h2>
+<hr />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>findstr /SIM /C:&quot;password&quot; *.txt *.ini *.cfg *.config *.xml *.git *.ps1 *.yml
+</span></code></pre></div>
 
 
 

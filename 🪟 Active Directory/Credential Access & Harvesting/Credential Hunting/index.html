@@ -3079,6 +3079,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#passwords-in-description-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passwords in description fields
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4725,6 +4734,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#passwords-in-description-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passwords in description fields
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4785,6 +4803,16 @@ places we should keep in mind when credential hunting:</p>
 <li>Found on user systems and shares</li>
 <li>Files such as pass.txt, passwords.docx, passwords.xlsx found on user systems, shares, <a href="https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration">Sharepoint</a></li>
 </ul>
+<h2 id="passwords-in-description-fields">Passwords in description fields</h2>
+<hr />
+<p><strong>Remote</strong>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nxc<span class="w"> </span>ldap<span class="w"> </span>&lt;hostname&gt;<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;pass&gt;<span class="w"> </span>-M<span class="w"> </span>get-desc-users
+</span></code></pre></div>
+<strong>Local</strong>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Import-Module</span> <span class="n">powerview</span><span class="p">.</span><span class="n">ps1</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Get-DomainUser</span> <span class="p">*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">description</span> <span class="p">|</span><span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Description</span> <span class="o">-ne</span> <span class="nv">$null</span><span class="p">}</span>
+</span></code></pre></div></p>
 
 
 
