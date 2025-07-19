@@ -86,7 +86,7 @@ pypykatz lsa minidump lsass.dmp
 
 **Elevating to SYSTEM**
 
-https://github.com/decoder-it/psgetsystem
+[https://github.com/decoder-it/psgetsystem](https://github.com/decoder-it/psgetsystem)
 
 Using psgetsystem we can launch a child process that inherits the token of the parent process.
 

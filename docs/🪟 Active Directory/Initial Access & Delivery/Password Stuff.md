@@ -90,3 +90,8 @@ Import-Module powerview.ps1
 Get-DomainUser * | Select-Object samaccountname,description |Where-Object {$_.Description -ne $null}
 ```
 
+## Passwords in files
+___
+```cmd-session
+findstr /SIM /C:"password" *.txt *.ini *.cfg *.config *.xml *.git *.ps1 *.yml
+```

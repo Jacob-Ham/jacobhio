@@ -46,3 +46,20 @@ places we should keep in mind when credential hunting:
 - KeePass databases --> pull hash, crack and get loads of access.
 - Found on user systems and shares
 - Files such as pass.txt, passwords.docx, passwords.xlsx found on user systems, shares, [Sharepoint](https://www.microsoft.com/en-us/microsoft-365/sharepoint/collaboration)
+
+## Passwords in description fields
+___
+**Remote**
+```bash
+nxc ldap <hostname> -u <user> -p <pass> -M get-desc-users
+```
+**Local**
+```powershell
+Import-Module powerview.ps1
+```
+```powershell
+Get-DomainUser * | Select-Object samaccountname,description |Where-Object {$_.Description -ne $null}
+```
+
+
+
