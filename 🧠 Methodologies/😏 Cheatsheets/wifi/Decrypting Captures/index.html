@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://jacobh.io/%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Decrypting%20Captures/">
       
       
-        <link rel="prev" href="../Capturing%20Traffic/">
+        <link rel="prev" href="../Cracking%20Passphrases/">
       
       
-        <link rel="next" href="../Interface%20Modes/">
+        <link rel="next" href="../Finding%20Hidden%20Networks/">
       
       
       <link rel="icon" href="../../../../assets/favicon.ico">
@@ -2895,12 +2895,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../Bypassing%20MAC%20Filtering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bypassing MAC Filtering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Capturing%20Traffic/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Capturing Traffic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cracking%20Passphrases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cracking Passphrases
     
   </span>
   
@@ -2937,6 +2983,29 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Finding%20Hidden%20Networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finding Hidden Networks
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4799,7 +4868,68 @@
 
   <h1>Decrypting Captures</h1>
 
-
+<p>We can decrypt <code>WEP</code>, <code>WPA PSK</code>, and <code>WPA2 PSK</code> captures with airdecap-ng. it can remove wireless headers from an unencrypted capture file. This tool is particularly useful in analyzing the data within captured packets by making the content readable and removing unnecessary wireless protocol information.</p>
+<p>Airdecap-ng can be used for the following:</p>
+<ul>
+<li>Removing wireless headers from an open network capture (Unencrypted capture).</li>
+<li>Decrypting a WEP-encrypted capture file using a hexadecimal WEP key.</li>
+<li>Decrypting a WPA/WPA2-encrypted capture file using the passphrase.</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>airdecap-ng<span class="w"> </span><span class="o">[</span>options<span class="o">]</span><span class="w"> </span>&lt;pcap<span class="w"> </span>file&gt;
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-l</code></td>
+<td>don't remove the 802.11 header</td>
+</tr>
+<tr>
+<td><code>-b</code></td>
+<td>access point MAC address filter</td>
+</tr>
+<tr>
+<td><code>-k</code></td>
+<td>WPA/WPA2 Pairwise Master Key in hex</td>
+</tr>
+<tr>
+<td><code>-e</code></td>
+<td>target network ascii identifier</td>
+</tr>
+<tr>
+<td><code>-p</code></td>
+<td>target network WPA/WPA2 passphrase</td>
+</tr>
+<tr>
+<td><code>-w</code></td>
+<td>target network WEP key in hexadecimal</td>
+</tr>
+<tr>
+<td><code>Airdecap-ng</code> generates a new file with the suffix <code>-dec.cap</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>the decrypted capture file using <code>airdecap-ng</code>, observe how the <code>Protocol</code> tab displays the correct protocol, such as ARP, TCP, DHCP, HTTP, etc. Additionally, notice how the <code>Info</code> tab provides more detailed information, and it correctly displays the <code>source</code> and <code>destination</code> IP addresses.</p>
+<p><strong>Removing Wireless Headers from Unencrypted Capture file (open network):</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>airdecap-ng -b &lt;bssid&gt; &lt;capture-file&gt;
+</span></code></pre></div>
+<p>Replace with the MAC address of the access point and with the name of the capture file.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>airdecap-ng<span class="w"> </span>-b<span class="w"> </span><span class="m">00</span>:14:6C:7A:41:81<span class="w"> </span>opencapture.cap
+</span></code></pre></div>
+<p><strong>Decrypting WEP-encrypted captures</strong></p>
+<p>Requires hexadecimal WEP key
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>airdecap-ng<span class="w"> </span>-w<span class="w"> </span>&lt;WEP-key&gt;<span class="w"> </span>&lt;capture-file&gt;
+</span></code></pre></div></p>
+<p><strong>Decrypting WPA-encrypted captures</strong></p>
+<p>Needs passphrase and essid of the network</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>airdecap-ng<span class="w"> </span>-p<span class="w"> </span>&lt;passphrase&gt;<span class="w"> </span>&lt;capture-file&gt;<span class="w"> </span>-e<span class="w"> </span>&lt;essid&gt;
+</span></code></pre></div>
 
 
 
