@@ -60,10 +60,24 @@ You can also dump across channels
 sudo airodump-ng --band abg wlan0mon
 ```
 
-**Save output to file**
+
+#### **Capturing Traffic**
 
 ```bash
 airodump-ng wlan0mon --write outFile 
 ```
 will generate `.cap, .csv, kismet.csv, kismet.netxml, log.vsc` by default
+
+#### Reading output
+___
+**Cipher**:
+
+- CCMP = WPA2
+- TKIP = WPA1
+
+**Auth:**
+
+- PSK = Personal
+- MG
+- T = enterprise
 

