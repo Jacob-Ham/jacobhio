@@ -175,12 +175,6 @@ Run against target
 sudo hcxdumptool --rds=1 -F --bpf=SSID.bpf -i wlan1mon -w outfile.pcapng
 ```
 
-or with targets list
-
-```bash
-sudo hcxdumptool --essidlist=targets.txt -i wlan1mon -w outfile.pcapng
-```
-
 You are looking for a `+` under the 3 or the P column.
 Convert to hash and crack (dictionary)
 
