@@ -17,6 +17,11 @@ with airodump:
 airodump-ng wlan0mon -c 1 --wps
 ```
 
+0:	WPS is not supported by the access point.
+1:	WPS is enabled but not configured.
+2:	WPS is enabled and configured.
+
+
 with wash:
 ```bash
 wash -i wlan0mon
