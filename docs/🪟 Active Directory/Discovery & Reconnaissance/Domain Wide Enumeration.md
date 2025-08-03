@@ -19,6 +19,7 @@ bloodhound-python -c All -u <user> -p <pass> -d domain.local -ns <dc-ip>
 ```PowerShell
 sudo bloodhound-python -u 'user' -p 'pass' -ns <dc-ip> -d domain.local -c all 
 ```
+`--use-ldaps` if ldaps
 
 **Local Ingestion**
 ```C
