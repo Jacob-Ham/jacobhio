@@ -175,11 +175,13 @@ sed 's/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*\1\*\$\2/' crack_file > sqldev_
 
 ### Cracking a ticket
 
-| etype | Hashcat Mode | Example Command                            |
-| ----- | ------------ | ------------------------------------------ |
-| 23    | 13100        | `hashcat -m 13100 hashes.txt wordlist.txt` |
-| 17    | 19600        | `hashcat -m 19600 hashes.txt wordlist.txt` |
-| 18    | 19700        | `hashcat -m 19700 hashes.txt wordlist.txt` |
+|Encryption Type (etype)|Name / Algorithm|Hashcat Mode|Notes / Where Seen|
+|---|---|---|---|
+|`23`|RC4-HMAC (arcfour-hmac-md5)|**13100**|Default for older AD, common in Kerberoasting. Weak, fastest to crack.|
+|`17`|AES128-CTS-HMAC-SHA1-96|**19600**|Seen when RC4 is disabled; newer/modern service accounts.|
+|`18`|AES256-CTS-HMAC-SHA1-96|**19700**|Stronger; common when "AES only" enforced.|
+|`3`|DES-CBC-MD5|_Obsolete_ (no current Hashcat mode)|Legacy, should be disabled.|
+|`RC4-HMAC-OLD` / `etype 24`|RC4-HMAC with old salt usage (rare)|Use **13100**|Rare edge cases, still cracks with RC4 mode.|
 
 
 ### Cleanup Considerations
