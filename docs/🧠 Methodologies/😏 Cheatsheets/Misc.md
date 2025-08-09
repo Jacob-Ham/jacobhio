@@ -9,3 +9,8 @@ ___
 5. At least one filter must be set up under Devices > USB > USB Settings. Clicking the top icon on the right (USB plug with solid blue dot) will create a 'universal' filter for any device. When the VM is running, you should now see a list when you go to Devices > USB that allows you to select devices to connect.
 
 
+
+## New note structure
+---
+Add cleanup considerations for EVERYTHING
+Add detection considerations for EVERYTHING

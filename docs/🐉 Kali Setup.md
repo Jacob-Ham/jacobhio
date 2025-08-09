@@ -73,6 +73,18 @@ mkdir -p ~/opt && wget -O ~/opt/Espanso.AppImage 'https://github.com/federico-te
 ```Python
 rm ~/.config/espanso/match/base.yml && wget https://raw.githubusercontent.com/Jacob-Ham/kali-configs/main/espanso/base.yml -P ~/.config/espanso/match/ && espanso start
 ```
+tmux config
+```bash
+tmux show -g | sed 's/^/set-option -g /' > ~/.tmux.conf
+```
+
+```bash
+echo 'set -g history-limit 500000' >> ~/.tmux.conf
+echo 'set -g mode-keys vi' >> ~/.tmux.conf
+tmux source-file ~/.tmux.conf
+```
+
+
 **Install KDE and remove Kali-Desktop**
 Install KDE
 ```C
