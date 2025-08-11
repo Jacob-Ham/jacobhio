@@ -48,6 +48,76 @@ A successful attack results in a full takeover of the SCCM site. By gaining Full
 - **Database Auditing:** Direct writes to sensitive SCCM tables like `RBAC_Admins` are a high-fidelity indicator of compromise if database auditing is enabled.
 
 
+## Identify
+___
+If `CN=System Management,CN=System` AD object exists, sccm is installed LDAP also creates new `object class` entries, such as `mssmsmanagementpoint` or `mssmssite`.
+
+Using [sccmhunter](https://github.com/garrettfoster13/sccmhunter) 
+
+```bash
+git clone -q https://github.com/garrettfoster13/sccmhunter
+cd sccmhunter
+python3 -m venv .sccmhunter
+source .sccmhunter/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+[Sccmhunter](https://github.com/garrettfoster13/sccmhunter) will help us extract from each server the following information:
+
+* The SCCM site code. 
+* Whether the server is a Central Administration Site (CAS). 
+* The SMB signing status (helpful in performing later NTLM relay attacks). 
+* Whether the server is the SCCM Primary Server or not. 
+* Whether it is the SCCM Distribution Point or not. 
+* Whether it is the SCCM SMS Provider or not. 
+* Whether the WSUS and MSSQL services are running on it or not.
+
+```bash
+python3 sccmhunter.py find -u <user> -p <pass> -d domain.local -dc-ip <dc-ip>
+```
+
+This command performs these checks:
+1. Checks the DACL for the `System Management` container manually created during AD schema extension.
+2. Checks for published `Managment Points`.
+3. Checks for strings `SCCM` and `MECM` in the entire directory.
+
+!!! alert "note"
+	To see the results, we can use the `-debug` option during the command execution or use `show -all` after we execute the command:
+
+```bash
+python3 sccmhunter.py show -all
+```
+
+Additionally, we can utilize the `smb` module to profile and list SMB shares of identified SCCM servers.
+
+1. Profiling the site server:
+
+	- Validates connectivity.
+	- Verifies if the site server hosts the MSSQL service.
+	- Determines if the site server is active or passive.
+	- Identify whether the site server is a central administration site.
+
+2. Management point verifications.
+
+	- Validates connectivity to the HTTP endpoints.
+
+3. Checks for roles and configurations.
+
+	- Searches for associated site codes from default file shares.
+	- Verify whether the SMB signing is turned off.
+	- Identifies the site system roles such as Site Server, Management Point, Distribution Point, SMS Provider, MSSQL, and WSUS.
+
+
+**Search for PXEBoot variables and save them:**
+
+```bash
+python3 sccmhunter.py smb -u <user> -p <pass> -d domain.local -dc-ip <dc-ip> -save
+```
+
+
+Additionally, the [SharpSCCM](https://github.com/Mayyhem/SharpSCCM) (C#) tool can also be utilized on Windows systems and it provides features for enumeration, credential gathering and lateral movement without requring access to the SCCM administration console.
+
+
 ## Execution
 ___
 **Step 1: Set up NTLM Relay**
