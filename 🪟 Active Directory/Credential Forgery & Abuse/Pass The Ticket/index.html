@@ -99,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#technique" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -3558,6 +3563,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pass The Ticket
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3569,6 +3587,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detection-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection &amp; Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detection &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4960,6 +5073,92 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup Considerations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detection-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection &amp; Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detection &amp; Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mitigation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4979,7 +5178,91 @@
 
   <h1>Pass The Ticket</h1>
 
-
+<h2 id="technique">Technique</h2>
+<hr />
+<p>Pass-the-Ticket (PtT) is a lateral movement technique that uses a stolen Kerberos ticket to authenticate to systems and access resources as the impersonated user. This attack bypasses the need to extract credentials from protected processes like LSASS, making it effective in hardened environments where credential dumping is monitored or prevented.</p>
+<p>The attack leverages a stolen Ticket Granting Ticket (TGT) or a service ticket (TGS). An attacker can use this ticket from a different machine to request new service tickets from the Domain Controller and gain access to network resources, effectively impersonating the user without ever knowing their password.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<hr />
+<p><strong>Access Level:</strong> Administrative rights are required on the source machine to dump Kerberos tickets from memory, as they belong to other users' logon sessions.</p>
+<p><strong>System State:</strong> The attacker must have a foothold on a domain-joined machine where a target user is currently logged in or has an active Kerberos ticket cached.</p>
+<p><strong>Information:</strong> The attacker needs to identify a valid Kerberos ticket in memory to steal.</p>
+<p><strong>Misc</strong>: Your system time must be synced with the DC. If your time is too skewed, the ticket will be considered invalid.</p>
+<h2 id="considerations">Considerations</h2>
+<hr />
+<p><strong>Impact</strong></p>
+<p>Successful PtT allows an attacker to move laterally across the network and access any resources the impersonated user has permissions for. If the stolen ticket belongs to a Domain Administrator, the attacker gains full control over the domain.</p>
+<div class="admonition alert">
+<p class="admonition-title">DANGER</p>
+<p><strong>Sacrificial Processes:</strong> It is critical to inject stolen tickets into a "sacrificial process" rather than overwriting the ticket of an existing logon session. Overwriting a ticket for a critical process (like <code>SYSTEM$</code>) or a service can cause an outage, as the service may not be able to re-authenticate until it is restarted. Using a sacrificial process creates a new, isolated logon session for the ticket. While this is safer, creating a new logon session (<code>LOGON_TYPE = 9</code>) is an Indicator of Compromise (IOC) that can be detected.</p>
+</div>
+<p><strong>OPSEC</strong></p>
+<ul>
+<li>
+<p><strong>Tooling Footprint:</strong> Executing tools like <code>Rubeus.exe</code> from disk creates obvious IOCs (process name, file hash, arguments) for EDR. Prefer in-memory execution or integrated C2 capabilities to avoid detection.</p>
+</li>
+<li>
+<p><strong>Logon Artifacts:</strong> Creating a sacrificial process generates a detectable <strong><code>LOGON_TYPE = 9</code></strong> event. This is a direct trade-off between preventing service outages and maintaining stealth.</p>
+</li>
+<li>
+<p><strong>Suspicious Service Requests:</strong> After passing a ticket, the host's requests for new service tickets can appear abnormal.</p>
+</li>
+</ul>
+<h2 id="execution">Execution</h2>
+<hr />
+<p><strong>Create a Sacrificial Process</strong></p>
+<p>To avoid overwriting existing tickets and potentially causing service disruptions, create a new process with its own logon session. Rubeus can create this process, which will be used for ticket injection. The <code>/show</code> flag makes the new command window visible.</p>
+<p><div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">createnetonly</span> <span class="p">/</span><span class="n">program</span><span class="p">:</span><span class="s2">&quot;C:\Windows\System32\cmd.exe&quot;</span> <span class="p">/</span><span class="n">show</span>
+</span></code></pre></div>
+The output provides the Logon ID (LUID) of the new session. Save this for later.</p>
+<p><strong>Identify TIckets</strong> (In original session)</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">triage</span>
+</span></code></pre></div>
+<p>Once a target ticket is identified (e.g., a ticket for <code>admin@DOMAIN.LOCAL</code> with the service <code>krbtgt</code>), save its LUID.</p>
+<p><strong>Dump the target ticket with its LUID</strong> (In original session)</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">.\</span><span class="n">Rubeus</span><span class="p">.</span><span class="n">exe</span> <span class="n">dump</span> <span class="p">/</span><span class="n">luid</span><span class="p">:</span><span class="n">0x89275d</span> <span class="p">/</span><span class="n">service</span><span class="p">:</span><span class="n">krbtgt</span> <span class="p">/</span><span class="n">nowrap</span>
+</span></code></pre></div>
+<p>This command outputs the user's ticket in Base64 format.</p>
+<p><strong>Pass the Ticket (PTT)</strong> (In <strong>Sacrificial Process</strong>)</p>
+<p>inject the stolen ticket into the current logon session. The <code>/ptt</code> flag passes the ticket directly into memory.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Rubeus.exe renew /ticket:doIFVjCCBVKgAwIBBaEDA&lt;SNIP&gt; /ptt
+</span></code></pre></div>
+<p>Rerun <code>klist</code> to confirm that the ticket for the target user is now in our current session.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>klist
+</span></code></pre></div>
+<p>The output should now show the impersonated user's ticket. With this ticket in memory, any network action you perform will be on behalf of that user. For example, accessing a Domain Controller's C$ share.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dir \\dc01\c$
+</span></code></pre></div>
+Windows will automatically use the injected TGT to request a TGS for the <code>cifs/dc01</code> service and grant you access.</p>
+<h2 id="cleanup-considerations">Cleanup Considerations</h2>
+<hr />
+<p>Terminating the sacrificial process will destroy the associated logon session and the injected tickets.</p>
+<h2 id="detection-mitigation">Detection &amp; Mitigation</h2>
+<hr />
+<h4 id="detection">Detection</h4>
+<ul>
+<li>
+<p>Monitor for process creation events associated with <code>LOGON_TYPE = 9</code> (New Credentials), which tools like Rubeus use to create sacrificial processes.</p>
+</li>
+<li>
+<p>Audit for Kerberos service ticket requests (Event ID 4769) originating from unusual hosts or at anomalous times.</p>
+</li>
+<li>
+<p>Network traffic analysis can potentially identify a ticket being used from an IP address not associated with the legitimate user.</p>
+</li>
+</ul>
+<h4 id="mitigation">Mitigation</h4>
+<ul>
+<li>
+<p><strong>Limit Admin Privileges:</strong> Restricting local administrator rights prevents attackers from being able to dump tickets from other users' sessions on a machine.</p>
+</li>
+<li>
+<p><strong>Protected Users Group:</strong> Add high-privilege accounts to the "Protected Users" group in Active Directory. This enforces security controls that make it much harder to steal or use their tickets, such as disabling credential caching.</p>
+</li>
+<li>
+<p><strong>Microsoft Defender for Identity:</strong> Can detect anomalous ticket usage across the network, which is a key indicator of a Pass-the-Ticket attack.</p>
+</li>
+</ul>
 
 
 
