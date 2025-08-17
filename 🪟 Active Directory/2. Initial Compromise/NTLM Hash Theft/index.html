@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/2.%20Initial%20Compromise/NTLM%20Theft%20Files/">
+        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/2.%20Initial%20Compromise/NTLM%20Hash%20Theft/">
       
       
         <link rel="prev" href="../LLMNR%20Poisoning/">
       
       
-        <link rel="next" href="../NetNTLM%20Hash%20Stealing/">
+        <link rel="next" href="../Password%20Stuff/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>NTLM Theft Files - jacobh.io</title>
+        <title>NTLM Hash Theft - jacobh.io</title>
       
     
     
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="NTLM Theft Files - jacobh.io" >
+        <meta  property="og:title"  content="NTLM Hash Theft - jacobh.io" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/2. Initial Compromise/NTLM Theft Files.png" >
+        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/2. Initial Compromise/NTLM Hash Theft.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/2.%20Initial%20Compromise/NTLM%20Theft%20Files/" >
+        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/2.%20Initial%20Compromise/NTLM%20Hash%20Theft/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="NTLM Theft Files - jacobh.io" >
+        <meta  name="twitter:title"  content="NTLM Hash Theft - jacobh.io" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/2. Initial Compromise/NTLM Theft Files.png" >
+        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/2. Initial Compromise/NTLM Hash Theft.png" >
       
     
     
@@ -98,6 +98,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#theft-files" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -128,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NTLM Theft Files
+              NTLM Hash Theft
             
           </span>
         </div>
@@ -3535,41 +3540,84 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    NTLM Hash Theft
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    NTLM Theft Files
+    NTLM Hash Theft
     
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../NetNTLM%20Hash%20Stealing/" class="md-nav__link">
         
-  
-  
-  <span class="md-ellipsis">
-    NetNTLM Hash Stealing
-    
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#theft-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theft Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poisoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Poisoning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relaying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relaying
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc Locations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5130,6 +5178,50 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#theft-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theft Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poisoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Poisoning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relaying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relaying
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc Locations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5147,8 +5239,10 @@
   
 
 
-  <h1>NTLM Theft Files</h1>
+  <h1>NTLM Hash Theft</h1>
 
+<h2 id="theft-files">Theft Files</h2>
+<hr />
 <p>Any writable directory (shares, nfs, locally) where users will list contents you can use certain file types to steal hashes</p>
 <p><strong>Manual: (.lnk)</strong></p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$objShell</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="n">WScript</span><span class="p">.</span><span class="n">Shell</span>
@@ -5170,6 +5264,22 @@ Hash received? Try to crack it
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">5600</span><span class="w"> </span>user.hash<span class="w"> </span>/usr/share/wordlists/rockyou.txt
 </span></code></pre></div></p>
 <p>OR:  <a href="../Relay%20Attacks/">Relay Attacks</a></p>
+<h2 id="poisoning">Poisoning</h2>
+<hr />
+<ul>
+<li><a href="../LLMNR%20Poisoning/">LLMNR Poisoning</a></li>
+<li><a href="../IPv6%20Attacks/">IPv6 Attacks</a></li>
+</ul>
+<h2 id="relaying">Relaying</h2>
+<hr />
+<ul>
+<li><a href="../Relay%20Attacks/">Relay Attacks</a></li>
+</ul>
+<h2 id="misc-locations">Misc Locations</h2>
+<hr />
+<ul>
+<li><a href="https://osandamalith.com/2017/03/24/places-of-interest-in-stealing-netntlm-hashes/">https://osandamalith.com/2017/03/24/places-of-interest-in-stealing-netntlm-hashes/</a></li>
+</ul>
 
 
 
