@@ -4090,6 +4090,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#abuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abuse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mitigation" class="md-nav__link">
     <span class="md-ellipsis">
       Mitigation
@@ -5144,6 +5153,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#abuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abuse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mitigation" class="md-nav__link">
     <span class="md-ellipsis">
       Mitigation
@@ -5195,6 +5213,17 @@ Crack them with
 </span></code></pre></div>
 We can quickly view unique captured hashes by typing <code>GET NTLMV2UNIQUE</code>. We can type in <code>GET NTLMV2USERNAMES</code> and see which usernames we have collected. This is helpful if we want a listing of users to perform additional enumeration against and see which are worth<br />
 attempting to crack offline using Hashcat.</p>
+<h2 id="abuse">Abuse</h2>
+<hr />
+<p>Once you receive a response:</p>
+<p>you can either crack the Net-NTLMv2 hash</p>
+<ul>
+<li>See: <a href="../../Credential%20Access%20%26%20Harvesting/Hash%20Cracking/">Hash Cracking</a></li>
+</ul>
+<p>Or relay the to authenticate to a service</p>
+<ul>
+<li>See: <a href="../../Lateral%20Movement/Relay%20Attacks/">Relay Attacks</a></li>
+</ul>
 <h2 id="mitigation">Mitigation</h2>
 <hr />
 <ol>
