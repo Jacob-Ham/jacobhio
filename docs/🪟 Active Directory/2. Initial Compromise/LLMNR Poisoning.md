@@ -40,11 +40,11 @@ Once you receive a response:
 
 you can either crack the Net-NTLMv2 hash
 
-- See: [Hash Cracking](../Credential%20Access%20&%20Harvesting/Hash%20Cracking.md)
+- See: [Hash Cracking](../3.%20Credential%20Theft/Hash%20Cracking.md)
 
 Or relay the to authenticate to a service
 
-- See: [Relay Attacks](../Lateral%20Movement/Relay%20Attacks.md)
+- See: [Relay Attacks](Relay%20Attacks.md)
 
 
 ## Mitigation

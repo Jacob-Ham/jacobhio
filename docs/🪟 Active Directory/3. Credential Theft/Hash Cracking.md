@@ -20,4 +20,4 @@ hashcat -m 18200 --force -a 0 hashes.txt <wordlist>
 ```bash
 hashcat -m 13100 --force -a 0 hashes.txt <wordlist>
 ```
-
+- More ticket hash types can be found in the [Kerberoasting](Kerberoasting.md) sections.

@@ -71,7 +71,7 @@ ___
 procdump.exe -accepteula -ma lsass.exe lsass.dmp
 ```
 or with task manager
-![](../../assets/Pasted%20image%2020250719100303.png)
+![](../../../assets/Pasted%20image%2020250719100303.png)
 
 read with mimikatz or pypykatz
 

@@ -11,6 +11,40 @@ tags:
 Relay captures hashes to target machine for various types of access.
 - Only works if SMB signing is disabled or "not required"
 - Relayed creds MUST be admin on the machine
+
+
+## Identifying Relay Targets
+___
+**Automated**
+
+[RunFinger.py](https://github.com/lgandx/Responder/blob/master/tools/RunFinger.py) included with Responder can scan the network for potential relay targets for:
+
+- SMB
+- MSSQL
+- RDP
+
+```bash
+python3 RunFinger.py -i 192.168.1.0/24
+```
+
+**NetExec** will automatically generate a list of targets with --gen-relay-list for:
+
+- SMB
+
+```
+nxc smb 192.168.1.0/24 --gen-relay-list output.txt
+```
+
+
+
+
+
+## ntlmrelayx
+___
+
+
+
+
 ## Responder + ntlmrelayx
 ---
 
