@@ -337,10 +337,6 @@
          <lastmod>2025-08-17</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Host%20Enumeration/</loc>
-         <lastmod>2025-08-17</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Living%20Off%20the%20Land%20Enumeration/</loc>
          <lastmod>2025-08-17</lastmod>
     </url>
@@ -349,7 +345,7 @@
          <lastmod>2025-08-17</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/SMB/</loc>
+         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Service%20Enumeration/</loc>
          <lastmod>2025-08-17</lastmod>
     </url>
     <url>
@@ -449,7 +445,11 @@
          <lastmod>2025-08-17</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/4.%20Privilege%20Escalation/Domain/%C2%A9%EF%B8%8F%20ADCS/</loc>
+         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/4.%20Privilege%20Escalation/Domain/ADCS/ESC1/</loc>
+         <lastmod>2025-08-17</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/4.%20Privilege%20Escalation/Domain/ADCS/Enumerate%20ADCS/</loc>
          <lastmod>2025-08-17</lastmod>
     </url>
     <url>

