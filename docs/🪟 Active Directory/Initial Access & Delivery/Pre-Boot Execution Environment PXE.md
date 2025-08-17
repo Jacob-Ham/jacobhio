@@ -18,7 +18,6 @@ aliases:
   - SCCM Task Sequence Credential Harvesting
 ---
 
-
 ## Technique
 ___
 This technique provides initial access by exploiting the **Pre-Boot Execution Environment (PXE)**, a standard for booting computers over the network. In corporate environments, PXE is commonly used by **System Center Configuration Manager (SCCM)** to deploy operating systems.
