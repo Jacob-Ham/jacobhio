@@ -473,10 +473,6 @@
          <lastmod>2025-08-17</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Microsoft%20Configuration%20Manager/</loc>
-         <lastmod>2025-08-17</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Lateral%20Movement/Pivoting/</loc>
          <lastmod>2025-08-17</lastmod>
     </url>
@@ -521,10 +517,6 @@
          <lastmod>2025-08-17</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/SCCM%20Site%20Takeover%20I/</loc>
-         <lastmod>2025-08-17</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/Token%20Privileges/</loc>
          <lastmod>2025-08-17</lastmod>
     </url>
@@ -550,6 +542,14 @@
     </url>
     <url>
          <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/%F0%9F%91%BB%20PrintNightmare/</loc>
+         <lastmod>2025-08-17</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/SCCM/SCCM%20Site%20Takeover%20I/</loc>
+         <lastmod>2025-08-17</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/%F0%9F%AA%9F%20Active%20Directory/Privilege%20Escalation/SCCM/SCCM%20Site%20Takeover%20II/</loc>
          <lastmod>2025-08-17</lastmod>
     </url>
 </urlset>
