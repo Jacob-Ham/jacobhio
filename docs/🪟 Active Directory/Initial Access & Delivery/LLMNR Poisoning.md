@@ -34,6 +34,19 @@ Invoke-Inveigh Y -NBNS Y -ConsoleOutput Y -FileOutput Y
 We can quickly view unique captured hashes by typing `GET NTLMV2UNIQUE`. We can type in `GET NTLMV2USERNAMES` and see which usernames we have collected. This is helpful if we want a listing of users to perform additional enumeration against and see which are worth  
 attempting to crack offline using Hashcat.
 
+## Abuse
+___
+Once you receive a response:
+
+you can either crack the Net-NTLMv2 hash
+
+- See: [Hash Cracking](../Credential%20Access%20&%20Harvesting/Hash%20Cracking.md)
+
+Or relay the to authenticate to a service
+
+- See: [Relay Attacks](../Lateral%20Movement/Relay%20Attacks.md)
+
+
 ## Mitigation
 ---
 1. Select "Turn OFF multicast Name Resolution" under Local Computer Policy > Computer Configuration > Administrative Templates > Network > DNS Client in the Group Policy Editor
