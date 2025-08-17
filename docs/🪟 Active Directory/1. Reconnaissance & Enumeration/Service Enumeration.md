@@ -3,8 +3,8 @@ tags:
   - AD
 ---
 
-## Share Enumeration
----
+## SMB 
+___
 ```PowerShell
 nxc smb <ip> -u '' -p '' --shares
 ```
