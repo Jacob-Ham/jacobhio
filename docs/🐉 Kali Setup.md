@@ -16,6 +16,9 @@ sudo apt install feroxbuster -y
 sudo apt install alacritty -y
 sudo apt install rlwrap -y
 cd /tmp && git clone https://github.com/Jacob-Ham/gbins.git && cd gbins && pip3 install -r requirements.txt --break-system-packages && sudo /usr/bin/chmod u+x gbins.py && /usr/bin/sudo /usr/bin/cp -p gbins.py /usr/bin/gbins
+
+cd /tmp && git clone https://github.com/Jacob-Ham/auth.git && cd auth && sudo /usr/bin/chmod u+x auth.py && /usr/bin/sudo /usr/bin/cp -p auth.py /usr/bin/auth
+
 sudo apt install dirsearch -y
 sudo apt install tmux -y
 sudo apt install syncthing -y
