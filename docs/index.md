@@ -9,13 +9,12 @@
  **💼** **[LinkedIn](https://www.linkedin.com/in/jacob-hammargren)**       | 🖥️ **[GitHub](https://github.com/Jacob-Ham)**   | 📜 **[Resume](https://filedn.com/ltuwgrUJcIJFey0kD7kqPqj/JHammargren-Resume.pdf)**  | ✉️ [Email](mailto:jake@jacobh.io)
 
 ### Industry Certifications
-[Practical Network Penetration Tester](https://www.credential.net/0c3a1bec-3953-4575-bec3-91da26af2280)
 
 | [Offensive Security Certified Professional (OSCP)](https://credentials.offsec.com/f0e7984b-0a1f-4d46-8675-808a973564a3#acc.Oegqp6TV)<br>![](assets/oscp.png) | [Certified Penetration Testing Specialist (CPTS)](https://www.credly.com/badges/a2efda9c-8328-4426-a0ac-b6fef8f6abd8)<br>![](assets/oscpts.png) | [Certified Red Team Operator (CRTO)](https://eu.badgr.com/public/assertions/Yb3KP9mETDe2qBJ5Ohy48g)<br>![](assets/crto.png) |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| <br>![](assets/oaws.png)                                                                                                                                     | <br>![](assets/pwpa.png)                                                                                                                        | Genesis Prolab<br>![](assets/genesis.png)                                                                                   |
-| <br>![](assets/pnpt.png)                                                                                                                                     | <br>![](assets/pjpt.png)                                                                                                                        | <br>![](assets/cdsa.png)                                                                                                    |
-| <br>![](assets/secplus.png)                                                                                                                                  |                                                                                                                                                 |                                                                                                                             |
+
+
+
 ### Misc
 [Offensive AWS Security Professional](https://api.eu.badgr.io/public/assertions/H7DhW8vRSlGT3wzc9R_Nng?identity__email=jacobit.work%40gmail.com)
 
