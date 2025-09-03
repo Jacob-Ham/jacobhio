@@ -42,7 +42,7 @@ controlledInput';prompt()//';
 ---
 1. Get a list of tags (copy to clipboard [https://portswigger.net/web-security/cross-site-scripting/cheat-sheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet))
 2. Intercept request with burp, send to intruder.
-![](../../assets/Pasted%20image%2020250629173700.png)
+![](../../../../assets/Pasted%20image%2020250629173700.png)
 3. Paste the tags into the payloads. 
 4. Start attack, monitor for unfiltered response codes, different length responses, etc...
 5. You've hopefully found an unfiltered tag.

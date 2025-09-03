@@ -41,8 +41,8 @@ OR:  [Relay Attacks](Relay%20Attacks.md)
 
 ## Poisoning
 ___
-- [LLMNR Poisoning](../2.%20Initial%20Compromise/LLMNR%20Poisoning.md)
-- [IPv6 Attacks](../2.%20Initial%20Compromise/IPv6%20Attacks.md)
+- [LLMNR Poisoning](LLMNR%20Poisoning.md)
+- [IPv6 Attacks](IPv6%20Attacks.md)
 
 ## Relaying
 ___

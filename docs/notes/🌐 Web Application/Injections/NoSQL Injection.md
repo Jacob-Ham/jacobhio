@@ -38,7 +38,7 @@ Becomes:
 ```
 email[$ne]=test@test.com&password[$ne]=test
 ```
-![](../../assets/Pasted%20image%2020250629152540.png)
+![](../../../../assets/Pasted%20image%2020250629152540.png)
 This will evaluate to TRUE (unless the values actually exist) and bypass auth.
 OR match anything and always eval to true:
 ```
@@ -56,6 +56,6 @@ Ways can match ALL data from an injection point and return it:
 ---
 Execute arbitrary JavaScript in the context of the database.
 **Auth bypass**
-![](../../assets/Pasted%20image%2020250629153121.png)
+![](../../../../assets/Pasted%20image%2020250629153121.png)
 we could set `username` to `" || true || ""=="`, which should result in the query statement always returning `True`, regardless of what `this.username` and `this.password` are.
-![](../../assets/Pasted%20image%2020250629153156.png)
+![](../../../../assets/Pasted%20image%2020250629153156.png)
