@@ -12,7 +12,8 @@ ___
 - [ ] [Domain Wide Enumeration](1.%20Reconnaissance%20&%20Enumeration/Domain%20Wide%20Enumeration.md)
 - [ ] 
 #### Foothold
-- [ ] [Pre-Windows 2000 Computers](2.%20Initial%20Compromise/Pre-Windows%202000%20Computers.md)
+- [ ] [Pre-Windows 2000 Computers](docs/Active%20Directory/2.%20Initial%20Compromise/Pre-Windows%202000%20Computers.md)
+    
 - [ ] [Pre-Boot Execution Environment PXE](2.%20Initial%20Compromise/Pre-Boot%20Execution%20Environment%20PXE.md)
 - [ ] [LLMNR Poisoning](2.%20Initial%20Compromise/LLMNR%20Poisoning.md)
 - [ ] [IPv6 Attacks](2.%20Initial%20Compromise/IPv6%20Attacks.md)
