@@ -1,9 +1,8 @@
 ___
-##  TL;DR
-___
+##  TL;DR:
 
 ### Identify
----
+
 
 **Tools:** [pre2k](https://github.com/garrettfoster13/pre2k), [nxc](https://github.com/Pennyw0rth/NetExec)
 
@@ -21,12 +20,14 @@ nxc ldap <dc-ip> -u 'user' -p 'pass' -M pre2k
 pre2k unauth -d <DOMAIN> -dc-ip <dcip> -inputfile <listofcomputers>
 ```
 
-!!! alert "You can pass `-n` to check blank passwords as well"
+!!! alert "Note"
+	You can pass `-n` to check blank passwords as well
 
 !!! alert "Manual mode"
 	Without using the tool, you can check by identifying `pwdlastset: 12/31/1600 7:00:00PM`
 
-!!! alert "The only error that indicates an auth failure is `KDC_ERR_PREAUTH_FAILED` other errors do not mean you can't authenticate"  
+!!! alert "Note"
+	The only error that indicates an auth failure is `KDC_ERR_PREAUTH_FAILED` other errors do not mean you can't authenticate
 
 **Validate**
 ```bash
@@ -36,7 +37,8 @@ Expected output: `STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT`
 
 ### Exploit
 
-!!! alert "this is semi-destructive, it may require the object be rejoined to the domain"
+!!! alert "Note"
+	this is semi-destructive, it may require the object be rejoined to the domain
 
 Change the account password
 
