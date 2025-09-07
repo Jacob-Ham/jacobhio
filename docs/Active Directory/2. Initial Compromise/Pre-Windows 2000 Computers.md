@@ -40,14 +40,12 @@ Expected output: `STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT`
 !!! alert "Note"
 	this is semi-destructive, it may require the object be rejoined to the domain
 
-Change the account password
 
-**Imacket**
+**Change the account password:**
 ```bash
 impacket-changpasswd.py domain/machinename\$:machinename@dc-ip -newpass <pass>
 ```
-
-**NetExec**
+or
 ```bash
 nxc smb <dcip> -u machinename$ -p 'machinename' -M change-password -o NEWPASS=NewPassword
 ```
