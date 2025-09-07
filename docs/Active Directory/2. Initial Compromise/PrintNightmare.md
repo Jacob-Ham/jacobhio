@@ -9,6 +9,9 @@ tags:
 [https://github.com/cube0x0/CVE-2021-1675](https://github.com/cube0x0/CVE-2021-1675)
 ## Identify
 ---
+
+
+
 ```PowerShell
  rpcdump.py @172.16.5.5 | egrep 'MS-RPRN|MS-PAR'
 ```

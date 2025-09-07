@@ -71,6 +71,12 @@ The primary method for identifying a vulnerable PXE server is to use the `PXEThi
 !!! alert "note"
 	 PXEThief  should only be used on windows due to the pywin32 dependency, it also works best with python 3.10 
 
+Attempt to autodiscover distribution point IP:
+```powershell
+python pxethief.py 1 
+```
+
+You already know the SCCM server ip (more reliable):
 ```powershell
 python pxethief.py 2 <DISTRIBUTION_POINT_IP>
 ```

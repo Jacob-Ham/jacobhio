@@ -8,7 +8,15 @@ tags:
 ## Identify
 ---
 ### From Windows
-**Check if “Cert Publishers” group exists (checks if ADCS is enabled)**
+
+Is ADCS in use?
+
+**Run certutil** 
+```bash
+certutil.exe
+```
+
+**Check if “Cert Publishers” group exists **
 ```C
 net localgroup "Cert Publishers"
 ```

