@@ -8,7 +8,7 @@ ___
 
 **With creds**
 ```bash
-pre2k auth -u <user> -d <DOMAIN> -p <pass> -dc-ip <dcip> -ldaps
+pre2k auth -u <user> -d <DOMAIN> -p <pass> -dc-ip <dcip> -ldaps -save
 ```
 or
 ```bash
@@ -17,7 +17,7 @@ nxc ldap <dc-ip> -u 'user' -p 'pass' -M pre2k
 
 **Without creds**
 ```bash
-pre2k unauth -d <DOMAIN> -dc-ip <dcip> -inputfile <listofcomputers>
+pre2k unauth -d <DOMAIN> -dc-ip <dcip> -inputfile <listofcomputers> -save
 ```
 
 !!! alert "Note"
@@ -38,7 +38,7 @@ Expected output: `STATUS_NOLOGON_WORKSTATION_TRUST_ACCOUNT`
 ### Exploit
 
 !!! alert "Note"
-	this is semi-destructive, it may require the object be rejoined to the domain
+	this is semi-destructive, you're changing the machine password, may require the object be rejoined to the domain
 
 
 **Change the account password:**
