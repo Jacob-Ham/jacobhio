@@ -1,0 +1,337 @@
+Azure Storage Accounts & Blobs
+
+HackTricks Training
+
+What is Azure Storage Account?
+Azure Storage Accounts are fundamental services in Microsoft Azure that provide scalable, secure, and highly available cloud storage for various data types, including blobs (binary large objects), files, queues, and tables. They serve as containers that group these different storage services together under a single namespace for easy management.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Configurations (I)
+Main configuration options:
+Every storage account must have a unique name across all Azure.
+Every storage account is deployed in a region or in an Azure extended zone
+It's possible to select the premium version of the storage account for better performance
+It's possible to select among 4 types of redundancy to protect against rack, drive and datacenter failures.
+
+Security configuration options:
+Require secure transfer for REST API operations: Require TLS in any communication with the storage
+Allows enabling anonymous access on individual containers: If not, it won't be possible to enable anonymous access in the future
+Enable storage account key access: If not, access with Shared Keys will be forbidden
+Minimum TLS version
+Permitted scope for copy operations: Allow from any storage account, from any storage account from the same Entra tenant or from storage account with private endpoints in the same virtual network.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Configurations (II)
+Blob Storage options:
+Allow cross-tenant replication
+Access tier: Hot (frequently access data), Cool and Cold (rarely accessed data)
+
+
+
+Networking options:
+Network access:
+Allow from all networks
+Allow from selected virtual networks and IP addresses
+Disable public access and use private access
+Private endpoints: It allows a private connection to the storage account from a virtual network
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Configurations (III)
+Data protection options:
+Point-in-time restore for containers: Allows to restore containers to an earlier state
+It requires versioning, change feed, and blob soft delete to be enabled.
+Enable soft delete for blobs: It enables a retention period in days for deleted blobs (even overwritten)
+Enable soft delete for containers: It enables a retention period in days for deleted containers
+Enable soft delete for file shares: It enables a retention period in days for deleted file shared
+Enable versioning for blobs: Maintain previous versions of your blobs
+Enable blob change feed: Keep logs of create, modification, and delete changes to blobs
+Enable version-level immutability support: Allows you to set time-based retention policy on the account-level that will apply to all blob versions.
+Version-level immutability support and point-in-time restore for containers cannot be enabled simultaneously.
+Encryption configuration options:
+Encryption type: It's possible to use Microsoft-managed keys (MMK) or Customer-managed keys (CMK)
+Enable infrastructure encryption: Allows to double encrypt the data "for more security"
+
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Container Public Exposure
+Containers in Azure Storage Accounts are logical groupings that help you organize your blobs for easier management and access.
+
+Basically, containers contain Blobs (files you can upload, like S3 in AWS).
+
+Public Exposure Options:
+Private
+Blob (read access for blobs)
+Container (read access for container listing and blobs)
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Storage Endpoints
+https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview
+Storage service
+Endpoint
+Blob Storage
+https://<storage-account>.blob.core.windows.net
+Static website (Blob Storage)
+https://<storage-account>.web.core.windows.net
+Data Lake Storage Gen2
+https://<storage-account>.dfs.core.windows.net
+Azure Files
+https://<storage-account>.file.core.windows.net
+Queue Storage
+https://<storage-account>.queue.core.windows.net
+Table Storage
+https://<storage-account>.table.core.windows.net
+
+RBAC Authentication
+Azure Storage supports using Microsoft Entra ID to authorize requests using Azure role-based access control (Azure RBAC) to grant permissions to a security principal, which may be a user, group, or service principal. 
+
+az role assignment create --role "Storage Blob Data Contributor" --assignee <email> --scope "/subscriptions/<subscription>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/blobServices/default/containers/<container>"
+
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Access Key Authentication
+The storage accounts have access keys that can be used to access it. This provides full access to the storage account.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+DEMO
+Connect to the web console and show the keys
+
+Shared Key & Lite Shared Keys
+It's possible to generate Shared Keys signed with an access key to authorize access to certain resources via a signed URL.
+Note that the CanonicalizedResource part represents the storage services resource (URI). And if any part in the URL is encoded, it should also be encoded inside the CanonicalizedResource.
+The CanonicalizeHeaders are all headers for the resource that begin with x-ms-, including the x-ms-date header.
+Generate a shared key for blob, queue and file services signing the following information:
+StringToSign = VERB + "\n" +
+Content-Encoding + "\n" +
+Content-Language + "\n" +
+Content-Length + "\n" +
+Content-MD5 + "\n" +
+Content-Type + "\n" +
+Date + "\n" +
+If-Modified-Since + "\n" +
+If-Match + "\n" +
+If-None-Match + "\n" +
+If-Unmodified-Since + "\n" +
+Range + "\n" +
+CanonicalizedHeaders +
+CanonicalizedResource;
+
+Generate a lite shared key for blob, queue and file services signing the following information:
+
+StringToSign = VERB + "\n" +  
+               Content-MD5 + "\n" +  
+               Content-Type + "\n" +  
+               Date + "\n" +  
+               CanonicalizedHeaders +   
+               CanonicalizedResource;
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Shared Key & Lite Shared Keys
+Use the signed keys inside the Authorization HTTP header:
+
+Authorization="[SharedKey|SharedKeyLite] <AccountName>:<Signature>"
+Authorization: SharedKey myaccount:ctzMq410TV3wS7upTBcunJTDLEJwMAZuFPfr0mrrA08=
+
+PUT http://myaccount/mycontainer?restype=container&timeout=30 HTTP/1.1 
+ x-ms-version: 2014-02-14 
+ x-ms-date: Fri, 26 Jun 2015 23:39:12 GMT 
+ Authorization: SharedKey myaccount:ctzMq410TV3wS7upTBcunJTDLEJwMAZuFPfr0mrrA08= 
+ Content-Length: 0
+
+DEMO
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+Do a MitM to the az cli accessing data to show that it uses these keys internally
+
+export ADAL_PYTHON_SSL_NO_VERIFY=1
+export AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
+export HTTPS_PROXY="http://127.0.0.1:8080"
+export HTTP_PROXY="http://127.0.0.1:8080"
+export REQUESTS_CA_BUNDLE=/Users/carlospolop/Downloads/cacert.pem
+
+az storage blob download \
+  --account-name deletemetraining \
+  --container-name deletemevmapp \
+  --name hello.txt \
+  --file /tmp/hello.txt
+
+
+Shared Access Signature (SAS)
+Shared Access Signatures (SAS) are secure, time-limited URLs that grant specific permissions to access resources in an Azure Storage account without exposing the account's access keys. While access keys provide full administrative access to all resources, SAS allows for granular control by specifying permissions (like read or write) and defining an expiration time.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Types of SAS
+User delegation SAS
+This is created from an Entra ID principal which will sign the SAS and delegate the permissions from the user to the SAS. It can only be used with blob and data lake storage (docs). It's possible to revoke all generated user delegated SAS.
+It's possible to generate a delegation SAS with "more" permissions than the ones the user has, but if the principal doesn't have them, it won't work (no privesc).
+
+Service SAS
+This is signed using one of the storage account access keys. It can be used to grant access to specific resources in a single storage service. If the key is renewed, the SAS will stop working.
+
+Account SAS
+It's also signed with one of the storage account access keys. It grants access to resources across a storage account services (Blob, Queue, Table, File) and can include service-level operations.
+
+
+
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+SAS URL’s
+A SAS URL signed by an access key looks like this:
+https://<container_name>.blob.core.windows.net/newcontainer?sp=r&st=2021-09-26T18:15:21Z&se=2021-10-27T02:14:21Z&spr=https&sv=2021-07-08&sr=c&sig=7S%2BZySOgy4aA3Dk0V1cJyTSIf1cW%2Fu3WFkhHV32%2B4PE%3D
+
+A SAS URL signed as a user delegation looks like this:
+https://<container_name>.blob.core.windows.net/testing-container?sp=r&st=2024-11-22T15:07:40Z&se=2024-11-22T23:07:40Z&skoid=d77c71a1-96e7-483d-bd51-bd753aa66e62&sktid=fdd066e1-ee37-49bc-b08f-d0e152119b04&skt=2024-11-22T15:07:40Z&ske=2024-11-22T23:07:40Z&sks=b&skv=2022-11-02&spr=https&sv=2022-11-02&sr=c&sig=7s5dJyeE6klUNRulUj9TNL0tMj2K7mtxyRc97xbYDqs%3D
+
+The SAS tokens created are not being traced by Azure.
+
+Note some http params:
+The se param indicates the expiration date of the SAS
+The sp param indicates the permissions of the SAS
+The sig is the signature validating the SAS
+In account SAS: The ss parameter indicate the allowed services (blobs, tables…)
+In account SAS: The srt param indicates the resource types allowed (service, container, object)
+DEMO
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+Generate a service SAS and a user delegation SAS and show some differences
+
+SFTP for Azure Blob Storage
+
+Azure Blob Storage supports the SSH File Transfer Protocol (SFTP), enabling secure file transfer and management directly to Blob Storage without requiring custom solutions or third-party products.
+Key Features
+Protocol Support: SFTP works with Blob Storage accounts configured with hierarchical namespace (HNS). This organizes blobs into directories and subdirectories for easier navigation.
+Security: SFTP uses local user identities for authentication and does not integrate with RBAC or ABAC. Each local user can authenticate via:
+Azure-generated passwords
+Public-private SSH key pairs
+Granular Permissions: Permissions such as Read, Write, Delete, and List can be assigned to local users for up to 100 containers.
+Networking Considerations: SFTP connections are made through port 22. Azure supports network configurations like firewalls, private endpoints, or virtual networks to secure SFTP traffic.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Enumeration Az Cli
+Microsoft Azure Storage Explorer
+# Get storage accounts
+az storage account list #Get the account name from here
+
+# BLOB STORAGE
+## List containers
+az storage container list --account-name <name>
+## Check if public access is allowed
+az storage container show-permission \
+--account-name <acc-name> \
+-n <container-name>
+## Make a container public
+az storage container set-permission \
+--public-access container \
+--account-name <acc-name> \
+-n <container-name>
+## List blobs in a container
+az storage blob list \
+--container-name <container name> \
+--account-name <account name>
+
+
+## Download blob
+az storage blob download \
+--account-name <account name> \
+--container-name <container name> \
+--name <blob name> \
+--file </path/to/local/file>
+
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Enumeration Az Cli
+# ACCESS KEYS
+az storage account keys list --account-name <name>
+## Check key policies
+az storage account show -n <name> --query "{KeyPolicy:keyPolicy}"
+
+## Once having the key, it's possible to use it with the argument --account-key
+
+## Enum blobs with account key
+az storage blob list \
+--container-name <container name> \
+--account-name <account name> \
+--account-key "ZrF40pkVKvWPUr[...]v7LZw=="
+
+## Enum blobs with permissions
+az storage blob list \
+--container-name <container name> \
+--account-name <account name> \
+--auth-mode login
+
+
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+
+Enumeration Az Cli
+# SAS
+## List access policies
+az storage <container|queue|share|table> policy list \
+  --account-name <acc name> \
+  --container-name <container name>
+
+## Generate SAS with all permissions using an access key
+az storage <container|queue|share|table|blob> generate-sas \
+  --permissions acdefilmrtwxy \
+  --expiry 2024-12-31T23:59:00Z \
+  --account-name <acc-name> \
+  -n <container-name>
+
+## Generate SAS with all permissions using via user delegation
+az storage <container|queue|share|table|blob> generate-sas \
+  --permissions acdefilmrtwxy \
+  --expiry 2024-12-31T23:59:00Z \
+  --account-name <acc-name> \
+  --as-user --auth-mode login \
+  -n <container-name>
+## Generate account SAS
+az storage account generate-sas \
+--expiry 2024-12-31T23:59:00Z \
+--account-name <acc-name> \
+--services qt \
+--resource-types sco \
+--permissions acdfilrtuwxy
+
+## Use the returned SAS key with the param --sas-token
+## e.g.
+az storage blob show \
+  --account-name <account name> \
+  --container-name <container name> \
+  --sas-token 'se=2024-12-31T23%3A59%3A00Z&sp=racwdxyltfmei&sv=2022-11-02&sr=c&sig=ym%2Bu%2BQp5qqrPotIK5/rrm7EMMxZRwF/hMWLfK1VWy6E%3D' \
+  --name 'asd.txt'
+
+## Enum users
+az storage account local-user list \
+  --account-name <storage-account-name> \
+  --resource-group <resource-group-name>
+
+DEMO
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-storage.html
+Enumerate a blob storage 
+
+Privilege Escalation
+
+Microsoft.Storage/storageAccounts/listkeys/action
+List (and get the values) of the access keys of the storage accounts. Allowing the principal to escalate its privileges over the storage accounts.
+Microsoft.Storage/storageAccounts/regenerateKey/action
+Renew and get the new secret value of the access keys of the storage accounts. Allowing the principal to escalate its privileges over the storage accounts. Moreover, in the response, the user will get the value of the renewed key and also of the not renewed one.
+Microsoft.Storage/storageAccounts/write
+Create or update an existing storage account updating any setting like network rules or policies.
+Microsoft.Storage/storageAccounts/localusers/regeneratePassword/action
+Regenerate the password of user to access a container and retrieve sensitive information
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-privilege-escalation/az-storage-privesc.html
+
+Post Exploitation
+
+Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read
+A principal with this permission will be able to list the blobs (files) inside a container and download the files which might contain sensitive information.
+Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write
+A principal with this permission will be able to write and overwrite files in containers which might allow him to cause some damage or even escalate privileges (e.g. overwrite some code stored in a blob)
+*/delete
+Delete objects causing potential DoS and lost of valuable info.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-post-exploitation/az-blob-storage-post-exploitation.html
+
+Persistence
+
+
+Keep the access keys
+Generate SAS
+User delegated are 7 days max
+Create local user in a container
+Enable soft delete in blobs and containers
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-persistence/az-storage-persistence.html
