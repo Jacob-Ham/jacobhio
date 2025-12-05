@@ -741,58 +741,6 @@
          <lastmod>2025-12-05</lastmod>
     </url>
     <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/ACLs/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Capabilities/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Credential%20Hunting/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Environment%20Hunting/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/General%20Information/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Groups/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Low-Level%20Exploits/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/NFS%2C%20Samba%2C%20Network%20Shares/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Permissions/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Restricted%20Shells/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Service-Based%20Escalation/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Shared%20Libraries%20%26%20Interpreter%20Hijacking/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
-         <loc>https://jacobh.io/Cheatsheets/Linux%20Privilege%20Escalation/Writable%20Directories/</loc>
-         <lastmod>2025-12-05</lastmod>
-    </url>
-    <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Attacking/</loc>
          <lastmod>2025-12-05</lastmod>
     </url>
@@ -826,6 +774,58 @@
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Reconnaissance/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/ACLs/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Capabilities/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Credential%20Hunting/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Environment%20Hunting/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/General%20Information/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Groups/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Low-Level%20Exploits/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/NFS%2C%20Samba%2C%20Network%20Shares/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Permissions/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Restricted%20Shells/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Service-Based%20Escalation/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Shared%20Libraries%20%26%20Interpreter%20Hijacking/</loc>
+         <lastmod>2025-12-05</lastmod>
+    </url>
+    <url>
+         <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Writable%20Directories/</loc>
          <lastmod>2025-12-05</lastmod>
     </url>
     <url>
