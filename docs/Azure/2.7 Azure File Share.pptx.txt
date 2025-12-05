@@ -1,0 +1,120 @@
+Azure File Share
+
+HackTricks Training
+
+What is Azure File Share?
+Azure Files is a fully managed cloud file storage service that provides shared file storage accessible via standard SMB (Server Message Block) and NFS (Network File System) protocols. Therefore, it allows you to create highly available network file shares that can be accessed simultaneously by multiple virtual machines (VMs) or on-premises systems, enabling seamless file sharing across environments.
+The main protocol used is SMB as NFS Azure file shares aren't supported for Windows (according to the docs).
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+Access Tiers
+Transaction Optimized: Optimized for transaction-heavy operations.
+Hot: Balanced between transactions and storage.
+Cool: Cost-effective for storage.
+Premium: High-performance file storage optimized for low-latency and IOPS-intensive workloads.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+Backups & Snapshots
+Daily backup: A backup point is created each day at an indicated time (e.g. 19.30 UTC) and stored for from 1 to 200 days
+Weekly backup: A backup point is created each week at an indicated day and time (Sunday at 19.30) and stored for from 1 to 200 weeks
+Monthly backup: A backup point is created each month at an indicated day and time (e.g. first Sunday at 19.30) and stored for from 1 to 120 months
+Yearly backup: A backup point is created each year at an indicated day and time (e.g. January first Sunday at 19.30) and stored for from 1 to 10 years
+It's also possible to perform manual backups and snapshots at any time. Backups and snapshots are actually the same in this context.
+
+Note that file shares configured with NFS doesn’t support backups.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+Network Protections
+Remember that network protections are applied at the Storage account level.
+
+Networking options:
+Network access:
+Allow from all networks (cannot be used with file shares using NFS)
+Allow from selected virtual networks and IP addresses
+Disable public access and use private access
+Private endpoints: It allows a private connection to the storage account from a virtual network
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+API Authentication
+The same as in the Storage Account & Blobs lesson:
+RBAC
+Access keys
+Shared keys | Lite shared keys
+Shared Access Signature (SAS)
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+SMB Authentication
+Use access key as password
+On-premises AD DS Authentication: It uses on-premises Active Directory credentials synced with Microsoft Entra ID for identity-based access. It requires network connectivity to on-premises AD DS.
+Microsoft Entra Domain Services Authentication: It leverages Microsoft Entra Domain Services (cloud-based AD) to provide access using Microsoft Entra credentials.
+Microsoft Entra Kerberos for Hybrid Identities: It enables Microsoft Entra users to authenticate Azure file shares over the internet using Kerberos. It supports hybrid Microsoft Entra joined or Microsoft Entra joined VMs without requiring connectivity to on-premises domain controllers. But it does not support cloud-only identities.
+AD Kerberos Authentication for Linux Clients: It allows Linux clients to use Kerberos for SMB authentication via on-premises AD DS or Microsoft Entra Domain Services.
+
+Remember that having the needed Azure permissions granted to your Entra ID principal you can perform any action in the file share from the API.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+NFS “Authentication”
+It supports 3 root squash configurations (Find more information in https://book.hacktricks.wiki/en/network-services-pentesting/nfs-service-pentesting.html?highlight=nfs#squashing):
+Root squash: The root user is mapped to the anonymous user.
+No root squash: The root user is mapped to the root user.
+All squash: All users are mapped to the anonymous user.
+You must disabled "Secure transfer required" at storage account level as NFS doesn't support encryption.
+You must give some kind of private access to the NFS server as it doesn't support public access. For example, you can create a private endpoint and expose it in a subnet of a virtual network inside the subscription.
+The private endpoint will be exposed inside an IP address in the subnet with the port 2059 open to access the NFS service.
+It's possible to use nmap to discover the private endpoint.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+Enumeration Az Cli
+# Get storage accounts
+az storage account list #Get the account name from here
+
+# List file shares
+az storage share list --account-name <name>
+az storage share-rm list --storage-account <name> # To see the deleted ones too --include-deleted
+# Get dirs/files inside the share
+az storage file list --account-name <name> --share-name <share-name>
+## If type is "dir", you can continue enumerating files inside of it
+az storage file list --account-name <name> --share-name <prev_dir/share-name>
+# Download a complete share (with directories and files inside of them)
+az storage file download-batch -d . --source <share-name> --account-name <name>
+
+# Get snapshots/backups
+az storage share list --account-name <name> --include-snapshots --query "[?snapshot != null]"
+# List contents of a snapshot/backup
+az storage file list --account-name <name> --share-name <share-name> --snapshot <snapshot-version> #e.g. "2024-11-25T11:26:59.0000000Z"
+# Download snapshot/backup
+az storage file download-batch -d . --account-name <name> --source <share-name> --snapshot <snapshot-version>
+
+
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+
+
+Local Enumeration
+# Find private endpoints with NFS access with
+sudo nmap -n -T5 -Pn -p 2049,445 --open <private-ip>/16
+
+# Find if a share is mounted inside a VM with
+mount | grep nfs
+mount | grep "username="
+DEMO
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-file-shares.html
+Pre: Create a file share with some files and back up
+Show:
+Check it from the web app (the share and the back up)
+Enumerate from the CLI
+Mount it locally and access it
+
+Privilege Escalation & Persistence
+
+Same as in the Azure Storage Account & Blobs lesson
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-privilege-escalation/az-storage-privesc.html
+
+Post Exploitation
+
+Microsoft.Storage/storageAccounts/fileServices/fileshares/files/read
+A principal with this permission will be able to list the files inside a file share and download the files which might contain sensitive information.
+Microsoft.Storage/storageAccounts/fileServices/fileshares/files/write
+A principal with this permission will be able to write and overwrite files in file shares which might allow him to cause some damage or even escalate privileges (e.g. overwrite some code stored in a file share)
+*/delete
+Delete objects causing potential DoS and lost of valuable info.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-post-exploitation/az-file-share-post-exploitation.html

@@ -36,7 +36,7 @@ Oracle: 	`dbms_pipe.receive_message(('a'),10)`
 Microsoft: 	`WAITFOR DELAY '0:0:10'`
 ## Automated
 ---
-See [SQLMap](../../Methodologies/😏%20Cheatsheets/SQLMap.md) cheat sheet
+See [SQLMap](docs/Methodologies/Cheatsheets/SQLMap.md) cheat sheet
 
 ## Cheat Sheet Per DB Type
 ---

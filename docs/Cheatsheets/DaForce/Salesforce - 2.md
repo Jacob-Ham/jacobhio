@@ -17,7 +17,7 @@
 
 ---
 
-## 1. Preparation & Legal Considerations
+## 1. Preparation
 
 **Checklist**
 - **Test Accounts** for:  

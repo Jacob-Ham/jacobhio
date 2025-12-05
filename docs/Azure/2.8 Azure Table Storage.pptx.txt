@@ -1,0 +1,80 @@
+Azure Table Storage
+
+HackTricks Training
+
+What is Azure Table Storage?
+Azure Table Storage is a NoSQL key-value store designed for storing large volumes of structured, non-relational data. It offers high availability, low latency, and scalability to handle large datasets efficiently. Data is organized into tables, with each entity identified by a partition key and row key, enabling fast lookups. It supports features like encryption at rest, role-based access control, and shared access signatures for secure, managed storage suitable for a wide range of applications.
+
+There isn't built-in backup mechanism for table storage.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-table-storage.html
+
+Keys
+PartitionKey
+The PartitionKey groups entities into logical partitions. Entities with the same PartitionKey are stored together, which improves query performance and scalability.
+Example: In a table storing employee data, PartitionKey might represent a department, e.g., "HR" or "IT".
+RowKey
+The RowKey is the unique identifier for an entity within a partition. When combined with the PartitionKey, it ensures that each entity in the table has a globally unique identifier.
+Example: For the "HR" partition, RowKey might be an employee ID, e.g., "12345".
+Other Properties (Custom Properties)
+Besides the PartitionKey and RowKey, an entity can have additional custom properties to store data. These are user-defined and act like columns in a traditional database.
+Properties are stored as key-value pairs.
+Example: Name, Age, Title could be custom properties for an employee.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-table-storage.html
+
+Network Protections
+Remember that network protections are applied at the Storage account level:
+
+Networking options:
+Network access:
+Allow from all networks
+Allow from selected virtual networks and IP addresses
+Disable public access and use private access
+Private endpoints: It allows a private connection to the storage account from a virtual network
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-table-storage.html
+
+API Authentication
+The same as in the Storage Account & Blobs lesson:
+RBAC
+Access keys
+Shared keys | Lite shared keys
+Shared Access Signature (SAS)
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-table-storage.html
+
+Enumeration Az Cli
+# Get storage accounts
+az storage account list
+
+# List tables
+az storage table list --account-name <name>
+
+# Read table
+az storage entity query \
+--account-name <name> \
+--table-name <t-name> \
+--num-results 10
+
+
+DEMO
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-table-storage.html
+Pre: Create a table storage
+Show:
+Check it from the web app (the share and the back up)
+Enumerate from the CLI
+Save some data from cli
+Read it from cli
+
+
+Privilege Escalation & Persistence
+
+Same as in the Azure Storage Account & Blobs lesson
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-privilege-escalation/az-storage-privesc.html
+
+Post Exploitation
+
+Microsoft.Storage/storageAccounts/tableServices/tables/entities/read
+A principal with this permission will be able to list the tables inside a table storage and read the info which might contain sensitive information.
+Microsoft.Storage/storageAccounts/tableServices/tables/entities/write | Microsoft.Storage/storageAccounts/tableServices/tables/entities/add/action | Microsoft.Storage/storageAccounts/tableServices/tables/entities/update/action
+A principal with these permissions will be able to write and overwrite entries in tables which might allow him to cause some damage or even escalate privileges (e.g. overwrite some trusted data that could abuse some injection vulnerability in the app using it).
+*/delete
+Delete objects causing potential DoS and lost of valuable info.
+https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-post-exploitation/az-table-storage-post-exploitation.html

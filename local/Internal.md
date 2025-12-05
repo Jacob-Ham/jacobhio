@@ -7,13 +7,14 @@ ___
 - [ ] [Null Session](1.%20Reconnaissance%20&%20Enumeration/Null%20Session.md)
 - [ ] Network Scanning
 - [ ] [SMB Signing](1.%20Reconnaissance%20&%20Enumeration/SMB%20Signing.md)
+
 **Authenticated**
+
 - [ ] [DNS Dump](1.%20Reconnaissance%20&%20Enumeration/DNS%20Dump.md)
 - [ ] [Domain Wide Enumeration](1.%20Reconnaissance%20&%20Enumeration/Domain%20Wide%20Enumeration.md)
 - [ ] 
 #### Foothold
 - [ ] [Pre-Windows 2000 Computers](docs/Active%20Directory/2.%20Initial%20Compromise/Pre-Windows%202000%20Computers.md)
-    
 - [ ] [Pre-Boot Execution Environment PXE](2.%20Initial%20Compromise/Pre-Boot%20Execution%20Environment%20PXE.md)
 - [ ] [LLMNR Poisoning](2.%20Initial%20Compromise/LLMNR%20Poisoning.md)
 - [ ] [IPv6 Attacks](2.%20Initial%20Compromise/IPv6%20Attacks.md)
@@ -36,8 +37,8 @@ ___
 	- [ ] [Group Policy Abuse](4.%20Lateral%20Movement/Group%20Policy%20Abuse.md)
 #### General
 - [ ] [MachineAccountQuota](Miscellaneous/MachineAccountQuota.md)
-- [ ] [Default Credentials](../Methodologies/😏%20Cheatsheets/Default%20Credentials.md)
-- [ ] IPMI Hash Disclosure
+- [ ] [Default Credentials](docs/Methodologies/Cheatsheets/Default%20Credentials.md)
+- [ ] IPMI Hash Dump
 - [ ] Network Shares with Sensitive Data
 - [ ] IIS Tilde Enumeration
 - [ ] Cisco Smart Install
