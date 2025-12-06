@@ -2,7 +2,12 @@ site_name: jacobh.io
 site_url: https://jacobh.io
 plugins:
   - social
-  - search
+  - search:
+      lang: en
+      separator: '[\s\-/]+'
+      min_search_length: 2
+      prebuild_index: true
+      index_search_page: true
 theme:
   name: material
   logo: assets/favicon.ico
@@ -26,6 +31,9 @@ theme:
   features:
     - content.code.copy
     - navigation.tabs
+
+
+
 
 repo_url: https://github.com/Jacob-Ham/jacobhio
 repo_name: Jacob-Ham/jacobhio
