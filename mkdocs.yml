@@ -47,3 +47,4 @@ markdown_extensions:
 - pymdownx.snippets
 - pymdownx.superfences
 - admonition
+- pymdownx.admonition
