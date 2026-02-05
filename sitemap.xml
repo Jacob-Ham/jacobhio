@@ -2,966 +2,966 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jacobh.io/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/setup/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Authenticate/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Compute%20Services%20%26%20Lateral%20Movement/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Credential%20%26%20Identity%20Attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Discovery%20%26%20Reconnaissance/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Phishing%20via%20SSO%20Device%20Codes/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Secrets%20%26%20Notification%20Services/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Serverless%20Services%20Exploitation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Storage%20Enumeration%20%26%20Exploitation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/AWS/Tools/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/DNS%20Dump/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Domain%20User%20Enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Domain%20Wide%20Enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Enumerating%20Security%20Controls/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Group%20Membership/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Living%20Off%20the%20Land%20Enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Null%20Session/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Password%20Policy%20Enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/SMB%20Signing/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/1.%20Reconnaissance%20%26%20Enumeration/Service%20Enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/ASREPRoast/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/IPv6%20Attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/LLMNR%20Poisoning/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/Password%20Stuff/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/Pre-Boot%20Execution%20Environment%20PXE/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/Pre-Windows%202000%20Computers/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/PrintNightmare/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/Relay%20Attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/Word%20Doc%20Macro/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/2.%20Initial%20Compromise/ZeroLogon/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/Authentication%20Coercion/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/Credential%20Dumping/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/Credential%20Hunting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/GPP%20Password/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/Hash%20Cracking/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/Kerberoasting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/NTLM%20Hash%20Theft/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/3.%20Credential%20Theft/Unconstrained%20Delegation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Alternate%20Service%20Name/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Constrained%20Delegation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Domain%20ACLs/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Execution%20Methods/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Forest%20%26%20Domain%20Trusts/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Group%20Policy%20Abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Kerberos%20Double%20Hop/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/MSSQL%20Abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Overpass%20The%20Hash/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Pass%20The%20Hash/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Pass%20The%20Ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Pivoting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Resource-Based%20Constrained%20Delegation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/4.%20Lateral%20Movement/Service%20for%20User%20to%20Self/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/DCShadow/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/DCSync/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/Diamond%20Ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/Golden%20Ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/NoPac%20%28SamAccountName%20Spoofing%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/Silver%20Ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/ADCS/ESC1/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/ADCS/Enumerate%20ADCS/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/SCCM/Enumerate%20SCCM/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/SCCM/SCCM%20Site%20Takeover%20I/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Domain/SCCM/SCCM%20Site%20Takeover%20II/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Local/Local%20Administrator%20Password%20Solution/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Local/Token%20Privileges/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Local/UAC%20Bypasses/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Local/Unquoted%20Service%20Path/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Local/Weak%20Service%20Binary%20Permissions/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/5.%20Privilege%20Escalation/Local/Weak%20Service%20Permissions/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/6.%20Defense%20Evasion/Powershell%20Downgrade/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/Miscellaneous/Disable%20Restricted%20Admin%20Mode/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/Miscellaneous/Enable%20plaintext%20wdigest/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/Miscellaneous/Host%20Persistence/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/Miscellaneous/MachineAccountQuota/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20active_directory_enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20cisco_phones/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20default_credentials/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20forest_domain_trusts/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20laps_abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20ldap_passback/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20ldap_techniques/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20living_off_the_land/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20office_macro/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20password_attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20password_spraying/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20powershell_downgrade/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20printnightmare/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20samr_protocol_abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20service_enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20token_impersonation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20weak_service_permissions/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20windows_library_files/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20windows_priv_esc/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/%28%29%20windows_privileges/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/adcs_vulnerabilities/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/alternate_service_name/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/asreproast/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/authentication_coercion/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/bloodhound/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/credential_dumping/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/data_pillaging/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/dcsync/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/diamond_ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/dns_dump/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/domain_acls/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/execution_methods/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/golden_ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/gpp_password/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/group_membership/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/group_policy_abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/hash_cracking/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/ipv6_attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/kerberoasting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/kerberos_delegation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/llmnr_poisoning/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/mDNS/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/machine_account_quota/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/mssql_abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/nfs/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/ntlm_hash_theft/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/null_session/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/overpass_the_hash/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/pass_the_hash/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/pass_the_ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/password_attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/password_policy_enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/pivoting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/powerview/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/pre_windows_2000_computers/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/pxe_boot_attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/relay_attacks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/sccm_site_takeover/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/security_controls_enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/service_for_user_to_self/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/shadow_credentials/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/silver_ticket/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/smb_signing/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/static_ip/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/uac_bypasses/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/unquoted_service_path/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/vmware_vCenter_vSphere/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Active%20Directory/flat/zerologon/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/administrative_units/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/azure_keyvault/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/azure_networking/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/azure_storage/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/azure_virtual_machines/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/azure_webapps/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/container_apps/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/data_pillaging/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/database/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/external_recon/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/group_abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/managed_identity_and_apps/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/mfa/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/misc_commands/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/on-prem_to_cloud/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/password_spraying/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/phishing/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/resource_enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/role_abuse/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/service_principals/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/storage/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/tenant_wide_enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/user_enumeration/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/Tokens/get_tokens/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/Tokens/priv_esc_FOCI_tokens/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/Tokens/tokens_info/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Azure/Tokens/using_tokens/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/Compiling%20Binaries/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/Default%20Credentials/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/Misc/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/Network%20Recon/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/Passive%20Network%20Recon/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/PowerView/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/SQLMap/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/WebApp/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/DaForce/Salesforce%20-%201/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/DaForce/Salesforce%20-%202/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/DaForce/Salesforce%20-%203/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/DaForce/Salesforce%20-%204/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Attacking/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Bypassing%20MAC%20Filtering/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Cracking%20Passphrases/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Decrypting%20Captures/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Driver%20Installation%20Alfa%20A1US036ACS/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Finding%20Hidden%20Networks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Interface%20Modes/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Monitor%20Mode/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Cheatsheets/wifi/Reconnaissance/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/ACLs/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Capabilities/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Credential%20Hunting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Environment%20Hunting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/General%20Information/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Groups/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Low-Level%20Exploits/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/NFS%2C%20Samba%2C%20Network%20Shares/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Permissions/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Restricted%20Shells/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Service-Based%20Escalation/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Shared%20Libraries%20%26%20Interpreter%20Hijacking/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Linux/Linux%20Privilege%20Escalation/Writable%20Directories/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Insecure%20File%20Uploads/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Verb%20Tampering/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Web%20Application%20Firewall/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/API/-%20Getting%20Started/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/API/API/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/API/Mass%20Assignment/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Access%20Control/-%20Getting%20Started/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Access%20Control/Broken%20Function%20Level%20Access%20%28BLFA%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Access%20Control/Broken%20Object%20Level%20Access%20%28BOLA%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Access%20Control/Insecure%20Direct%20Object%20Reference%20%28IDOR%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Authentication/-%20Getting%20Started/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Authentication/Brute%20Forcing%20Authentication/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Authentication/Json%20Web%20Tokens%20%28JWTs%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Authentication/Multi-Factor%20Authentication/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Authentication/Rate%20Limiting/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Authentication/Session%20Tokens/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Discovery/Directory%20Fuzzing/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Discovery/Google%20Dorks/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Discovery/Parameter%20Fuzzing/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/File%20Inclusion/Directory%20Traversal/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/File%20Inclusion/Filter%20Bypasses/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/File%20Inclusion/Local%20File%20Inclusion%20%28LFI%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/File%20Inclusion/Remote%20File%20Inclusion/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Injections/Command%20Injection/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Injections/Cross-Site%20Scripting%20%28XSS%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Injections/External%20Entity%20Injection%20%28XXE%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Injections/NoSQL%20Injection/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Injections/SQL%20Injection/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Injections/Server-Side%20Template%20Injection%20%28SSTI%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Request%20Forgery/Cross-Site%20Request%20Forgery%20%28CSRF%29/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/Web%20Application/Request%20Forgery/Server%20Side%20Request%20Forgery/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/writeups/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
     <url>
          <loc>https://jacobh.io/writeups/HackTheBox/OverCertified/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2026-02-05</lastmod>
     </url>
 </urlset>
